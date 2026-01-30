@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techstars Belfast | Event Series</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --bg-color: #0f0f0f;
+            --text-color: #f0f0f0;
+            --accent-color: #00e676; /* Techstars-ish Green */
+            --secondary-accent: #6c5ce7;
+            --border-color: #333;
+            --card-bg: #1a1a1a;
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'Courier Prime', 'Courier New', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .tag, .date {
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+            letter-spacing: -0.05em;
+        }
+
+        /* UTILITIES */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--text-color);
+            color: var(--bg-color);
+            padding: 12px 24px;
+            text-decoration: none;
+            font-family: var(--font-mono);
+            font-weight: bold;
+            border: 1px solid var(--text-color);
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--text-color);
+            box-shadow: 4px 4px 0 var(--accent-color);
+            transform: translate(-2px, -2px);
+        }
+
+        /* HEADER & HERO */
+        header {
+            padding: 2rem 0 4rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .logo-area img {
+            height: 120px;
+            width: auto;
+        }
+
+        .terminal-logo {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            opacity: 0.8;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
+
+        .hero-context {
+            font-size: 1.1rem;
+            max-width: 600px;
+            color: #ccc;
+            margin-bottom: 2rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1.5rem;
+        }
+
+        /* EVENTS LIST */
+        .events-section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .events-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .event-card {
+            display: grid;
+            grid-template-columns: 120px 1fr auto;
+            gap: 2rem;
+            background: #161616;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            align-items: center;
+        }
+
+        .event-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+            background: #1c1c1c;
+        }
+
+        .event-date-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #222;
+            border-radius: 8px;
+            padding: 1rem;
+            min-height: 100px;
+            border: 1px solid #333;
+        }
+
+        .event-date-box .day {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            line-height: 1;
+        }
+
+        .event-date-box .month {
+            font-size: 0.75rem;
+            color: #888;
+            margin-top: 0.25rem;
+            letter-spacing: 0.1em;
+        }
+
+        .event-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .event-content h3 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin: 0;
+            letter-spacing: -0.01em;
+            font-family: var(--font-main);
+            text-transform: none;
+        }
+
+        .event-info-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #aaa;
+            font-family: var(--font-mono);
+        }
+
+        .info-item i, .info-item svg {
+            width: 16px;
+            height: 16px;
+            color: var(--accent-color);
+        }
+
+        .event-description {
+            font-size: 0.95rem;
+            color: #888;
+            line-height: 1.5;
+            margin-top: 0.5rem;
+        }
+
+        .tag-pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .tag-pill.remote { background: rgba(108, 92, 231, 0.2); color: #a29bfe; }
+        .tag-pill.in-person { background: rgba(0, 230, 118, 0.1); color: #00e676; }
+        .tag-pill.partner { background: rgba(255, 255, 255, 0.1); color: #fff; border: 1px solid rgba(255,255,255,0.3); }
+
+        .event-action .btn {
+            min-width: 120px;
+            text-align: center;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            padding: 12px 20px;
+        }
+
+        /* INFO GRID */
+        .pillars-section {
+            padding: 4rem 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pillar-card {
+            background: #161616;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .pillar-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .pillar-icon {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .pillar-card h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-family: var(--font-mono);
+        }
+
+        .pillar-card p {
+            font-size: 0.95rem;
+            color: #aaa;
+            line-height: 1.5;
+        }
+
+        .in-short-section {
+            padding: 4rem 2rem;
+            background: #0a0a0a;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .in-short-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .in-short-section p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 4rem;
+            padding: 4rem 0;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: #666;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .event-card {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 1.5rem;
+            }
+            .event-date-box {
+                flex-direction: row;
+                min-height: auto;
+                padding: 0.5rem 1rem;
+                gap: 1rem;
+                justify-content: flex-start;
+            }
+            .event-date-box .month { margin-top: 0; }
+            .event-info-row { gap: 1rem; }
+            .event-action .btn {
+                width: 100%;
+            }
+            .context-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <div class="logo-area">
+                    <img src="public/SCP_Belfast_Logo_Final_Primary_WG.png" alt="Techstars Belfast Logo">
+                </div>
+                <div class="terminal-logo">&gt; LAUNCH_INIT_2026</div>
+            </div>
+            
+            <h1>BUILD FROM HERE.<br>SHIP TO EVERYWHERE.</h1>
+            
+            <div class="hero-context">
+                <p>Belfast's startup ecosystem is entering a new chapter. In partnership with Queen's University and Ormeau Labs, we are launching Techstars in Northern Ireland—providing local founders with a direct line to a global network of mentors, investors, and resources.</p>
+                <br>
+                <p>Techstars Belfast is a founder-led startup community for Northern Ireland, powered by the global Techstars network. It exists to help ambitious founders start, build, and connect — regardless of stage — by providing access to world-class networks, practical learning, and high-quality peer support. </p>
+            </div>
+
+            <a href="#events" class="btn">VIEW THE SCHEDULE ↓</a>
+        </header>
+
+        <section id="events" class="events-section">
+            <div class="section-header">
+                <h2>UPCOMING SESSIONS</h2>
+            </div>
+
+            <div class="events-grid">
+                <!-- PARTNER EVENT 1 -->
+                <div class="event-card">
+                    <div class="event-date-box">
+                        <span class="day">03</span>
+                        <span class="month">FEB</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="tag-row">
+                            <span class="tag-pill partner">PARTNER SESSION</span>
+                            <span class="tag-pill in-person">In Person</span>
+                        </div>
+                        <h3>Founder Labs x The AMP: AMA</h3>
+                        <div class="event-info-row">
+                            <div class="info-item">
+                                <i data-lucide="clock"></i>
+                                <span>11:00 AM – 3:00 PM</span>
+                            </div>
+                            <div class="info-item">
+                                <i data-lucide="map-pin"></i>
+                                <span>Ebrington Square, Derry</span>
+                            </div>
+                            <div class="info-item">
+                                <i data-lucide="users"></i>
+                                <span>Cohort 4 focus</span>
+                            </div>
+                        </div>
+                        <p class="event-description">Join the Founder Labs team at The AMP for an open conversation about Cohort 4. Includes a Fireside Chat with Orla Lynch and Ian Browne, plus insights from alumni.</p>
+                    </div>
+                    <div class="event-action">
+                        <a href="https://luma.com/ixnvtb9s" class="btn" target="_blank">REGISTER NOW</a>
+                    </div>
+                </div>
+
+                <!-- EVENT 1 -->
+                <div class="event-card">
+                    <div class="event-date-box">
+                        <span class="day">05</span>
+                        <span class="month">FEB</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="tag-row">
+                            <span class="tag-pill remote">Virtual Pre-Accelerator</span>
+                        </div>
+                        <h3>Founder AMA: Techstars Founder Catalyst</h3>
+                        <div class="event-info-row">
+                            <div class="info-item">
+                                <i data-lucide="clock"></i>
+                                <span>3:00 PM – 4:00 PM GMT</span>
+                            </div>
+                            <div class="info-item">
+                                <i data-lucide="video"></i>
+                                <span>Google Meet</span>
+                            </div>
+                            <div class="info-item">
+                                <i data-lucide="users"></i>
+                                <span>Founders only</span>
+                            </div>
+                        </div>
+                        <p class="event-description">Ask questions live, no filters, no sales pitch. Join the Techstars team to find out if the 10-week virtual pre-accelerator is the right fit for your startup before applications close Feb 13.</p>
+                    </div>
+                    <div class="event-action">
+                        <a href="https://luma.com/a9e83czs" class="btn" target="_blank">REGISTER NOW</a>
+                    </div>
+                </div>
+
+                <!-- PARTNER EVENT 2 -->
+                <div class="event-card">
+                    <div class="event-date-box">
+                        <span class="day">05</span>
+                        <span class="month">FEB</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="tag-row">
+                            <span class="tag-pill partner">PARTNER SESSION</span>
+                            <span class="tag-pill in-person">In Person</span>
+                        </div>
+                        <h3>Founders Night X Founder Labs</h3>
+                        <div class="event-info-row">
+                            <div class="info-item">
+                                <i data-lucide="clock"></i>
+                                <span>5:30 PM – 7:30 PM</span>
+                            </div>
+                            <div class="info-item">
+                                <i data-lucide="map-pin"></i>
+                                <span>Ormeau Labs, Belfast</span>
+                            </div>
+                            <div class="info-item">
+                                <i data-lucide="zap"></i>
+                                <span>Cohort 4 Launch</span>
+                            </div>
+                        </div>
+                        <p class="event-description">Dive into startups and scaling with Orla Lynch. Get an exclusive first look at Cohort 4 and hear real-world insights from previous cohort members in an interactive setting.</p>
+                    </div>
+                    <div class="event-action">
+                        <a href="https://luma.com/6sqbnad2" class="btn" target="_blank">REGISTER NOW</a>
+                    </div>
+                </div>
+
+                <!-- EVENT 2 -->
+                <div class="event-card">
+                    <div class="event-date-box">
+                        <span class="day">12</span>
+                        <span class="month">FEB</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="tag-row">
+                            <span class="tag-pill in-person">Community Event</span>
+                        </div>
+                        <h3>Coinbase x Ormeau Labs: Future of Commerce</h3>
+                        <div class="event-info-row">
+                            <div class="info-item">
+                                <i data-lucide="clock"></i>
+                                <span>5:30 PM – 7:30 PM</span>
+                            </div>
+                            <div class="info-item">
+                                <i data-lucide="map-pin"></i>
+                                <span>Ormeau Labs, Belfast</span>
+                            </div>
+                            <div class="info-item">
+                                <i data-lucide="link"></i>
+                                <span>NI-Blockchain Partnership</span>
+                            </div>
+                        </div>
+                        <p class="event-description">Unpick the future of commerce, agents, and stablecoins with Evan (Coinbase) and Ian (Ormeau Labs). Part of the new QUB partnership launching Techstars in NI.</p>
+                    </div>
+                    <div class="event-action">
+                        <a href="#" class="btn">REGISTER NOW</a>
+                    </div>
+                </div>
+
+                <!-- EVENT 3 -->
+                <div class="event-card">
+                    <div class="event-date-box">
+                        <span class="day">04</span>
+                        <span class="month">MAR</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="tag-row">
+                            <span class="tag-pill in-person">Build Challenge</span>
+                        </div>
+                        <h3>Founders vs VCs: Agent Wars</h3>
+                        <div class="event-info-row">
+                            <div class="info-item">
+                                <i data-lucide="clock"></i>
+                                <span>11:00 AM – 2:30 PM</span>
+                            </div>
+                            <div class="info-item">
+                                <i data-lucide="map-pin"></i>
+                                <span>Ormeau Labs</span>
+                            </div>
+                            <div class="info-item">
+                                <i data-lucide="zap"></i>
+                                <span>Technical Build</span>
+                            </div>
+                        </div>
+                        <p class="event-description">Who can build the best AI agents in just 2 hours? A high-stakes live build challenge between local founders and the investment community.</p>
+                    </div>
+                    <div class="event-action">
+                        <a href="#" class="btn" style="opacity: 0.5; cursor: not-allowed; pointer-events: none;">COMING SOON</a>
+                    </div>
+                </div>
+
+                <!-- EVENT 4 -->
+                <div class="event-card">
+                    <div class="event-date-box">
+                        <span class="day">05</span>
+                        <span class="month">MAR</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="tag-row">
+                            <span class="tag-pill in-person">Founders Night Series</span>
+                        </div>
+                        <h3>Founder ❤️ Investor: Elkstone Fund Launch</h3>
+                        <div class="event-info-row">
+                            <div class="info-item">
+                                <i data-lucide="clock"></i>
+                                <span>5:30 PM – 7:30 PM</span>
+                            </div>
+                            <div class="info-item">
+                                <i data-lucide="map-pin"></i>
+                                <span>Ormeau Labs</span>
+                            </div>
+                            <div class="info-item">
+                                <i data-lucide="trending-up"></i>
+                                <span>Elkstone Fund</span>
+                            </div>
+                        </div>
+                        <p class="event-description">Elkstone announces their new fund opening to Northern Irish founders. An honest closed-door discussion between an Elkstone Investor and one of their portfolio CEOs.</p>
+                    </div>
+                    <div class="event-action">
+                        <a href="#" class="btn" style="opacity: 0.5; cursor: not-allowed; pointer-events: none;">COMING SOON</a>
+                    </div>
+                </div>
+
+                <!-- EVENT 5 -->
+                <div class="event-card">
+                    <div class="event-date-box">
+                        <span class="day">14</span>
+                        <span class="month">MAR</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="tag-row">
+                            <span class="tag-pill in-person">Networking</span>
+                        </div>
+                        <h3>Stripe Snacks: Agentic Commerce</h3>
+                        <div class="event-info-row">
+                            <div class="info-item">
+                                <i data-lucide="clock"></i>
+                                <span>10:00 AM – 1:00 PM</span>
+                            </div>
+                            <div class="info-item">
+                                <i data-lucide="map-pin"></i>
+                                <span>Ormeau Labs</span>
+                            </div>
+                            <div class="info-item">
+                                <i data-lucide="coffee"></i>
+                                <span>Stripe Partnership</span>
+                            </div>
+                        </div>
+                        <p class="event-description">Continuing the agentic commerce discussion with content and networking in partnership with our friends at Stripe. Coffee, snacks, and shipping agents.</p>
+                    </div>
+                    <div class="event-action">
+                        <a href="#" class="btn" style="opacity: 0.5; cursor: not-allowed; pointer-events: none;">COMING SOON</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pillars-section">
+            <div class="section-header">
+                <h2>HOW WE HELP FOUNDERS</h2>
+            </div>
+            <div class="pillars-grid">
+                <!-- PILLAR 1 -->
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i data-lucide="users"></i></div>
+                    <h3>1. Founder Community & Network</h3>
+                    <p>At its core, Techstars Belfast is a community of ambitious founders, operators, and builders. It connects you into the global Techstars ecosystem — thousands of founders, mentors, and investors worldwide — while remaining deeply rooted in Northern Ireland.</p>
+                </div>
+                <!-- PILLAR 2 -->
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i data-lucide="rocket"></i></div>
+                    <h3>2. Pre-Accelerator & Early-Stage Programmes</h3>
+                    <p>Structured, time-bound programmes designed for founders at the very earliest stages. These programmes help you move from idea to validated problem, early product, and a credible path to funding. The focus is on execution, clarity, and founder confidence.</p>
+                </div>
+                <!-- PILLAR 3 -->
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i data-lucide="code"></i></div>
+                    <h3>3. Hackathons & Build Sprints</h3>
+                    <p>Regular hackathons and build sprints give founders space to experiment, prototype, and ship quickly. Practical, hands-on events designed to compress weeks of work into days, often in partnership with leading global tech companies.</p>
+                </div>
+                <!-- PILLAR 4 -->
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i data-lucide="graduation-cap"></i></div>
+                    <h3>4. Founder Education & Masterclasses</h3>
+                    <p>Targeted masterclasses covering the fundamentals of building a startup: customer discovery, go-to-market, fundraising readiness, AI-native product design, and founder storytelling. Led by experienced founders and investors.</p>
+                </div>
+                <!-- PILLAR 5 -->
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i data-lucide="coffee"></i></div>
+                    <h3>5. Events, Meetups & Founder Dinners</h3>
+                    <p>A steady cadence of informal events creating space for honest conversations and peer learning. Designed to reduce founder isolation and help you learn from people a few steps ahead of you.</p>
+                </div>
+                <!-- PILLAR 6 -->
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i data-lucide="gift"></i></div>
+                    <h3>6. Partner-Led Opportunities & Perks</h3>
+                    <p>Access to software credits, tools, early product access, and real commercial exposure through partnerships with global technology companies. Practical and founder-first, focused on building faster and smarter.</p>
+                </div>
+                <!-- PILLAR 7 -->
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i data-lucide="trending-up"></i></div>
+                    <h3>7. Pathways to Capital & Next-Stage Support</h3>
+                    <p>While we don't invest directly, we provide warm pathways to capital and later-stage programmes. The emphasis is on readiness and fit — making sure founders raise money at the right time, from the right people.</p>
+                </div>
+            </div>
+
+            <div class="in-short-section">
+                <h2>IN SHORT</h2>
+                <p>Techstars Belfast is a launchpad, not an accelerator. It’s where founders come to find community, build momentum, learn the fundamentals, and connect into a global network — without giving up equity or being forced into a one-size-fits-all programme.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>TECHSTARS BELFAST × ORMEAU LABS × QUB<br>
+            &copy; 2026. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

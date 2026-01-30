@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="${page^}">
+    <section class="page-hero">
+        <div class="container">
+            <h1>${page^^}</h1>
+            <p>Page content to be built</p>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .page-hero {
+        min-height: 60vh;
+        display: flex;
+        align-items: center;
+        padding-top: 120px;
+    }
+</style>

@@ -1,0 +1,370 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const events = [
+    {
+        day: '03',
+        month: 'FEB',
+        tag: 'PARTNER SESSION',
+        tagType: 'partner',
+        title: 'Founder Labs x The AMP: AMA',
+        time: '11:00 AM – 3:00 PM',
+        location: 'Ebrington Square, Derry',
+        audience: 'Cohort 4 focus',
+        description: 'Join the Founder Labs team at The AMP for an open conversation about Cohort 4. Includes a Fireside Chat with Orla Lynch and Ian Browne, plus insights from alumni.',
+        link: 'https://luma.com/ixnvtb9s',
+        active: true
+    },
+    {
+        day: '05',
+        month: 'FEB',
+        tag: 'Virtual Pre-Accelerator',
+        tagType: 'remote',
+        title: 'Founder AMA: Techstars Founder Catalyst',
+        time: '3:00 PM – 4:00 PM GMT',
+        location: 'Google Meet',
+        audience: 'Founders only',
+        description: 'Ask questions live, no filters, no sales pitch. Join the Techstars team to find out if the 10-week virtual pre-accelerator is the right fit for your startup before applications close Feb 13.',
+        link: 'https://luma.com/a9e83czs',
+        active: true
+    },
+    {
+        day: '05',
+        month: 'FEB',
+        tag: 'PARTNER SESSION',
+        tagType: 'partner',
+        title: 'Founders Night X Founder Labs',
+        time: '5:30 PM – 7:30 PM',
+        location: 'Ormeau Labs, Belfast',
+        audience: 'Cohort 4 Launch',
+        description: 'Dive into startups and scaling with Orla Lynch. Get an exclusive first look at Cohort 4 and hear real-world insights from previous cohort members in an interactive setting.',
+        link: 'https://luma.com/6sqbnad2',
+        active: true
+    },
+    {
+        day: '12',
+        month: 'FEB',
+        tag: 'Community Event',
+        tagType: 'in-person',
+        title: 'Coinbase x Ormeau Labs: Future of Commerce',
+        time: '5:30 PM – 7:30 PM',
+        location: 'Ormeau Labs, Belfast',
+        audience: 'NI-Blockchain Partnership',
+        description: 'Unpick the future of commerce, agents, and stablecoins with Evan (Coinbase) and Ian (Ormeau Labs). Part of the new QUB partnership launching Techstars in NI.',
+        link: '#',
+        active: true
+    },
+    {
+        day: '04',
+        month: 'MAR',
+        tag: 'Build Challenge',
+        tagType: 'in-person',
+        title: 'Founders vs VCs: Agent Wars',
+        time: '11:00 AM – 2:30 PM',
+        location: 'Ormeau Labs',
+        audience: 'Technical Build',
+        description: 'Who can build the best AI agents in just 2 hours? A high-stakes live build challenge between local founders and the investment community.',
+        link: '#',
+        active: false
+    },
+    {
+        day: '05',
+        month: 'MAR',
+        tag: 'Founders Night Series',
+        tagType: 'in-person',
+        title: 'Founder ❤️ Investor: Elkstone Fund Launch',
+        time: '5:30 PM – 7:30 PM',
+        location: 'Ormeau Labs',
+        audience: 'Elkstone Fund',
+        description: 'Elkstone announces their new fund opening to Northern Irish founders. An honest closed-door discussion between an Elkstone Investor and one of their portfolio CEOs.',
+        link: '#',
+        active: false
+    },
+    {
+        day: '14',
+        month: 'MAR',
+        tag: 'Networking',
+        tagType: 'in-person',
+        title: 'Stripe Snacks: Agentic Commerce',
+        time: '10:00 AM – 1:00 PM',
+        location: 'Ormeau Labs',
+        audience: 'Stripe Partnership',
+        description: 'Continuing the agentic commerce discussion with content and networking in partnership with our friends at Stripe. Coffee, snacks, and shipping agents.',
+        link: '#',
+        active: false
+    }
+];
+---
+
+<BaseLayout title="Events">
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>EVENTS</h1>
+            <div class="page-intro">
+                <p>From workshops and AMAs to hackathons and founder dinners — our events are designed to help you learn, build, and connect with the Belfast startup community.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events List -->
+    <section class="events-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>UPCOMING SESSIONS</h2>
+            </div>
+
+            <div class="events-grid">
+                {events.map(event => (
+                    <div class="event-card">
+                        <div class="event-date-box">
+                            <span class="day">{event.day}</span>
+                            <span class="month">{event.month}</span>
+                        </div>
+                        <div class="event-content">
+                            <div class="tag-row">
+                                <span class={`tag-pill ${event.tagType}`}>{event.tag}</span>
+                                {event.tagType === 'partner' && <span class="tag-pill in-person">In Person</span>}
+                            </div>
+                            <h3>{event.title}</h3>
+                            <div class="event-info-row">
+                                <div class="info-item">
+                                    <i data-lucide="clock"></i>
+                                    <span>{event.time}</span>
+                                </div>
+                                <div class="info-item">
+                                    <i data-lucide={event.tagType === 'remote' ? 'video' : 'map-pin'}></i>
+                                    <span>{event.location}</span>
+                                </div>
+                                <div class="info-item">
+                                    <i data-lucide="users"></i>
+                                    <span>{event.audience}</span>
+                                </div>
+                            </div>
+                            <p class="event-description">{event.description}</p>
+                        </div>
+                        <div class="event-action">
+                            {event.active ? (
+                                <a href={event.link} class="btn" target="_blank">REGISTER NOW</a>
+                            ) : (
+                                <span class="btn btn--disabled">COMING SOON</span>
+                            )}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    /* PAGE HEADER */
+    .page-header {
+        padding-top: 140px;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .page-header .container {
+        max-width: 1000px;
+    }
+
+    .page-header h1 {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        margin-bottom: 1.5rem;
+    }
+
+    .page-intro {
+        font-size: 1.1rem;
+        max-width: 600px;
+        color: #ccc;
+        border-left: 2px solid var(--accent-color);
+        padding-left: 1.5rem;
+    }
+
+    .page-intro p {
+        max-width: none;
+    }
+
+    /* EVENTS SECTION */
+    .events-section {
+        padding: 4rem 0;
+    }
+
+    .events-section .container {
+        max-width: 1000px;
+    }
+
+    .section-header {
+        margin-bottom: 3rem;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 1rem;
+    }
+
+    .events-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .event-card {
+        display: grid;
+        grid-template-columns: 120px 1fr auto;
+        gap: 2rem;
+        background: #161616;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+        align-items: center;
+    }
+
+    .event-card:hover {
+        border-color: var(--accent-color);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+        background: #1c1c1c;
+    }
+
+    .event-date-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #222;
+        border-radius: 8px;
+        padding: 1rem;
+        min-height: 100px;
+        border: 1px solid #333;
+    }
+
+    .event-date-box .day {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--accent-color);
+        line-height: 1;
+        font-family: var(--font-mono);
+    }
+
+    .event-date-box .month {
+        font-size: 0.75rem;
+        color: #888;
+        margin-top: 0.25rem;
+        letter-spacing: 0.1em;
+        font-family: var(--font-mono);
+        text-transform: uppercase;
+    }
+
+    .event-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .tag-row {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .event-content h3 {
+        font-size: 1.5rem;
+        color: #fff;
+        margin: 0;
+        letter-spacing: -0.01em;
+        font-family: var(--font-main);
+        text-transform: none;
+    }
+
+    .event-info-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .info-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        color: #aaa;
+        font-family: var(--font-mono);
+    }
+
+    .info-item i {
+        width: 16px;
+        height: 16px;
+        color: var(--accent-color);
+    }
+
+    .event-description {
+        font-size: 0.95rem;
+        color: #888;
+        line-height: 1.5;
+        margin-top: 0.5rem;
+    }
+
+    .tag-pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 2px 10px;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-family: var(--font-mono);
+    }
+
+    .tag-pill.remote { background: rgba(108, 92, 231, 0.2); color: #a29bfe; }
+    .tag-pill.in-person { background: rgba(0, 230, 118, 0.1); color: #00e676; }
+    .tag-pill.partner { background: rgba(255, 255, 255, 0.1); color: #fff; border: 1px solid rgba(255,255,255,0.3); }
+
+    .event-action .btn {
+        min-width: 120px;
+        text-align: center;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        padding: 12px 20px;
+    }
+
+    .btn--disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+        .page-header {
+            padding-top: 120px;
+        }
+
+        .event-card {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            padding: 1.5rem;
+        }
+
+        .event-date-box {
+            flex-direction: row;
+            min-height: auto;
+            padding: 0.5rem 1rem;
+            gap: 1rem;
+            justify-content: flex-start;
+        }
+
+        .event-date-box .month {
+            margin-top: 0;
+        }
+
+        .event-info-row {
+            gap: 1rem;
+        }
+
+        .event-action .btn {
+            width: 100%;
+        }
+    }
+</style>

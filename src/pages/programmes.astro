@@ -1,0 +1,192 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pillars = [
+    {
+        icon: 'users',
+        title: '1. Founder Community & Network',
+        description: 'At its core, Techstars Belfast is a community of ambitious founders, operators, and builders. It connects you into the global Techstars ecosystem — thousands of founders, mentors, and investors worldwide — while remaining deeply rooted in Northern Ireland.'
+    },
+    {
+        icon: 'rocket',
+        title: '2. Pre-Accelerator & Early-Stage Programmes',
+        description: 'Structured, time-bound programmes designed for founders at the very earliest stages. These programmes help you move from idea to validated problem, early product, and a credible path to funding. The focus is on execution, clarity, and founder confidence.'
+    },
+    {
+        icon: 'code',
+        title: '3. Hackathons & Build Sprints',
+        description: 'Regular hackathons and build sprints give founders space to experiment, prototype, and ship quickly. Practical, hands-on events designed to compress weeks of work into days, often in partnership with leading global tech companies.'
+    },
+    {
+        icon: 'graduation-cap',
+        title: '4. Founder Education & Masterclasses',
+        description: 'Targeted masterclasses covering the fundamentals of building a startup: customer discovery, go-to-market, fundraising readiness, AI-native product design, and founder storytelling. Led by experienced founders and investors.'
+    },
+    {
+        icon: 'coffee',
+        title: '5. Events, Meetups & Founder Dinners',
+        description: 'A steady cadence of informal events creating space for honest conversations and peer learning. Designed to reduce founder isolation and help you learn from people a few steps ahead of you.'
+    },
+    {
+        icon: 'gift',
+        title: '6. Partner-Led Opportunities & Perks',
+        description: 'Access to software credits, tools, early product access, and real commercial exposure through partnerships with global technology companies. Practical and founder-first, focused on building faster and smarter.'
+    },
+    {
+        icon: 'trending-up',
+        title: '7. Pathways to Capital & Next-Stage Support',
+        description: 'While we don\'t invest directly, we provide warm pathways to capital and later-stage programmes. The emphasis is on readiness and fit — making sure founders raise money at the right time, from the right people.'
+    }
+];
+---
+
+<BaseLayout title="Programmes">
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>PROGRAMMES</h1>
+            <div class="page-intro">
+                <p>Techstars Belfast offers a range of programmes and resources designed to help founders at every stage — from first idea to fundraising and beyond.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Help Founders -->
+    <section class="pillars-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>HOW WE HELP FOUNDERS</h2>
+            </div>
+
+            <div class="pillars-grid">
+                {pillars.map(pillar => (
+                    <div class="pillar-card">
+                        <div class="pillar-icon">
+                            <i data-lucide={pillar.icon}></i>
+                        </div>
+                        <h3>{pillar.title}</h3>
+                        <p>{pillar.description}</p>
+                    </div>
+                ))}
+            </div>
+
+            <div class="in-short-section">
+                <h2>IN SHORT</h2>
+                <p>Techstars Belfast is a launchpad, not an accelerator. It's where founders come to find community, build momentum, learn the fundamentals, and connect into a global network — without giving up equity or being forced into a one-size-fits-all programme.</p>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    /* PAGE HEADER */
+    .page-header {
+        padding-top: 140px;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .page-header .container {
+        max-width: 1000px;
+    }
+
+    .page-header h1 {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        margin-bottom: 1.5rem;
+    }
+
+    .page-intro {
+        font-size: 1.1rem;
+        max-width: 600px;
+        color: #ccc;
+        border-left: 2px solid var(--accent-color);
+        padding-left: 1.5rem;
+    }
+
+    .page-intro p {
+        max-width: none;
+    }
+
+    /* PILLARS SECTION */
+    .pillars-section {
+        padding: 4rem 0;
+    }
+
+    .pillars-section .container {
+        max-width: 1000px;
+    }
+
+    .section-header {
+        margin-bottom: 3rem;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 1rem;
+    }
+
+    .pillars-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .pillar-card {
+        background: #161616;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+    }
+
+    .pillar-card:hover {
+        border-color: var(--accent-color);
+        transform: translateY(-2px);
+    }
+
+    .pillar-icon {
+        color: var(--accent-color);
+        margin-bottom: 1.5rem;
+    }
+
+    .pillar-card h3 {
+        color: #fff;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        font-family: var(--font-mono);
+    }
+
+    .pillar-card p {
+        font-size: 0.95rem;
+        color: #aaa;
+        line-height: 1.5;
+        max-width: none;
+    }
+
+    .in-short-section {
+        padding: 4rem 2rem;
+        background: #0a0a0a;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        margin: 4rem 0 0;
+        text-align: center;
+    }
+
+    .in-short-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--accent-color);
+    }
+
+    .in-short-section p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        color: #ccc;
+        line-height: 1.6;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+        .page-header {
+            padding-top: 120px;
+        }
+    }
+</style>

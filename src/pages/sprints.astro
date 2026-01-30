@@ -1,0 +1,225 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Sprints">
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>SPRINTS</h1>
+            <div class="page-intro">
+                <p>Intensive build sessions designed to compress weeks of work into days. Partner-led hackathons and sprints where founders ship real products alongside global tech companies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sprints Content -->
+    <section class="sprints-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>UPCOMING SPRINTS</h2>
+            </div>
+
+            <div class="sprint-cards">
+                <div class="sprint-card">
+                    <div class="sprint-badge">COMING SOON</div>
+                    <h3>Founders vs VCs: Agent Wars</h3>
+                    <p class="sprint-date">March 4, 2026 • Ormeau Labs</p>
+                    <p class="sprint-description">Who can build the best AI agents in just 2 hours? A high-stakes live build challenge between local founders and the investment community.</p>
+                    <div class="sprint-details">
+                        <div class="detail-item">
+                            <i data-lucide="clock"></i>
+                            <span>11:00 AM – 2:30 PM</span>
+                        </div>
+                        <div class="detail-item">
+                            <i data-lucide="zap"></i>
+                            <span>Technical Build</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sprint-card">
+                    <div class="sprint-badge">COMING SOON</div>
+                    <h3>Stripe Snacks: Agentic Commerce</h3>
+                    <p class="sprint-date">March 14, 2026 • Ormeau Labs</p>
+                    <p class="sprint-description">Continuing the agentic commerce discussion with content and networking in partnership with our friends at Stripe. Coffee, snacks, and shipping agents.</p>
+                    <div class="sprint-details">
+                        <div class="detail-item">
+                            <i data-lucide="clock"></i>
+                            <span>10:00 AM – 1:00 PM</span>
+                        </div>
+                        <div class="detail-item">
+                            <i data-lucide="coffee"></i>
+                            <span>Stripe Partnership</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-block">
+                <h2>WHAT ARE SPRINTS?</h2>
+                <p>Sprints are focused, time-boxed build sessions where founders work intensively on specific challenges. Often run in partnership with leading tech companies, these events give you access to tools, mentorship, and real-world problems to solve.</p>
+                <p>Whether it's building AI agents, integrating payments, or shipping a prototype — sprints are about doing, not just talking.</p>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    /* PAGE HEADER */
+    .page-header {
+        padding-top: 140px;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .page-header .container {
+        max-width: 1000px;
+    }
+
+    .page-header h1 {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        margin-bottom: 1.5rem;
+    }
+
+    .page-intro {
+        font-size: 1.1rem;
+        max-width: 600px;
+        color: #ccc;
+        border-left: 2px solid var(--accent-color);
+        padding-left: 1.5rem;
+    }
+
+    .page-intro p {
+        max-width: none;
+    }
+
+    /* SPRINTS SECTION */
+    .sprints-section {
+        padding: 4rem 0;
+    }
+
+    .sprints-section .container {
+        max-width: 1000px;
+    }
+
+    .section-header {
+        margin-bottom: 3rem;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 1rem;
+    }
+
+    .sprint-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    .sprint-card {
+        background: #161616;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .sprint-card:hover {
+        border-color: var(--accent-color);
+        transform: translateY(-2px);
+    }
+
+    .sprint-badge {
+        display: inline-block;
+        padding: 4px 12px;
+        background: rgba(108, 92, 231, 0.2);
+        color: #a29bfe;
+        font-size: 0.7rem;
+        font-weight: 600;
+        font-family: var(--font-mono);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border-radius: 20px;
+        margin-bottom: 1rem;
+    }
+
+    .sprint-card h3 {
+        font-size: 1.4rem;
+        color: #fff;
+        margin-bottom: 0.5rem;
+        font-family: var(--font-main);
+        text-transform: none;
+    }
+
+    .sprint-date {
+        font-size: 0.85rem;
+        color: var(--accent-color);
+        font-family: var(--font-mono);
+        margin-bottom: 1rem;
+    }
+
+    .sprint-description {
+        font-size: 0.95rem;
+        color: #aaa;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+    }
+
+    .sprint-details {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    .detail-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        color: #888;
+        font-family: var(--font-mono);
+    }
+
+    .detail-item i {
+        width: 16px;
+        height: 16px;
+        color: var(--accent-color);
+    }
+
+    .info-block {
+        padding: 3rem;
+        background: #0a0a0a;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+    }
+
+    .info-block h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--accent-color);
+    }
+
+    .info-block p {
+        font-size: 1.1rem;
+        color: #ccc;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+        max-width: none;
+    }
+
+    .info-block p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+        .page-header {
+            padding-top: 120px;
+        }
+
+        .sprint-cards {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

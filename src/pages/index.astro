@@ -1,0 +1,347 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const latestEvent = {
+    day: '03',
+    month: 'FEB',
+    tag: 'PARTNER SESSION',
+    tagType: 'partner',
+    title: 'Founder Labs x The AMP: AMA',
+    time: '11:00 AM – 3:00 PM',
+    location: 'Ebrington Square, Derry',
+    description: 'Join the Founder Labs team at The AMP for an open conversation about Cohort 4.',
+    link: 'https://luma.com/ixnvtb9s'
+};
+---
+
+<BaseLayout title="Home">
+    <!-- Hero Section with Video Background -->
+    <section class="hero">
+        <div class="hero-video-container">
+            <video
+                class="hero-video"
+                autoplay
+                muted
+                loop
+                playsinline
+            >
+                <source src="/images/hero-techstars.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="container hero-content">
+            <div class="hero-logo">
+                <img src="/images/techstarsbelfastlogo.png" alt="Techstars Belfast">
+            </div>
+            
+            <h1>BUILD FROM HERE.<br>SHIP TO EVERYWHERE.</h1>
+            
+            <div class="hero-context">
+                <p>Belfast's startup ecosystem is entering a new chapter. In partnership with Queen's University and Ormeau Labs, we are launching Techstars in Northern Ireland—providing local founders with a direct line to a global network of mentors, investors, and resources.</p>
+                <br>
+                <p>Techstars Belfast is a founder-led startup community for Northern Ireland, powered by the global Techstars network. It exists to help ambitious founders start, build, and connect — regardless of stage — by providing access to world-class networks, practical learning, and high-quality peer support.</p>
+            </div>
+
+            <a href="#events" class="btn">VIEW THE SCHEDULE ↓</a>
+        </div>
+    </section>
+
+    <!-- Latest Event -->
+    <section id="events" class="events-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>LATEST EVENT</h2>
+            </div>
+
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-date-box">
+                        <span class="day">{latestEvent.day}</span>
+                        <span class="month">{latestEvent.month}</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="tag-row">
+                            <span class={`tag-pill ${latestEvent.tagType}`}>{latestEvent.tag}</span>
+                        </div>
+                        <h3>{latestEvent.title}</h3>
+                        <div class="event-info-row">
+                            <div class="info-item">
+                                <i data-lucide="clock"></i>
+                                <span>{latestEvent.time}</span>
+                            </div>
+                            <div class="info-item">
+                                <i data-lucide="map-pin"></i>
+                                <span>{latestEvent.location}</span>
+                            </div>
+                        </div>
+                        <p class="event-description">{latestEvent.description}</p>
+                    </div>
+                    <div class="event-action">
+                        <a href={latestEvent.link} class="btn" target="_blank">REGISTER NOW</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="view-all-wrapper">
+                <a href="/events" class="btn">VIEW ALL EVENTS →</a>
+            </div>
+        </div>
+    </section>
+
+</BaseLayout>
+
+<style>
+    /* HERO SECTION */
+    .hero {
+        position: relative;
+        min-height: 50vh;
+        display: flex;
+        align-items: flex-start;
+        overflow: hidden;
+        padding-top: 100px;
+        padding-bottom: 4rem;
+    }
+
+    .hero .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .events-section .container {
+        max-width: 1000px;
+    }
+
+    .hero-video-container {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+    }
+
+    .hero-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            to bottom,
+            rgba(15, 15, 15, 0.75) 0%,
+            rgba(15, 15, 15, 0.85) 60%,
+            rgba(15, 15, 15, 1) 100%
+        );
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        padding-top: 100px;
+        width: 100%;
+    }
+
+    .hero-logo {
+        margin-bottom: 2.5rem;
+        padding-top: 1rem;
+    }
+
+    .hero-logo img {
+        height: 100px;
+        width: auto;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        line-height: 1.1;
+        margin-bottom: 2rem;
+        max-width: 800px;
+    }
+
+    .hero-context {
+        font-size: 1.1rem;
+        max-width: 600px;
+        color: #ccc;
+        margin-bottom: 2rem;
+        border-left: 2px solid var(--accent-color);
+        padding-left: 1.5rem;
+    }
+
+    .hero-context p {
+        max-width: none;
+    }
+
+    /* EVENTS SECTION */
+    .events-section {
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-header {
+        margin-bottom: 3rem;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 1rem;
+    }
+
+    .events-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .event-card {
+        display: grid;
+        grid-template-columns: 120px 1fr auto;
+        gap: 2rem;
+        background: #161616;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+        align-items: center;
+    }
+
+    .event-card:hover {
+        border-color: var(--accent-color);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+        background: #1c1c1c;
+    }
+
+    .event-date-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #222;
+        border-radius: 8px;
+        padding: 1rem;
+        min-height: 100px;
+        border: 1px solid #333;
+    }
+
+    .event-date-box .day {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--accent-color);
+        line-height: 1;
+        font-family: var(--font-mono);
+    }
+
+    .event-date-box .month {
+        font-size: 0.75rem;
+        color: #888;
+        margin-top: 0.25rem;
+        letter-spacing: 0.1em;
+        font-family: var(--font-mono);
+        text-transform: uppercase;
+    }
+
+    .event-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .event-content h3 {
+        font-size: 1.5rem;
+        color: #fff;
+        margin: 0;
+        letter-spacing: -0.01em;
+        font-family: var(--font-main);
+        text-transform: none;
+    }
+
+    .event-info-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .info-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        color: #aaa;
+        font-family: var(--font-mono);
+    }
+
+    .info-item i {
+        width: 16px;
+        height: 16px;
+        color: var(--accent-color);
+    }
+
+    .event-description {
+        font-size: 0.95rem;
+        color: #888;
+        line-height: 1.5;
+        margin-top: 0.5rem;
+    }
+
+    .tag-pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 2px 10px;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-family: var(--font-mono);
+    }
+
+    .tag-pill.remote { background: rgba(108, 92, 231, 0.2); color: #a29bfe; }
+    .tag-pill.in-person { background: rgba(0, 230, 118, 0.1); color: #00e676; }
+    .tag-pill.partner { background: rgba(255, 255, 255, 0.1); color: #fff; border: 1px solid rgba(255,255,255,0.3); }
+
+    .event-action .btn {
+        min-width: 120px;
+        text-align: center;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        padding: 12px 20px;
+    }
+
+    .view-all-wrapper {
+        margin-top: 3rem;
+        text-align: center;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+        .hero-content {
+            padding-top: 120px;
+        }
+
+        .event-card {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            padding: 1.5rem;
+        }
+
+        .event-date-box {
+            flex-direction: row;
+            min-height: auto;
+            padding: 0.5rem 1rem;
+            gap: 1rem;
+            justify-content: flex-start;
+        }
+
+        .event-date-box .month {
+            margin-top: 0;
+        }
+
+        .event-info-row {
+            gap: 1rem;
+        }
+
+        .event-action .btn {
+            width: 100%;
+        }
+    }
+</style>
