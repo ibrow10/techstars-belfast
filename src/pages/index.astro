@@ -15,14 +15,17 @@ const latestEvent = {
 
 const whyCards = [
     {
+        icon: 'users',
         title: 'Community',
         description: 'Rooms full of founders. Honest conversations. No posturing.'
     },
     {
+        icon: 'zap',
         title: 'Momentum',
         description: 'Sprints, AMAs, workshops — things that make you move faster.'
     },
     {
+        icon: 'globe',
         title: 'Reach',
         description: 'Warm pathways to mentors, investors and partners across the UK, Europe and North America.'
     }
@@ -84,9 +87,9 @@ const testimonials = [
             
             <h1>BUILD FROM HERE.<br>SHIP TO EVERYWHERE.</h1>
             
-            <div class="hero-context">
-                <p>The founder community Northern Ireland needs. Finally.</p>
-            </div>
+            <p class="hero-tagline">
+                <span class="swoosh-under">The</span> founder community Northern Ireland needs. <span class="circle-highlight">Built here.</span>
+            </p>
 
             <div class="hero-ctas">
                 <a href="/events" class="btn">See what's on</a>
@@ -103,6 +106,9 @@ const testimonials = [
             <div class="why-grid">
                 {whyCards.map(card => (
                     <div class="why-card">
+                        <div class="why-icon">
+                            <i data-lucide={card.icon}></i>
+                        </div>
                         <h3>{card.title}</h3>
                         <p>{card.description}</p>
                     </div>
@@ -114,7 +120,12 @@ const testimonials = [
     <!-- Fuller Pitch -->
     <section class="pitch-section">
         <div class="container">
-            <p class="pitch-text">If you're building a startup — idea, MVP, revenue, fundraising — you'll find your people here. And you'll get a direct line into the global Techstars network, without having to leave home to get taken seriously.</p>
+            <div class="pitch-content">
+                <p class="pitch-headline">There has never been a better time to start a company. <span class="swoosh-under">Never.</span></p>
+                <p class="pitch-body">It's a paradigm shift. The tools are better. The barriers are lower. The reach is <span class="circle-highlight">global</span> from day one.</p>
+                <p class="pitch-body">What's missing is the room — the people, the momentum, the honest conversations.</p>
+                <p class="pitch-cta">That's what we're building.</p>
+            </div>
         </div>
     </section>
 
@@ -232,6 +243,41 @@ const testimonials = [
 </BaseLayout>
 
 <style>
+    /* SWOOSH AND CIRCLE HIGHLIGHTS */
+    .swoosh-under {
+        position: relative;
+        display: inline-block;
+    }
+
+    .swoosh-under::after {
+        content: '';
+        position: absolute;
+        left: -2px;
+        right: -2px;
+        bottom: -4px;
+        height: 8px;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8 Q25 2, 50 6 T98 4' stroke='%2300e676' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center;
+        background-size: 100% 100%;
+    }
+
+    .circle-highlight {
+        position: relative;
+        display: inline-block;
+        padding: 0 0.15em;
+    }
+
+    .circle-highlight::before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: -12px;
+        right: -12px;
+        bottom: -8px;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 50' preserveAspectRatio='none'%3E%3Cellipse cx='60' cy='25' rx='55' ry='20' stroke='%2300e676' stroke-width='2.5' fill='none' transform='rotate(-2 60 25)'/%3E%3C/svg%3E") no-repeat center;
+        background-size: 100% 100%;
+        pointer-events: none;
+    }
+
     /* HERO SECTION */
     .hero {
         position: relative;
@@ -296,18 +342,12 @@ const testimonials = [
         max-width: 800px;
     }
 
-    .hero-context {
-        font-size: 1.2rem;
+    .hero-tagline {
+        font-size: 1.3rem;
         max-width: 600px;
         color: #ccc;
         margin-bottom: 2rem;
-        border-left: 2px solid rgba(0, 230, 118, 0.35);
-        padding-left: 1.5rem;
-    }
-
-    .hero-context p {
-        max-width: none;
-        margin: 0;
+        line-height: 1.5;
     }
 
     .hero-ctas {
@@ -328,8 +368,9 @@ const testimonials = [
 
     /* WHY FOUNDERS SHOW UP SECTION */
     .why-section {
-        padding: 4rem 0;
+        padding: 5rem 0;
         border-bottom: 1px solid var(--border-color);
+        background: linear-gradient(to bottom, #0f0f0f 0%, #141414 100%);
     }
 
     .why-section .container {
@@ -338,26 +379,54 @@ const testimonials = [
 
     .why-section h2 {
         text-align: center;
-        margin-bottom: 3rem;
+        margin-bottom: 3.5rem;
         font-size: 1.25rem;
         text-transform: uppercase;
         letter-spacing: 0.1em;
+        color: var(--text-muted);
     }
 
     .why-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+        gap: 2.5rem;
     }
 
     .why-card {
         text-align: center;
-        padding: 2rem 1rem;
+        padding: 2.5rem 1.5rem;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.3s ease;
+    }
+
+    .why-card:hover {
+        background: rgba(255, 255, 255, 0.04);
+        border-color: rgba(0, 230, 118, 0.2);
+        transform: translateY(-4px);
+    }
+
+    .why-icon {
+        width: 56px;
+        height: 56px;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        background: rgba(0, 230, 118, 0.1);
+        color: var(--accent-color);
+    }
+
+    .why-icon i {
+        width: 28px;
+        height: 28px;
     }
 
     .why-card h3 {
-        color: var(--accent-color);
-        font-size: 1.1rem;
+        color: #fff;
+        font-size: 1.25rem;
         text-transform: uppercase;
         letter-spacing: 0.05em;
         margin-bottom: 1rem;
@@ -365,14 +434,14 @@ const testimonials = [
     }
 
     .why-card p {
-        color: #ccc;
-        line-height: 1.6;
+        color: #999;
+        line-height: 1.7;
         font-size: 1rem;
     }
 
     /* FULLER PITCH SECTION */
     .pitch-section {
-        padding: 4rem 0;
+        padding: 5rem 0;
         border-bottom: 1px solid var(--border-color);
     }
 
@@ -380,13 +449,33 @@ const testimonials = [
         max-width: 1000px;
     }
 
-    .pitch-text {
-        font-size: 1.2rem;
-        color: #aaa;
-        line-height: 1.7;
+    .pitch-content {
         max-width: 700px;
-        text-align: center;
         margin: 0 auto;
+        text-align: center;
+    }
+
+    .pitch-headline {
+        font-size: 1.5rem;
+        color: #fff;
+        line-height: 1.4;
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+    }
+
+    .pitch-body {
+        font-size: 1.15rem;
+        color: #999;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+    }
+
+    .pitch-cta {
+        font-size: 1.2rem;
+        color: var(--accent-color);
+        font-weight: 600;
+        margin-top: 1.5rem;
+        font-family: var(--font-mono);
     }
 
     /* START HERE SECTION */
@@ -731,6 +820,17 @@ const testimonials = [
         .why-grid {
             grid-template-columns: 1fr;
             gap: 1.5rem;
+        }
+
+        .why-card {
+            padding: 2rem 1.5rem;
+        }
+
+        .circle-highlight::before {
+            top: -6px;
+            left: -8px;
+            right: -8px;
+            bottom: -6px;
         }
 
         .event-card {
