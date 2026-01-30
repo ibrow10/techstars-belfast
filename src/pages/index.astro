@@ -47,6 +47,26 @@ const latestEvent = {
         </div>
     </section>
 
+    <!-- Partners Section -->
+    <section class="partners-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>IN PARTNERSHIP WITH</h2>
+            </div>
+            
+            <div class="partners-content">
+                <p>Techstars Belfast is delivered with Queen's University Belfast and Ormeau Labs. Queen's brings world-class research, talent and spinout potential — and a commitment to growing entrepreneurial ambition across students, postgraduates and researchers. Ormeau Labs anchors the initiative in the heart of the founder community. Together, we're building a practical, founder-first platform that connects Northern Ireland into the global Techstars network.</p>
+            </div>
+            
+            <div class="partners-logos">
+                <img src="/images/QUB-Logo.png" alt="Queen's University Belfast" class="partner-logo">
+                <img src="/images/ormeau-labs-logo.svg" alt="Ormeau Labs" class="partner-logo">
+            </div>
+            
+            <a href="/partners" class="btn">Partner with us</a>
+        </div>
+    </section>
+
     <!-- Latest Event -->
     <section id="events" class="events-section">
         <div class="container">
@@ -109,8 +129,47 @@ const latestEvent = {
         padding: 0 2rem;
     }
 
-    .events-section .container {
+    .events-section .container,
+    .partners-section .container {
         max-width: 1000px;
+    }
+
+    /* PARTNERS SECTION */
+    .partners-section {
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .partners-content {
+        margin-bottom: 2rem;
+    }
+
+    .partners-content p {
+        font-size: 1.1rem;
+        color: #ccc;
+        line-height: 1.7;
+        max-width: 800px;
+        border-left: 2px solid var(--accent-color);
+        padding-left: 1.5rem;
+    }
+
+    .partners-logos {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .partner-logo {
+        height: 50px;
+        width: auto;
+        filter: brightness(0) invert(1);
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+    }
+
+    .partner-logo:hover {
+        opacity: 1;
     }
 
     .hero-video-container {
