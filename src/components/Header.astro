@@ -14,22 +14,54 @@ const navItems = [
                 <span class="logo-text">techstars<span class="logo-underscore">_</span> Belfast</span>
             </a>
             
-            <nav class="main-nav" aria-label="Main navigation">
-                <ul class="nav-list">
-                    {navItems.map(item => (
-                        <li><a href={item.href}>{item.label}</a></li>
-                    ))}
-                </ul>
-            </nav>
-            
-            <a href="#newsletter" class="header-cta btn">Subscribe</a>
+            <div class="header-right">
+                <nav class="main-nav" aria-label="Main navigation">
+                    <ul class="nav-list">
+                        {navItems.map(item => (
+                            <li><a href={item.href}>{item.label}</a></li>
+                        ))}
+                    </ul>
+                </nav>
+                
+                <a href="#newsletter" class="header-cta">Subscribe</a>
+            </div>
             
             <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
-                <i data-lucide="menu"></i>
+                <i data-lucide="menu" class="menu-icon"></i>
+                <i data-lucide="x" class="close-icon"></i>
             </button>
         </div>
+        
+        <!-- Mobile Menu -->
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+            <ul class="mobile-nav-list">
+                {navItems.map(item => (
+                    <li><a href={item.href}>{item.label}</a></li>
+                ))}
+                <li><a href="#newsletter" class="mobile-cta">Subscribe</a></li>
+            </ul>
+        </nav>
     </div>
 </header>
+
+<script>
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const header = document.querySelector('.site-header');
+    
+    menuBtn?.addEventListener('click', () => {
+        const isOpen = header?.classList.toggle('menu-open');
+        menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    
+    // Close menu when clicking a link
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            header?.classList.remove('menu-open');
+            menuBtn?.setAttribute('aria-expanded', 'false');
+        });
+    });
+</script>
 
 <style>
     .site-header {
@@ -39,7 +71,7 @@ const navItems = [
         right: 0;
         z-index: 1000;
         padding: var(--space-md) 0;
-        background: rgba(15, 15, 15, 0.9);
+        background: rgba(15, 15, 15, 0.95);
         backdrop-filter: blur(10px);
         border-bottom: 1px solid var(--border-color);
     }
@@ -48,7 +80,6 @@ const navItems = [
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: var(--space-lg);
     }
     
     .logo {
@@ -68,15 +99,21 @@ const navItems = [
         color: var(--accent-color);
     }
     
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: var(--space-lg);
+    }
+    
     .nav-list {
         display: flex;
         list-style: none;
-        gap: var(--space-lg);
+        gap: var(--space-md);
     }
     
     .nav-list a {
         font-family: var(--font-mono);
-        font-size: 1.1rem;
+        font-size: 0.95rem;
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.02em;
@@ -116,13 +153,63 @@ const navItems = [
         padding: var(--space-sm);
     }
     
+    .mobile-menu-btn .close-icon {
+        display: none;
+    }
+    
+    .menu-open .mobile-menu-btn .menu-icon {
+        display: none;
+    }
+    
+    .menu-open .mobile-menu-btn .close-icon {
+        display: block;
+    }
+    
+    .mobile-nav {
+        display: none;
+        padding-top: var(--space-lg);
+    }
+    
+    .mobile-nav-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+    
+    .mobile-nav-list a {
+        display: block;
+        font-family: var(--font-mono);
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        color: var(--text-color);
+        padding: var(--space-sm) 0;
+        border-bottom: 1px solid var(--border-color);
+        transition: color var(--transition-fast);
+    }
+    
+    .mobile-nav-list a:hover {
+        color: var(--accent-color);
+    }
+    
+    .mobile-nav-list .mobile-cta {
+        color: var(--accent-color);
+        border-bottom: none;
+        margin-top: var(--space-sm);
+    }
+    
     @media (max-width: 768px) {
-        .main-nav,
-        .header-cta {
+        .header-right {
             display: none;
         }
         
         .mobile-menu-btn {
+            display: block;
+        }
+        
+        .menu-open .mobile-nav {
             display: block;
         }
     }
