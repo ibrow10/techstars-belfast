@@ -12,6 +12,38 @@ const latestEvent = {
     description: 'Join the Founder Labs team at The AMP for an open conversation about Cohort 4.',
     link: 'https://luma.com/ixnvtb9s'
 };
+
+const startHereCards = [
+    {
+        title: 'Come to an event',
+        description: 'Meet founders. Learn something useful. Leave with energy.',
+        cta: 'View events',
+        link: '/events'
+    },
+    {
+        title: 'Join a sprint',
+        description: 'Time-boxed build sessions. Ship something real.',
+        cta: 'See sprints',
+        link: '/sprints'
+    },
+    {
+        title: 'Do a programme',
+        description: 'Structured weeks that take you from "maybe" to "we\'re actually doing this".',
+        cta: 'Explore programmes',
+        link: '/programmes'
+    }
+];
+
+const testimonials = [
+    {
+        quote: "Best founder room in Belfast. No fluff. Real people building.",
+        author: "Founder, Belfast"
+    },
+    {
+        quote: "I left with a shipped prototype and three intros that actually mattered.",
+        author: "Founder, Northern Ireland"
+    }
+];
 ---
 
 <BaseLayout title="Home">
@@ -38,21 +70,69 @@ const latestEvent = {
             <h1>BUILD FROM HERE.<br>SHIP TO EVERYWHERE.</h1>
             
             <div class="hero-context">
-                <p>Belfast's startup ecosystem is entering a new chapter. In partnership with Queen's University and Ormeau Labs, we are launching Techstars in Northern Ireland—providing local founders with a direct line to a global network of mentors, investors, and resources.</p>
+                <p>The founder community Northern Ireland needs.<br>Small team. Big ambition. No theatre.</p>
                 <br>
-                <p>Techstars Belfast is a founder-led startup community powered by the global Techstars network. It exists to help ambitious founders start, build, and connect — regardless of stage — by providing access to world-class networks, practical learning, and high-quality peer support.</p>
+                <p>If you're building a startup — idea, MVP, revenue, fundraising — you'll find your people here. And you'll get a direct line into the global Techstars network, without having to leave home to get taken seriously.</p>
             </div>
 
-            <a href="#events" class="btn">VIEW THE SCHEDULE ↓</a>
+            <ul class="hero-bullets">
+                <li><strong>Community:</strong> rooms full of founders. Honest conversations. No posturing.</li>
+                <li><strong>Momentum:</strong> sprints, AMAs, workshops — things that make you move faster.</li>
+                <li><strong>Reach:</strong> warm pathways to mentors, investors and partners across the UK, Europe and North America.</li>
+            </ul>
+
+            <div class="hero-ctas">
+                <a href="/events" class="btn">See what's on this month</a>
+                <a href="#newsletter" class="btn btn--outline">Get the weekly email</a>
+            </div>
         </div>
     </section>
 
-    <!-- Latest Event -->
+    <!-- Start Here Section -->
+    <section class="start-here-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>NOT SURE WHERE YOU FIT? START HERE.</h2>
+            </div>
+
+            <div class="start-here-grid">
+                {startHereCards.map(card => (
+                    <div class="start-here-card card">
+                        <h3>{card.title}</h3>
+                        <p>{card.description}</p>
+                        <a href={card.link} class="card-link">{card.cta} →</a>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- Ethos Strip -->
+    <section class="ethos-strip">
+        <div class="container">
+            <p>We give first. We move fast. We're here to help founders win.</p>
+        </div>
+    </section>
+
+    <!-- Manifesto Block -->
+    <section class="manifesto-section">
+        <div class="container">
+            <div class="manifesto-content">
+                <p class="manifesto-lead">Techstars Belfast is founder-led.<br>We're a startup community that behaves like a startup.</p>
+                <p>We move fast. We're comfortable in ambiguity. We occasionally get things wrong. When we do, we don't blame anyone — we fix it, learn, and move on.</p>
+                <p>Founders are our customer. We ask "how can we better help founders?" every day. And we don't care about borders — we're the bridge from Belfast into the UK, Europe and North America.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Up (Featured Event) -->
     <section id="events" class="events-section">
         <div class="container">
             <div class="section-header">
-                <h2>LATEST EVENT</h2>
+                <h2>NEXT UP</h2>
             </div>
+
+            <p class="section-intro">Turn up. Bring questions. Leave clearer.</p>
 
             <div class="events-grid">
                 <div class="event-card">
@@ -89,6 +169,36 @@ const latestEvent = {
         </div>
     </section>
 
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-block">
+                <h2>THE WEEKLY FOUNDER EMAIL</h2>
+                <p>One email a week. No spam. Just the best founder opportunities in NI.</p>
+                <p class="newsletter-detail">Events. Sprints. Programmes. Open calls. Things worth your time.</p>
+                <a href="#newsletter" class="btn btn--accent">Get the weekly email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>WHAT FOUNDERS SAY</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                {testimonials.map(testimonial => (
+                    <div class="testimonial-card card">
+                        <p class="testimonial-quote">"{testimonial.quote}"</p>
+                        <p class="testimonial-author">— {testimonial.author}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
 </BaseLayout>
 
 <style>
@@ -107,10 +217,6 @@ const latestEvent = {
         max-width: 1000px;
         margin: 0 auto;
         padding: 0 2rem;
-    }
-
-    .events-section .container {
-        max-width: 1000px;
     }
 
     .hero-video-container {
@@ -164,7 +270,7 @@ const latestEvent = {
         font-size: 1.1rem;
         max-width: 600px;
         color: #ccc;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
         border-left: 2px solid var(--accent-color);
         padding-left: 1.5rem;
     }
@@ -173,16 +279,159 @@ const latestEvent = {
         max-width: none;
     }
 
+    .hero-bullets {
+        list-style: none;
+        margin-bottom: 2rem;
+        max-width: 600px;
+    }
+
+    .hero-bullets li {
+        font-size: 1rem;
+        color: #ccc;
+        margin-bottom: 0.75rem;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .hero-bullets li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--accent-color);
+    }
+
+    .hero-bullets strong {
+        color: #fff;
+    }
+
+    .hero-ctas {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .btn--outline {
+        background: transparent;
+        color: var(--text-color);
+    }
+
+    .btn--outline:hover {
+        background: var(--text-color);
+        color: var(--bg-color);
+    }
+
+    /* START HERE SECTION */
+    .start-here-section {
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .start-here-section .container {
+        max-width: 1000px;
+    }
+
+    .start-here-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .start-here-card {
+        padding: 2rem;
+    }
+
+    .start-here-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.75rem;
+        font-family: var(--font-mono);
+    }
+
+    .start-here-card p {
+        font-size: 0.95rem;
+        color: #aaa;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+    }
+
+    .card-link {
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        color: var(--accent-color);
+        text-transform: uppercase;
+        transition: opacity 0.2s ease;
+    }
+
+    .card-link:hover {
+        opacity: 0.8;
+    }
+
+    /* ETHOS STRIP */
+    .ethos-strip {
+        padding: 3rem 0;
+        background: #161616;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .ethos-strip .container {
+        max-width: 1000px;
+    }
+
+    .ethos-strip p {
+        font-family: var(--font-mono);
+        font-size: 1.2rem;
+        text-align: center;
+        color: var(--accent-color);
+        margin: 0;
+    }
+
+    /* MANIFESTO SECTION */
+    .manifesto-section {
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .manifesto-section .container {
+        max-width: 1000px;
+    }
+
+    .manifesto-content {
+        max-width: 700px;
+    }
+
+    .manifesto-lead {
+        font-size: 1.3rem;
+        color: #fff;
+        margin-bottom: 1.5rem;
+        line-height: 1.4;
+    }
+
+    .manifesto-content p {
+        font-size: 1.05rem;
+        color: #aaa;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+    }
+
     /* EVENTS SECTION */
     .events-section {
         padding: 4rem 0;
         border-bottom: 1px solid var(--border-color);
     }
 
+    .events-section .container {
+        max-width: 1000px;
+    }
+
     .section-header {
-        margin-bottom: 3rem;
+        margin-bottom: 1.5rem;
         border-bottom: 1px solid var(--border-color);
         padding-bottom: 1rem;
+    }
+
+    .section-intro {
+        font-size: 1.1rem;
+        color: #aaa;
+        margin-bottom: 2rem;
     }
 
     .events-grid {
@@ -312,10 +561,102 @@ const latestEvent = {
         text-align: center;
     }
 
+    /* NEWSLETTER SECTION */
+    .newsletter-section {
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .newsletter-section .container {
+        max-width: 1000px;
+    }
+
+    .newsletter-block {
+        background: #0a0a0a;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 4rem;
+        text-align: center;
+    }
+
+    .newsletter-block h2 {
+        color: var(--accent-color);
+        margin-bottom: 1rem;
+    }
+
+    .newsletter-block p {
+        font-size: 1.15rem;
+        color: #ccc;
+        margin-bottom: 0.5rem;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .newsletter-detail {
+        font-size: 1rem !important;
+        color: #888 !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .btn--accent {
+        background: var(--accent-color);
+        color: var(--bg-color);
+        border-color: var(--accent-color);
+    }
+
+    .btn--accent:hover {
+        background: transparent;
+        color: var(--accent-color);
+    }
+
+    /* TESTIMONIALS SECTION */
+    .testimonials-section {
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .testimonials-section .container {
+        max-width: 1000px;
+    }
+
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .testimonial-card {
+        padding: 2rem;
+    }
+
+    .testimonial-quote {
+        font-size: 1.1rem;
+        color: #ccc;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+        font-style: italic;
+    }
+
+    .testimonial-author {
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        color: var(--accent-color);
+    }
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
         .hero-content {
             padding-top: 120px;
+        }
+
+        .hero-ctas {
+            flex-direction: column;
+        }
+
+        .hero-ctas .btn {
+            width: 100%;
+            text-align: center;
         }
 
         .event-card {
@@ -342,6 +683,10 @@ const latestEvent = {
 
         .event-action .btn {
             width: 100%;
+        }
+
+        .newsletter-block {
+            padding: 2rem;
         }
     }
 </style>

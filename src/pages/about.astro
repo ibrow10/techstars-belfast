@@ -1,5 +1,20 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const partners = [
+    {
+        name: "Queen's University Belfast (QUB)",
+        description: "Talent, research, facilities — and a serious commitment to building the pipeline."
+    },
+    {
+        name: "Ormeau Labs",
+        description: "The home base. The rooms. The people."
+    },
+    {
+        name: "Techstars",
+        description: "Global network. Proven community systems. Give First."
+    }
+];
 ---
 
 <BaseLayout title="About">
@@ -8,42 +23,64 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="container">
             <h1>ABOUT</h1>
             <div class="page-intro">
-                <p>Techstars Belfast is a founder-led startup community for Northern Ireland, powered by the global Techstars network.</p>
+                <p>Techstars Belfast is founder-led.<br>We're building the community we wish existed when we started.</p>
+                <br>
+                <p>We give first with no expectation of return.<br>We care about founders more than we care about optics.</p>
             </div>
         </div>
     </section>
 
-    <!-- About Content -->
+    <!-- What We're Building -->
     <section class="about-section">
         <div class="container">
-            <div class="about-content">
-                <h2>OUR STORY</h2>
-                <p>Belfast's startup ecosystem is entering a new chapter. In partnership with Queen's University and Ormeau Labs, we are launching Techstars in Northern Ireland — providing local founders with a direct line to a global network of mentors, investors, and resources.</p>
-                
-                <p>Techstars Belfast exists to help ambitious founders start, build, and connect — regardless of stage — by providing access to world-class networks, practical learning, and high-quality peer support.</p>
+            <h2>WHAT WE'RE BUILDING</h2>
+            <div class="section-content">
+                <p>Belfast is ready for a new chapter. So we're bringing Techstars' community playbook here — with Queen's University Belfast and Ormeau Labs — and adapting it for local founders.</p>
+                <p>This isn't about "community strategy". It's about helping founders start companies that can compete globally.</p>
+            </div>
+        </div>
+    </section>
 
-                <h2>OUR PARTNERS</h2>
-                <div class="partners-grid">
-                    <div class="partner-item">
-                        <h3>Queen's University Belfast</h3>
-                        <p>Academic partner providing access to research, talent, and facilities.</p>
-                    </div>
-                    <div class="partner-item">
-                        <h3>Ormeau Labs</h3>
-                        <p>Physical home for the Belfast startup community in the heart of the city.</p>
-                    </div>
-                    <div class="partner-item">
-                        <h3>Techstars Global</h3>
-                        <p>Access to a worldwide network of 4,000+ companies and 10,000+ mentors.</p>
-                    </div>
-                </div>
+    <!-- How We Work -->
+    <section class="about-section">
+        <div class="container">
+            <h2>HOW WE WORK</h2>
+            <div class="section-content">
+                <p>We move fast. We're comfortable with ambiguity. We occasionally get things wrong. When we do, we fix it, learn, and keep going.</p>
+                <p class="highlight">We ask ourselves, every day:<br>"How can we better help founders?"</p>
+            </div>
+        </div>
+    </section>
 
-                <div class="cta-block">
-                    <p>Want to get involved? Join us at an upcoming event or reach out to partner with us.</p>
-                    <div class="cta-buttons">
-                        <a href="/events" class="btn">VIEW EVENTS</a>
-                        <a href="/partners" class="btn btn--outline">PARTNER WITH US</a>
+    <!-- Partners -->
+    <section class="partners-section">
+        <div class="container">
+            <h2>OUR PARTNERS</h2>
+            <div class="partners-grid">
+                {partners.map(partner => (
+                    <div class="partner-item card">
+                        <h3>{partner.name}</h3>
+                        <p>{partner.description}</p>
                     </div>
+                ))}
+            </div>
+            <div class="partner-logos">
+                <img src="/images/QUB-Logo.png" alt="Queen's University Belfast" class="partner-logo">
+                <img src="/images/ormeau-labs-logo.svg" alt="Ormeau Labs" class="partner-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-block">
+                <h2>WANT IN?</h2>
+                <p>Turn up to an event. Join a sprint. Or reach out if you want to build with us.</p>
+                <div class="cta-buttons">
+                    <a href="/events" class="btn">View events</a>
+                    <a href="/sprints" class="btn btn--outline">See sprints</a>
+                    <a href="/partners" class="btn btn--outline">Partner with us</a>
                 </div>
             </div>
         </div>
@@ -79,59 +116,65 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         max-width: none;
     }
 
-    /* ABOUT SECTION */
+    /* ABOUT SECTIONS */
     .about-section {
         padding: 4rem 0;
+        border-bottom: 1px solid var(--border-color);
     }
 
     .about-section .container {
         max-width: 1000px;
     }
 
-    .about-content h2 {
-        font-size: 1.5rem;
+    .about-section h2 {
+        font-size: 1.25rem;
         margin-bottom: 1.5rem;
-        margin-top: 3rem;
-        border-bottom: 1px solid var(--border-color);
-        padding-bottom: 1rem;
     }
 
-    .about-content h2:first-child {
-        margin-top: 0;
-    }
-
-    .about-content > p {
+    .section-content p {
         font-size: 1.1rem;
         color: #ccc;
         line-height: 1.7;
-        margin-bottom: 1.5rem;
-        max-width: 800px;
+        margin-bottom: 1rem;
+        max-width: 700px;
+    }
+
+    .section-content .highlight {
+        font-size: 1.15rem;
+        color: #fff;
+        margin-top: 1.5rem;
+    }
+
+    /* PARTNERS SECTION */
+    .partners-section {
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .partners-section .container {
+        max-width: 1000px;
+    }
+
+    .partners-section h2 {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
     }
 
     .partners-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
     }
 
     .partner-item {
-        background: #161616;
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
         padding: 2rem;
-        transition: all 0.3s ease;
-    }
-
-    .partner-item:hover {
-        border-color: var(--accent-color);
-        transform: translateY(-2px);
     }
 
     .partner-item h3 {
         color: #fff;
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
         font-family: var(--font-mono);
     }
 
@@ -141,20 +184,41 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         line-height: 1.5;
     }
 
+    .partner-logos {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .partner-logo {
+        height: 50px;
+        width: auto;
+        filter: brightness(0) invert(1);
+        opacity: 0.7;
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+        padding: 4rem 0;
+    }
+
+    .cta-section .container {
+        max-width: 1000px;
+    }
+
     .cta-block {
-        margin-top: 4rem;
-        padding: 3rem;
-        background: #0a0a0a;
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
         text-align: center;
     }
 
-    .cta-block p {
-        font-size: 1.2rem;
-        color: #ccc;
-        margin-bottom: 1.5rem;
-        max-width: none;
+    .cta-block h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .cta-block > p {
+        font-size: 1.1rem;
+        color: #aaa;
+        margin-bottom: 2rem;
     }
 
     .cta-buttons {
@@ -178,6 +242,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     @media (max-width: 768px) {
         .page-header {
             padding-top: 120px;
+        }
+
+        .cta-buttons {
+            flex-direction: column;
+        }
+
+        .cta-buttons .btn {
+            width: 100%;
+        }
+
+        .partner-logos {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.5rem;
         }
     }
 </style>

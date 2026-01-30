@@ -102,8 +102,23 @@ const events = [
         <div class="container">
             <h1>EVENTS</h1>
             <div class="page-intro">
-                <p>From workshops and AMAs to hackathons and founder dinners — our events are designed to help you learn, build, and connect with the Belfast startup community.</p>
+                <p>Founders don't need more panels.<br>They need good rooms, useful sessions, and people who'll tell the truth.</p>
+                <br>
+                <p>These events are built for that.<br>Turn up. Bring questions. Leave clearer.</p>
             </div>
+        </div>
+    </section>
+
+    <!-- What You'll Get -->
+    <section class="what-you-get-section">
+        <div class="container">
+            <h2>WHAT YOU'LL GET AT A TECHSTARS BELFAST EVENT</h2>
+            <ul class="benefits-list">
+                <li>Practical answers (not vibes)</li>
+                <li>Founder peers who are actually building</li>
+                <li>New opportunities: customers, collaborators, hires, mentors</li>
+                <li>A reason to keep going when it feels hard</li>
+            </ul>
         </div>
     </section>
 
@@ -113,6 +128,8 @@ const events = [
             <div class="section-header">
                 <h2>UPCOMING SESSIONS</h2>
             </div>
+
+            <p class="events-note">Everything upcoming is below. If it's full, join the list anyway — we run these often.</p>
 
             <div class="events-grid">
                 {events.map(event => (
@@ -155,6 +172,18 @@ const events = [
             </div>
         </div>
     </section>
+
+    <!-- Page CTA -->
+    <section class="page-cta-section">
+        <div class="container">
+            <div class="page-cta-block">
+                <h2>WANT THE BEST THINGS BEFORE THEY FILL UP?</h2>
+                <p>Get the weekly email.</p>
+                <p class="cta-detail">One email a week. No spam. Just the best founder opportunities in NI.</p>
+                <a href="#newsletter" class="btn btn--accent">Get the weekly email</a>
+            </div>
+        </div>
+    </section>
 </BaseLayout>
 
 <style>
@@ -186,6 +215,41 @@ const events = [
         max-width: none;
     }
 
+    /* WHAT YOU'LL GET SECTION */
+    .what-you-get-section {
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .what-you-get-section .container {
+        max-width: 1000px;
+    }
+
+    .what-you-get-section h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .benefits-list {
+        list-style: none;
+        max-width: 600px;
+    }
+
+    .benefits-list li {
+        font-size: 1.05rem;
+        color: #ccc;
+        margin-bottom: 0.75rem;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .benefits-list li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--accent-color);
+    }
+
     /* EVENTS SECTION */
     .events-section {
         padding: 4rem 0;
@@ -196,9 +260,16 @@ const events = [
     }
 
     .section-header {
-        margin-bottom: 3rem;
+        margin-bottom: 1.5rem;
         border-bottom: 1px solid var(--border-color);
         padding-bottom: 1rem;
+    }
+
+    .events-note {
+        font-size: 1rem;
+        color: #888;
+        margin-bottom: 2rem;
+        font-style: italic;
     }
 
     .events-grid {
@@ -333,6 +404,52 @@ const events = [
         opacity: 0.5;
         cursor: not-allowed;
         pointer-events: none;
+    }
+
+    /* PAGE CTA SECTION */
+    .page-cta-section {
+        padding: 4rem 0;
+    }
+
+    .page-cta-section .container {
+        max-width: 1000px;
+    }
+
+    .page-cta-block {
+        background: #0a0a0a;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 4rem;
+        text-align: center;
+    }
+
+    .page-cta-block h2 {
+        color: var(--accent-color);
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .page-cta-block p {
+        font-size: 1.15rem;
+        color: #ccc;
+        margin-bottom: 0.5rem;
+    }
+
+    .page-cta-block .cta-detail {
+        font-size: 1rem;
+        color: #888;
+        margin-bottom: 2rem;
+    }
+
+    .btn--accent {
+        background: var(--accent-color);
+        color: var(--bg-color);
+        border-color: var(--accent-color);
+    }
+
+    .btn--accent:hover {
+        background: transparent;
+        color: var(--accent-color);
     }
 
     /* RESPONSIVE */

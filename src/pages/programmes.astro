@@ -1,78 +1,106 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const pillars = [
+const tracks = [
     {
         icon: 'users',
-        title: '1. Founder Community & Network',
-        description: 'At its core, Techstars Belfast is a community of ambitious founders, operators, and builders. It connects you into the global Techstars ecosystem — thousands of founders, mentors, and investors worldwide — while remaining deeply rooted in Northern Ireland.'
-    },
-    {
-        icon: 'rocket',
-        title: '2. Pre-Accelerator & Early-Stage Programmes',
-        description: 'Structured, time-bound programmes designed for founders at the very earliest stages. These programmes help you move from idea to validated problem, early product, and a credible path to funding. The focus is on execution, clarity, and founder confidence.'
+        name: 'COMMUNITY',
+        subtitle: 'Always-on',
+        description: "You don't build alone. And you shouldn't have to. This is where you meet other founders, compare notes, and realise you're not the only one finding it hard.",
+        detail: "You'll get rooms, sessions, and a steady cadence that keeps you moving."
     },
     {
         icon: 'code',
-        title: '3. Hackathons & Build Sprints',
-        description: 'Regular hackathons and build sprints give founders space to experiment, prototype, and ship quickly. Practical, hands-on events designed to compress weeks of work into days, often in partnership with leading global tech companies.'
+        name: 'BUILD',
+        subtitle: 'Sprints + Hackathons',
+        description: "Time-boxed. Practical. Slightly intense. You'll compress weeks into days and ship something real.",
+        detail: "This is for founders who learn by doing. And who want momentum now."
     },
     {
-        icon: 'graduation-cap',
-        title: '4. Founder Education & Masterclasses',
-        description: 'Targeted masterclasses covering the fundamentals of building a startup: customer discovery, go-to-market, fundraising readiness, AI-native product design, and founder storytelling. Led by experienced founders and investors.'
-    },
-    {
-        icon: 'coffee',
-        title: '5. Events, Meetups & Founder Dinners',
-        description: 'A steady cadence of informal events creating space for honest conversations and peer learning. Designed to reduce founder isolation and help you learn from people a few steps ahead of you.'
-    },
-    {
-        icon: 'gift',
-        title: '6. Partner-Led Opportunities & Perks',
-        description: 'Access to software credits, tools, early product access, and real commercial exposure through partnerships with global technology companies. Practical and founder-first, focused on building faster and smarter.'
-    },
-    {
-        icon: 'trending-up',
-        title: '7. Pathways to Capital & Next-Stage Support',
-        description: 'While we don\'t invest directly, we provide warm pathways to capital and later-stage programmes. The emphasis is on readiness and fit — making sure founders raise money at the right time, from the right people.'
+        icon: 'rocket',
+        name: 'GET READY',
+        subtitle: 'Pre-accelerator',
+        description: "If you're serious about going full-time, validating the problem, and becoming fundable — this is the track. Structure, accountability, and founder confidence.",
+        detail: "Not theory. Not slides. Real progress."
     }
+];
+
+const whoItsFor = [
+    "you're early and need direction",
+    "you're building and need speed",
+    "you're isolated and need peers",
+    "you want to raise eventually — and want to do it properly"
 ];
 ---
 
-<BaseLayout title="Programmes">
+<BaseLayout title="Programme">
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>PROGRAMMES</h1>
+            <h1>PROGRAMME</h1>
             <div class="page-intro">
-                <p>Techstars Belfast offers a range of programmes and resources designed to help founders at every stage — from first idea to fundraising and beyond.</p>
+                <p>Some founders need a community.<br>Some need a deadline.<br>Some need a push.<br>Most need all three.</p>
+                <br>
+                <p>We run a stack of programmes that meet you where you are — and help you move.</p>
             </div>
         </div>
     </section>
 
-    <!-- How We Help Founders -->
-    <section class="pillars-section">
+    <!-- Programme Tracks -->
+    <section class="tracks-section">
         <div class="container">
-            <div class="section-header">
-                <h2>HOW WE HELP FOUNDERS</h2>
-            </div>
-
-            <div class="pillars-grid">
-                {pillars.map(pillar => (
-                    <div class="pillar-card">
-                        <div class="pillar-icon">
-                            <i data-lucide={pillar.icon}></i>
+            <div class="tracks-grid">
+                {tracks.map(track => (
+                    <div class="track-card card">
+                        <div class="track-icon">
+                            <i data-lucide={track.icon}></i>
                         </div>
-                        <h3>{pillar.title}</h3>
-                        <p>{pillar.description}</p>
+                        <div class="track-header">
+                            <h3>{track.name}</h3>
+                            <span class="track-subtitle">{track.subtitle}</span>
+                        </div>
+                        <p class="track-description">{track.description}</p>
+                        <p class="track-detail">{track.detail}</p>
                     </div>
                 ))}
             </div>
+        </div>
+    </section>
 
-            <div class="in-short-section">
-                <h2>IN SHORT</h2>
-                <p>Techstars Belfast is a launchpad, not an accelerator. It's where founders come to find community, build momentum, learn the fundamentals, and connect into a global network — without giving up equity or being forced into a one-size-fits-all programme.</p>
+    <!-- In Plain English -->
+    <section class="plain-english-section">
+        <div class="container">
+            <div class="plain-english-block">
+                <h2>IN PLAIN ENGLISH</h2>
+                <p>Techstars Belfast is a launchpad.<br>Not a fluffy accelerator. Not a co-working brochure.</p>
+                <p>A place to build momentum — and connect into the wider Techstars world — without giving up equity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who It's For -->
+    <section class="who-section">
+        <div class="container">
+            <h2>THIS IS FOR YOU IF:</h2>
+            <ul class="who-list">
+                {whoItsFor.map(item => (
+                    <li>{item}</li>
+                ))}
+            </ul>
+        </div>
+    </section>
+
+    <!-- Page CTA -->
+    <section class="page-cta-section">
+        <div class="container">
+            <div class="page-cta-block">
+                <h2>NOT SURE WHERE TO START?</h2>
+                <p>Come to an event. Join a sprint. Or get the weekly email and pick your moment.</p>
+                <div class="cta-buttons">
+                    <a href="/events" class="btn">View events</a>
+                    <a href="/sprints" class="btn btn--outline">Join a sprint</a>
+                    <a href="#newsletter" class="btn btn--outline">Get the weekly email</a>
+                </div>
             </div>
         </div>
     </section>
@@ -107,86 +135,187 @@ const pillars = [
         max-width: none;
     }
 
-    /* PILLARS SECTION */
-    .pillars-section {
+    /* TRACKS SECTION */
+    .tracks-section {
         padding: 4rem 0;
+        border-bottom: 1px solid var(--border-color);
     }
 
-    .pillars-section .container {
+    .tracks-section .container {
         max-width: 1000px;
     }
 
-    .section-header {
-        margin-bottom: 3rem;
-        border-bottom: 1px solid var(--border-color);
-        padding-bottom: 1rem;
-    }
-
-    .pillars-grid {
+    .tracks-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
+        gap: 1.5rem;
     }
 
-    .pillar-card {
-        background: #161616;
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
+    .track-card {
         padding: 2rem;
-        transition: all 0.3s ease;
     }
 
-    .pillar-card:hover {
-        border-color: var(--accent-color);
-        transform: translateY(-2px);
-    }
-
-    .pillar-icon {
+    .track-icon {
         color: var(--accent-color);
-        margin-bottom: 1.5rem;
-    }
-
-    .pillar-card h3 {
-        color: #fff;
-        font-size: 1.2rem;
         margin-bottom: 1rem;
+    }
+
+    .track-header {
+        margin-bottom: 1rem;
+    }
+
+    .track-header h3 {
+        font-size: 1.3rem;
         font-family: var(--font-mono);
+        margin-bottom: 0.25rem;
     }
 
-    .pillar-card p {
+    .track-subtitle {
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        color: var(--accent-color);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .track-description {
+        font-size: 1rem;
+        color: #ccc;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .track-detail {
         font-size: 0.95rem;
-        color: #aaa;
+        color: #888;
         line-height: 1.5;
-        max-width: none;
+        font-style: italic;
     }
 
-    .in-short-section {
-        padding: 4rem 2rem;
+    /* PLAIN ENGLISH SECTION */
+    .plain-english-section {
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .plain-english-section .container {
+        max-width: 1000px;
+    }
+
+    .plain-english-block {
         background: #0a0a0a;
         border: 1px solid var(--border-color);
         border-radius: 12px;
-        margin: 4rem 0 0;
+        padding: 3rem;
         text-align: center;
     }
 
-    .in-short-section h2 {
-        font-size: 1.5rem;
+    .plain-english-block h2 {
+        color: var(--accent-color);
+        font-size: 1.25rem;
         margin-bottom: 1.5rem;
+    }
+
+    .plain-english-block p {
+        font-size: 1.15rem;
+        color: #ccc;
+        line-height: 1.6;
+        max-width: 600px;
+        margin: 0 auto 1rem;
+    }
+
+    .plain-english-block p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* WHO SECTION */
+    .who-section {
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .who-section .container {
+        max-width: 1000px;
+    }
+
+    .who-section h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .who-list {
+        list-style: none;
+        max-width: 500px;
+    }
+
+    .who-list li {
+        font-size: 1.05rem;
+        color: #ccc;
+        margin-bottom: 0.75rem;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .who-list li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
         color: var(--accent-color);
     }
 
-    .in-short-section p {
-        font-size: 1.2rem;
-        max-width: 800px;
-        margin: 0 auto;
-        color: #ccc;
-        line-height: 1.6;
+    /* PAGE CTA SECTION */
+    .page-cta-section {
+        padding: 4rem 0;
+    }
+
+    .page-cta-section .container {
+        max-width: 1000px;
+    }
+
+    .page-cta-block {
+        text-align: center;
+    }
+
+    .page-cta-block h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .page-cta-block > p {
+        font-size: 1.1rem;
+        color: #aaa;
+        margin-bottom: 2rem;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .btn--outline {
+        background: transparent;
+        color: var(--text-color);
+    }
+
+    .btn--outline:hover {
+        background: var(--text-color);
+        color: var(--bg-color);
     }
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
         .page-header {
             padding-top: 120px;
+        }
+
+        .cta-buttons {
+            flex-direction: column;
+        }
+
+        .cta-buttons .btn {
+            width: 100%;
         }
     }
 </style>

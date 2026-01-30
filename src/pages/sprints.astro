@@ -1,5 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const whatHappens = [
+    "a clear build challenge (you can finish it)",
+    "people around you building too",
+    "practical help when you get stuck",
+    "a demo at the end (yes, even if it's rough)"
+];
 ---
 
 <BaseLayout title="Sprints">
@@ -8,58 +15,59 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="container">
             <h1>SPRINTS</h1>
             <div class="page-intro">
-                <p>Intensive build sessions designed to compress weeks of work into days. Partner-led hackathons and sprints where founders ship real products alongside global tech companies.</p>
+                <p>Sprints are where talking stops.<br>You show up. You build. You ship.</p>
+                <br>
+                <p>They're short, intense build sessions — sometimes with partners — where we compress time and force momentum.</p>
             </div>
         </div>
     </section>
 
-    <!-- Sprints Content -->
-    <section class="sprints-section">
+    <!-- What Happens -->
+    <section class="what-happens-section">
         <div class="container">
-            <div class="section-header">
-                <h2>UPCOMING SPRINTS</h2>
-            </div>
+            <h2>WHAT HAPPENS IN A SPRINT</h2>
+            <ul class="what-list">
+                {whatHappens.map(item => (
+                    <li>{item}</li>
+                ))}
+            </ul>
+        </div>
+    </section>
 
-            <div class="sprint-cards">
-                <div class="sprint-card">
-                    <div class="sprint-badge">COMING SOON</div>
-                    <h3>Founders vs VCs: Agent Wars</h3>
-                    <p class="sprint-date">March 4, 2026 • Ormeau Labs</p>
-                    <p class="sprint-description">Who can build the best AI agents in just 2 hours? A high-stakes live build challenge between local founders and the investment community.</p>
-                    <div class="sprint-details">
-                        <div class="detail-item">
-                            <i data-lucide="clock"></i>
-                            <span>11:00 AM – 2:30 PM</span>
-                        </div>
-                        <div class="detail-item">
-                            <i data-lucide="zap"></i>
-                            <span>Technical Build</span>
-                        </div>
-                    </div>
+    <!-- Bring / Leave -->
+    <section class="bring-leave-section">
+        <div class="container">
+            <div class="bring-leave-grid">
+                <div class="bring-leave-card card">
+                    <h3>BRING</h3>
+                    <p>A laptop, a problem worth solving, and a willingness to move fast.</p>
                 </div>
-
-                <div class="sprint-card">
-                    <div class="sprint-badge">COMING SOON</div>
-                    <h3>Stripe Snacks: Agentic Commerce</h3>
-                    <p class="sprint-date">March 14, 2026 • Ormeau Labs</p>
-                    <p class="sprint-description">Continuing the agentic commerce discussion with content and networking in partnership with our friends at Stripe. Coffee, snacks, and shipping agents.</p>
-                    <div class="sprint-details">
-                        <div class="detail-item">
-                            <i data-lucide="clock"></i>
-                            <span>10:00 AM – 1:00 PM</span>
-                        </div>
-                        <div class="detail-item">
-                            <i data-lucide="coffee"></i>
-                            <span>Stripe Partnership</span>
-                        </div>
-                    </div>
+                <div class="bring-leave-card card">
+                    <h3>LEAVE WITH</h3>
+                    <p>A shipped prototype, new contacts, and the next 3 actions.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="info-block">
-                <h2>WHAT ARE SPRINTS?</h2>
-                <p>Sprints are focused, time-boxed build sessions where founders work intensively on specific challenges. Often run in partnership with leading tech companies, these events give you access to tools, mentorship, and real-world problems to solve.</p>
-                <p>Whether it's building AI agents, integrating payments, or shipping a prototype — sprints are about doing, not just talking.</p>
+    <!-- Who It's For -->
+    <section class="who-section">
+        <div class="container">
+            <div class="who-content">
+                <p>If you're stuck, overthinking, or moving too slowly — do a sprint.<br>You'll surprise yourself.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page CTA -->
+    <section class="page-cta-section">
+        <div class="container">
+            <div class="page-cta-block">
+                <p>See upcoming sprints on the Events page.<br>And get the weekly email so you don't miss the next one.</p>
+                <div class="cta-buttons">
+                    <a href="/events" class="btn">View events</a>
+                    <a href="#newsletter" class="btn btn--outline">Get the weekly email</a>
+                </div>
             </div>
         </div>
     </section>
@@ -94,122 +102,125 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         max-width: none;
     }
 
-    /* SPRINTS SECTION */
-    .sprints-section {
+    /* WHAT HAPPENS SECTION */
+    .what-happens-section {
         padding: 4rem 0;
+        border-bottom: 1px solid var(--border-color);
     }
 
-    .sprints-section .container {
+    .what-happens-section .container {
         max-width: 1000px;
     }
 
-    .section-header {
-        margin-bottom: 3rem;
-        border-bottom: 1px solid var(--border-color);
-        padding-bottom: 1rem;
+    .what-happens-section h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
     }
 
-    .sprint-cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        gap: 2rem;
-        margin-bottom: 4rem;
+    .what-list {
+        list-style: none;
+        max-width: 500px;
     }
 
-    .sprint-card {
-        background: #161616;
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
-        padding: 2rem;
-        transition: all 0.3s ease;
+    .what-list li {
+        font-size: 1.05rem;
+        color: #ccc;
+        margin-bottom: 0.75rem;
+        padding-left: 1.5rem;
         position: relative;
     }
 
-    .sprint-card:hover {
-        border-color: var(--accent-color);
-        transform: translateY(-2px);
-    }
-
-    .sprint-badge {
-        display: inline-block;
-        padding: 4px 12px;
-        background: rgba(108, 92, 231, 0.2);
-        color: #a29bfe;
-        font-size: 0.7rem;
-        font-weight: 600;
-        font-family: var(--font-mono);
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        border-radius: 20px;
-        margin-bottom: 1rem;
-    }
-
-    .sprint-card h3 {
-        font-size: 1.4rem;
-        color: #fff;
-        margin-bottom: 0.5rem;
-        font-family: var(--font-main);
-        text-transform: none;
-    }
-
-    .sprint-date {
-        font-size: 0.85rem;
+    .what-list li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
         color: var(--accent-color);
-        font-family: var(--font-mono);
-        margin-bottom: 1rem;
     }
 
-    .sprint-description {
-        font-size: 0.95rem;
-        color: #aaa;
-        line-height: 1.5;
-        margin-bottom: 1.5rem;
+    /* BRING / LEAVE SECTION */
+    .bring-leave-section {
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--border-color);
     }
 
-    .sprint-details {
-        display: flex;
-        flex-wrap: wrap;
+    .bring-leave-section .container {
+        max-width: 1000px;
+    }
+
+    .bring-leave-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 1.5rem;
     }
 
-    .detail-item {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 0.85rem;
-        color: #888;
+    .bring-leave-card {
+        padding: 2rem;
+    }
+
+    .bring-leave-card h3 {
+        font-size: 1rem;
         font-family: var(--font-mono);
-    }
-
-    .detail-item i {
-        width: 16px;
-        height: 16px;
         color: var(--accent-color);
+        margin-bottom: 1rem;
     }
 
-    .info-block {
-        padding: 3rem;
-        background: #0a0a0a;
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
-    }
-
-    .info-block h2 {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-        color: var(--accent-color);
-    }
-
-    .info-block p {
-        font-size: 1.1rem;
+    .bring-leave-card p {
+        font-size: 1.05rem;
         color: #ccc;
         line-height: 1.6;
-        margin-bottom: 1rem;
-        max-width: none;
     }
 
-    .info-block p:last-child {
-        margin-bottom: 0;
+    /* WHO SECTION */
+    .who-section {
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .who-section .container {
+        max-width: 1000px;
+    }
+
+    .who-content p {
+        font-size: 1.2rem;
+        color: #ccc;
+        line-height: 1.6;
+        max-width: 600px;
+    }
+
+    /* PAGE CTA SECTION */
+    .page-cta-section {
+        padding: 4rem 0;
+    }
+
+    .page-cta-section .container {
+        max-width: 1000px;
+    }
+
+    .page-cta-block {
+        text-align: center;
+    }
+
+    .page-cta-block > p {
+        font-size: 1.1rem;
+        color: #aaa;
+        margin-bottom: 2rem;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .btn--outline {
+        background: transparent;
+        color: var(--text-color);
+    }
+
+    .btn--outline:hover {
+        background: var(--text-color);
+        color: var(--bg-color);
     }
 
     /* RESPONSIVE */
@@ -218,8 +229,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             padding-top: 120px;
         }
 
-        .sprint-cards {
-            grid-template-columns: 1fr;
+        .cta-buttons {
+            flex-direction: column;
+        }
+
+        .cta-buttons .btn {
+            width: 100%;
         }
     }
 </style>

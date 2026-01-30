@@ -1,5 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const whyPartner = [
+    "Get close to builders early (pre-seed to seed, shipping fast)",
+    "Sponsor real work (sprints, hackathons, founder sessions — not panels)",
+    "Earn trust by giving first (tools, credits, time, expertise)",
+    "Plug into Techstars (global network, local depth)"
+];
+
+const whatPartnersDo = [
+    "Sponsor a sprint challenge (and bring experts to help, not to sell)",
+    "Provide credits/tools founders can actually use",
+    "Host a founder session that is practical and honest",
+    "Support scholarships / travel / founder access"
+];
 ---
 
 <BaseLayout title="Partner with us">
@@ -8,49 +22,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="container">
             <h1>PARTNER WITH US</h1>
             <div class="page-intro">
-                <p>We work with forward-thinking companies who want to support the next generation of founders in Northern Ireland.</p>
+                <p>We work with companies who genuinely want to help founders.<br>Not logo collectors. Not innovation theatre.</p>
+                <br>
+                <p>If you're building in AI, fintech, dev tools, cloud, payments — and you want to be close to what's coming next — partner with us.</p>
             </div>
         </div>
     </section>
 
-    <!-- Partner Info -->
-    <section class="partner-section">
+    <!-- Why Partner -->
+    <section class="why-section">
         <div class="container">
-            <div class="partner-content">
-                <h2>WHY PARTNER WITH TECHSTARS BELFAST?</h2>
-                
-                <p>Techstars Belfast connects you directly with ambitious founders building the future. Our partners get meaningful access to early-stage startups, talent, and the local tech community.</p>
+            <h2>WHY PARTNER WITH US</h2>
+            <ul class="why-list">
+                {whyPartner.map(item => (
+                    <li>{item}</li>
+                ))}
+            </ul>
+        </div>
+    </section>
 
-                <div class="partner-benefits">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i data-lucide="users"></i>
-                        </div>
-                        <h3>Access to Founders</h3>
-                        <p>Connect with pre-seed and seed-stage founders actively building in Northern Ireland.</p>
-                    </div>
+    <!-- What Partners Can Do -->
+    <section class="what-section">
+        <div class="container">
+            <h2>WHAT PARTNERS CAN DO</h2>
+            <ul class="what-list">
+                {whatPartnersDo.map(item => (
+                    <li>{item}</li>
+                ))}
+            </ul>
+        </div>
+    </section>
 
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i data-lucide="calendar"></i>
-                        </div>
-                        <h3>Event Sponsorship</h3>
-                        <p>Co-host workshops, hackathons, and founder events with your brand front and centre.</p>
-                    </div>
-
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i data-lucide="globe"></i>
-                        </div>
-                        <h3>Global Network</h3>
-                        <p>Tap into the worldwide Techstars network of 4,000+ companies and 10,000+ mentors.</p>
-                    </div>
-                </div>
-
-                <div class="cta-block">
-                    <p>Interested in partnering with us? We'd love to hear from you.</p>
-                    <a href="mailto:belfast@techstars.com" class="btn">GET IN TOUCH</a>
-                </div>
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-block">
+                <p>If this sounds like you, get in touch.<br>We'll keep it simple.</p>
+                <a href="mailto:belfast@techstars.com" class="btn btn--accent">Get in touch</a>
             </div>
         </div>
     </section>
@@ -85,86 +93,118 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         max-width: none;
     }
 
-    /* PARTNER SECTION */
-    .partner-section {
+    /* WHY SECTION */
+    .why-section {
         padding: 4rem 0;
+        border-bottom: 1px solid var(--border-color);
     }
 
-    .partner-section .container {
+    .why-section .container {
         max-width: 1000px;
     }
 
-    .partner-content h2 {
-        font-size: 1.5rem;
+    .why-section h2 {
+        font-size: 1.25rem;
         margin-bottom: 1.5rem;
-        border-bottom: 1px solid var(--border-color);
-        padding-bottom: 1rem;
     }
 
-    .partner-content > p {
-        font-size: 1.1rem;
+    .why-list {
+        list-style: none;
+        max-width: 600px;
+    }
+
+    .why-list li {
+        font-size: 1.05rem;
         color: #ccc;
-        margin-bottom: 3rem;
-        max-width: 700px;
+        margin-bottom: 0.75rem;
+        padding-left: 1.5rem;
+        position: relative;
     }
 
-    .partner-benefits {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-        margin-bottom: 4rem;
-    }
-
-    .benefit-card {
-        background: #161616;
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
-        padding: 2rem;
-        transition: all 0.3s ease;
-    }
-
-    .benefit-card:hover {
-        border-color: var(--accent-color);
-        transform: translateY(-2px);
-    }
-
-    .benefit-icon {
+    .why-list li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
         color: var(--accent-color);
+    }
+
+    /* WHAT SECTION */
+    .what-section {
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .what-section .container {
+        max-width: 1000px;
+    }
+
+    .what-section h2 {
+        font-size: 1.25rem;
         margin-bottom: 1.5rem;
     }
 
-    .benefit-card h3 {
-        color: #fff;
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-        font-family: var(--font-mono);
+    .what-list {
+        list-style: none;
+        max-width: 600px;
     }
 
-    .benefit-card p {
-        font-size: 0.95rem;
-        color: #aaa;
-        line-height: 1.5;
+    .what-list li {
+        font-size: 1.05rem;
+        color: #ccc;
+        margin-bottom: 0.75rem;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .what-list li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--accent-color);
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+        padding: 4rem 0;
+    }
+
+    .cta-section .container {
+        max-width: 1000px;
     }
 
     .cta-block {
-        padding: 3rem;
         background: #0a0a0a;
         border: 1px solid var(--border-color);
         border-radius: 12px;
+        padding: 4rem;
         text-align: center;
     }
 
     .cta-block p {
         font-size: 1.2rem;
         color: #ccc;
-        margin-bottom: 1.5rem;
-        max-width: none;
+        margin-bottom: 2rem;
+    }
+
+    .btn--accent {
+        background: var(--accent-color);
+        color: var(--bg-color);
+        border-color: var(--accent-color);
+    }
+
+    .btn--accent:hover {
+        background: transparent;
+        color: var(--accent-color);
     }
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
         .page-header {
             padding-top: 120px;
+        }
+
+        .cta-block {
+            padding: 2rem;
         }
     }
 </style>

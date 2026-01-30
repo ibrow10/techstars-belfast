@@ -9,7 +9,7 @@ const currentYear = new Date().getFullYear();
                 <div class="footer-logo">
                     <img src="/images/techstarsbelfastlogo.png" alt="Techstars Belfast" class="logo-img">
                 </div>
-                <p class="footer-tagline">Building Northern Ireland's next generation of founders.</p>
+                <p class="footer-tagline">Built for founders.</p>
                 
                 <div class="footer-partner-logos">
                     <span class="partner-label">In partnership with</span>
@@ -39,6 +39,11 @@ const currentYear = new Date().getFullYear();
                     </ul>
                 </div>
             </div>
+        </div>
+
+        <div class="footer-newsletter">
+            <p class="newsletter-tagline">One email a week. No spam. Just the best founder opportunities in NI.</p>
+            <a href="#newsletter" class="btn btn--small">Get the weekly email</a>
         </div>
         
         <div class="footer-bottom">
@@ -137,6 +142,38 @@ const currentYear = new Date().getFullYear();
     }
     
     .footer-col a:hover {
+        color: var(--accent-color);
+    }
+
+    .footer-newsletter {
+        border-top: 1px solid var(--border-color);
+        padding: var(--space-lg) 0;
+        text-align: center;
+    }
+
+    .newsletter-tagline {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        margin-bottom: var(--space-md);
+    }
+
+    .btn--small {
+        display: inline-block;
+        background: var(--accent-color);
+        color: var(--bg-color);
+        padding: 8px 16px;
+        font-family: var(--font-mono);
+        font-weight: 600;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border: 1px solid var(--accent-color);
+        border-radius: 4px;
+        transition: all 0.2s ease;
+    }
+
+    .btn--small:hover {
+        background: transparent;
         color: var(--accent-color);
     }
     
