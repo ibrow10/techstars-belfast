@@ -13,6 +13,21 @@ const latestEvent = {
     link: 'https://luma.com/ixnvtb9s'
 };
 
+const whyCards = [
+    {
+        title: 'Community',
+        description: 'Rooms full of founders. Honest conversations. No posturing.'
+    },
+    {
+        title: 'Momentum',
+        description: 'Sprints, AMAs, workshops — things that make you move faster.'
+    },
+    {
+        title: 'Reach',
+        description: 'Warm pathways to mentors, investors and partners across the UK, Europe and North America.'
+    }
+];
+
 const startHereCards = [
     {
         title: 'Come to an event',
@@ -70,21 +85,36 @@ const testimonials = [
             <h1>BUILD FROM HERE.<br>SHIP TO EVERYWHERE.</h1>
             
             <div class="hero-context">
-                <p>The founder community Northern Ireland needs.<br>Small team. Big ambition. No theatre.</p>
-                <br>
-                <p>If you're building a startup — idea, MVP, revenue, fundraising — you'll find your people here. And you'll get a direct line into the global Techstars network, without having to leave home to get taken seriously.</p>
+                <p>The founder community Northern Ireland needs. Finally.</p>
             </div>
-
-            <ul class="hero-bullets">
-                <li><strong>Community:</strong> rooms full of founders. Honest conversations. No posturing.</li>
-                <li><strong>Momentum:</strong> sprints, AMAs, workshops — things that make you move faster.</li>
-                <li><strong>Reach:</strong> warm pathways to mentors, investors and partners across the UK, Europe and North America.</li>
-            </ul>
 
             <div class="hero-ctas">
-                <a href="/events" class="btn">See what's on this month</a>
+                <a href="/events" class="btn">See what's on</a>
                 <a href="#newsletter" class="btn btn--outline">Get the weekly email</a>
             </div>
+        </div>
+    </section>
+
+    <!-- Why Founders Show Up -->
+    <section class="why-section">
+        <div class="container">
+            <h2>Why founders show up</h2>
+            
+            <div class="why-grid">
+                {whyCards.map(card => (
+                    <div class="why-card">
+                        <h3>{card.title}</h3>
+                        <p>{card.description}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- Fuller Pitch -->
+    <section class="pitch-section">
+        <div class="container">
+            <p class="pitch-text">If you're building a startup — idea, MVP, revenue, fundraising — you'll find your people here. And you'll get a direct line into the global Techstars network, without having to leave home to get taken seriously.</p>
         </div>
     </section>
 
@@ -262,46 +292,22 @@ const testimonials = [
     .hero h1 {
         font-size: clamp(2.5rem, 5vw, 3.5rem);
         line-height: 1.1;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
         max-width: 800px;
     }
 
     .hero-context {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         max-width: 600px;
         color: #ccc;
-        margin-bottom: 1.5rem;
-        border-left: 2px solid var(--accent-color);
+        margin-bottom: 2rem;
+        border-left: 2px solid rgba(0, 230, 118, 0.35);
         padding-left: 1.5rem;
     }
 
     .hero-context p {
         max-width: none;
-    }
-
-    .hero-bullets {
-        list-style: none;
-        margin-bottom: 2rem;
-        max-width: 600px;
-    }
-
-    .hero-bullets li {
-        font-size: 1rem;
-        color: #ccc;
-        margin-bottom: 0.75rem;
-        padding-left: 1.5rem;
-        position: relative;
-    }
-
-    .hero-bullets li::before {
-        content: "•";
-        position: absolute;
-        left: 0;
-        color: var(--accent-color);
-    }
-
-    .hero-bullets strong {
-        color: #fff;
+        margin: 0;
     }
 
     .hero-ctas {
@@ -318,6 +324,69 @@ const testimonials = [
     .btn--outline:hover {
         background: var(--text-color);
         color: var(--bg-color);
+    }
+
+    /* WHY FOUNDERS SHOW UP SECTION */
+    .why-section {
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .why-section .container {
+        max-width: 1000px;
+    }
+
+    .why-section h2 {
+        text-align: center;
+        margin-bottom: 3rem;
+        font-size: 1.25rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    .why-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .why-card {
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    .why-card h3 {
+        color: var(--accent-color);
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 1rem;
+        font-family: var(--font-mono);
+    }
+
+    .why-card p {
+        color: #ccc;
+        line-height: 1.6;
+        font-size: 1rem;
+    }
+
+    /* FULLER PITCH SECTION */
+    .pitch-section {
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .pitch-section .container {
+        max-width: 1000px;
+    }
+
+    .pitch-text {
+        font-size: 1.2rem;
+        color: #aaa;
+        line-height: 1.7;
+        max-width: 700px;
+        text-align: center;
+        margin: 0 auto;
     }
 
     /* START HERE SECTION */
@@ -657,6 +726,11 @@ const testimonials = [
         .hero-ctas .btn {
             width: 100%;
             text-align: center;
+        }
+
+        .why-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
         }
 
         .event-card {
