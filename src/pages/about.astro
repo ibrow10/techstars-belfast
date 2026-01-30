@@ -2,20 +2,182 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="${page^}">
-    <section class="page-hero">
+<BaseLayout title="About">
+    <!-- Page Header -->
+    <section class="page-header">
         <div class="container">
-            <h1>${page^^}</h1>
-            <p>Page content to be built</p>
+            <h1>ABOUT</h1>
+            <div class="page-intro">
+                <p>Techstars Belfast is a founder-led startup community for Northern Ireland, powered by the global Techstars network.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2>OUR STORY</h2>
+                <p>Belfast's startup ecosystem is entering a new chapter. In partnership with Queen's University and Ormeau Labs, we are launching Techstars in Northern Ireland — providing local founders with a direct line to a global network of mentors, investors, and resources.</p>
+                
+                <p>Techstars Belfast exists to help ambitious founders start, build, and connect — regardless of stage — by providing access to world-class networks, practical learning, and high-quality peer support.</p>
+
+                <h2>OUR PARTNERS</h2>
+                <div class="partners-grid">
+                    <div class="partner-item">
+                        <h3>Queen's University Belfast</h3>
+                        <p>Academic partner providing access to research, talent, and facilities.</p>
+                    </div>
+                    <div class="partner-item">
+                        <h3>Ormeau Labs</h3>
+                        <p>Physical home for the Belfast startup community in the heart of the city.</p>
+                    </div>
+                    <div class="partner-item">
+                        <h3>Techstars Global</h3>
+                        <p>Access to a worldwide network of 4,000+ companies and 10,000+ mentors.</p>
+                    </div>
+                </div>
+
+                <div class="cta-block">
+                    <p>Want to get involved? Join us at an upcoming event or reach out to partner with us.</p>
+                    <div class="cta-buttons">
+                        <a href="/events" class="btn">VIEW EVENTS</a>
+                        <a href="/partners" class="btn btn--outline">PARTNER WITH US</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </BaseLayout>
 
 <style>
-    .page-hero {
-        min-height: 60vh;
+    /* PAGE HEADER */
+    .page-header {
+        padding-top: 140px;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .page-header .container {
+        max-width: 1000px;
+    }
+
+    .page-header h1 {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        margin-bottom: 1.5rem;
+    }
+
+    .page-intro {
+        font-size: 1.1rem;
+        max-width: 600px;
+        color: #ccc;
+        border-left: 2px solid var(--accent-color);
+        padding-left: 1.5rem;
+    }
+
+    .page-intro p {
+        max-width: none;
+    }
+
+    /* ABOUT SECTION */
+    .about-section {
+        padding: 4rem 0;
+    }
+
+    .about-section .container {
+        max-width: 1000px;
+    }
+
+    .about-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        margin-top: 3rem;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 1rem;
+    }
+
+    .about-content h2:first-child {
+        margin-top: 0;
+    }
+
+    .about-content > p {
+        font-size: 1.1rem;
+        color: #ccc;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+        max-width: 800px;
+    }
+
+    .partners-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .partner-item {
+        background: #161616;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+    }
+
+    .partner-item:hover {
+        border-color: var(--accent-color);
+        transform: translateY(-2px);
+    }
+
+    .partner-item h3 {
+        color: #fff;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        font-family: var(--font-mono);
+    }
+
+    .partner-item p {
+        font-size: 0.95rem;
+        color: #aaa;
+        line-height: 1.5;
+    }
+
+    .cta-block {
+        margin-top: 4rem;
+        padding: 3rem;
+        background: #0a0a0a;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        text-align: center;
+    }
+
+    .cta-block p {
+        font-size: 1.2rem;
+        color: #ccc;
+        margin-bottom: 1.5rem;
+        max-width: none;
+    }
+
+    .cta-buttons {
         display: flex;
-        align-items: center;
-        padding-top: 120px;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .btn--outline {
+        background: transparent;
+        color: var(--text-color);
+    }
+
+    .btn--outline:hover {
+        background: var(--text-color);
+        color: var(--bg-color);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+        .page-header {
+            padding-top: 120px;
+        }
     }
 </style>
