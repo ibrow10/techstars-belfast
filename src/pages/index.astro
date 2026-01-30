@@ -17,17 +17,20 @@ const whyCards = [
     {
         icon: 'users',
         title: 'Community',
-        description: 'Rooms full of founders. Honest conversations. No posturing.'
+        description: 'Rooms full of founders. Honest conversations. No posturing.',
+        bg: '/images/founders1.jpg'
     },
     {
         icon: 'zap',
         title: 'Momentum',
-        description: 'Sprints, AMAs, workshops — things that make you move faster.'
+        description: 'Sprints, AMAs, workshops — things that make you move faster.',
+        bg: '/images/founders2.jpg'
     },
     {
         icon: 'globe',
         title: 'Reach',
-        description: 'Warm pathways to mentors, investors and partners across the UK, Europe and North America.'
+        description: 'Warm pathways to mentors, investors and partners across the UK, Europe and North America.',
+        bg: '/images/founders3.jpg'
     }
 ];
 
@@ -105,12 +108,15 @@ const testimonials = [
             
             <div class="why-grid">
                 {whyCards.map(card => (
-                    <div class="why-card">
-                        <div class="why-icon">
-                            <i data-lucide={card.icon}></i>
+                    <div class="why-card" style={`--bg-image: url('${card.bg}')`}>
+                        <div class="why-card-bg"></div>
+                        <div class="why-card-content">
+                            <div class="why-icon">
+                                <i data-lucide={card.icon}></i>
+                            </div>
+                            <h3>{card.title}</h3>
+                            <p>{card.description}</p>
                         </div>
-                        <h3>{card.title}</h3>
-                        <p>{card.description}</p>
                     </div>
                 ))}
             </div>
@@ -382,18 +388,48 @@ const testimonials = [
     }
 
     .why-card {
+        position: relative;
         text-align: center;
         padding: 2.5rem 1.5rem;
         border-radius: 16px;
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         transition: all 0.3s ease;
+        overflow: hidden;
+        min-height: 280px;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .why-card-bg {
+        position: absolute;
+        inset: 0;
+        background-image: var(--bg-image);
+        background-size: cover;
+        background-position: center;
+        opacity: 0.25;
+        transition: opacity 0.3s ease;
+    }
+
+    .why-card-bg::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(15, 15, 15, 0.95) 0%, rgba(15, 15, 15, 0.7) 50%, rgba(15, 15, 15, 0.5) 100%);
+    }
+
+    .why-card-content {
+        position: relative;
+        z-index: 1;
+        width: 100%;
     }
 
     .why-card:hover {
-        background: rgba(255, 255, 255, 0.04);
-        border-color: rgba(0, 230, 118, 0.2);
+        border-color: rgba(0, 210, 106, 0.4);
         transform: translateY(-4px);
+    }
+
+    .why-card:hover .why-card-bg {
+        opacity: 0.35;
     }
 
     .why-icon {
