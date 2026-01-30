@@ -158,10 +158,22 @@ const testimonials = [
     <!-- Manifesto Block -->
     <section class="manifesto-section">
         <div class="container">
-            <div class="manifesto-content">
-                <p class="manifesto-lead">Techstars Belfast is founder-led.<br>We're a startup community that behaves like a startup.</p>
-                <p>We move fast. We're comfortable in ambiguity. We occasionally get things wrong. When we do, we don't blame anyone — we fix it, learn, and move on.</p>
-                <p>Founders are our customer. We ask "how can we better help founders?" every day. And we don't care about borders — we're the bridge from Belfast into the UK, Europe and North America.</p>
+            <div class="manifesto-box">
+                <span class="manifesto-label">OUR DNA</span>
+                <h2 class="manifesto-headline">Techstars Belfast is <span class="highlight">founder-led</span>.</h2>
+                <p class="manifesto-subhead">We're a startup community that behaves like a startup.</p>
+                
+                <div class="manifesto-values">
+                    <div class="value-block">
+                        <p>We move fast. We're comfortable in ambiguity. We occasionally get things wrong.</p>
+                        <p class="value-emphasis">When we do, we don't blame anyone — we fix it, learn, and move on.</p>
+                    </div>
+                    
+                    <div class="value-block">
+                        <p>Founders are our customer. We ask <span class="highlight">"how can we better help founders?"</span> every day.</p>
+                        <p>And we don't care about borders — we're the bridge from Belfast into the UK, Europe and North America.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -521,30 +533,73 @@ const testimonials = [
 
     /* MANIFESTO SECTION */
     .manifesto-section {
-        padding: 4rem 0;
+        padding: 5rem 0;
         border-bottom: 1px solid var(--border-color);
+        background: linear-gradient(135deg, rgba(0, 210, 106, 0.03) 0%, transparent 50%);
     }
 
     .manifesto-section .container {
         max-width: 1000px;
     }
 
-    .manifesto-content {
-        max-width: 700px;
+    .manifesto-box {
+        background: #111;
+        border: 1px solid var(--border-color);
+        border-left: 4px solid var(--accent-color);
+        border-radius: 0 12px 12px 0;
+        padding: 3rem;
+        position: relative;
     }
 
-    .manifesto-lead {
-        font-size: 1.3rem;
-        color: #fff;
+    .manifesto-label {
+        display: inline-block;
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--accent-color);
+        background: rgba(0, 210, 106, 0.1);
+        padding: 6px 12px;
+        border-radius: 4px;
         margin-bottom: 1.5rem;
-        line-height: 1.4;
     }
 
-    .manifesto-content p {
-        font-size: 1.05rem;
-        color: #aaa;
+    .manifesto-headline {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        color: #fff;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+    }
+
+    .manifesto-subhead {
+        font-size: 1.3rem;
+        color: #888;
+        margin-bottom: 2.5rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .manifesto-values {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .value-block p {
+        font-size: 1.1rem;
+        color: #999;
         line-height: 1.7;
         margin-bottom: 1rem;
+    }
+
+    .value-emphasis {
+        color: #ccc !important;
+        font-weight: 500;
+    }
+
+    .highlight {
+        color: var(--accent-color);
     }
 
     /* EVENTS SECTION */
