@@ -2,15 +2,15 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const latestEvent = {
-    day: '03',
+    day: '05',
     month: 'FEB',
-    tag: 'PARTNER SESSION',
-    tagType: 'partner',
-    title: 'Founder Labs x The AMP: AMA',
-    time: '11:00 AM – 3:00 PM',
-    location: 'Ebrington Square, Derry',
-    description: 'Join the Founder Labs team at The AMP for an open conversation about Cohort 4.',
-    link: 'https://luma.com/ixnvtb9s'
+    tag: 'VIRTUAL PRE-ACCELERATOR',
+    tagType: 'remote',
+    title: 'Founder AMA: Techstars Founder Catalyst',
+    time: '3:00 PM – 4:00 PM GMT',
+    location: 'Google Meet',
+    description: 'Ask questions live, no filters, no sales pitch. Join the Techstars team to find out if the 10-week virtual pre-accelerator is the right fit for your startup before applications close Feb 13.',
+    link: 'https://luma.com/a9e83czs'
 };
 
 const whyCards = [
@@ -55,16 +55,6 @@ const startHereCards = [
     }
 ];
 
-const testimonials = [
-    {
-        quote: "This is phenomenal for Belfast, and NI overall. Well played! 🚀",
-        author: "Founder, Northern Ireland"
-    },
-    {
-        quote: "I left with a shipped prototype and three intros that actually mattered.",
-        author: "Founder, Northern Ireland"
-    }
-];
 ---
 
 <BaseLayout title="Home">
@@ -100,21 +90,18 @@ const testimonials = [
     <!-- Partnership Section -->
     <section class="partnership-section">
         <div class="container">
-            <div class="partnership-box">
-                <div class="partnership-logos">
-                    <div class="partner-logo techstars-logo">
-                        <img src="/images/techstarsbelfastlogo.png" alt="Techstars Belfast">
-                    </div>
-                    <div class="partner-logo qub-logo">
-                        <img src="/images/QUB-Logo.png" alt="Queen's University Belfast">
-                    </div>
-                    <div class="partner-logo ormeau-logo">
-                        <img src="/images/ormeau-labs-logo.svg" alt="Ormeau Labs">
-                    </div>
+            <p class="partnership-label">Official Techstars Startup Community Partnership</p>
+            <div class="partnership-logos">
+                <div class="partner-logo techstars-logo">
+                    <img src="/images/techstarsbelfastlogo.png" alt="Techstars Belfast">
                 </div>
-                <div class="partnership-text">
-                    <span class="partnership-label">OFFICIAL TECHSTARS STARTUP COMMUNITY PARTNERSHIP</span>
-                    <p class="partnership-delivered">Delivered by Queen's University Belfast & Ormeau Labs</p>
+                <span class="logo-separator">×</span>
+                <div class="partner-logo qub-logo">
+                    <img src="/images/QUB-Logo.png" alt="Queen's University Belfast">
+                </div>
+                <span class="logo-separator">×</span>
+                <div class="partner-logo ormeau-logo">
+                    <img src="/images/ormeau-labs-logo.svg" alt="Ormeau Labs">
                 </div>
             </div>
         </div>
@@ -249,24 +236,6 @@ const testimonials = [
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>WHAT FOUNDERS SAY</h2>
-            </div>
-
-            <div class="testimonials-grid">
-                {testimonials.map(testimonial => (
-                    <div class="testimonial-card card">
-                        <p class="testimonial-quote">"{testimonial.quote}"</p>
-                        <p class="testimonial-author">— {testimonial.author}</p>
-                    </div>
-                ))}
-            </div>
-        </div>
-    </section>
-
 </BaseLayout>
 
 <style>
@@ -289,7 +258,7 @@ const testimonials = [
         display: flex;
         align-items: flex-start;
         overflow: hidden;
-        padding-top: 100px;
+        padding-top: 200px;
         padding-bottom: 4rem;
     }
 
@@ -325,7 +294,7 @@ const testimonials = [
     .hero-content {
         position: relative;
         z-index: 1;
-        padding-top: 100px;
+        padding-top: 280px;
         width: 100%;
     }
 
@@ -362,105 +331,64 @@ const testimonials = [
 
     /* PARTNERSHIP SECTION */
     .partnership-section {
-        background: linear-gradient(to bottom, #0a0a0a 0%, #0f0f0f 100%);
-        padding: 3.5rem 0;
+        padding: 2.5rem 0;
         border-bottom: 1px solid var(--border-color);
     }
 
     .partnership-section .container {
         max-width: 1000px;
-    }
-
-    .partnership-box {
-        background: linear-gradient(135deg, rgba(0, 210, 106, 0.05) 0%, rgba(0, 210, 106, 0.02) 100%);
-        border: 2px solid rgba(0, 210, 106, 0.2);
-        border-radius: 16px;
-        padding: 3rem 2.5rem;
         text-align: center;
-        position: relative;
-        overflow: hidden;
     }
 
-    .partnership-box::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, 
-            transparent 0%, 
-            var(--accent-color) 50%, 
-            transparent 100%
-        );
+    .partnership-label {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: #666;
+        margin: 0 0 1.5rem 0;
     }
 
     .partnership-logos {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 3rem;
+        gap: 1.5rem;
         flex-wrap: wrap;
-        margin-bottom: 2rem;
-        padding-bottom: 2rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .logo-separator {
+        color: #444;
+        font-size: 1rem;
+        font-weight: 300;
     }
 
     .partner-logo {
         display: flex;
         align-items: center;
         justify-content: center;
-        filter: brightness(1) contrast(1);
-        transition: all 0.3s ease;
+        opacity: 0.7;
+        transition: opacity 0.3s ease;
     }
 
     .partner-logo:hover {
-        filter: brightness(1.1) contrast(1.1);
-        transform: translateY(-2px);
+        opacity: 1;
     }
 
     .techstars-logo img {
-        height: 70px;
+        height: 90px;
         width: auto;
     }
 
     .qub-logo img {
-        height: 65px;
+        height: 80px;
         width: auto;
     }
 
     .ormeau-logo img {
-        height: 50px;
+        height: 65px;
         width: auto;
-    }
-
-    .partnership-text {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-        align-items: center;
-    }
-
-    .partnership-label {
-        display: inline-block;
-        font-family: var(--font-mono);
-        font-size: 0.75rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        color: var(--accent-color);
-        background: rgba(0, 210, 106, 0.15);
-        padding: 8px 16px;
-        border-radius: 6px;
-        border: 1px solid rgba(0, 210, 106, 0.3);
-    }
-
-    .partnership-delivered {
-        font-family: var(--font-mono);
-        font-size: 1rem;
-        color: #ccc;
-        margin: 0;
-        letter-spacing: 0.02em;
+        filter: brightness(0) invert(1);
     }
 
     /* WHY FOUNDERS SHOW UP SECTION */
@@ -508,7 +436,7 @@ const testimonials = [
         background-image: var(--bg-image);
         background-size: cover;
         background-position: center;
-        opacity: 0.25;
+        opacity: 0.45;
         transition: opacity 0.3s ease;
     }
 
@@ -516,7 +444,7 @@ const testimonials = [
         content: '';
         position: absolute;
         inset: 0;
-        background: linear-gradient(to top, rgba(15, 15, 15, 0.95) 0%, rgba(15, 15, 15, 0.7) 50%, rgba(15, 15, 15, 0.5) 100%);
+        background: linear-gradient(to top, rgba(15, 15, 15, 0.85) 0%, rgba(15, 15, 15, 0.5) 50%, rgba(15, 15, 15, 0.3) 100%);
     }
 
     .why-card-content {
@@ -536,7 +464,7 @@ const testimonials = [
     }
 
     .why-card:hover .why-card-bg {
-        opacity: 0.35;
+        opacity: 0.55;
     }
 
     .why-icon {
@@ -916,44 +844,10 @@ const testimonials = [
         color: var(--accent-color);
     }
 
-    /* TESTIMONIALS SECTION */
-    .testimonials-section {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .testimonials-section .container {
-        max-width: 1000px;
-    }
-
-    .testimonials-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-    }
-
-    .testimonial-card {
-        padding: 2rem;
-    }
-
-    .testimonial-quote {
-        font-size: 1.1rem;
-        color: #ccc;
-        line-height: 1.6;
-        margin-bottom: 1rem;
-        font-style: italic;
-    }
-
-    .testimonial-author {
-        font-family: var(--font-mono);
-        font-size: 0.85rem;
-        color: var(--accent-color);
-    }
-
     /* RESPONSIVE */
     @media (max-width: 768px) {
         .hero-content {
-            padding-top: 120px;
+            padding-top: 160px;
         }
 
         .hero-ctas {
@@ -965,33 +859,24 @@ const testimonials = [
             text-align: center;
         }
 
-        .partnership-box {
-            padding: 2rem 1.5rem;
-        }
-
         .partnership-logos {
-            gap: 2rem;
+            gap: 1rem;
         }
 
         .techstars-logo img {
-            height: 55px;
+            height: 70px;
         }
 
         .qub-logo img {
-            height: 50px;
+            height: 60px;
         }
 
         .ormeau-logo img {
-            height: 40px;
+            height: 50px;
         }
 
-        .partnership-label {
-            font-size: 0.65rem;
-            padding: 6px 12px;
-        }
-
-        .partnership-delivered {
-            font-size: 0.9rem;
+        .logo-separator {
+            font-size: 0.8rem;
         }
 
         .why-grid {
