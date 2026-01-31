@@ -84,10 +84,6 @@ const testimonials = [
         </div>
 
         <div class="container hero-content">
-            <div class="hero-logo">
-                <img src="/images/techstarsbelfastlogo.png" alt="Techstars Belfast">
-            </div>
-            
             <h1>BUILD HERE.<br>SHIP EVERYWHERE.</h1>
             
             <p class="hero-tagline">
@@ -97,6 +93,29 @@ const testimonials = [
             <div class="hero-ctas">
                 <a href="/events" class="btn">See what's on</a>
                 <a href="#newsletter" class="btn btn--outline">Get the weekly email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Section -->
+    <section class="partnership-section">
+        <div class="container">
+            <div class="partnership-box">
+                <div class="partnership-logos">
+                    <div class="partner-logo techstars-logo">
+                        <img src="/images/techstarsbelfastlogo.png" alt="Techstars Belfast">
+                    </div>
+                    <div class="partner-logo qub-logo">
+                        <img src="/images/QUB-Logo.png" alt="Queen's University Belfast">
+                    </div>
+                    <div class="partner-logo ormeau-logo">
+                        <img src="/images/ormeau-labs-logo.svg" alt="Ormeau Labs">
+                    </div>
+                </div>
+                <div class="partnership-text">
+                    <span class="partnership-label">OFFICIAL TECHSTARS STARTUP COMMUNITY PARTNERSHIP</span>
+                    <p class="partnership-delivered">Delivered by Queen's University Belfast & Ormeau Labs</p>
+                </div>
             </div>
         </div>
     </section>
@@ -310,16 +329,6 @@ const testimonials = [
         width: 100%;
     }
 
-    .hero-logo {
-        margin-bottom: 2.5rem;
-        padding-top: 1rem;
-    }
-
-    .hero-logo img {
-        height: 100px;
-        width: auto;
-    }
-
     .hero h1 {
         font-size: clamp(2.5rem, 5vw, 3.5rem);
         line-height: 1.1;
@@ -349,6 +358,109 @@ const testimonials = [
     .btn--outline:hover {
         background: var(--text-color);
         color: var(--bg-color);
+    }
+
+    /* PARTNERSHIP SECTION */
+    .partnership-section {
+        background: linear-gradient(to bottom, #0a0a0a 0%, #0f0f0f 100%);
+        padding: 3.5rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .partnership-section .container {
+        max-width: 1000px;
+    }
+
+    .partnership-box {
+        background: linear-gradient(135deg, rgba(0, 210, 106, 0.05) 0%, rgba(0, 210, 106, 0.02) 100%);
+        border: 2px solid rgba(0, 210, 106, 0.2);
+        border-radius: 16px;
+        padding: 3rem 2.5rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .partnership-box::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            var(--accent-color) 50%, 
+            transparent 100%
+        );
+    }
+
+    .partnership-logos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .partner-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        filter: brightness(1) contrast(1);
+        transition: all 0.3s ease;
+    }
+
+    .partner-logo:hover {
+        filter: brightness(1.1) contrast(1.1);
+        transform: translateY(-2px);
+    }
+
+    .techstars-logo img {
+        height: 70px;
+        width: auto;
+    }
+
+    .qub-logo img {
+        height: 65px;
+        width: auto;
+    }
+
+    .ormeau-logo img {
+        height: 50px;
+        width: auto;
+    }
+
+    .partnership-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    .partnership-label {
+        display: inline-block;
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--accent-color);
+        background: rgba(0, 210, 106, 0.15);
+        padding: 8px 16px;
+        border-radius: 6px;
+        border: 1px solid rgba(0, 210, 106, 0.3);
+    }
+
+    .partnership-delivered {
+        font-family: var(--font-mono);
+        font-size: 1rem;
+        color: #ccc;
+        margin: 0;
+        letter-spacing: 0.02em;
     }
 
     /* WHY FOUNDERS SHOW UP SECTION */
@@ -851,6 +963,35 @@ const testimonials = [
         .hero-ctas .btn {
             width: 100%;
             text-align: center;
+        }
+
+        .partnership-box {
+            padding: 2rem 1.5rem;
+        }
+
+        .partnership-logos {
+            gap: 2rem;
+        }
+
+        .techstars-logo img {
+            height: 55px;
+        }
+
+        .qub-logo img {
+            height: 50px;
+        }
+
+        .ormeau-logo img {
+            height: 40px;
+        }
+
+        .partnership-label {
+            font-size: 0.65rem;
+            padding: 6px 12px;
+        }
+
+        .partnership-delivered {
+            font-size: 0.9rem;
         }
 
         .why-grid {
