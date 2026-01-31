@@ -15,21 +15,21 @@ const latestEvent = {
 
 const whyCards = [
     {
-        icon: 'users',
-        title: 'Community',
-        description: 'Rooms full of founders. Honest conversations. No posturing.',
+        icon: 'code',
+        title: 'BUILDERS',
+        description: 'Bring code. Leave with momentum.',
         bg: '/images/founders1.jpg'
     },
     {
-        icon: 'zap',
-        title: 'Momentum',
-        description: 'Sprints, AMAs, workshops — things that make you move faster.',
+        icon: 'microscope',
+        title: 'RESEARCHERS',
+        description: 'Bring the insight. We\'ll help you prove demand.',
         bg: '/images/founders2.jpg'
     },
     {
-        icon: 'globe',
-        title: 'Reach',
-        description: 'Warm pathways to mentors, investors and partners across the UK, Europe and North America.',
+        icon: 'briefcase',
+        title: 'DOMAIN EXPERTS',
+        description: 'Bring the problem. We\'ll help you build it.',
         bg: '/images/founders3.jpg'
     }
 ];
@@ -91,7 +91,7 @@ const testimonials = [
             <h1>BUILD HERE.<br>SHIP EVERYWHERE.</h1>
             
             <p class="hero-tagline">
-                The founder community Northern Ireland needs. Built here<span class="cursor">|</span>
+                This isn't startup tourism. It's a founder-led network for builders, researchers, and domain experts who want to move fast — with AI-native execution baked in<span class="cursor">|</span>
             </p>
 
             <div class="hero-ctas">
@@ -101,10 +101,10 @@ const testimonials = [
         </div>
     </section>
 
-    <!-- Why Founders Show Up -->
+    <!-- Bring What You Have -->
     <section class="why-section">
         <div class="container">
-            <h2>Why founders show up</h2>
+            <h2>BRING WHAT YOU HAVE</h2>
             
             <div class="why-grid">
                 {whyCards.map(card => (
@@ -120,6 +120,8 @@ const testimonials = [
                     </div>
                 ))}
             </div>
+
+            <p class="ai-native-tagline">AI-native by default: agents, automations, prototypes, customer discovery — every week.</p>
         </div>
     </section>
 
@@ -127,7 +129,7 @@ const testimonials = [
     <section class="start-here-section">
         <div class="container">
             <div class="section-header">
-                <h2>NOT SURE WHERE YOU FIT? START HERE.</h2>
+                <h2>CHOOSE YOUR STARTING POINT</h2>
             </div>
 
             <div class="start-here-grid">
@@ -455,6 +457,18 @@ const testimonials = [
         color: #999;
         line-height: 1.7;
         font-size: 1rem;
+    }
+
+    .ai-native-tagline {
+        text-align: center;
+        font-size: 1.1rem;
+        color: #aaa;
+        margin-top: 3rem;
+        padding-top: 2.5rem;
+        border-top: 1px solid var(--border-color);
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     /* START HERE SECTION */
