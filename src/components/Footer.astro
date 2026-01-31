@@ -9,13 +9,13 @@ const currentYear = new Date().getFullYear();
                 <div class="footer-logo">
                     <img src="/images/techstarsbelfastlogo.png" alt="Techstars Belfast" class="logo-img">
                 </div>
-                <p class="footer-tagline">Built for founders.</p>
+                <p class="footer-tagline">An official Techstars Community Partnership</p>
                 
                 <div class="footer-partner-logos">
-                    <span class="partner-label">In partnership with</span>
                     <div class="partner-logos">
                         <img src="/images/QUB-Logo.png" alt="Queen's University Belfast" class="partner-logo">
-                        <img src="/images/ormeau-labs-logo.svg" alt="Ormeau Labs" class="partner-logo">
+                        <span class="partner-separator">×</span>
+                        <img src="/images/ormeau-labs-logo.svg" alt="Ormeau Labs" class="partner-logo ormeau">
                     </div>
                 </div>
             </div>
@@ -41,12 +41,8 @@ const currentYear = new Date().getFullYear();
             </div>
         </div>
 
-        <div class="footer-newsletter">
-            <a href="#newsletter" class="btn btn--small">Get the weekly email</a>
-        </div>
-        
         <div class="footer-bottom">
-            <p class="footer-copyright">TECHSTARS BELFAST × ORMEAU LABS × QUB &nbsp;•&nbsp; &copy; {currentYear} Techstars Belfast. All Rights Reserved.</p>
+            <p class="footer-copyright">&copy; {currentYear} Techstars Belfast. All Rights Reserved.</p>
         </div>
     </div>
 </footer>
@@ -66,7 +62,7 @@ const currentYear = new Date().getFullYear();
     }
     
     .footer-logo {
-        margin-bottom: var(--space-md);
+        margin-bottom: var(--space-sm);
     }
     
     .footer-logo .logo-img {
@@ -75,37 +71,39 @@ const currentYear = new Date().getFullYear();
     }
     
     .footer-tagline {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
         color: var(--text-muted);
-        font-size: 0.9rem;
-        max-width: 300px;
+        margin-bottom: var(--space-md);
     }
     
     .footer-partner-logos {
-        margin-top: var(--space-lg);
-    }
-    
-    .partner-label {
-        display: block;
-        font-family: var(--font-mono);
-        font-size: 0.7rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: var(--text-muted);
-        margin-bottom: var(--space-sm);
+        margin-top: var(--space-sm);
     }
     
     .partner-logos {
         display: flex;
         align-items: center;
-        gap: var(--space-lg);
+        gap: var(--space-md);
+    }
+
+    .partner-separator {
+        color: #555;
+        font-size: 0.9rem;
     }
     
     .partner-logo {
-        height: 36px;
+        height: 32px;
         width: auto;
         opacity: 0.7;
         filter: brightness(0) invert(1);
         transition: opacity var(--transition-fast);
+    }
+
+    .partner-logo.ormeau {
+        height: 28px;
     }
     
     .partner-logo:hover {
@@ -144,32 +142,6 @@ const currentYear = new Date().getFullYear();
         color: var(--accent-color);
     }
 
-    .footer-newsletter {
-        border-top: 1px solid var(--border-color);
-        padding: var(--space-md) 0;
-        text-align: center;
-    }
-
-    .btn--small {
-        display: inline-block;
-        background: var(--accent-color);
-        color: var(--bg-color);
-        padding: 8px 16px;
-        font-family: var(--font-mono);
-        font-weight: 600;
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.02em;
-        border: 1px solid var(--accent-color);
-        border-radius: 4px;
-        transition: all 0.2s ease;
-    }
-
-    .btn--small:hover {
-        background: transparent;
-        color: var(--accent-color);
-    }
-    
     .footer-bottom {
         border-top: 1px solid var(--border-color);
         padding-top: var(--space-lg);
@@ -178,7 +150,7 @@ const currentYear = new Date().getFullYear();
     
     .footer-copyright {
         font-family: var(--font-mono);
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         letter-spacing: 0.02em;
         color: var(--text-muted);
     }
