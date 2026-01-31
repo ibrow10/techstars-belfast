@@ -2,100 +2,574 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const whyPartner = [
-    "Get close to builders early (pre-seed to seed, shipping fast)",
-    "Sponsor real work (sprints, hackathons, founder sessions — not panels)",
-    "Earn trust by giving first (tools, credits, time, expertise)",
-    "Plug into Techstars (global network, local depth)"
+    {
+        icon: 'users',
+        title: 'Meet serious founders early',
+        description: 'If you want access to the next wave of AI-native startups, this is where they show up before they\'re polished.'
+    },
+    {
+        icon: 'heart',
+        title: 'Be seen as a builder-friendly brand',
+        description: 'Founders remember who helped them ship — not who sponsored a banner.'
+    },
+    {
+        icon: 'lightbulb',
+        title: 'Create real-world innovation pathways',
+        description: 'Run a sprint around a genuine problem. Offer mentors. Explore pilots. Find talent.'
+    },
+    {
+        icon: 'trending-up',
+        title: 'Support economic impact',
+        description: 'For public-sector and civic stakeholders: we focus on action and outputs, not reports that sit on shelves.'
+    }
 ];
 
-const whatPartnersDo = [
-    "Sponsor a sprint challenge (and bring experts to help, not to sell)",
-    "Provide credits/tools founders can actually use",
-    "Host a founder session that is practical and honest",
-    "Support scholarships / travel / founder access"
+const eventFormats = [
+    'Founder Night (short talks + networking)',
+    'AMA / Fireside (operator-led, candid)',
+    'Masterclass (practical, hands-on)',
+    'Demo Night (teams show what they shipped)',
+    'Partner workshop (tools + use-cases + credits)'
+];
+
+const eventBring = [
+    'A great speaker (or two)',
+    'A practical topic founders actually need',
+    'Optional: space, food, travel support, or tools/credits'
+];
+
+const eventGet = [
+    'Brand trust with founders (earned, not forced)',
+    'High-signal relationship building',
+    'Optional: recruiting/talent visibility',
+    'Content capture (photos, clips, recap) if you want it'
+];
+
+const sprintTypes = [
+    {
+        title: 'Challenge Sprint',
+        description: '"Here\'s a real problem. Build the best approach."'
+    },
+    {
+        title: 'Tooling Sprint',
+        description: 'Enable teams with credits + templates + mentors'
+    },
+    {
+        title: 'Industry Sprint',
+        description: 'Target a local strength (fintech, legal/regtech, creative industries, health, manufacturing)'
+    },
+    {
+        title: 'AI Agent Sprint',
+        description: 'Practical agentic workflows, automation, integration'
+    }
+];
+
+const sprintBring = [
+    'A clear problem statement (or build theme)',
+    'Mentors who can show up and help teams unblock',
+    'Optional: credits/perks/prizes/pilot pathway'
+];
+
+const sprintGet = [
+    'Early access to builders and teams',
+    'Fresh ideas and prototypes against real problems',
+    'Brand association with "shipping culture"',
+    'Optional: pilot conversations with the best teams'
+];
+
+const sponsorWant = [
+    'Consistent brand presence with founders (not one-off)',
+    'A clear pipeline to talent and early teams',
+    'A credible, public commitment to AI-native entrepreneurship',
+    'Measurable activity: attendance, builds shipped, founder progression'
+];
+
+const sponsorFunds = [
+    'A year-round events cadence (2–4/month)',
+    'Sprint delivery (venues, ops, mentors, demo nights)',
+    'Founder support and access (travel bursaries, credits, tools)',
+    'Community infrastructure (newsletter, content, founder comms)'
+];
+
+const sponsorGets = [
+    '"Always-on" presence across the ecosystem',
+    'Priority involvement in sprint themes and programming',
+    'Structured access to founders (meetups, demo nights, curated intros)',
+    'Visibility across channels (site, newsletter, event comms, partner wall)',
+    'A credible story: "We\'re building the future here."'
+];
+
+const greatPartner = [
+    'Want to help founders ship (not just "be associated")',
+    'Can bring mentors/operators who are practical',
+    'Are willing to show up consistently',
+    'Care about AI-era company building (speed, modern tooling, real demos)'
+];
+
+const process = [
+    {
+        number: '01',
+        title: 'Intro call',
+        description: '30 mins — goals, audience, what you want to achieve'
+    },
+    {
+        number: '02',
+        title: 'Choose a partnership mode',
+        description: 'Event / Sprint / Sponsorship (or a mix)'
+    },
+    {
+        number: '03',
+        title: 'Design the activation',
+        description: 'Topic/theme, roles, what founders get'
+    },
+    {
+        number: '04',
+        title: 'Deliver',
+        description: 'We run tight ops; you bring the value'
+    },
+    {
+        number: '05',
+        title: 'Measure + iterate',
+        description: 'Attendance, engagement, output, next steps'
+    }
+];
+
+const faqs = [
+    {
+        question: 'Is this just Belfast?',
+        answer: 'Belfast is the hub, but we\'re building a NI-wide network in practice.'
+    },
+    {
+        question: 'Can we run something in Derry / elsewhere?',
+        answer: 'Yes — if it\'s founder-first and we can deliver it properly.'
+    },
+    {
+        question: 'Can we pitch at founders?',
+        answer: 'No. You can teach, mentor, and support shipping. Founders can smell sales decks a mile away.'
+    },
+    {
+        question: 'What\'s the quickest way to start?',
+        answer: 'Co-host one event or sponsor one Sprint theme. Then scale what works.'
+    }
 ];
 ---
 
 <BaseLayout title="Partner with us">
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- Hero Section -->
+    <section class="partner-hero">
         <div class="container">
-            <h1>PARTNER WITH US</h1>
-            <div class="page-intro">
-                <p>We work with companies who genuinely want to help founders.<br>Not logo collectors. Not innovation theatre.</p>
-                <br>
-                <p>If you're building in AI, fintech, dev tools, cloud, payments — and you want to be close to what's coming next — partner with us.</p>
+            <span class="hero-label">PARTNER WITH US</span>
+            <h1>BUILD THE NEXT GENERATION OF FOUNDERS IN BELFAST</h1>
+            <p class="hero-tagline">— and across Northern Ireland</p>
+            
+            <p class="hero-description">
+                Techstars Belfast exists to help ambitious builders start, ship, and scale — with an AI-native approach and a global network behind it.
+            </p>
+
+            <div class="hero-what">
+                <p>We partner with companies, universities, investors, and public-sector organisations to run:</p>
+                <ul>
+                    <li>High-signal events (masterclasses, founder nights, AMAs)</li>
+                    <li>Sprints (our AI-era evolution of Startup Weekend)</li>
+                    <li>Programmes and pathways (e.g., Founder Catalyst)</li>
+                    <li>Community-building activity that creates real founder momentum</li>
+                </ul>
             </div>
+
+            <div class="hero-partners">
+                <p class="partners-label">Delivered with</p>
+                <div class="partners-logos">
+                    <img src="/images/QUB-Logo.png" alt="Queen's University Belfast" class="partner-logo qub">
+                    <img src="/images/ormeau-labs-logo.svg" alt="Ormeau Labs" class="partner-logo ormeau">
+                    <img src="/images/techstarsbelfastlogo.png" alt="Techstars Belfast" class="partner-logo ts">
+                </div>
+            </div>
+
+            <a href="#contact" class="btn btn--accent">Partner with us</a>
         </div>
     </section>
 
     <!-- Why Partner -->
     <section class="why-section">
         <div class="container">
-            <h2>WHY PARTNER WITH US</h2>
-            <ul class="why-list">
+            <h2>WHY PARTNER WITH TECHSTARS BELFAST?</h2>
+            <div class="why-grid">
                 {whyPartner.map(item => (
-                    <li>{item}</li>
+                    <div class="why-card">
+                        <div class="why-icon">
+                            <i data-lucide={item.icon}></i>
+                        </div>
+                        <h3>{item.title}</h3>
+                        <p>{item.description}</p>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     </section>
 
-    <!-- What Partners Can Do -->
-    <section class="what-section">
+    <!-- Ways to Partner -->
+    <section class="ways-section">
         <div class="container">
-            <h2>WHAT PARTNERS CAN DO</h2>
-            <ul class="what-list">
-                {whatPartnersDo.map(item => (
-                    <li>{item}</li>
-                ))}
-            </ul>
+            <h2>WAYS TO PARTNER</h2>
+
+            <!-- Events -->
+            <div class="partner-mode" id="events">
+                <div class="mode-header">
+                    <span class="mode-letter">A</span>
+                    <div>
+                        <h3>Partner on Events</h3>
+                        <p class="mode-tagline">Events are our "community heartbeat": repeat collisions, repeat learning, repeat momentum.</p>
+                    </div>
+                </div>
+
+                <div class="mode-content">
+                    <div class="mode-column">
+                        <h4>Good event formats</h4>
+                        <ul>
+                            {eventFormats.map(item => <li>{item}</li>)}
+                        </ul>
+                    </div>
+                    <div class="mode-column">
+                        <h4>What you bring</h4>
+                        <ul>
+                            {eventBring.map(item => <li>{item}</li>)}
+                        </ul>
+                    </div>
+                    <div class="mode-column">
+                        <h4>What you get</h4>
+                        <ul>
+                            {eventGet.map(item => <li>{item}</li>)}
+                        </ul>
+                    </div>
+                </div>
+
+                <p class="mode-rule"><i data-lucide="alert-circle"></i> <strong>Founder-first rule:</strong> we keep the content practical. No sales pitches. If it's a product session, it must help founders ship.</p>
+            </div>
+
+            <!-- Sprints -->
+            <div class="partner-mode" id="sprints">
+                <div class="mode-header">
+                    <span class="mode-letter">B</span>
+                    <div>
+                        <h3>Partner on Sprints</h3>
+                        <p class="mode-tagline">Sprints are where founders build, not just talk. They're the fastest way to turn interest into real prototypes, teams, and companies.</p>
+                    </div>
+                </div>
+
+                <div class="mode-content">
+                    <div class="sprint-types">
+                        <h4>Sprint partner options</h4>
+                        <div class="sprint-types-grid">
+                            {sprintTypes.map(type => (
+                                <div class="sprint-type-card">
+                                    <strong>{type.title}</strong>
+                                    <span>{type.description}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    
+                    <div class="mode-columns">
+                        <div class="mode-column">
+                            <h4>What you bring</h4>
+                            <ul>
+                                {sprintBring.map(item => <li>{item}</li>)}
+                            </ul>
+                        </div>
+                        <div class="mode-column">
+                            <h4>What you get</h4>
+                            <ul>
+                                {sprintGet.map(item => <li>{item}</li>)}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-partners">
+                    <h4>Examples of partner types we'd love</h4>
+                    <div class="example-logos">
+                        <div class="example-item">
+                            <span>AI tooling / model partners</span>
+                        </div>
+                        <div class="example-item">
+                            <span>Developer platforms & fintech infrastructure</span>
+                        </div>
+                        <div class="example-item">
+                            <span>Creator / media tooling</span>
+                        </div>
+                        <div class="example-item">
+                            <span>Enterprise / public-sector orgs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sponsorship -->
+            <div class="partner-mode" id="sponsorship">
+                <div class="mode-header">
+                    <span class="mode-letter">C</span>
+                    <div>
+                        <h3>Sponsor Techstars Belfast</h3>
+                        <p class="mode-tagline">Some partners want to do more than show up once. Financial sponsorship allows us to run more events, create more founder on-ramps, and build a stronger NI-wide network.</p>
+                    </div>
+                </div>
+
+                <div class="mode-content sponsor-content">
+                    <div class="sponsor-column">
+                        <h4>Sponsorship is ideal if you want</h4>
+                        <ul>
+                            {sponsorWant.map(item => <li>{item}</li>)}
+                        </ul>
+                    </div>
+                    <div class="sponsor-column">
+                        <h4>What sponsorship can fund</h4>
+                        <ul>
+                            {sponsorFunds.map(item => <li>{item}</li>)}
+                        </ul>
+                    </div>
+                    <div class="sponsor-column highlight-column">
+                        <h4>What sponsors get</h4>
+                        <ul>
+                            {sponsorGets.map(item => <li>{item}</li>)}
+                        </ul>
+                    </div>
+                </div>
+
+                <p class="mode-rule"><i data-lucide="shield"></i> <strong>Important:</strong> we do not sell founder access in a way that breaks trust. This stays founder-first.</p>
+            </div>
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta-section">
+    <!-- Great Partner -->
+    <section class="great-partner-section">
         <div class="container">
-            <div class="cta-block">
-                <p>If this sounds like you, get in touch.<br>We'll keep it simple.</p>
-                <a href="mailto:belfast@techstars.com" class="btn btn--accent">Get in touch</a>
+            <div class="great-partner-block">
+                <h2>WHAT MAKES A GREAT PARTNER</h2>
+                <p class="great-intro">We're a good fit if you:</p>
+                <ul>
+                    {greatPartner.map(item => <li><i data-lucide="check"></i> {item}</li>)}
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="process-section">
+        <div class="container">
+            <h2>HOW IT WORKS</h2>
+            <div class="process-grid">
+                {process.map(step => (
+                    <div class="process-step">
+                        <span class="step-number">{step.number}</span>
+                        <h3>{step.title}</h3>
+                        <p>{step.description}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-block">
+                <h2>GET IN TOUCH</h2>
+                <p class="contact-intro">Tell us what you want to do and we'll propose the best format.</p>
+                
+                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Role</label>
+                            <input type="text" id="role" name="role">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="organisation">Organisation</label>
+                        <input type="text" id="organisation" name="organisation" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="partnership-type">Partnership type</label>
+                        <select id="partnership-type" name="partnership-type">
+                            <option value="">Select an option</option>
+                            <option value="events">Events</option>
+                            <option value="sprints">Sprints</option>
+                            <option value="sponsorship">Sponsorship</option>
+                            <option value="not-sure">Not sure yet</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="outcome">What outcome do you want? (brand, talent, pilots, ecosystem impact)</label>
+                        <textarea id="outcome" name="outcome" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="timeline">Timeline</label>
+                            <select id="timeline" name="timeline">
+                                <option value="">Select timeline</option>
+                                <option value="next-month">Next month</option>
+                                <option value="this-quarter">This quarter</option>
+                                <option value="annual">Annual partnership</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">Budget range (optional)</label>
+                            <input type="text" id="budget" name="budget" placeholder="Optional">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contribute">Anything you can contribute (speakers, mentors, credits, venue)</label>
+                        <textarea id="contribute" name="contribute" rows="2"></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn--accent">Partner with us</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>FAQ</h2>
+            <div class="faq-grid">
+                {faqs.map(faq => (
+                    <div class="faq-item">
+                        <h3>{faq.question}</h3>
+                        <p>{faq.answer}</p>
+                    </div>
+                ))}
             </div>
         </div>
     </section>
 </BaseLayout>
 
 <style>
-    /* PAGE HEADER */
-    .page-header {
-        padding-top: 140px;
-        padding-bottom: 3rem;
+    /* HERO SECTION */
+    .partner-hero {
+        padding-top: 160px;
+        padding-bottom: 5rem;
         border-bottom: 1px solid var(--border-color);
+        background: linear-gradient(135deg, rgba(0, 230, 118, 0.05) 0%, transparent 50%);
     }
 
-    .page-header .container {
-        max-width: 1000px;
+    .partner-hero .container {
+        max-width: 900px;
     }
 
-    .page-header h1 {
-        font-size: clamp(2.5rem, 5vw, 3.5rem);
-        margin-bottom: 1.5rem;
+    .hero-label {
+        display: inline-block;
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--accent-color);
+        margin-bottom: 1rem;
     }
 
-    .page-intro {
-        font-size: 1.1rem;
-        max-width: 600px;
+    .partner-hero h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        line-height: 1.1;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-tagline {
+        font-size: 1.25rem;
+        color: #888;
+        margin-bottom: 2rem;
+    }
+
+    .hero-description {
+        font-size: 1.15rem;
         color: #ccc;
-        border-left: 2px solid var(--accent-color);
-        padding-left: 1.5rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        max-width: 700px;
     }
 
-    .page-intro p {
-        max-width: none;
+    .hero-what p {
+        font-size: 1rem;
+        color: #aaa;
+        margin-bottom: 1rem;
+    }
+
+    .hero-what ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 2.5rem 0;
+    }
+
+    .hero-what li {
+        font-size: 1rem;
+        color: #ccc;
+        padding-left: 1.5rem;
+        margin-bottom: 0.5rem;
+        position: relative;
+    }
+
+    .hero-what li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--accent-color);
+    }
+
+    .hero-partners {
+        margin-bottom: 2.5rem;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+    }
+
+    .partners-label {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #666;
+        margin-bottom: 1rem;
+    }
+
+    .partners-logos {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .partner-logo {
+        height: 50px;
+        width: auto;
+        opacity: 0.8;
+    }
+
+    .partner-logo.ormeau {
+        filter: brightness(0) invert(1);
+    }
+
+    .partner-logo.ts {
+        height: 60px;
     }
 
     /* WHY SECTION */
     .why-section {
-        padding: 4rem 0;
+        padding: 5rem 0;
         border-bottom: 1px solid var(--border-color);
     }
 
@@ -104,86 +578,483 @@ const whatPartnersDo = [
     }
 
     .why-section h2 {
-        font-size: 1.25rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2.5rem;
     }
 
-    .why-list {
-        list-style: none;
-        max-width: 600px;
+    .why-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
     }
 
-    .why-list li {
-        font-size: 1.05rem;
-        color: #ccc;
-        margin-bottom: 0.75rem;
-        padding-left: 1.5rem;
-        position: relative;
+    .why-card {
+        padding: 1.5rem;
+        background: #161616;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        transition: all 0.3s ease;
     }
 
-    .why-list li::before {
-        content: "•";
-        position: absolute;
-        left: 0;
+    .why-card:hover {
+        border-color: var(--accent-color);
+        transform: translateY(-2px);
+    }
+
+    .why-icon {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 230, 118, 0.1);
+        border-radius: 10px;
+        margin-bottom: 1rem;
+    }
+
+    .why-icon i {
+        width: 24px;
+        height: 24px;
         color: var(--accent-color);
     }
 
-    /* WHAT SECTION */
-    .what-section {
-        padding: 4rem 0;
+    .why-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        text-transform: none;
+        font-family: var(--font-main);
+    }
+
+    .why-card p {
+        font-size: 0.9rem;
+        color: #888;
+        line-height: 1.5;
+    }
+
+    /* WAYS TO PARTNER */
+    .ways-section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border-color);
+        background: #0a0a0a;
+    }
+
+    .ways-section .container {
+        max-width: 1000px;
+    }
+
+    .ways-section > .container > h2 {
+        margin-bottom: 3rem;
+    }
+
+    .partner-mode {
+        background: #161616;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .mode-header {
+        display: flex;
+        gap: 1.5rem;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
         border-bottom: 1px solid var(--border-color);
     }
 
-    .what-section .container {
-        max-width: 1000px;
+    .mode-letter {
+        font-family: var(--font-mono);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--accent-color);
+        background: rgba(0, 230, 118, 0.1);
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        flex-shrink: 0;
     }
 
-    .what-section h2 {
-        font-size: 1.25rem;
+    .mode-header h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        text-transform: none;
+        font-family: var(--font-main);
+    }
+
+    .mode-tagline {
+        font-size: 1rem;
+        color: #888;
+    }
+
+    .mode-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
         margin-bottom: 1.5rem;
     }
 
-    .what-list {
-        list-style: none;
-        max-width: 600px;
+    .mode-column h4 {
+        font-size: 0.85rem;
+        font-family: var(--font-mono);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #666;
+        margin-bottom: 1rem;
     }
 
-    .what-list li {
-        font-size: 1.05rem;
-        color: #ccc;
+    .mode-column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mode-column li {
+        font-size: 0.95rem;
+        color: #aaa;
+        padding-left: 1.25rem;
         margin-bottom: 0.75rem;
-        padding-left: 1.5rem;
         position: relative;
     }
 
-    .what-list li::before {
+    .mode-column li::before {
         content: "•";
         position: absolute;
         left: 0;
         color: var(--accent-color);
     }
 
-    /* CTA SECTION */
-    .cta-section {
-        padding: 4rem 0;
+    .mode-rule {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        font-size: 0.9rem;
+        color: #888;
+        padding: 1rem;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 8px;
+        margin-top: 1rem;
     }
 
-    .cta-section .container {
-        max-width: 1000px;
+    .mode-rule i {
+        width: 18px;
+        height: 18px;
+        color: var(--accent-color);
+        flex-shrink: 0;
+        margin-top: 2px;
     }
 
-    .cta-block {
-        background: #0a0a0a;
+    .mode-rule strong {
+        color: #ccc;
+    }
+
+    /* Sprint specific */
+    .sprint-types {
+        grid-column: 1 / -1;
+        margin-bottom: 1rem;
+    }
+
+    .sprint-types h4 {
+        font-size: 0.85rem;
+        font-family: var(--font-mono);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #666;
+        margin-bottom: 1rem;
+    }
+
+    .sprint-types-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .sprint-type-card {
+        padding: 1rem;
+        background: #0f0f0f;
         border: 1px solid var(--border-color);
-        border-radius: 12px;
-        padding: 4rem;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .sprint-type-card strong {
+        font-size: 0.95rem;
+        color: #fff;
+    }
+
+    .sprint-type-card span {
+        font-size: 0.85rem;
+        color: #888;
+    }
+
+    .mode-columns {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+    }
+
+    .example-partners {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .example-partners h4 {
+        font-size: 0.85rem;
+        font-family: var(--font-mono);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #666;
+        margin-bottom: 1rem;
+    }
+
+    .example-logos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .example-item {
+        padding: 0.5rem 1rem;
+        background: #0f0f0f;
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        font-size: 0.85rem;
+        color: #aaa;
+    }
+
+    /* Sponsor specific */
+    .sponsor-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .sponsor-column h4 {
+        font-size: 0.85rem;
+        font-family: var(--font-mono);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #666;
+        margin-bottom: 1rem;
+    }
+
+    .sponsor-column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sponsor-column li {
+        font-size: 0.9rem;
+        color: #aaa;
+        padding-left: 1.25rem;
+        margin-bottom: 0.75rem;
+        position: relative;
+    }
+
+    .sponsor-column li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--accent-color);
+    }
+
+    .highlight-column {
+        background: rgba(0, 230, 118, 0.05);
+        padding: 1.25rem;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 230, 118, 0.2);
+    }
+
+    /* GREAT PARTNER */
+    .great-partner-section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .great-partner-section .container {
+        max-width: 800px;
+    }
+
+    .great-partner-block {
         text-align: center;
     }
 
-    .cta-block p {
-        font-size: 1.2rem;
-        color: #ccc;
+    .great-partner-block h2 {
+        margin-bottom: 1rem;
+    }
+
+    .great-intro {
+        font-size: 1.1rem;
+        color: #888;
         margin-bottom: 2rem;
+    }
+
+    .great-partner-block ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: inline-block;
+        text-align: left;
+    }
+
+    .great-partner-block li {
+        font-size: 1.1rem;
+        color: #ccc;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .great-partner-block li i {
+        width: 20px;
+        height: 20px;
+        color: var(--accent-color);
+    }
+
+    /* PROCESS */
+    .process-section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border-color);
+        background: #0a0a0a;
+    }
+
+    .process-section .container {
+        max-width: 1000px;
+    }
+
+    .process-section h2 {
+        margin-bottom: 2.5rem;
+    }
+
+    .process-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+    }
+
+    .process-step {
+        text-align: center;
+        padding: 1.5rem 1rem;
+        position: relative;
+    }
+
+    .process-step::after {
+        content: "→";
+        position: absolute;
+        right: -0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #333;
+        font-size: 1.25rem;
+    }
+
+    .process-step:last-child::after {
+        display: none;
+    }
+
+    .step-number {
+        font-family: var(--font-mono);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--accent-color);
+        display: block;
+        margin-bottom: 0.75rem;
+    }
+
+    .process-step h3 {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+        text-transform: none;
+        font-family: var(--font-main);
+    }
+
+    .process-step p {
+        font-size: 0.8rem;
+        color: #888;
+        line-height: 1.4;
+    }
+
+    /* CONTACT */
+    .contact-section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .contact-section .container {
+        max-width: 700px;
+    }
+
+    .contact-block h2 {
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-intro {
+        font-size: 1.1rem;
+        color: #888;
+        margin-bottom: 2.5rem;
+    }
+
+    .contact-form {
+        background: #161616;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 2rem;
+    }
+
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+        display: block;
+        font-size: 0.85rem;
+        color: #aaa;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        background: #0f0f0f;
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        color: #fff;
+        font-size: 1rem;
+        font-family: inherit;
+        transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: var(--accent-color);
+    }
+
+    .form-group select {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        padding-right: 2.5rem;
+    }
+
+    .form-actions {
+        margin-top: 1.5rem;
+        text-align: center;
     }
 
     .btn--accent {
@@ -197,14 +1068,90 @@ const whatPartnersDo = [
         color: var(--accent-color);
     }
 
+    /* FAQ */
+    .faq-section {
+        padding: 5rem 0;
+        background: #0a0a0a;
+    }
+
+    .faq-section .container {
+        max-width: 900px;
+    }
+
+    .faq-section h2 {
+        margin-bottom: 2.5rem;
+    }
+
+    .faq-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .faq-item {
+        padding: 1.5rem;
+        background: #161616;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+    }
+
+    .faq-item h3 {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+        text-transform: none;
+        font-family: var(--font-main);
+    }
+
+    .faq-item p {
+        font-size: 0.95rem;
+        color: #888;
+        line-height: 1.5;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
-        .page-header {
+        .partner-hero {
             padding-top: 120px;
+            padding-bottom: 3rem;
         }
 
-        .cta-block {
-            padding: 2rem;
+        .partners-logos {
+            gap: 1.5rem;
+        }
+
+        .partner-logo {
+            height: 40px;
+        }
+
+        .partner-logo.ts {
+            height: 50px;
+        }
+
+        .mode-header {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .mode-content,
+        .sponsor-content {
+            grid-template-columns: 1fr;
+        }
+
+        .process-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .process-step::after {
+            display: none;
+        }
+
+        .form-row {
+            grid-template-columns: 1fr;
+        }
+
+        .contact-form {
+            padding: 1.5rem;
         }
     }
 </style>

@@ -74,7 +74,7 @@ const startHereCards = [
         </div>
 
         <div class="container hero-content">
-            <h1>BUILD HERE.<br>SHIP EVERYWHERE.</h1>
+            <h1>BUILD HERE.<br><span class="highlight">SHIP EVERYWHERE.</span></h1>
             
             <p class="hero-tagline">
                 This isn't startup tourism. It's a founder-led network for builders, researchers, and domain experts who want to move fast — with AI-native execution baked in<span class="cursor">|</span>
@@ -109,6 +109,17 @@ const startHereCards = [
         </div>
     </section>
 
+    <!-- Bill Gurley Quote -->
+    <section class="quote-highlight">
+        <div class="container">
+            <blockquote>
+                <p>"The number one way to protect your career from AI is to be the most aggressive user of AI in your field.</p>
+                <p class="quote-emphasis">RUN AT IT."</p>
+                <cite>— Bill Gurley</cite>
+            </blockquote>
+        </div>
+    </section>
+
     <!-- Bring What You Have -->
     <section class="why-section">
         <div class="container">
@@ -129,7 +140,6 @@ const startHereCards = [
                 ))}
             </div>
 
-            <p class="ai-native-tagline">AI-native by default: agents, automations, prototypes, customer discovery — every week.</p>
         </div>
     </section>
 
@@ -296,6 +306,10 @@ const startHereCards = [
         max-width: 800px;
     }
 
+    .hero h1 .highlight {
+        color: var(--accent-color);
+    }
+
     .hero-tagline {
         font-size: 1.3rem;
         max-width: 600px;
@@ -380,6 +394,69 @@ const startHereCards = [
         height: 65px;
         width: auto;
         filter: brightness(0) invert(1);
+    }
+
+    /* BILL GURLEY QUOTE */
+    .quote-highlight {
+        padding: 4rem 0;
+        background: linear-gradient(135deg, rgba(0, 230, 118, 0.08) 0%, rgba(0, 0, 0, 0) 50%);
+        border-bottom: 1px solid var(--border-color);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .quote-highlight::before {
+        content: '"';
+        position: absolute;
+        top: -40px;
+        left: 5%;
+        font-size: 20rem;
+        font-family: Georgia, serif;
+        color: rgba(0, 230, 118, 0.06);
+        line-height: 1;
+        pointer-events: none;
+    }
+
+    .quote-highlight .container {
+        max-width: 900px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .quote-highlight blockquote {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .quote-highlight blockquote p {
+        font-size: clamp(1.3rem, 3vw, 1.75rem);
+        line-height: 1.5;
+        color: #ccc;
+        margin: 0 0 1rem 0;
+        font-weight: 400;
+    }
+
+    .quote-highlight .quote-emphasis {
+        font-family: var(--font-mono);
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 700;
+        color: var(--accent-color);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin: 1.5rem 0;
+        text-shadow: 0 0 40px rgba(0, 230, 118, 0.3);
+    }
+
+    .quote-highlight cite {
+        display: block;
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        color: #666;
+        font-style: normal;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        margin-top: 1.5rem;
     }
 
     /* WHY FOUNDERS SHOW UP SECTION */
@@ -488,18 +565,6 @@ const startHereCards = [
         color: #999;
         line-height: 1.7;
         font-size: 1rem;
-    }
-
-    .ai-native-tagline {
-        text-align: center;
-        font-size: 1.1rem;
-        color: #aaa;
-        margin-top: 3rem;
-        padding-top: 2.5rem;
-        border-top: 1px solid var(--border-color);
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     /* START HERE SECTION */
@@ -836,6 +901,24 @@ const startHereCards = [
 
         .newsletter-block {
             padding: 2rem;
+        }
+
+        .quote-highlight {
+            padding: 3rem 0;
+        }
+
+        .quote-highlight::before {
+            font-size: 12rem;
+            top: -20px;
+            left: 0;
+        }
+
+        .quote-highlight blockquote p {
+            font-size: 1.2rem;
+        }
+
+        .quote-highlight .quote-emphasis {
+            font-size: 1.75rem;
         }
     }
 </style>

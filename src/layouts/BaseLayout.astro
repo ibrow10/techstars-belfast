@@ -24,7 +24,7 @@ const { title, description = "Techstars Belfast - Building Northern Ireland's ne
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
     
     <!-- Open Graph -->
     <meta property="og:title" content={title}>
@@ -41,7 +41,19 @@ const { title, description = "Techstars Belfast - Building Northern Ireland's ne
     <Footer />
     
     <script>
-        lucide.createIcons();
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+        // Also try immediately in case DOM is already loaded
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            setTimeout(() => {
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                }
+            }, 100);
+        }
     </script>
 </body>
 </html>

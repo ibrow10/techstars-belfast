@@ -1,23 +1,152 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const partners = [
+const stack = [
     {
-        name: "Queen's University Belfast (QUB)",
-        description: "Talent, research, facilities — and a serious commitment to building the pipeline."
+        icon: 'calendar',
+        title: 'Events & founder nights',
+        description: 'Meet peers, learn fast, build momentum'
     },
     {
-        name: "Ormeau Labs",
-        description: "The home base. The rooms. The people."
+        icon: 'zap',
+        title: 'Sprints',
+        description: 'Our AI-era evolution of Startup Weekend: ship in hours/days, not weeks'
     },
     {
-        name: "Techstars",
-        description: "Global network. Proven community systems. Give First."
+        icon: 'rocket',
+        title: 'Founder Catalyst',
+        description: 'A structured pre-accelerator pathway delivered through Techstars'
+    },
+    {
+        icon: 'users',
+        title: 'Community Development Lab',
+        description: 'Coordinated ecosystem action (with founders in the room first)'
+    }
+];
+
+const whyNowPoints = [
+    'how products are built (speed, tooling, smaller teams)',
+    'which markets are accessible (global from day one)',
+    'which jobs and industries get disrupted (workflow-heavy sectors in particular)'
+];
+
+const weNeed = [
+    'try building companies earlier',
+    'meet collaborators faster',
+    'access world-class mentorship and peer networks',
+    'develop global ambition without leaving home'
+];
+
+const principles = [
+    {
+        title: 'Founders first',
+        description: 'Practical help over theatre.'
+    },
+    {
+        title: 'Ship fast',
+        description: 'Working demos beat slides.'
+    },
+    {
+        title: 'AI-native by default',
+        description: 'The future is already here.'
+    },
+    {
+        title: 'Global ambition, local roots',
+        description: 'Build from here. Ship everywhere.'
+    },
+    {
+        title: 'Be optimistic',
+        description: 'Believe in what\'s possible.'
+    },
+    {
+        title: 'Give First',
+        description: 'Help without expecting anything in return.'
     }
 ];
 ---
 
 <BaseLayout title="About">
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <img src="/images/techstarsbelfastlogo.png" alt="Techstars Belfast" class="hero-logo">
+            <h1>BUILD HERE.<br><span class="highlight">SHIP EVERYWHERE.</span></h1>
+            <p class="hero-description">
+                Techstars Belfast is a founder-led startup community for Northern Ireland — delivered with Queen's University Belfast and Ormeau Labs — connecting ambitious local builders into the global Techstars platform and network.
+            </p>
+            <p class="hero-subdescription">
+                We run high-signal events, build sprints, and early-stage programmes designed for the pace of the AI era.
+            </p>
+            <p class="hero-ethos">This is not about "innovation". <span class="highlight">It's about founders.</span></p>
+            <div class="hero-ctas">
+                <a href="/partners" class="btn">Partner with us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who are Techstars -->
+    <section class="techstars-section">
+        <div class="container">
+            <h2>WHO ARE TECHSTARS?</h2>
+            <div class="techstars-content">
+                <p class="lead">Techstars is one of the world's most recognised startup networks: a founder-first organisation that runs mentorship-driven accelerators, invests in early-stage companies, and supports startup communities globally.</p>
+                <p class="mission">Their mission is simple: <span class="highlight">help founders succeed.</span></p>
+                <div class="techstars-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">2006</span>
+                        <span class="stat-label">Founded</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5,000+</span>
+                        <span class="stat-label">Companies invested</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">>$20B</span>
+                        <span class="stat-label">Market cap</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">Global</span>
+                        <span class="stat-label">Founder network</span>
+                    </div>
+                </div>
+                <p class="techstars-note">Since 2006, Techstars has built a global community of founders, mentors, investors and partners that stays connected long after any single programme ends.</p>
+                <p class="techstars-leader">Techstars is led by David Cohen, one of the original founders.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is Techstars Belfast -->
+    <section class="what-section">
+        <div class="container">
+            <h2>WHAT IS TECHSTARS BELFAST?</h2>
+            <div class="what-content">
+                <p class="lead">Techstars Belfast is Techstars' Startup Community Partnership model, launched in Belfast and built to serve founders across Northern Ireland.</p>
+                <p>A Startup Community Partnership is designed to help a city or region build a thriving startup community using Techstars' playbooks, programmes and global experience.</p>
+                
+                <h3>In practice, Techstars Belfast is a stack (not a single programme):</h3>
+                <div class="stack-grid">
+                    {stack.map(item => (
+                        <div class="stack-card">
+                            <div class="stack-icon">
+                                <i data-lucide={item.icon}></i>
+                            </div>
+                            <div class="stack-text">
+                                <strong>{item.title}</strong>
+                                <span>{item.description}</span>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                <div class="flywheel-block">
+                    <p class="flywheel-intro">We're building a simple flywheel:</p>
+                    <p class="flywheel">show up → meet the right people → ship faster → become fundable → recycle back into the community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Our DNA Section -->
     <section class="manifesto-section">
         <div class="container">
@@ -41,81 +170,412 @@ const partners = [
         </div>
     </section>
 
-    <!-- Page Header -->
-    <section class="page-header page-header--no-top">
-        <div class="container">
-            <h1>ABOUT</h1>
-            <div class="page-intro">
-                <p>Techstars Belfast is founder-led.<br>We're building the community we wish existed when we started.</p>
-                <br>
-                <p>We give first with no expectation of return.<br>We care about founders more than we care about optics.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- What We're Building -->
-    <section class="about-section">
-        <div class="container">
-            <h2>WHAT WE'RE BUILDING</h2>
-            <div class="section-content">
-                <p>Belfast is ready for a new chapter. So we're bringing Techstars' community playbook here — with Queen's University Belfast and Ormeau Labs — and adapting it for local founders.</p>
-                <p>This isn't about "community strategy". It's about helping founders start companies that can compete globally.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- How We Work -->
-    <section class="about-section">
-        <div class="container">
-            <h2>HOW WE WORK</h2>
-            <div class="section-content">
-                <p>We move fast. We're comfortable with ambiguity. We occasionally get things wrong. When we do, we fix it, learn, and keep going.</p>
-                <p class="highlight">We ask ourselves, every day:<br>"How can we better help founders?"</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Partners -->
+    <!-- Our Partners -->
     <section class="partners-section">
         <div class="container">
             <h2>OUR PARTNERS</h2>
+            <p class="partners-intro">Techstars Belfast is delivered with two anchor partners — one rooted in research and talent, one rooted in community and density.</p>
+            
             <div class="partners-grid">
-                {partners.map(partner => (
-                    <div class="partner-item card">
-                        <h3>{partner.name}</h3>
-                        <p>{partner.description}</p>
-                    </div>
-                ))}
-            </div>
-            <div class="partner-logos">
-                <img src="/images/QUB-Logo.png" alt="Queen's University Belfast" class="partner-logo">
-                <img src="/images/ormeau-labs-logo.svg" alt="Ormeau Labs" class="partner-logo">
+                <div class="partner-card">
+                    <img src="/images/QUB-Logo.png" alt="Queen's University Belfast" class="partner-logo qub">
+                    <h3>Queen's University Belfast</h3>
+                    <p class="partner-description">Queen's brings deep research capability, student and postgraduate talent, and a long-standing commitment to entrepreneurship, commercialisation and spinouts through QUBIS and wider innovation programmes.</p>
+                    <p class="partner-why"><strong>This matters because</strong> the next wave of breakout companies will come from people closest to frontier knowledge — researchers, PhDs, engineers, and builders who can compete globally.</p>
+                </div>
+                
+                <div class="partner-card">
+                    <img src="/images/ormeau-labs-logo.svg" alt="Ormeau Labs" class="partner-logo ormeau">
+                    <h3>Ormeau Labs</h3>
+                    <p class="partner-description">Ormeau Labs is a central hub for founders in Belfast — a space where startups, freelancers and entrepreneurs build, meet and collaborate.</p>
+                    <p class="partner-why"><strong>This matters because</strong> startup communities aren't built on strategy documents — they're built through repeated collisions, shared experiences, and rooms full of builders.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Closing CTA -->
-    <section class="cta-section">
+    <!-- Why Now -->
+    <section class="why-now-section">
         <div class="container">
-            <div class="cta-block">
-                <h2>WANT IN?</h2>
-                <p>Turn up to an event. Join a sprint. Or reach out if you want to build with us.</p>
-                <div class="cta-buttons">
-                    <a href="/events" class="btn">View events</a>
-                    <a href="/sprints" class="btn btn--outline">See sprints</a>
-                    <a href="/partners" class="btn btn--outline">Partner with us</a>
+            <h2>WHY THIS IS IMPORTANT (AND WHY NOW)</h2>
+            <div class="why-now-content">
+                <p class="lead">Northern Ireland is at an inflection point.</p>
+                
+                <div class="why-block">
+                    <h3>AI is changing:</h3>
+                    <ul>
+                        {whyNowPoints.map(point => (
+                            <li>{point}</li>
+                        ))}
+                    </ul>
+                </div>
+
+                <div class="why-block">
+                    <h3>If we want Northern Ireland to win, we need more people to:</h3>
+                    <ul>
+                        {weNeed.map(point => (
+                            <li>{point}</li>
+                        ))}
+                    </ul>
+                </div>
+
+                <p class="why-conclusion">Techstars Belfast exists to make that real — with practical formats that match modern build velocity, and a network that opens doors beyond our local market.</p>
+                <p class="why-tagline">We're building companies that <span class="highlight">start here and compete everywhere.</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Get Involved -->
+    <section class="involved-section">
+        <div class="container">
+            <h2>HOW TO GET INVOLVED</h2>
+            
+            <div class="involved-grid">
+                <div class="involved-card">
+                    <div class="involved-icon">
+                        <i data-lucide="rocket"></i>
+                    </div>
+                    <h3>If you're a founder (or want to be)</h3>
+                    <p>Start with an event. Join a Sprint. Ship something. Momentum is the whole game.</p>
+                    <div class="involved-ctas">
+                        <a href="/events" class="btn btn--small">View events</a>
+                        <a href="/sprints" class="btn btn--small btn--outline">Join a Sprint</a>
+                    </div>
+                </div>
+
+                <div class="involved-card">
+                    <div class="involved-icon">
+                        <i data-lucide="microscope"></i>
+                    </div>
+                    <h3>If you're a researcher / student / PhD</h3>
+                    <p>This is your on-ramp. Bring a problem, a hypothesis, or a capability — and build in public with people who can help you turn it into a company.</p>
+                    <div class="involved-ctas">
+                        <a href="/sprints" class="btn btn--small">Join a Sprint</a>
+                        <a href="/programmes" class="btn btn--small btn--outline">Apply to Founder Catalyst</a>
+                    </div>
+                </div>
+
+                <div class="involved-card">
+                    <div class="involved-icon">
+                        <i data-lucide="handshake"></i>
+                    </div>
+                    <h3>If you're a partner (corporate, investor, organisation)</h3>
+                    <p>Sponsor a Sprint. Host a masterclass. Provide tools/credits. Meet founders early and support the next generation of companies in Northern Ireland.</p>
+                    <div class="involved-ctas">
+                        <a href="/partners" class="btn btn--small">Partner with us</a>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Operating Principles -->
+    <section class="principles-section">
+        <div class="container">
+            <h2>OUR OPERATING PRINCIPLES</h2>
+            <div class="principles-grid">
+                {principles.map(principle => (
+                    <div class="principle-card">
+                        <h3>{principle.title}</h3>
+                        <p>{principle.description}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Line -->
+    <section class="footer-line-section">
+        <div class="container">
+            <p class="footer-line">Techstars Belfast is part of a global movement of Techstars Startup Community Partners — building stronger founder networks in cities around the world.</p>
         </div>
     </section>
 </BaseLayout>
 
 <style>
-    /* MANIFESTO SECTION */
-    .manifesto-section {
-        padding: 140px 0 4rem;
+    /* HERO SECTION */
+    .about-hero {
+        padding-top: 160px;
+        padding-bottom: 5rem;
         border-bottom: 1px solid var(--border-color);
-        background: linear-gradient(135deg, rgba(0, 210, 106, 0.03) 0%, transparent 50%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-bg {
+        position: absolute;
+        inset: 0;
+        background-image: url('/images/hackathon.jpg');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.15;
+        z-index: 0;
+    }
+
+    .hero-bg::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(15, 15, 15, 0.3) 0%, rgba(15, 15, 15, 0.9) 70%, rgba(15, 15, 15, 1) 100%);
+    }
+
+    .about-hero .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .about-hero .container {
+        max-width: 900px;
+    }
+
+    .hero-logo {
+        height: 120px;
+        width: auto;
+        margin-bottom: 2rem;
+    }
+
+    .about-hero h1 {
+        font-size: clamp(2.5rem, 6vw, 3.5rem);
+        line-height: 1.1;
+        margin-bottom: 2rem;
+    }
+
+    .about-hero h1 .highlight {
+        color: var(--accent-color);
+    }
+
+    .hero-description {
+        font-size: 1.25rem;
+        color: #ccc;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        max-width: 800px;
+    }
+
+    .hero-subdescription {
+        font-size: 1.1rem;
+        color: #aaa;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-ethos {
+        font-size: 1.15rem;
+        color: #888;
+        margin-bottom: 2.5rem;
+    }
+
+    .hero-ethos .highlight {
+        color: var(--accent-color);
+        font-weight: 500;
+    }
+
+    .hero-ctas {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .highlight {
+        color: var(--accent-color);
+    }
+
+    .btn--outline {
+        background: transparent;
+        color: var(--text-color);
+    }
+
+    .btn--outline:hover {
+        background: var(--text-color);
+        color: var(--bg-color);
+    }
+
+    .btn--small {
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+
+    /* WHO ARE TECHSTARS */
+    .techstars-section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .techstars-section .container {
+        max-width: 900px;
+    }
+
+    .techstars-section h2 {
+        margin-bottom: 2rem;
+    }
+
+    .techstars-content .lead {
+        font-size: 1.2rem;
+        color: #ccc;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .techstars-content .mission {
+        font-size: 1.1rem;
+        color: #aaa;
+        margin-bottom: 2.5rem;
+    }
+
+    .techstars-stats {
+        display: flex;
+        gap: 3rem;
+        margin-bottom: 2rem;
+        padding: 1.5rem 0;
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+        flex-wrap: wrap;
+    }
+
+    .stat-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .stat-number {
+        font-family: var(--font-mono);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--accent-color);
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+        color: #888;
+    }
+
+    .techstars-note {
+        font-size: 1rem;
+        color: #888;
+        margin-bottom: 1rem;
+    }
+
+    .techstars-leader {
+        font-size: 0.95rem;
+        color: #666;
+        font-style: italic;
+    }
+
+    /* WHAT IS TECHSTARS BELFAST */
+    .what-section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border-color);
+        background: #0a0a0a;
+    }
+
+    .what-section .container {
+        max-width: 900px;
+    }
+
+    .what-section h2 {
+        margin-bottom: 2rem;
+    }
+
+    .what-content .lead {
+        font-size: 1.2rem;
+        color: #ccc;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .what-content > p {
+        font-size: 1rem;
+        color: #aaa;
+        margin-bottom: 2.5rem;
+    }
+
+    .what-content h3 {
+        font-size: 1rem;
+        color: #888;
+        font-family: var(--font-mono);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 1.5rem;
+    }
+
+    .stack-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .stack-card {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.25rem;
+        background: #161616;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .stack-card:hover {
+        border-color: var(--accent-color);
+    }
+
+    .stack-icon {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 230, 118, 0.1);
+        border-radius: 8px;
+        flex-shrink: 0;
+    }
+
+    .stack-icon i {
+        width: 20px;
+        height: 20px;
+        color: var(--accent-color);
+    }
+
+    .stack-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .stack-text strong {
+        color: #fff;
+        font-size: 0.95rem;
+    }
+
+    .stack-text span {
+        color: #888;
+        font-size: 0.9rem;
+    }
+
+    .flywheel-block {
+        padding: 1.5rem;
+        background: #111;
+        border-left: 3px solid var(--accent-color);
+        border-radius: 0 8px 8px 0;
+    }
+
+    .flywheel-intro {
+        font-size: 0.9rem;
+        color: #888;
+        margin-bottom: 0.5rem;
+    }
+
+    .flywheel {
+        font-family: var(--font-mono);
+        font-size: 1rem;
+        color: var(--accent-color);
+    }
+
+    /* MANIFESTO / OUR DNA SECTION */
+    .manifesto-section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border-color);
     }
 
     .manifesto-section .container {
@@ -178,75 +638,11 @@ const partners = [
         font-weight: 500;
     }
 
-    .highlight {
-        color: var(--accent-color);
-    }
-
-    /* PAGE HEADER */
-    .page-header {
-        padding-top: 140px;
-        padding-bottom: 3rem;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .page-header--no-top {
-        padding-top: 4rem;
-    }
-
-    .page-header .container {
-        max-width: 1000px;
-    }
-
-    .page-header h1 {
-        font-size: clamp(2.5rem, 5vw, 3.5rem);
-        margin-bottom: 1.5rem;
-    }
-
-    .page-intro {
-        font-size: 1.1rem;
-        max-width: 600px;
-        color: #ccc;
-        border-left: 2px solid var(--accent-color);
-        padding-left: 1.5rem;
-    }
-
-    .page-intro p {
-        max-width: none;
-    }
-
-    /* ABOUT SECTIONS */
-    .about-section {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .about-section .container {
-        max-width: 1000px;
-    }
-
-    .about-section h2 {
-        font-size: 1.25rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .section-content p {
-        font-size: 1.1rem;
-        color: #ccc;
-        line-height: 1.7;
-        margin-bottom: 1rem;
-        max-width: 700px;
-    }
-
-    .section-content .highlight {
-        font-size: 1.15rem;
-        color: #fff;
-        margin-top: 1.5rem;
-    }
-
     /* PARTNERS SECTION */
     .partners-section {
-        padding: 4rem 0;
+        padding: 5rem 0;
         border-bottom: 1px solid var(--border-color);
+        background: #0a0a0a;
     }
 
     .partners-section .container {
@@ -254,106 +650,301 @@ const partners = [
     }
 
     .partners-section h2 {
-        font-size: 1.25rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .partners-intro {
+        font-size: 1.1rem;
+        color: #aaa;
+        margin-bottom: 2.5rem;
+        max-width: 700px;
     }
 
     .partners-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-        margin-bottom: 3rem;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
     }
 
-    .partner-item {
+    .partner-card {
+        background: #161616;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
         padding: 2rem;
+        transition: all 0.3s ease;
     }
 
-    .partner-item h3 {
-        color: #fff;
-        font-size: 1.1rem;
-        margin-bottom: 0.75rem;
-        font-family: var(--font-mono);
-    }
-
-    .partner-item p {
-        font-size: 0.95rem;
-        color: #aaa;
-        line-height: 1.5;
-    }
-
-    .partner-logos {
-        display: flex;
-        align-items: center;
-        gap: 2.5rem;
+    .partner-card:hover {
+        border-color: var(--accent-color);
     }
 
     .partner-logo {
-        height: 50px;
+        height: 60px;
         width: auto;
+        margin-bottom: 1.5rem;
+    }
+
+    .partner-logo.qub {
+        filter: none;
+    }
+
+    .partner-logo.ormeau {
         filter: brightness(0) invert(1);
-        opacity: 0.7;
     }
 
-    /* CTA SECTION */
-    .cta-section {
-        padding: 4rem 0;
+    .partner-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        text-transform: none;
+        font-family: var(--font-main);
     }
 
-    .cta-section .container {
-        max-width: 1000px;
-    }
-
-    .cta-block {
-        text-align: center;
-    }
-
-    .cta-block h2 {
-        font-size: 1.5rem;
+    .partner-description {
+        font-size: 0.95rem;
+        color: #aaa;
+        line-height: 1.6;
         margin-bottom: 1rem;
     }
 
-    .cta-block > p {
-        font-size: 1.1rem;
-        color: #aaa;
+    .partner-why {
+        font-size: 0.9rem;
+        color: #666;
+        line-height: 1.5;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .partner-why strong {
+        color: #888;
+    }
+
+    /* WHY NOW SECTION */
+    .why-now-section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .why-now-section .container {
+        max-width: 900px;
+    }
+
+    .why-now-section h2 {
         margin-bottom: 2rem;
     }
 
-    .cta-buttons {
+    .why-now-content .lead {
+        font-size: 1.3rem;
+        color: #ccc;
+        margin-bottom: 2.5rem;
+    }
+
+    .why-block {
+        margin-bottom: 2rem;
+    }
+
+    .why-block h3 {
+        font-size: 1rem;
+        color: #888;
+        margin-bottom: 1rem;
+        text-transform: none;
+        font-family: var(--font-main);
+    }
+
+    .why-block ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .why-block li {
+        font-size: 1rem;
+        color: #aaa;
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+        position: relative;
+    }
+
+    .why-block li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--accent-color);
+    }
+
+    .why-conclusion {
+        font-size: 1.1rem;
+        color: #aaa;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .why-tagline {
+        font-size: 1.2rem;
+        color: #ccc;
+    }
+
+    /* INVOLVED SECTION */
+    .involved-section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border-color);
+        background: #0a0a0a;
+    }
+
+    .involved-section .container {
+        max-width: 1000px;
+    }
+
+    .involved-section h2 {
+        margin-bottom: 2.5rem;
+    }
+
+    .involved-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .involved-card {
+        background: #161616;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+    }
+
+    .involved-card:hover {
+        border-color: var(--accent-color);
+        transform: translateY(-2px);
+    }
+
+    .involved-icon {
+        width: 48px;
+        height: 48px;
         display: flex;
-        gap: 1rem;
+        align-items: center;
         justify-content: center;
+        background: rgba(0, 230, 118, 0.1);
+        border-radius: 10px;
+        margin-bottom: 1.25rem;
+    }
+
+    .involved-icon i {
+        width: 24px;
+        height: 24px;
+        color: var(--accent-color);
+    }
+
+    .involved-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+        text-transform: none;
+        font-family: var(--font-main);
+        color: #fff;
+    }
+
+    .involved-card > p {
+        font-size: 0.95rem;
+        color: #888;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+    }
+
+    .involved-ctas {
+        display: flex;
+        gap: 0.75rem;
         flex-wrap: wrap;
     }
 
-    .btn--outline {
-        background: transparent;
-        color: var(--text-color);
+    /* PRINCIPLES SECTION */
+    .principles-section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border-color);
     }
 
-    .btn--outline:hover {
-        background: var(--text-color);
-        color: var(--bg-color);
+    .principles-section .container {
+        max-width: 1000px;
+    }
+
+    .principles-section h2 {
+        margin-bottom: 2.5rem;
+    }
+
+    .principles-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1.25rem;
+    }
+
+    .principle-card {
+        padding: 1.5rem;
+        background: #161616;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        border-top: 3px solid var(--accent-color);
+    }
+
+    .principle-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        text-transform: none;
+        font-family: var(--font-main);
+    }
+
+    .principle-card p {
+        font-size: 0.9rem;
+        color: #888;
+    }
+
+    /* FOOTER LINE */
+    .footer-line-section {
+        padding: 3rem 0;
+        background: #0a0a0a;
+    }
+
+    .footer-line-section .container {
+        max-width: 800px;
+        text-align: center;
+    }
+
+    .footer-line {
+        font-size: 0.95rem;
+        color: #666;
+        font-style: italic;
     }
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-        .page-header {
+        .about-hero {
             padding-top: 120px;
+            padding-bottom: 3rem;
         }
 
-        .cta-buttons {
+        .hero-logo {
+            height: 80px;
+        }
+
+        .hero-ctas,
+        .involved-ctas {
             flex-direction: column;
         }
 
-        .cta-buttons .btn {
+        .hero-ctas .btn,
+        .involved-ctas .btn {
             width: 100%;
+            text-align: center;
         }
 
-        .partner-logos {
+        .techstars-stats {
             flex-direction: column;
-            align-items: flex-start;
             gap: 1.5rem;
+        }
+
+        .manifesto-box {
+            padding: 2rem;
+        }
+
+        .partners-grid {
+            grid-template-columns: 1fr;
         }
     }
 </style>

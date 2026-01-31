@@ -1,72 +1,420 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const whatHappens = [
-    "a clear build challenge (you can finish it)",
-    "people around you building too",
-    "practical help when you get stuck",
-    "a demo at the end (yes, even if it's rough)"
+const whoFor = [
+    {
+        icon: 'code',
+        title: 'BUILDERS',
+        description: 'Engineers, designers, product people who want to ship fast.'
+    },
+    {
+        icon: 'microscope',
+        title: 'RESEARCHERS & PHDS',
+        description: 'Turn technical insight into something people can use.'
+    },
+    {
+        icon: 'briefcase',
+        title: 'DOMAIN EXPERTS',
+        description: 'You know the problem deeply; we\'ll help teams build the solution.'
+    },
+    {
+        icon: 'rocket',
+        title: 'FIRST-TIME FOUNDERS',
+        description: 'An on-ramp with structure, community, and momentum.'
+    },
+    {
+        icon: 'users',
+        title: 'EARLY TEAMS',
+        description: 'Accelerate progress, sharpen the story, get feedback.'
+    }
+];
+
+const whatYouGet = [
+    {
+        number: '01',
+        title: 'A shipped prototype',
+        description: 'A demo you can show. A repo you can continue. A feature you can build on.'
+    },
+    {
+        number: '02',
+        title: 'Real feedback',
+        description: 'From other builders, mentors, and (where possible) target users.'
+    },
+    {
+        number: '03',
+        title: 'New collaborators',
+        description: 'One of the fastest ways to meet potential co-founders and early teammates.'
+    },
+    {
+        number: '04',
+        title: 'A clear next step',
+        description: 'Keep building, join the next Sprint, apply to Founder Catalyst, or plug into deeper support.'
+    }
+];
+
+const formats = [
+    {
+        duration: '2 HOURS',
+        title: 'Shipping Sprint',
+        description: 'Fast. Focused. High energy. Build a tiny thing and demo it.'
+    },
+    {
+        duration: '1 DAY',
+        title: 'Build Sprint',
+        description: 'Prototype → feedback → iterate. Great for first-timers.'
+    },
+    {
+        duration: '2–3 DAYS',
+        title: 'Full Sprint',
+        description: 'Team formation + deeper build + real demo-day energy.'
+    },
+    {
+        duration: '2 WEEKS',
+        title: 'Challenge',
+        description: 'For serious momentum: ship something users can actually touch, test, and pay for.'
+    }
+];
+
+const tracks = [
+    {
+        icon: 'hammer',
+        title: 'Builder Track',
+        description: 'Engineers and makers. You will ship.'
+    },
+    {
+        icon: 'lightbulb',
+        title: 'Research Track',
+        description: 'Turn research and technical insight into a product direction.'
+    },
+    {
+        icon: 'target',
+        title: 'Domain Track',
+        description: 'Bring a real problem and help teams build the right solution.'
+    },
+    {
+        icon: 'megaphone',
+        title: 'Non-technical Track',
+        description: 'Customer discovery, outreach, GTM experiments, storytelling, demos.'
+    }
+];
+
+const themes = [
+    'Workflow automation & fintech',
+    'Legal, compliance & regtech',
+    'Health & care',
+    'Manufacturing & engineering',
+    'Creative industries (film/TV/media/games)',
+    'Public services & AI-native government'
 ];
 ---
 
 <BaseLayout title="Sprints">
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- Hero Section -->
+    <section class="sprint-hero">
+        <div class="hero-bg"></div>
         <div class="container">
+            <img src="/images/TS FW Logo.png" alt="Techstars Founder Weekend" class="sprint-logo">
+            <p class="hero-label">TECHSTARS FOUNDER WEEKEND, REBUILT FOR THE AI ERA</p>
             <h1>SPRINTS</h1>
-            <div class="page-intro">
-                <p>Sprints are where talking stops.<br>You show up. You build. You ship.</p>
-                <br>
-                <p>They're short, intense build sessions — sometimes with partners — where we compress time and force momentum.</p>
+            <p class="hero-tagline">
+                High-intensity build sessions where you find collaborators, pick a real problem, and ship something real — fast.
+            </p>
+            <p class="hero-ethos">
+                No theatre. No posturing.<br>
+                <span class="highlight">Just builders moving at modern speed.</span>
+            </p>
+            <div class="hero-ctas">
+                <a href="/events" class="btn">See upcoming Sprints</a>
+                <a href="#newsletter" class="btn btn--outline">Subscribe for Sprint drops</a>
             </div>
         </div>
     </section>
 
-    <!-- What Happens -->
-    <section class="what-happens-section">
+    <!-- What is a Sprint -->
+    <section class="what-section">
         <div class="container">
-            <h2>WHAT HAPPENS IN A SPRINT</h2>
-            <ul class="what-list">
-                {whatHappens.map(item => (
-                    <li>{item}</li>
-                ))}
-            </ul>
-        </div>
-    </section>
-
-    <!-- Bring / Leave -->
-    <section class="bring-leave-section">
-        <div class="container">
-            <div class="bring-leave-grid">
-                <div class="bring-leave-card card">
-                    <h3>BRING</h3>
-                    <p>A laptop, a problem worth solving, and a willingness to move fast.</p>
+            <h2>WHAT IS A SPRINT?</h2>
+            <div class="what-content">
+                <p class="lead">A Sprint is a time-boxed build challenge designed to compress weeks of work into a short window.</p>
+                <div class="what-grid">
+                    <div class="what-item">
+                        <i data-lucide="check-circle"></i>
+                        <span>Validate a problem worth solving</span>
+                    </div>
+                    <div class="what-item">
+                        <i data-lucide="check-circle"></i>
+                        <span>Build a prototype (or a real feature)</span>
+                    </div>
+                    <div class="what-item">
+                        <i data-lucide="check-circle"></i>
+                        <span>Test it with users</span>
+                    </div>
+                    <div class="what-item">
+                        <i data-lucide="check-circle"></i>
+                        <span>Demo what you shipped</span>
+                    </div>
                 </div>
-                <div class="bring-leave-card card">
-                    <h3>LEAVE WITH</h3>
-                    <p>A shipped prototype, new contacts, and the next 3 actions.</p>
-                </div>
+                <p class="what-outcome">You'll leave with something you can keep building — and people you'll likely keep building with.</p>
             </div>
         </div>
     </section>
 
-    <!-- Who It's For -->
+    <!-- Why We're Adapting -->
+    <section class="why-adapting-section">
+        <div class="container">
+            <div class="why-adapting-content">
+                <div class="why-text">
+                    <h2>WHY WE'RE ADAPTING STARTUP WEEKEND</h2>
+                    <p class="old-model">The old model assumes you need three days to go from idea → deck.</p>
+                    <p class="new-model">In the AI era you can go <span class="highlight">idea → prototype → demo in hours.</span></p>
+                </div>
+                <div class="why-points">
+                    <div class="why-point">
+                        <i data-lucide="bot"></i>
+                        <div>
+                            <strong>AI-native tooling</strong>
+                            <span>Agents, copilots, rapid prototyping stacks</span>
+                        </div>
+                    </div>
+                    <div class="why-point">
+                        <i data-lucide="package"></i>
+                        <div>
+                            <strong>Shipping-first</strong>
+                            <span>Working demos beat slides</span>
+                        </div>
+                    </div>
+                    <div class="why-point">
+                        <i data-lucide="users"></i>
+                        <div>
+                            <strong>Modern team formation</strong>
+                            <span>Builders + researchers + operators + domain experts</span>
+                        </div>
+                    </div>
+                    <div class="why-point">
+                        <i data-lucide="globe"></i>
+                        <div>
+                            <strong>Real-world problems</strong>
+                            <span>Northern Ireland strengths + global markets</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="why-cta">This is how new companies get started now.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Sprints Are For -->
     <section class="who-section">
         <div class="container">
-            <div class="who-content">
-                <p>If you're stuck, overthinking, or moving too slowly — do a sprint.<br>You'll surprise yourself.</p>
+            <div class="section-header">
+                <h2>WHO SPRINTS ARE FOR</h2>
+                <p class="section-tagline">You don't need permission. You just need intent.</p>
+            </div>
+            <div class="who-grid">
+                {whoFor.map(item => (
+                    <div class="who-card card">
+                        <div class="who-icon">
+                            <i data-lucide={item.icon}></i>
+                        </div>
+                        <h3>{item.title}</h3>
+                        <p>{item.description}</p>
+                    </div>
+                ))}
+            </div>
+            <p class="who-closing">If you can contribute (skills, insight, hustle), you belong.</p>
+        </div>
+    </section>
+
+    <!-- What You'll Get -->
+    <section class="outcomes-section">
+        <div class="container">
+            <h2>WHAT YOU ACTUALLY LEAVE WITH</h2>
+            <div class="outcomes-grid">
+                {whatYouGet.map(item => (
+                    <div class="outcome-card">
+                        <span class="outcome-number">{item.number}</span>
+                        <h3>{item.title}</h3>
+                        <p>{item.description}</p>
+                    </div>
+                ))}
             </div>
         </div>
     </section>
 
-    <!-- Page CTA -->
-    <section class="page-cta-section">
+    <!-- Sprint Formats -->
+    <section class="formats-section">
         <div class="container">
-            <div class="page-cta-block">
-                <p>See upcoming sprints on the Events page.<br>And get the weekly email so you don't miss the next one.</p>
+            <div class="section-header">
+                <h2>SPRINT FORMATS</h2>
+                <p class="section-tagline">Different speeds for different people. We're testing what works best in Northern Ireland.</p>
+            </div>
+            <div class="formats-grid">
+                {formats.map(format => (
+                    <div class="format-card">
+                        <span class="format-duration">{format.duration}</span>
+                        <h3>{format.title}</h3>
+                        <p>{format.description}</p>
+                    </div>
+                ))}
+            </div>
+            <p class="formats-note">Each Sprint has a theme (AI agents, fintech workflows, creator tools, health, climate, public services) — often tied to Northern Ireland's strengths and partner challenges.</p>
+        </div>
+    </section>
+
+    <!-- How a Sprint Works -->
+    <section class="process-section">
+        <div class="container">
+            <h2>HOW A SPRINT WORKS</h2>
+            <div class="process-grid">
+                <div class="process-phase">
+                    <h3>BEFORE</h3>
+                    <ul>
+                        <li>Sign up</li>
+                        <li>Join the community channel (details emailed)</li>
+                        <li>Choose a track: builder / research / domain / non-technical</li>
+                    </ul>
+                </div>
+                <div class="process-phase">
+                    <h3>DURING</h3>
+                    <ol>
+                        <li><strong>Kickoff</strong> — problem framing, rules, tools</li>
+                        <li><strong>Form teams</strong> — match skills + domains</li>
+                        <li><strong>Build</strong> — ship fast, get support</li>
+                        <li><strong>Demo</strong> — show what you built (working > pretty)</li>
+                        <li><strong>Next steps</strong> — decide what happens after</li>
+                    </ol>
+                </div>
+                <div class="process-phase">
+                    <h3>AFTER</h3>
+                    <ul>
+                        <li>Optional follow-on support</li>
+                        <li>Intros to mentors/partners (when relevant)</li>
+                        <li>Pathways into programmes (Founder Catalyst, Founder Labs, etc.)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tracks -->
+    <section class="tracks-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>TRACKS</h2>
+                <p class="section-tagline">So everyone can contribute.</p>
+            </div>
+            <div class="tracks-grid">
+                {tracks.map(track => (
+                    <div class="track-card card">
+                        <div class="track-icon">
+                            <i data-lucide={track.icon}></i>
+                        </div>
+                        <h3>{track.title}</h3>
+                        <p>{track.description}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- Themes -->
+    <section class="themes-section">
+        <div class="container">
+            <div class="themes-content">
+                <h2>THEMES WE CARE ABOUT</h2>
+                <p class="themes-intro">Northern Ireland has real edge in sectors being reshaped by AI. Expect Sprints around:</p>
+                <div class="themes-list">
+                    {themes.map(theme => (
+                        <span class="theme-tag">{theme}</span>
+                    ))}
+                </div>
+                <p class="themes-cta">We're not building NI-only companies.<br><span class="highlight">We're building companies that start here and compete everywhere.</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perks -->
+    <section class="perks-section">
+        <div class="container">
+            <h2>CREDITS, PERKS & PARTNER SUPPORT</h2>
+            <p class="perks-intro">Some Sprints include:</p>
+            <div class="perks-grid">
+                <div class="perk-item">
+                    <i data-lucide="cloud"></i>
+                    <span>Model / cloud credits</span>
+                </div>
+                <div class="perk-item">
+                    <i data-lucide="gift"></i>
+                    <span>Founder perks</span>
+                </div>
+                <div class="perk-item">
+                    <i data-lucide="graduation-cap"></i>
+                    <span>Expert mentors</span>
+                </div>
+                <div class="perk-item">
+                    <i data-lucide="handshake"></i>
+                    <span>Partner challenges & pilot opportunities</span>
+                </div>
+            </div>
+            <p class="perks-note">We'll always prioritise practical help over gimmicks.</p>
+        </div>
+    </section>
+
+    <!-- What Happens After -->
+    <section class="after-section">
+        <div class="container">
+            <h2>WHAT HAPPENS AFTER A SPRINT?</h2>
+            <p class="after-intro">Sprints are the on-ramp. If you want to go further:</p>
+            <div class="after-grid">
+                <div class="after-card card">
+                    <h3>Keep building</h3>
+                    <p>Stay connected to the community</p>
+                </div>
+                <div class="after-card card">
+                    <h3>Join the next Sprint</h3>
+                    <p>Momentum compounds</p>
+                </div>
+                <div class="after-card card">
+                    <h3>Apply to Founder Catalyst</h3>
+                    <p>A structured 10-week programme for early founders</p>
+                </div>
+                <div class="after-card card">
+                    <h3>Progress into acceleration</h3>
+                    <p>For teams ready for the next stage</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner With Us -->
+    <section class="partner-section">
+        <div class="container">
+            <div class="partner-block">
+                <h2>RUN A SPRINT WITH US</h2>
+                <p class="partner-intro">If you're a company, university, or organisation with a real challenge — Sprints are a high-signal way to meet builders early and test ideas fast.</p>
+                <div class="partner-criteria">
+                    <p><strong>Great partners bring:</strong></p>
+                    <ul>
+                        <li>A clear problem worth solving</li>
+                        <li>Mentors who can show up</li>
+                        <li>Credits/perks/tools that help teams ship</li>
+                        <li>Optional pilot pathways</li>
+                    </ul>
+                </div>
+                <a href="/partners" class="btn">Partner with us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="newsletter" class="final-cta-section">
+        <div class="container">
+            <div class="final-cta-block">
+                <h2>READY?</h2>
+                <p class="final-cta-tagline">Come ship with us.</p>
                 <div class="cta-buttons">
-                    <a href="/events" class="btn">View events</a>
-                    <a href="#newsletter" class="btn btn--outline">Get the weekly email</a>
+                    <a href="/events" class="btn btn--accent">See upcoming Sprints</a>
+                    <a href="#newsletter" class="btn btn--outline">Subscribe for Sprint drops</a>
                 </div>
             </div>
         </div>
@@ -74,142 +422,82 @@ const whatHappens = [
 </BaseLayout>
 
 <style>
-    /* PAGE HEADER */
-    .page-header {
-        padding-top: 140px;
-        padding-bottom: 3rem;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .page-header .container {
-        max-width: 1000px;
-    }
-
-    .page-header h1 {
-        font-size: clamp(2.5rem, 5vw, 3.5rem);
+    /* HERO SECTION */
+    .sprint-logo {
+        height: 140px;
+        width: auto;
         margin-bottom: 1.5rem;
     }
 
-    .page-intro {
-        font-size: 1.1rem;
-        max-width: 600px;
-        color: #ccc;
-        border-left: 2px solid var(--accent-color);
-        padding-left: 1.5rem;
-    }
-
-    .page-intro p {
-        max-width: none;
-    }
-
-    /* WHAT HAPPENS SECTION */
-    .what-happens-section {
-        padding: 4rem 0;
+    .sprint-hero {
+        padding-top: 160px;
+        padding-bottom: 5rem;
         border-bottom: 1px solid var(--border-color);
-    }
-
-    .what-happens-section .container {
-        max-width: 1000px;
-    }
-
-    .what-happens-section h2 {
-        font-size: 1.25rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .what-list {
-        list-style: none;
-        max-width: 500px;
-    }
-
-    .what-list li {
-        font-size: 1.05rem;
-        color: #ccc;
-        margin-bottom: 0.75rem;
-        padding-left: 1.5rem;
         position: relative;
+        overflow: hidden;
     }
 
-    .what-list li::before {
-        content: "•";
+    .hero-bg {
         position: absolute;
-        left: 0;
-        color: var(--accent-color);
+        inset: 0;
+        background-image: url('/images/fc.jpg');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.15;
+        z-index: 0;
     }
 
-    /* BRING / LEAVE SECTION */
-    .bring-leave-section {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border-color);
+    .hero-bg::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(15, 15, 15, 0.3) 0%, rgba(15, 15, 15, 0.9) 70%, rgba(15, 15, 15, 1) 100%);
     }
 
-    .bring-leave-section .container {
-        max-width: 1000px;
+    .sprint-hero .container {
+        max-width: 900px;
+        position: relative;
+        z-index: 1;
     }
 
-    .bring-leave-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-    }
-
-    .bring-leave-card {
-        padding: 2rem;
-    }
-
-    .bring-leave-card h3 {
-        font-size: 1rem;
+    .hero-label {
         font-family: var(--font-mono);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
         color: var(--accent-color);
         margin-bottom: 1rem;
     }
 
-    .bring-leave-card p {
-        font-size: 1.05rem;
+    .sprint-hero h1 {
+        font-size: clamp(3rem, 8vw, 5rem);
+        margin-bottom: 1.5rem;
+        line-height: 1;
+    }
+
+    .hero-tagline {
+        font-size: clamp(1.2rem, 2.5vw, 1.5rem);
         color: #ccc;
-        line-height: 1.6;
-    }
-
-    /* WHO SECTION */
-    .who-section {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .who-section .container {
-        max-width: 1000px;
-    }
-
-    .who-content p {
-        font-size: 1.2rem;
-        color: #ccc;
-        line-height: 1.6;
-        max-width: 600px;
-    }
-
-    /* PAGE CTA SECTION */
-    .page-cta-section {
-        padding: 4rem 0;
-    }
-
-    .page-cta-section .container {
-        max-width: 1000px;
-    }
-
-    .page-cta-block {
-        text-align: center;
-    }
-
-    .page-cta-block > p {
-        font-size: 1.1rem;
-        color: #aaa;
+        max-width: 700px;
+        line-height: 1.5;
         margin-bottom: 2rem;
     }
 
-    .cta-buttons {
+    .hero-ethos {
+        font-size: 1.1rem;
+        color: #888;
+        margin-bottom: 2.5rem;
+        line-height: 1.6;
+    }
+
+    .hero-ethos .highlight {
+        color: var(--accent-color);
+        font-weight: 500;
+    }
+
+    .hero-ctas {
         display: flex;
         gap: 1rem;
-        justify-content: center;
         flex-wrap: wrap;
     }
 
@@ -223,18 +511,733 @@ const whatHappens = [
         color: var(--bg-color);
     }
 
+    .btn--accent {
+        background: var(--accent-color);
+        color: var(--bg-color);
+        border-color: var(--accent-color);
+    }
+
+    .btn--accent:hover {
+        background: transparent;
+        color: var(--accent-color);
+    }
+
+    /* WHAT IS A SPRINT */
+    .what-section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .what-section .container {
+        max-width: 900px;
+    }
+
+    .what-section h2 {
+        margin-bottom: 2rem;
+    }
+
+    .what-content .lead {
+        font-size: 1.25rem;
+        color: #ccc;
+        margin-bottom: 2rem;
+        max-width: 700px;
+    }
+
+    .what-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .what-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: #aaa;
+        font-size: 1rem;
+    }
+
+    .what-item i {
+        width: 20px;
+        height: 20px;
+        color: var(--accent-color);
+        flex-shrink: 0;
+    }
+
+    .what-outcome {
+        font-size: 1.1rem;
+        color: #888;
+        border-left: 2px solid var(--accent-color);
+        padding-left: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    /* WHY ADAPTING */
+    .why-adapting-section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border-color);
+        background: #0a0a0a;
+    }
+
+    .why-adapting-section .container {
+        max-width: 900px;
+    }
+
+    .why-adapting-content h2 {
+        margin-bottom: 1.5rem;
+    }
+
+    .old-model {
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 0.5rem;
+    }
+
+    .new-model {
+        font-size: 1.25rem;
+        color: #ccc;
+        margin-bottom: 2.5rem;
+    }
+
+    .new-model .highlight,
+    .themes-cta .highlight {
+        color: var(--accent-color);
+    }
+
+    .why-points {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .why-point {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.25rem;
+        background: #161616;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+    }
+
+    .why-point i {
+        width: 24px;
+        height: 24px;
+        color: var(--accent-color);
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+
+    .why-point div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .why-point strong {
+        color: #fff;
+        font-size: 0.95rem;
+    }
+
+    .why-point span {
+        color: #888;
+        font-size: 0.9rem;
+    }
+
+    .why-cta {
+        font-family: var(--font-mono);
+        font-size: 1rem;
+        color: var(--accent-color);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    /* WHO SECTION */
+    .who-section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .who-section .container {
+        max-width: 1000px;
+    }
+
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .section-header h2 {
+        margin-bottom: 0.5rem;
+    }
+
+    .section-tagline {
+        font-size: 1.1rem;
+        color: #888;
+    }
+
+    .who-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+    .who-card {
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    .who-icon {
+        width: 48px;
+        height: 48px;
+        margin: 0 auto 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background: rgba(0, 230, 118, 0.1);
+    }
+
+    .who-icon i {
+        width: 24px;
+        height: 24px;
+        color: var(--accent-color);
+    }
+
+    .who-card h3 {
+        font-size: 0.85rem;
+        font-family: var(--font-mono);
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.05em;
+    }
+
+    .who-card p {
+        font-size: 0.9rem;
+        color: #888;
+        line-height: 1.5;
+    }
+
+    .who-closing {
+        text-align: center;
+        font-size: 1rem;
+        color: #666;
+        font-style: italic;
+    }
+
+    /* OUTCOMES */
+    .outcomes-section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .outcomes-section .container {
+        max-width: 1000px;
+    }
+
+    .outcomes-section h2 {
+        margin-bottom: 2.5rem;
+    }
+
+    .outcomes-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .outcome-card {
+        padding: 1.5rem;
+        border-left: 3px solid var(--accent-color);
+        background: #161616;
+    }
+
+    .outcome-number {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: var(--accent-color);
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .outcome-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        text-transform: none;
+        font-family: var(--font-main);
+    }
+
+    .outcome-card p {
+        font-size: 0.9rem;
+        color: #888;
+        line-height: 1.5;
+    }
+
+    /* FORMATS */
+    .formats-section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border-color);
+        background: #0a0a0a;
+    }
+
+    .formats-section .container {
+        max-width: 1000px;
+    }
+
+    .formats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+    .format-card {
+        padding: 1.5rem;
+        background: #161616;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .format-card:hover {
+        border-color: var(--accent-color);
+        transform: translateY(-2px);
+    }
+
+    .format-duration {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        color: var(--accent-color);
+        background: rgba(0, 230, 118, 0.1);
+        padding: 4px 10px;
+        border-radius: 20px;
+        display: inline-block;
+        margin-bottom: 0.75rem;
+    }
+
+    .format-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        text-transform: none;
+        font-family: var(--font-main);
+    }
+
+    .format-card p {
+        font-size: 0.9rem;
+        color: #888;
+        line-height: 1.5;
+    }
+
+    .formats-note {
+        font-size: 0.95rem;
+        color: #666;
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    /* PROCESS */
+    .process-section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .process-section .container {
+        max-width: 1000px;
+    }
+
+    .process-section h2 {
+        margin-bottom: 2.5rem;
+    }
+
+    .process-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .process-phase {
+        padding: 2rem;
+        background: #161616;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+    }
+
+    .process-phase h3 {
+        font-size: 0.9rem;
+        font-family: var(--font-mono);
+        color: var(--accent-color);
+        margin-bottom: 1.25rem;
+        letter-spacing: 0.1em;
+    }
+
+    .process-phase ul,
+    .process-phase ol {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .process-phase li {
+        font-size: 0.95rem;
+        color: #aaa;
+        margin-bottom: 0.75rem;
+        padding-left: 1.25rem;
+        position: relative;
+    }
+
+    .process-phase ul li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: #555;
+    }
+
+    .process-phase ol {
+        counter-reset: step;
+    }
+
+    .process-phase ol li {
+        counter-increment: step;
+    }
+
+    .process-phase ol li::before {
+        content: counter(step) ".";
+        position: absolute;
+        left: 0;
+        color: #555;
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+    }
+
+    .process-phase li strong {
+        color: #ccc;
+    }
+
+    /* TRACKS */
+    .tracks-section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border-color);
+        background: #0a0a0a;
+    }
+
+    .tracks-section .container {
+        max-width: 1000px;
+    }
+
+    .tracks-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.25rem;
+    }
+
+    .track-card {
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    .track-icon {
+        width: 48px;
+        height: 48px;
+        margin: 0 auto 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background: rgba(0, 230, 118, 0.1);
+    }
+
+    .track-icon i {
+        width: 24px;
+        height: 24px;
+        color: var(--accent-color);
+    }
+
+    .track-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        text-transform: none;
+        font-family: var(--font-main);
+    }
+
+    .track-card p {
+        font-size: 0.9rem;
+        color: #888;
+        line-height: 1.5;
+    }
+
+    /* THEMES */
+    .themes-section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .themes-section .container {
+        max-width: 900px;
+    }
+
+    .themes-content h2 {
+        margin-bottom: 1rem;
+    }
+
+    .themes-intro {
+        font-size: 1.1rem;
+        color: #aaa;
+        margin-bottom: 2rem;
+    }
+
+    .themes-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .theme-tag {
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        padding: 8px 16px;
+        background: #161616;
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        color: #aaa;
+    }
+
+    .themes-cta {
+        font-size: 1.1rem;
+        color: #888;
+        line-height: 1.6;
+    }
+
+    /* PERKS */
+    .perks-section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border-color);
+        background: #0a0a0a;
+    }
+
+    .perks-section .container {
+        max-width: 900px;
+    }
+
+    .perks-section h2 {
+        margin-bottom: 0.5rem;
+    }
+
+    .perks-intro {
+        font-size: 1rem;
+        color: #888;
+        margin-bottom: 2rem;
+    }
+
+    .perks-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .perk-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem;
+        background: #161616;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+    }
+
+    .perk-item i {
+        width: 20px;
+        height: 20px;
+        color: var(--accent-color);
+    }
+
+    .perk-item span {
+        font-size: 0.9rem;
+        color: #aaa;
+    }
+
+    .perks-note {
+        font-size: 0.9rem;
+        color: #666;
+        font-style: italic;
+    }
+
+    /* AFTER */
+    .after-section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .after-section .container {
+        max-width: 1000px;
+    }
+
+    .after-section h2 {
+        margin-bottom: 0.5rem;
+    }
+
+    .after-intro {
+        font-size: 1.1rem;
+        color: #888;
+        margin-bottom: 2rem;
+    }
+
+    .after-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.25rem;
+    }
+
+    .after-card {
+        padding: 1.5rem;
+    }
+
+    .after-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        text-transform: none;
+        font-family: var(--font-main);
+    }
+
+    .after-card p {
+        font-size: 0.9rem;
+        color: #888;
+    }
+
+    /* PARTNER */
+    .partner-section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border-color);
+        background: #0a0a0a;
+    }
+
+    .partner-section .container {
+        max-width: 800px;
+    }
+
+    .partner-block {
+        text-align: center;
+    }
+
+    .partner-block h2 {
+        margin-bottom: 1rem;
+    }
+
+    .partner-intro {
+        font-size: 1.1rem;
+        color: #aaa;
+        margin-bottom: 2rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .partner-criteria {
+        text-align: left;
+        max-width: 400px;
+        margin: 0 auto 2rem;
+        padding: 1.5rem;
+        background: #161616;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+    }
+
+    .partner-criteria p {
+        font-size: 0.9rem;
+        color: #ccc;
+        margin-bottom: 1rem;
+    }
+
+    .partner-criteria ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .partner-criteria li {
+        font-size: 0.9rem;
+        color: #888;
+        margin-bottom: 0.5rem;
+        padding-left: 1.25rem;
+        position: relative;
+    }
+
+    .partner-criteria li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--accent-color);
+    }
+
+    /* FINAL CTA */
+    .final-cta-section {
+        padding: 5rem 0;
+    }
+
+    .final-cta-section .container {
+        max-width: 800px;
+    }
+
+    .final-cta-block {
+        text-align: center;
+        padding: 4rem;
+        background: linear-gradient(135deg, rgba(0, 230, 118, 0.08) 0%, transparent 50%);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+    }
+
+    .final-cta-block h2 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .final-cta-tagline {
+        font-size: 1.25rem;
+        color: #aaa;
+        margin-bottom: 2rem;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
-        .page-header {
-            padding-top: 120px;
+        .sprint-logo {
+            height: 100px;
         }
 
+        .sprint-hero {
+            padding-top: 120px;
+            padding-bottom: 3rem;
+        }
+
+        .hero-ctas,
         .cta-buttons {
             flex-direction: column;
         }
 
+        .hero-ctas .btn,
         .cta-buttons .btn {
             width: 100%;
+            text-align: center;
+        }
+
+        .process-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .final-cta-block {
+            padding: 2rem;
+        }
+
+        .final-cta-block h2 {
+            font-size: 2rem;
         }
     }
 </style>
