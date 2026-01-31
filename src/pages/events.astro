@@ -97,33 +97,33 @@ const events = [
 ---
 
 <BaseLayout title="Events">
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- Hero Section -->
+    <section class="hero-section">
         <div class="container">
-            <h1>EVENTS</h1>
-            <div class="page-intro">
-                <p>Founders don't need more panels.<br>They need good rooms, useful sessions, and people who'll tell the truth.</p>
-                <br>
-                <p>These events are built for that.<br>Turn up. Bring questions. Leave clearer.</p>
+            <span class="page-label">EVENTS</span>
+            <h1>GOOD ROOMS. USEFUL SESSIONS. REAL TALK.</h1>
+            <p class="hero-tagline">Founders don't need more panels. They need people who'll tell the truth.</p>
+        </div>
+    </section>
+
+    <!-- Partner Logos -->
+    <section class="partner-strip">
+        <div class="container">
+            <p class="partner-label">Upcoming Event Partners</p>
+            <div class="partner-logos">
+                <span class="partner-name">TECHSTARS</span>
+                <span class="partner-name">FOUNDER LABS</span>
+                <span class="partner-name">STRIPE</span>
+                <span class="partner-name">ELEVENLABS</span>
+                <span class="partner-name">COINBASE</span>
+                <span class="partner-name">SVV</span>
+                <span class="partner-name">ELKSTONE</span>
             </div>
         </div>
     </section>
 
-    <!-- What You'll Get -->
-    <section class="what-you-get-section">
-        <div class="container">
-            <h2>WHAT YOU'LL GET AT A TECHSTARS BELFAST EVENT</h2>
-            <ul class="benefits-list">
-                <li>Practical answers (not vibes)</li>
-                <li>Founder peers who are actually building</li>
-                <li>New opportunities: customers, collaborators, hires, mentors</li>
-                <li>A reason to keep going when it feels hard</li>
-            </ul>
-        </div>
-    </section>
-
     <!-- Events List -->
-    <section class="events-section">
+    <section id="upcoming" class="events-section">
         <div class="container">
             <div class="section-header">
                 <h2>UPCOMING SESSIONS</h2>
@@ -187,67 +187,79 @@ const events = [
 </BaseLayout>
 
 <style>
-    /* PAGE HEADER */
-    .page-header {
+    /* HERO SECTION */
+    .hero-section {
         padding-top: 140px;
-        padding-bottom: 3rem;
+        padding-bottom: 4rem;
         border-bottom: 1px solid var(--border-color);
     }
 
-    .page-header .container {
+    .hero-section .container {
         max-width: 1000px;
     }
 
-    .page-header h1 {
-        font-size: clamp(2.5rem, 5vw, 3.5rem);
-        margin-bottom: 1.5rem;
-    }
-
-    .page-intro {
-        font-size: 1.1rem;
-        max-width: 600px;
-        color: #ccc;
-        border-left: 2px solid var(--accent-color);
-        padding-left: 1.5rem;
-    }
-
-    .page-intro p {
-        max-width: none;
-    }
-
-    /* WHAT YOU'LL GET SECTION */
-    .what-you-get-section {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .what-you-get-section .container {
-        max-width: 1000px;
-    }
-
-    .what-you-get-section h2 {
-        font-size: 1.25rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .benefits-list {
-        list-style: none;
-        max-width: 600px;
-    }
-
-    .benefits-list li {
-        font-size: 1.05rem;
-        color: #ccc;
-        margin-bottom: 0.75rem;
-        padding-left: 1.5rem;
-        position: relative;
-    }
-
-    .benefits-list li::before {
-        content: "•";
-        position: absolute;
-        left: 0;
+    .page-label {
+        display: inline-block;
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
         color: var(--accent-color);
+        margin-bottom: 1rem;
+    }
+
+    .hero-section h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin-bottom: 1rem;
+        line-height: 1.1;
+    }
+
+    .hero-tagline {
+        font-size: 1.4rem;
+        color: #fff;
+        margin-bottom: 0;
+        max-width: 700px;
+    }
+
+    /* PARTNER STRIP */
+    .partner-strip {
+        padding: 1.5rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .partner-strip .container {
+        max-width: 1000px;
+    }
+
+    .partner-label {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: #666;
+        margin: 0 0 1rem 0;
+    }
+
+    .partner-logos {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .partner-name {
+        font-family: var(--font-mono);
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        color: #fff;
+        opacity: 0.9;
+        transition: opacity 0.3s ease;
+    }
+
+    .partner-name:hover {
+        opacity: 1;
     }
 
     /* EVENTS SECTION */
@@ -454,7 +466,7 @@ const events = [
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-        .page-header {
+        .hero-section {
             padding-top: 120px;
         }
 
