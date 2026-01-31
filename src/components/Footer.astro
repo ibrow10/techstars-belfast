@@ -13,7 +13,7 @@ const currentYear = new Date().getFullYear();
                 
                 <div class="footer-partner-logos">
                     <div class="partner-logos">
-                        <img src="/images/QUB-Logo.png" alt="Queen's University Belfast" class="partner-logo">
+                        <img src="/images/QUB-Logo.png" alt="Queen's University Belfast" class="partner-logo qub">
                         <span class="partner-separator">×</span>
                         <img src="/images/ormeau-labs-logo.svg" alt="Ormeau Labs" class="partner-logo ormeau">
                     </div>
@@ -105,6 +105,11 @@ const currentYear = new Date().getFullYear();
 
     .partner-logo.ormeau {
         height: 28px;
+    }
+
+    .partner-logo.qub {
+        filter: none;
+        opacity: 0.9;
     }
     
     .partner-logo:hover {
