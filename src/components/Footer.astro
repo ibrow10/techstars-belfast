@@ -44,6 +44,11 @@ const currentYear = new Date().getFullYear();
 
         <div class="footer-bottom">
             <p class="footer-copyright">&copy; {currentYear} Techstars Belfast. All Rights Reserved.</p>
+            <div class="footer-legal">
+                <a href="/privacy">Privacy Policy</a>
+                <span class="legal-separator">|</span>
+                <a href="/terms">Terms & Conditions</a>
+            </div>
         </div>
     </div>
 </footer>
@@ -160,7 +165,30 @@ const currentYear = new Date().getFullYear();
         font-size: 0.7rem;
         letter-spacing: 0.02em;
         color: var(--text-muted);
-        margin: 0 auto;
+        margin: 0 auto 0.75rem;
+    }
+
+    .footer-legal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .footer-legal a {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        color: var(--text-muted);
+        transition: color var(--transition-fast);
+    }
+
+    .footer-legal a:hover {
+        color: var(--accent-color);
+    }
+
+    .legal-separator {
+        color: #444;
+        font-size: 0.7rem;
     }
     
     @media (max-width: 768px) {

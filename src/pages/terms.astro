@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Terms and Conditions">
+    <section class="legal-page">
+        <div class="container">
+            <h1>Terms and Conditions</h1>
+            <p class="last-updated">Last Updated: 1 February 2026</p>
+
+            <h2>1. Introduction</h2>
+            <p>These terms and conditions apply between you, the User of this Website, and <strong>Ignite Accelerator NI Limited (trading as Techstars Belfast)</strong>, the owner and operator of this Website.</p>
+            <p>Your agreement to comply with these terms is deemed to occur upon your first use of the Website. If you do not agree, please stop using the Website immediately.</p>
+            <p>You must be at least 18 years of age to use this Website.</p>
+
+            <h2>2. Intellectual Property</h2>
+            <p>All Content on the Website is the property of Ignite Accelerator NI Limited, our affiliates, or relevant third parties. Content is protected by copyright, trademarks, and other intellectual property rights.</p>
+            <p>You may, for personal, non-commercial use only:</p>
+            <ul>
+                <li>View the Content on a computer screen</li>
+                <li>Print one copy of the Content</li>
+            </ul>
+            <p>You must not reproduce, modify, copy, distribute or use for commercial purposes any Content without written permission.</p>
+
+            <h2>3. Prohibited Use</h2>
+            <p>You may not use the Website:</p>
+            <ul>
+                <li>In any way that damages the Website or interferes with others' use</li>
+                <li>In any way that is unlawful, harmful, or abusive</li>
+                <li>To make copies of copyrighted Content without permission</li>
+            </ul>
+
+            <h2>4. Privacy Policy</h2>
+            <p>Use of the Website is also governed by our <a href="/privacy">Privacy Policy</a>, which is incorporated into these terms by reference.</p>
+
+            <h2>5. Disclaimers</h2>
+            <p>The Website and its services are provided "as is" and on an "as available" basis. We make no warranties of fitness for a particular purpose, accuracy, or quality. We are under no obligation to update information on the Website.</p>
+
+            <h2>6. Limitation of Liability</h2>
+            <p>To the extent that the Website and Content are provided free of charge, we will not be liable for any loss or damage of any kind. Nothing in these terms limits liability for death, personal injury, fraud, or any liability that cannot be excluded by law.</p>
+
+            <h2>7. General</h2>
+            <p>These terms may be varied by us from time to time. Such revised terms will apply from the date of publication. Users should check the terms regularly.</p>
+            <p>These terms shall be governed by the law of Northern Ireland, and all disputes shall be subject to the jurisdiction of the Northern Irish courts.</p>
+
+            <h2>8. Contact Details</h2>
+            <p><strong>Ignite Accelerator NI Limited (t/a Techstars Belfast)</strong><br>
+            Ormeau Labs, 18 Ormeau Avenue<br>
+            Belfast, BT2 8HS</p>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .legal-page {
+        padding-top: 140px;
+        padding-bottom: 4rem;
+    }
+
+    .legal-page .container {
+        max-width: 800px;
+    }
+
+    .legal-page h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .last-updated {
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        margin-bottom: 3rem;
+    }
+
+    .legal-page h2 {
+        font-size: 1.25rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--accent-color);
+    }
+
+    .legal-page p {
+        font-size: 1rem;
+        color: #ccc;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+    }
+
+    .legal-page ul {
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+    }
+
+    .legal-page li {
+        font-size: 1rem;
+        color: #aaa;
+        line-height: 1.6;
+        margin-bottom: 0.5rem;
+    }
+
+    .legal-page a {
+        color: var(--accent-color);
+    }
+
+    .legal-page a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        .legal-page {
+            padding-top: 120px;
+        }
+
+        .legal-page h1 {
+            font-size: 2rem;
+        }
+    }
+</style>
