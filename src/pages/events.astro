@@ -110,15 +110,33 @@ const events = [
     <!-- Partner Logos -->
     <section class="partner-strip">
         <div class="container">
-            <p class="partner-label">Upcoming Event Partners</p>
-            <div class="partner-logos">
-                <span class="partner-name">TECHSTARS</span>
-                <span class="partner-name">FOUNDER LABS</span>
-                <span class="partner-name">STRIPE</span>
-                <span class="partner-name">ELEVENLABS</span>
-                <span class="partner-name">COINBASE</span>
-                <span class="partner-name">SVV</span>
-                <span class="partner-name">ELKSTONE</span>
+            <p class="partner-label">Who we've run events with</p>
+            <div class="partner-logos-wrapper">
+                <div class="partner-logos">
+                    <img src="/images/openai.png" alt="OpenAI" class="partner-logo invert">
+                    <img src="/images/google.png" alt="Google" class="partner-logo">
+                    <img src="/images/stripe.png" alt="Stripe" class="partner-logo">
+                    <img src="/images/aws.png" alt="AWS" class="partner-logo">
+                    <img src="/images/logo-base.png" alt="Base" class="partner-logo">
+                    <img src="/images/generalcatalyst.png" alt="General Catalyst" class="partner-logo invert">
+                    <img src="/images/frontline.png" alt="Frontline" class="partner-logo">
+                    <img src="/images/earlybird.png" alt="Earlybird" class="partner-logo">
+                    <img src="/images/logo-surevalleyventures.webp" alt="Sure Valley Ventures" class="partner-logo">
+                    <img src="/images/dogpatch.png" alt="Dogpatch" class="partner-logo">
+                    <img src="/images/the-amp.png" alt="The AMP" class="partner-logo">
+                    <!-- Duplicate for seamless loop -->
+                    <img src="/images/openai.png" alt="OpenAI" class="partner-logo invert">
+                    <img src="/images/google.png" alt="Google" class="partner-logo">
+                    <img src="/images/stripe.png" alt="Stripe" class="partner-logo">
+                    <img src="/images/aws.png" alt="AWS" class="partner-logo">
+                    <img src="/images/logo-base.png" alt="Base" class="partner-logo">
+                    <img src="/images/generalcatalyst.png" alt="General Catalyst" class="partner-logo invert">
+                    <img src="/images/frontline.png" alt="Frontline" class="partner-logo">
+                    <img src="/images/earlybird.png" alt="Earlybird" class="partner-logo">
+                    <img src="/images/logo-surevalleyventures.webp" alt="Sure Valley Ventures" class="partner-logo">
+                    <img src="/images/dogpatch.png" alt="Dogpatch" class="partner-logo">
+                    <img src="/images/the-amp.png" alt="The AMP" class="partner-logo">
+                </div>
             </div>
         </div>
     </section>
@@ -250,7 +268,7 @@ const events = [
     }
 
     .partner-strip .container {
-        max-width: 1000px;
+        max-width: 900px;
     }
 
     .partner-label {
@@ -262,26 +280,56 @@ const events = [
         margin: 0 0 1rem 0;
     }
 
+    .partner-logos-wrapper {
+        overflow: hidden;
+        position: relative;
+        mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    }
+
     .partner-logos {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
-        gap: 2rem;
-        flex-wrap: wrap;
+        gap: 3rem;
+        width: max-content;
+        animation: scroll 30s linear infinite;
     }
 
-    .partner-name {
-        font-family: var(--font-mono);
-        font-size: 1.1rem;
-        font-weight: 700;
-        letter-spacing: 0.02em;
-        color: #fff;
-        opacity: 0.9;
-        transition: opacity 0.3s ease;
+    .partner-logos:hover {
+        animation-play-state: paused;
     }
 
-    .partner-name:hover {
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .partner-logo {
+        height: 28px;
+        width: auto;
+        object-fit: contain;
+        filter: grayscale(100%) brightness(1.5);
+        opacity: 0.8;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+    }
+
+    .partner-logo:hover {
+        filter: grayscale(0%) brightness(1);
         opacity: 1;
+    }
+
+    /* Invert dark logos to make them visible on dark background */
+    .partner-logo.invert {
+        filter: grayscale(100%) brightness(1.5) invert(1);
+    }
+
+    .partner-logo.invert:hover {
+        filter: grayscale(0%) brightness(1) invert(1);
     }
 
     /* EVENTS SECTION */
