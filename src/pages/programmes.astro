@@ -426,7 +426,16 @@ const faqs = [
     .fc-logo {
         height: 140px;
         width: auto;
+        max-width: 100%;
+        object-fit: contain;
         margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+        .fc-logo {
+            height: auto;
+            max-height: 100px;
+        }
     }
 
     .programme-label {
