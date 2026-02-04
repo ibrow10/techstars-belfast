@@ -218,8 +218,8 @@ const startHereCards = [
         <div class="container">
             <div class="newsletter-block">
                 <h2>THE WEEKLY FOUNDER EMAIL</h2>
-                <p>One email a week. No spam. Just the best founder opportunities in NI.</p>
-                <p class="newsletter-detail">Events. Sprints. Programmes. Open calls. Things worth your time.</p>
+                <p>Coming soon, sign up to find out more.</p>
+                <p class="newsletter-detail">Early access for events, sprints, programmes, and open calls.</p>
                 <form name="newsletter-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="newsletter-form">
                     <input type="hidden" name="form-name" value="newsletter-waitlist" />
                     <input type="hidden" name="redirect" value="/?waitlist=success#newsletter" />
@@ -867,13 +867,17 @@ const startHereCards = [
 
     .newsletter-success {
         margin-top: 0.9rem;
-        font-size: 0.95rem;
-        color: #b9f5c6;
+        font-size: 0.9rem;
+        color: var(--accent-color);
+        border: 1px solid var(--accent-color);
+        background: rgba(255, 255, 255, 0.04);
+        padding: 0.5rem 0.85rem;
+        border-radius: 999px;
         display: none;
     }
 
     .newsletter-success.is-visible {
-        display: block;
+        display: inline-block;
     }
 
     .sr-only {

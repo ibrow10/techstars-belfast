@@ -13,7 +13,8 @@ const events = [
         audience: 'Cohort 4 focus',
         description: 'Join the Founder Labs team at The AMP for an open conversation about Cohort 4. Includes a Fireside Chat with Orla Lynch and Ian Browne, plus insights from alumni.',
         link: 'https://luma.com/ixnvtb9s',
-        active: true
+        active: true,
+        status: 'closed'
     },
     {
         day: '05',
@@ -193,7 +194,9 @@ const events = [
                             <p class="event-description">{event.description}</p>
                         </div>
                         <div class="event-action">
-                            {event.active ? (
+                            {event.status === 'closed' ? (
+                                <span class="btn btn--disabled">EVENT CLOSED</span>
+                            ) : event.active ? (
                                 <a href={event.link} class="btn" target="_blank">REGISTER NOW</a>
                             ) : (
                                 <span class="btn btn--disabled">COMING SOON</span>
