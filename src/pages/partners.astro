@@ -100,6 +100,7 @@ const sponsorGets = [
 ];
 
 const greatPartner = [
+    'You believe in our #givefirst mantra',
     'Want to help founders ship (not just "be associated")',
     'Can bring mentors/operators who are practical',
     'Are willing to show up consistently',
@@ -189,24 +190,6 @@ const faqs = [
         </div>
     </section>
 
-    <!-- Why Partner -->
-    <section class="why-section">
-        <div class="container">
-            <h2>WHY PARTNER WITH TECHSTARS BELFAST?</h2>
-            <div class="why-grid">
-                {whyPartner.map(item => (
-                    <div class="why-card">
-                        <div class="why-icon">
-                            <i data-lucide={item.icon}></i>
-                        </div>
-                        <h3>{item.title}</h3>
-                        <p>{item.description}</p>
-                    </div>
-                ))}
-            </div>
-        </div>
-    </section>
-
     <!-- Ways to Partner -->
     <section class="ways-section">
         <div class="container">
@@ -285,23 +268,6 @@ const faqs = [
                     </div>
                 </div>
 
-                <div class="example-partners">
-                    <h4>Examples of partner types we'd love</h4>
-                    <div class="example-logos">
-                        <div class="example-item">
-                            <span>AI tooling / model partners</span>
-                        </div>
-                        <div class="example-item">
-                            <span>Developer platforms & fintech infrastructure</span>
-                        </div>
-                        <div class="example-item">
-                            <span>Creator / media tooling</span>
-                        </div>
-                        <div class="example-item">
-                            <span>Enterprise / public-sector orgs</span>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <!-- Sponsorship -->
@@ -344,11 +310,17 @@ const faqs = [
     <section class="great-partner-section">
         <div class="container">
             <div class="great-partner-block">
+                <span class="great-eyebrow">PARTNER FIT</span>
                 <h2>WHAT MAKES A GREAT PARTNER</h2>
-                <p class="great-intro">We're a good fit if you:</p>
-                <ul>
-                    {greatPartner.map(item => <li><i data-lucide="check"></i> {item}</li>)}
-                </ul>
+                <p class="great-intro">We build best with teams who show up, share, and play long-term. If this feels true, we should talk.</p>
+                <div class="great-partner-grid">
+                    {greatPartner.map(item => (
+                        <div class="great-card">
+                            <i data-lucide="check-circle-2"></i>
+                            <span>{item}</span>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     </section>
@@ -545,69 +517,6 @@ const faqs = [
         height: 60px;
     }
 
-    /* WHY SECTION */
-    .why-section {
-        padding: 5rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .why-section .container {
-        max-width: 1000px;
-    }
-
-    .why-section h2 {
-        margin-bottom: 2.5rem;
-    }
-
-    .why-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 1.5rem;
-    }
-
-    .why-card {
-        padding: 1.5rem;
-        background: #161616;
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
-        transition: all 0.3s ease;
-    }
-
-    .why-card:hover {
-        border-color: var(--accent-color);
-        transform: translateY(-2px);
-    }
-
-    .why-icon {
-        width: 48px;
-        height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(0, 230, 118, 0.1);
-        border-radius: 10px;
-        margin-bottom: 1rem;
-    }
-
-    .why-icon i {
-        width: 24px;
-        height: 24px;
-        color: var(--accent-color);
-    }
-
-    .why-card h3 {
-        font-size: 1.1rem;
-        margin-bottom: 0.5rem;
-        text-transform: none;
-        font-family: var(--font-main);
-    }
-
-    .why-card p {
-        font-size: 0.9rem;
-        color: var(--text-muted);
-        line-height: 1.5;
-    }
-
     /* WAYS TO PARTNER */
     .ways-section {
         padding: 5rem 0;
@@ -771,38 +680,8 @@ const faqs = [
 
     .mode-columns {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 2rem;
-    }
-
-    .example-partners {
-        margin-top: 1.5rem;
-        padding-top: 1.5rem;
-        border-top: 1px solid var(--border-color);
-    }
-
-    .example-partners h4 {
-        font-size: 0.85rem;
-        font-family: var(--font-mono);
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        color: #999;
-        margin-bottom: 1rem;
-    }
-
-    .example-logos {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-
-    .example-item {
-        padding: 0.5rem 1rem;
-        background: #0f0f0f;
-        border: 1px solid var(--border-color);
-        border-radius: 20px;
-        font-size: 0.85rem;
-        color: #aaa;
     }
 
     /* Sponsor specific */
@@ -861,6 +740,16 @@ const faqs = [
         text-align: center;
     }
 
+    .great-eyebrow {
+        display: inline-block;
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--accent-color);
+        margin-bottom: 1rem;
+    }
+
     .great-partner-block h2 {
         margin-bottom: 1rem;
     }
@@ -871,27 +760,35 @@ const faqs = [
         margin-bottom: 2rem;
     }
 
-    .great-partner-block ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: inline-block;
+    .great-partner-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1rem;
+        margin-top: 2rem;
         text-align: left;
     }
 
-    .great-partner-block li {
-        font-size: 1.1rem;
-        color: #ccc;
-        margin-bottom: 1rem;
+    .great-card {
         display: flex;
-        align-items: center;
         gap: 0.75rem;
+        align-items: flex-start;
+        padding: 1.25rem;
+        border-radius: 12px;
+        background: #0f0f0f;
+        border: 1px solid var(--border-color);
     }
 
-    .great-partner-block li i {
+    .great-card i {
         width: 20px;
         height: 20px;
         color: var(--accent-color);
+        margin-top: 2px;
+        flex-shrink: 0;
+    }
+
+    .great-card span {
+        font-size: 1rem;
+        color: #ddd;
     }
 
     /* PROCESS */
@@ -1112,6 +1009,10 @@ const faqs = [
 
         .mode-content,
         .sponsor-content {
+            grid-template-columns: 1fr;
+        }
+
+        .mode-columns {
             grid-template-columns: 1fr;
         }
 
