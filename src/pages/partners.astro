@@ -376,7 +376,11 @@ const faqs = [
                 <h2>GET IN TOUCH</h2>
                 <p class="contact-intro">Tell us what you want to do and we'll propose the best format.</p>
                 
-                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <form class="contact-form" name="partner-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="partner-contact">
+                    <p class="hidden">
+                        <label>Don’t fill this out: <input name="bot-field"></label>
+                    </p>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -470,6 +474,10 @@ const faqs = [
 
     .partner-hero .container {
         max-width: 900px;
+    }
+
+    .hidden {
+        display: none;
     }
 
     .hero-label {
