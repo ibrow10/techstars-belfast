@@ -220,9 +220,8 @@ const startHereCards = [
                 <h2>THE WEEKLY FOUNDER EMAIL</h2>
                 <p>Coming soon, sign up to find out more.</p>
                 <p class="newsletter-detail">Early access for events, sprints, programmes, and open calls.</p>
-                <form name="newsletter-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="newsletter-form">
+                <form name="newsletter-waitlist" method="POST" action="/thanks" data-netlify="true" netlify-honeypot="bot-field" class="newsletter-form">
                     <input type="hidden" name="form-name" value="newsletter-waitlist" />
-                    <input type="hidden" name="redirect" value="/?waitlist=success#newsletter" />
                     <p class="hidden">
                         <label>Don’t fill this out: <input name="bot-field" /></label>
                     </p>
@@ -233,7 +232,6 @@ const startHereCards = [
                         <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="Your email" required />
                         <button type="submit" class="btn btn--accent">Join the waitlist</button>
                     </div>
-                    <p class="newsletter-success" data-waitlist-success="true">Thanks, you’re on the waitlist.</p>
                     <p class="newsletter-legal">By signing up, you agree to receive the weekly email.</p>
                 </form>
             </div>
@@ -865,21 +863,6 @@ const startHereCards = [
         color: #777;
     }
 
-    .newsletter-success {
-        margin-top: 0.9rem;
-        font-size: 0.9rem;
-        color: var(--accent-color);
-        border: 1px solid var(--accent-color);
-        background: rgba(255, 255, 255, 0.04);
-        padding: 0.5rem 0.85rem;
-        border-radius: 999px;
-        display: none;
-    }
-
-    .newsletter-success.is-visible {
-        display: inline-block;
-    }
-
     .sr-only {
         position: absolute;
         width: 1px;
@@ -1004,21 +987,3 @@ const startHereCards = [
         }
     }
 </style>
-
-<script>
-    const showWaitlistSuccess = () => {
-        const params = new URLSearchParams(window.location.search);
-        if (params.get('waitlist') === 'success') {
-            const message = document.querySelector('[data-waitlist-success]');
-            if (message) {
-                message.classList.add('is-visible');
-            }
-        }
-    };
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', showWaitlistSuccess);
-    } else {
-        showWaitlistSuccess();
-    }
-</script>

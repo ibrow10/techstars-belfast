@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Thanks">
+    <section class="thanks-hero">
+        <div class="container">
+            <span class="page-label">WAITLIST</span>
+            <h1>YOU’RE IN.</h1>
+            <p class="hero-tagline">Thanks for signing up. We’ll keep you in the loop as soon as the weekly email goes live.</p>
+        </div>
+    </section>
+
+    <section class="thanks-section">
+        <div class="container">
+            <div class="thanks-card">
+                <p class="thanks-title">Thanks, you’re on the waitlist.</p>
+                <p class="thanks-detail">Expect a welcome note and the best founder opportunities in Northern Ireland.</p>
+                <a href="/" class="btn btn--accent">Back to the site</a>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .thanks-hero {
+        position: relative;
+        padding: 7rem 0 3rem;
+        border-bottom: 1px solid var(--border-color);
+        background: radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.08), transparent 45%),
+            radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.06), transparent 40%);
+    }
+
+    .thanks-hero .container {
+        max-width: 1000px;
+    }
+
+    .page-label {
+        display: inline-block;
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--accent-color);
+        margin-bottom: 1rem;
+    }
+
+    .thanks-hero h1 {
+        margin: 1rem 0;
+        font-size: clamp(2.4rem, 4vw, 3.6rem);
+        letter-spacing: 0.02em;
+    }
+
+    .hero-tagline {
+        max-width: 640px;
+        color: #cfcfcf;
+        font-size: 1.1rem;
+    }
+
+    .thanks-section {
+        padding: 4rem 0 6rem;
+    }
+
+    .thanks-section .container {
+        max-width: 900px;
+    }
+
+    .thanks-card {
+        background: #0a0a0a;
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 3rem;
+        text-align: left;
+        display: grid;
+        gap: 1rem;
+    }
+
+    .thanks-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #fff;
+        margin: 0;
+    }
+
+    .thanks-detail {
+        font-size: 1rem;
+        color: #a9a9a9;
+        margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        .thanks-hero {
+            padding: 6rem 0 2.5rem;
+        }
+
+        .thanks-card {
+            padding: 2rem;
+        }
+    }
+</style>
