@@ -253,15 +253,21 @@ const faqs = [
                     </div>
                     
                     <div class="mode-columns">
-                        <div class="mode-column">
-                            <h4>What you bring</h4>
-                            <ul>
+                        <div class="mode-column sprint-column">
+                            <div class="sprint-column-header">
+                                <h4>What you bring</h4>
+                                <span class="sprint-column-tag">Input</span>
+                            </div>
+                            <ul class="sprint-list">
                                 {sprintBring.map(item => <li>{item}</li>)}
                             </ul>
                         </div>
-                        <div class="mode-column">
-                            <h4>What you get</h4>
-                            <ul>
+                        <div class="mode-column sprint-column">
+                            <div class="sprint-column-header">
+                                <h4>What you get</h4>
+                                <span class="sprint-column-tag">Output</span>
+                            </div>
+                            <ul class="sprint-list">
                                 {sprintGet.map(item => <li>{item}</li>)}
                             </ul>
                         </div>
@@ -682,6 +688,72 @@ const faqs = [
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 2rem;
+    }
+
+    .sprint-column {
+        background: #0f0f0f;
+        border: 1px solid var(--border-color);
+        border-radius: 14px;
+        padding: 1.5rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .sprint-column::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.06), transparent 55%);
+        pointer-events: none;
+    }
+
+    .sprint-column-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.25rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .sprint-column-tag {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        font-family: var(--font-mono);
+        color: var(--accent-color);
+        border: 1px solid rgba(0, 230, 118, 0.35);
+        border-radius: 999px;
+        padding: 0.35rem 0.75rem;
+        background: rgba(0, 230, 118, 0.08);
+    }
+
+    .sprint-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 0.9rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .sprint-list li {
+        display: grid;
+        grid-template-columns: 22px 1fr;
+        gap: 0.75rem;
+        align-items: start;
+        color: #d4d4d4;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .sprint-list li::before {
+        content: '•';
+        color: var(--accent-color);
+        font-size: 1.2rem;
+        line-height: 1;
+        margin-top: 0.1rem;
     }
 
     /* Sponsor specific */
