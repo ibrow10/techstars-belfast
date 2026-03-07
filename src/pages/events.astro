@@ -1,115 +1,22 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+const monthToNum = { JAN: 1, FEB: 2, MAR: 3, APR: 4, MAY: 5, JUN: 6, JUL: 7, AUG: 8, SEP: 9, OCT: 10, NOV: 11, DEC: 12 };
+
 const events = [
-    {
-        day: '03',
-        month: 'FEB',
-        tag: 'PARTNER SESSION',
-        tagType: 'partner',
-        title: 'Founder Labs x The AMP: AMA',
-        time: '11:00 AM – 3:00 PM',
-        location: 'Ebrington Square, Derry',
-        audience: 'Cohort 4 focus',
-        description: 'Join the Founder Labs team at The AMP for an open conversation about Cohort 4. Includes a Fireside Chat with Orla Lynch and Ian Browne, plus insights from alumni.',
-        link: 'https://luma.com/ixnvtb9s',
-        active: true,
-        status: 'closed'
-    },
-    {
-        day: '05',
-        month: 'FEB',
-        tag: 'Virtual Pre-Accelerator',
-        tagType: 'remote',
-        title: 'Founder AMA: Techstars Founder Catalyst',
-        time: '3:00 PM – 4:00 PM GMT',
-        location: 'Google Meet',
-        audience: 'Founders only',
-        description: 'Ask questions live, no filters, no sales pitch. Join the Techstars team to find out if the 10-week virtual pre-accelerator is the right fit for your startup before applications close Feb 13.',
-        link: 'https://luma.com/a9e83czs',
-        active: true,
-        status: 'closed'
-    },
-    {
-        day: '05',
-        month: 'FEB',
-        tag: 'PARTNER SESSION',
-        tagType: 'partner',
-        title: 'Founders Night X Founder Labs',
-        time: '5:30 PM – 7:30 PM',
-        location: 'Ormeau Labs, Belfast',
-        audience: 'Cohort 4 Launch',
-        description: 'Dive into startups and scaling with Orla Lynch. Get an exclusive first look at Cohort 4 and hear real-world insights from previous cohort members in an interactive setting.',
-        link: 'https://luma.com/6sqbnad2',
-        active: true,
-        status: 'closed'
-    },
-    {
-        day: '12',
-        month: 'FEB',
-        tag: 'Community Event',
-        tagType: 'in-person',
-        title: 'Coinbase x Ormeau Labs: Future of Commerce',
-        time: '5:30 PM – 7:30 PM',
-        location: 'Ormeau Labs, Belfast',
-        audience: 'NI-Blockchain Partnership',
-        description: 'Unpick the future of commerce, agents, and stablecoins with Evan (Coinbase) and Ian (Ormeau Labs). Part of the new QUB partnership launching Techstars in NI.',
-        link: '#',
-        active: true
-    },
-    {
-        day: '04',
-        month: 'MAR',
-        tag: 'Build Challenge',
-        tagType: 'in-person',
-        title: 'Founders vs VCs: Agent Wars',
-        time: '11:00 AM – 2:30 PM',
-        location: 'Ormeau Labs',
-        audience: 'Technical Build',
-        description: 'Who can build the best AI agents in just 2 hours? A high-stakes live build challenge between local founders and the investment community.',
-        link: '#',
-        active: false
-    },
-    {
-        day: '05',
-        month: 'MAR',
-        tag: 'Founders Night Series',
-        tagType: 'in-person',
-        title: 'Founder ❤️ Investor: Elkstone',
-        time: '5:30 PM – 7:30 PM',
-        location: 'Ormeau Labs',
-        audience: 'Elkstone Fund',
-        description: 'Elkstone have announced the first close on their new fund and are keen to invest in high potential early stage companies in Northern Ireland. Come hear from the team and one of their portfolio companies.',
-        link: '#',
-        active: false
-    },
-    {
-        day: '16',
-        month: 'MAR',
-        tag: 'Virtual Pre-Accelerator',
-        tagType: 'remote',
-        title: 'Founder Catalyst Kick Off',
-        time: '4:00 PM – 6:00 PM',
-        location: 'Google Meet',
-        audience: 'Cohort Participants',
-        description: 'The official kick off for the Founder Catalyst cohort. Get ready to start your 10-week journey with Techstars.',
-        link: '#',
-        active: false
-    },
-    {
-        day: '09',
-        month: 'APR',
-        tag: 'Networking',
-        tagType: 'in-person',
-        title: 'Stripe Snacks: Agentic Commerce',
-        time: '11:00 AM – 1:00 PM',
-        location: 'Ormeau Labs',
-        audience: 'Stripe Partnership',
-        description: 'Continuing the agentic commerce discussion with content and networking in partnership with our friends at Stripe. Coffee, snacks, and shipping agents.',
-        link: '#',
-        active: false
-    }
+    { day: '03', month: 'FEB', year: 2026, finished: true, tag: 'PARTNER SESSION', tagType: 'partner', title: 'Founder Labs x The AMP: AMA', time: '11:00 AM – 3:00 PM', location: 'Ebrington Square, Derry', audience: 'Cohort 4 focus', description: 'Join the Founder Labs team at The AMP for an open conversation about Cohort 4. Includes a Fireside Chat with Orla Lynch and Ian Browne, plus insights from alumni.', link: 'https://luma.com/ixnvtb9s', active: true, status: 'closed' },
+    { day: '05', month: 'FEB', year: 2026, finished: true, tag: 'Virtual Pre-Accelerator', tagType: 'remote', title: 'Founder AMA: Techstars Founder Catalyst', time: '3:00 PM – 4:00 PM GMT', location: 'Google Meet', audience: 'Founders only', description: 'Ask questions live, no filters, no sales pitch. Join the Techstars team to find out if the 10-week virtual pre-accelerator is the right fit for your startup. Applications have closed for Spring 2026.', link: 'https://luma.com/a9e83czs', active: true, status: 'closed' },
+    { day: '05', month: 'FEB', year: 2026, finished: true, tag: 'PARTNER SESSION', tagType: 'partner', title: 'Founders Night X Founder Labs', time: '5:30 PM – 7:30 PM', location: 'Ormeau Labs, Belfast', audience: 'Cohort 4 Launch', description: 'Dive into startups and scaling with Orla Lynch. Get an exclusive first look at Cohort 4 and hear real-world insights from previous cohort members in an interactive setting.', link: 'https://luma.com/6sqbnad2', active: true, status: 'closed' },
+    { day: '12', month: 'FEB', year: 2026, finished: false, tag: 'Community Event', tagType: 'in-person', title: 'Coinbase x Ormeau Labs: Future of Commerce', time: '5:30 PM – 7:30 PM', location: 'Ormeau Labs, Belfast', audience: 'NI-Blockchain Partnership', description: 'Unpick the future of commerce, agents, and stablecoins with Evan (Coinbase) and Ian (Ormeau Labs). Part of the new QUB partnership launching Techstars in NI.', link: '#', active: true },
+    { day: '04', month: 'MAR', year: 2026, finished: false, tag: 'Build Challenge', tagType: 'in-person', title: 'Founders vs VCs: Agent Wars', time: '11:00 AM – 2:30 PM', location: 'Ormeau Labs', audience: 'Technical Build', description: 'Who can build the best AI agents in just 2 hours? A high-stakes live build challenge between local founders and the investment community.', link: '#', active: false },
+    { day: '05', month: 'MAR', year: 2026, finished: false, tag: 'Founders Night Series', tagType: 'in-person', title: 'Founder ❤️ Investor: Elkstone', time: '5:30 PM – 7:30 PM', location: 'Ormeau Labs', audience: 'Elkstone Fund', description: 'Elkstone have announced the first close on their new fund and are keen to invest in high potential early stage companies in Northern Ireland. Come hear from the team and one of their portfolio companies.', link: '#', active: false },
+    { day: '16', month: 'MAR', year: 2026, finished: false, tag: 'Virtual Pre-Accelerator', tagType: 'remote', title: 'Founder Catalyst Kick Off', time: '4:00 PM – 6:00 PM', location: 'Google Meet', audience: 'Cohort Participants', description: 'The official kick off for the Founder Catalyst cohort. Get ready to start your 10-week journey with Techstars.', link: '#', active: false },
+    { day: '09', month: 'APR', year: 2026, finished: false, tag: 'Networking', tagType: 'in-person', title: 'Stripe Snacks: Agentic Commerce', time: '11:00 AM – 1:00 PM', location: 'Ormeau Labs', audience: 'Stripe Partnership', description: 'Continuing the agentic commerce discussion with content and networking in partnership with our friends at Stripe. Coffee, snacks, and shipping agents.', link: '#', active: false }
 ];
+
+const sortKey = (e) => e.year * 10000 + monthToNum[e.month] * 100 + parseInt(e.day);
+const upcomingEvents = events.filter(e => !e.finished).sort((a, b) => sortKey(a) - sortKey(b));
+const finishedEvents = events.filter(e => e.finished).sort((a, b) => sortKey(b) - sortKey(a));
 ---
 
 <BaseLayout title="Events">
@@ -157,17 +64,17 @@ const events = [
         </div>
     </section>
 
-    <!-- Events List -->
+    <!-- Upcoming Events -->
     <section id="upcoming" class="events-section">
         <div class="container">
             <div class="section-header">
-                <h2>UPCOMING SESSIONS</h2>
+                <h2>UPCOMING EVENTS</h2>
             </div>
 
             <p class="events-note">Everything upcoming is below. If it's full, join the list anyway — we run these often.</p>
 
             <div class="events-grid">
-                {events.map(event => (
+                {upcomingEvents.map(event => (
                     <div class="event-card">
                         <div class="event-date-box">
                             <span class="day">{event.day}</span>
@@ -196,13 +103,56 @@ const events = [
                             <p class="event-description">{event.description}</p>
                         </div>
                         <div class="event-action">
-                            {event.status === 'closed' ? (
-                                <span class="btn btn--disabled">EVENT CLOSED</span>
-                            ) : event.active ? (
+                            {event.active ? (
                                 <a href={event.link} class="btn" target="_blank">REGISTER NOW</a>
                             ) : (
                                 <span class="btn btn--disabled">COMING SOON</span>
                             )}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- Finished Events -->
+    <section id="finished" class="events-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>FINISHED EVENTS</h2>
+            </div>
+
+            <div class="events-grid">
+                {finishedEvents.map(event => (
+                    <div class="event-card event-card--finished">
+                        <div class="event-date-box">
+                            <span class="day">{event.day}</span>
+                            <span class="month">{event.month}</span>
+                        </div>
+                        <div class="event-content">
+                            <div class="tag-row">
+                                <span class={`tag-pill ${event.tagType}`}>{event.tag}</span>
+                                {event.tagType === 'partner' && <span class="tag-pill in-person">In Person</span>}
+                            </div>
+                            <h3>{event.title}</h3>
+                            <div class="event-info-row">
+                                <div class="info-item">
+                                    <i data-lucide="clock"></i>
+                                    <span>{event.time}</span>
+                                </div>
+                                <div class="info-item">
+                                    <i data-lucide={event.tagType === 'remote' ? 'video' : 'map-pin'}></i>
+                                    <span>{event.location}</span>
+                                </div>
+                                <div class="info-item">
+                                    <i data-lucide="users"></i>
+                                    <span>{event.audience}</span>
+                                </div>
+                            </div>
+                            <p class="event-description">{event.description}</p>
+                        </div>
+                        <div class="event-action">
+                            <span class="btn btn--disabled">EVENT ENDED</span>
                         </div>
                     </div>
                 ))}
@@ -394,7 +344,15 @@ const events = [
         border-color: var(--accent-color);
         transform: translateY(-2px);
         box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-        background: #1c1c1c;
+    }
+
+    .event-card--finished {
+        opacity: 0.9;
+    }
+
+    .event-card--finished:hover {
+        transform: none;
+        border-color: var(--border-color);
     }
 
     .event-date-box {

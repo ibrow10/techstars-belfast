@@ -48,10 +48,11 @@ const startHereCards = [
         link: '/sprints'
     },
     {
-        title: 'Join Founder Catalyst',
-        description: '10-week virtual pre-accelerator with Techstars. Go from early idea to fundable story — no equity, global cohort.',
-        cta: 'Learn more',
-        link: '/programmes'
+        title: 'Founder Catalyst',
+        description: '10-week virtual pre-accelerator with Techstars. Go from early idea to fundable story — no equity, global cohort. Applications closed for Spring 2026.',
+        cta: 'Applications closed',
+        link: '/programmes',
+        closed: true
     }
 ];
 
@@ -155,7 +156,11 @@ const startHereCards = [
                     <div class="start-here-card card">
                         <h3>{card.title}</h3>
                         <p>{card.description}</p>
-                        <a href={card.link} class="card-link">{card.cta} →</a>
+                        {card.closed ? (
+                            <span class="card-link card-link--disabled">{card.cta}</span>
+                        ) : (
+                            <a href={card.link} class="card-link">{card.cta} →</a>
+                        )}
                     </div>
                 ))}
             </div>
@@ -624,6 +629,12 @@ const startHereCards = [
 
     .card-link:hover {
         opacity: 0.8;
+    }
+
+    .card-link--disabled {
+        color: var(--text-muted);
+        cursor: default;
+        pointer-events: none;
     }
 
     /* ETHOS STRIP */
