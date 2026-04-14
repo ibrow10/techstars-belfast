@@ -20,7 +20,7 @@ The design DNA is established in `src/styles/global.css`. Key principles:
 ```css
 --bg-color: #0f0f0f;        /* Primary background */
 --bg-elevated: #161616;      /* Cards, elevated surfaces */
---accent-color: #00e676;     /* Techstars green - CTAs, highlights */
+--accent-color: #00D26A;     /* Techstars green - CTAs, highlights */
 --secondary-accent: #6c5ce7; /* Purple - secondary elements */
 --text-color: #f0f0f0;       /* Primary text */
 --text-muted: #888;          /* Subdued text */
