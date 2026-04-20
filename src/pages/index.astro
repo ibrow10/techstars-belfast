@@ -13,27 +13,6 @@ const latestEvent = {
     link: 'https://www.hackbelfast.org/register'
 };
 
-const whyCards = [
-    {
-        icon: 'code',
-        title: 'BUILDERS',
-        description: 'Bring code. Leave with momentum.',
-        bg: '/images/founders1.jpg'
-    },
-    {
-        icon: 'microscope',
-        title: 'RESEARCHERS',
-        description: 'Bring the insight. We\'ll help you prove demand.',
-        bg: '/images/founders2.jpg'
-    },
-    {
-        icon: 'briefcase',
-        title: 'DOMAIN EXPERTS',
-        description: 'Bring the problem. We\'ll help you build it.',
-        bg: '/images/founders3.jpg'
-    }
-];
-
 const startHereCards = [
     {
         title: 'Come to an event',
@@ -118,29 +97,6 @@ const startHereCards = [
                 <p class="quote-emphasis">RUN AT IT."</p>
                 <cite>— Bill Gurley</cite>
             </blockquote>
-        </div>
-    </section>
-
-    <!-- Bring What You Have -->
-    <section class="why-section">
-        <div class="container">
-            <h2>BRING WHAT YOU HAVE</h2>
-            
-            <div class="why-grid">
-                {whyCards.map(card => (
-                    <div class="why-card" style={`--bg-image: url('${card.bg}')`}>
-                        <div class="why-card-bg"></div>
-                        <div class="why-card-content">
-                            <div class="why-icon">
-                                <i data-lucide={card.icon}></i>
-                            </div>
-                            <h3>{card.title}</h3>
-                            <p>{card.description}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-
         </div>
     </section>
 
@@ -476,114 +432,6 @@ const startHereCards = [
         text-transform: uppercase;
         letter-spacing: 0.15em;
         margin-top: 1.5rem;
-    }
-
-    /* WHY FOUNDERS SHOW UP SECTION */
-    .why-section {
-        padding: 5rem 0;
-        border-bottom: 1px solid var(--border-color);
-        background: linear-gradient(to bottom, #0f0f0f 0%, #141414 100%);
-    }
-
-    .why-section .container {
-        max-width: 1000px;
-    }
-
-    .why-section h2 {
-        text-align: center;
-        margin-bottom: 3.5rem;
-        font-size: 1.25rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: var(--text-muted);
-    }
-
-    .why-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2.5rem;
-    }
-
-    .why-card {
-        position: relative;
-        text-align: center;
-        padding: 2.5rem 1.5rem;
-        border-radius: 16px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        transition: all 0.3s ease;
-        overflow: hidden;
-        height: 350px;
-        display: flex;
-        align-items: flex-end;
-    }
-
-    .why-card-bg {
-        position: absolute;
-        inset: 0;
-        background-image: var(--bg-image);
-        background-size: cover;
-        background-position: center;
-        opacity: 0.45;
-        transition: opacity 0.3s ease;
-    }
-
-    .why-card-bg::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to top, rgba(15, 15, 15, 0.85) 0%, rgba(15, 15, 15, 0.5) 50%, rgba(15, 15, 15, 0.3) 100%);
-    }
-
-    .why-card-content {
-        position: relative;
-        z-index: 1;
-        width: 100%;
-    }
-
-    .why-card p {
-        margin-bottom: 0;
-        min-height: 80px;
-    }
-
-    .why-card:hover {
-        border-color: rgba(0, 210, 106, 0.4);
-        transform: translateY(-4px);
-    }
-
-    .why-card:hover .why-card-bg {
-        opacity: 0.55;
-    }
-
-    .why-icon {
-        width: 56px;
-        height: 56px;
-        margin: 0 auto 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 12px;
-        background: rgba(0, 210, 106, 0.15);
-        color: var(--accent-color);
-    }
-
-    .why-icon i {
-        width: 28px;
-        height: 28px;
-    }
-
-    .why-card h3 {
-        color: #fff;
-        font-size: 1.25rem;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        margin-bottom: 1rem;
-        font-family: var(--font-mono);
-    }
-
-    .why-card p {
-        color: #999;
-        line-height: 1.7;
-        font-size: 1rem;
     }
 
     /* START HERE SECTION */
@@ -938,15 +786,6 @@ const startHereCards = [
 
         .logo-separator {
             font-size: 0.8rem;
-        }
-
-        .why-grid {
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
-
-        .why-card {
-            padding: 2rem 1.5rem;
         }
 
         .event-card {
