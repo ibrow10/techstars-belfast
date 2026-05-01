@@ -27,11 +27,10 @@ const startHereCards = [
         link: '/sprints'
     },
     {
-        title: 'Founder Catalyst',
-        description: '10-week virtual pre-accelerator with Techstars. Go from early idea to fundable story — no equity, global cohort. Applications closed for Spring 2026.',
-        cta: 'Applications closed',
-        link: '/programmes',
-        closed: true
+        title: 'Partner',
+        description: 'Back the next wave of NI founders. Sponsor events, sprints, or sign on as a Founding Partner.',
+        cta: 'See ways to partner',
+        link: '/partners'
     }
 ];
 
@@ -120,6 +119,10 @@ const startHereCards = [
                     </div>
                 ))}
             </div>
+
+            <p class="partner-blurb">
+                Already running an early-stage initiative — corporate, investor, university, public sector? We pair our founder community with partners who want to support the next generation of NI builders. Three tiers, founder-first, no sales pitches. <a href="/partners">See how to partner →</a>
+            </p>
         </div>
     </section>
 
@@ -483,6 +486,28 @@ const startHereCards = [
         color: var(--text-muted);
         cursor: default;
         pointer-events: none;
+    }
+
+    .partner-blurb {
+        margin: 2.5rem auto 0;
+        max-width: 760px;
+        font-size: 1rem;
+        color: #bbb;
+        line-height: 1.6;
+        text-align: center;
+    }
+
+    .partner-blurb a {
+        color: var(--accent-color);
+        font-family: var(--font-mono);
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+    }
+
+    .partner-blurb a:hover {
+        opacity: 0.8;
     }
 
     /* ETHOS STRIP */
