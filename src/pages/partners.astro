@@ -1,26 +1,24 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const whyPartner = [
+const stats = [
+    '10,000+ founders in the global Techstars network',
+    '$130.6B+ market cap of Techstars companies',
+    '150+ countries represented'
+];
+
+const whyPartnerColumns = [
     {
-        icon: 'users',
-        title: 'Meet serious founders early',
-        description: 'If you want access to the next wave of AI-native startups, this is where they show up before they\'re polished.'
+        audience: 'For corporates',
+        description: 'Early talent pipeline. Pre-IPO startup access. Credible AI-native positioning your customers and recruits will notice.'
     },
     {
-        icon: 'heart',
-        title: 'Be seen as a builder-friendly brand',
-        description: 'Founders remember who helped them ship — not who sponsored a banner.'
+        audience: 'For investors',
+        description: 'Deal flow at the earliest possible stage. Curated intros. Co-invest signals from a global Techstars network.'
     },
     {
-        icon: 'lightbulb',
-        title: 'Create real-world innovation pathways',
-        description: 'Run a sprint around a genuine problem. Offer mentors. Explore pilots. Find talent.'
-    },
-    {
-        icon: 'trending-up',
-        title: 'Support economic impact',
-        description: 'For public-sector and civic stakeholders: we focus on action and outputs, not reports that sit on shelves.'
+        audience: 'For universities & public sector',
+        description: 'Translate research into commercial outcomes. Deliver entrepreneurship outputs that funders can measure.'
     }
 ];
 
@@ -92,10 +90,12 @@ const sponsorFunds = [
 ];
 
 const sponsorGets = [
-    '"Always-on" presence across the ecosystem',
-    'Priority involvement in sprint themes and programming',
-    'Structured access to founders (meetups, demo nights, curated intros)',
-    'Visibility across channels (site, newsletter, event comms, partner wall)',
+    'Year-round, "always-on" presence across the ecosystem',
+    'Priority involvement in Sprint themes and programming',
+    'Named on the partner wall',
+    'Quarterly founder access sessions (curated intros, demo nights, meetups)',
+    'Full calendar access across events, sprints and programmes',
+    'Visibility across channels (site, newsletter, event comms)',
     'A credible story: "We\'re building the future here."'
 ];
 
@@ -115,8 +115,8 @@ const process = [
     },
     {
         number: '02',
-        title: 'Choose a partnership mode',
-        description: 'Event / Sprint / Sponsorship (or a mix)'
+        title: 'Choose a tier',
+        description: 'Event / Sprint / Founding Partner (or a mix)'
     },
     {
         number: '03',
@@ -153,6 +153,10 @@ const faqs = [
         answer: 'Co-host one event or sponsor one Sprint theme. Then scale what works.'
     }
 ];
+
+// TODO: replace with your Calendly / Cal.com booking link, then this single
+// constant updates every "Book an intro call" CTA on the page.
+const bookCallHref = '#book-call';
 ---
 
 <BaseLayout title="Partner with us">
@@ -160,33 +164,40 @@ const faqs = [
     <section class="partner-hero">
         <div class="container">
             <span class="hero-label">PARTNER WITH US</span>
-            <h1>BUILD THE NEXT GENERATION OF FOUNDERS IN BELFAST</h1>
-            <p class="hero-tagline">— and across Northern Ireland</p>
-            
-            <p class="hero-description">
-                Techstars Belfast exists to help ambitious builders start, ship, and scale — with an AI-native approach and a global network behind it.
+            <h1>Back the next generation of Northern Irish founders.</h1>
+            <p class="hero-subhead">
+                Techstars Belfast gives corporates, investors and universities a structured, founder-first way to build relationships with the builders, researchers and operators shaping the next decade — before anyone else does.
             </p>
 
-            <div class="hero-what">
-                <p>We partner with companies, universities, investors, and public-sector organisations to run:</p>
-                <ul>
-                    <li>High-signal events (masterclasses, founder nights, AMAs)</li>
-                    <li>Sprints (our AI-era evolution of Startup Weekend)</li>
-                    <li>Programmes and pathways (e.g., Founder Catalyst)</li>
-                    <li>Community-building activity that creates real founder momentum</li>
-                </ul>
-            </div>
+            <a href={bookCallHref} class="btn btn--accent hero-cta">Book an intro call</a>
+        </div>
+    </section>
 
-            <div class="hero-partners">
-                <p class="partners-label">Delivered with</p>
-                <div class="partners-logos">
-                    <img src="/images/QUB-Logo.png" alt="Queen's University Belfast" class="partner-logo qub">
-                    <img src="/images/ormeau-labs-logo.svg" alt="Ormeau Labs" class="partner-logo ormeau">
-                    <img src="/images/techstarsbelfastlogo.png" alt="Techstars Belfast" class="partner-logo ts">
-                </div>
+    <!-- Stat Strip -->
+    <section class="stat-strip">
+        <div class="container">
+            <div class="stat-grid">
+                {stats.map(stat => (
+                    <div class="stat-item">
+                        <p>{stat}</p>
+                    </div>
+                ))}
             </div>
+        </div>
+    </section>
 
-            <a href="#contact" class="btn btn--accent">Partner with us</a>
+    <!-- Why Partner With Us -->
+    <section class="why-partner-section">
+        <div class="container">
+            <h2>WHY PARTNER WITH US</h2>
+            <div class="why-grid">
+                {whyPartnerColumns.map(col => (
+                    <div class="why-column">
+                        <h3>{col.audience}</h3>
+                        <p>{col.description}</p>
+                    </div>
+                ))}
+            </div>
         </div>
     </section>
 
@@ -194,14 +205,15 @@ const faqs = [
     <section class="ways-section">
         <div class="container">
             <h2>WAYS TO PARTNER</h2>
+            <p class="ways-intro">Three tiers. Pick the level of involvement that fits — start small, scale what works.</p>
 
-            <!-- Events -->
-            <div class="partner-mode" id="events">
+            <!-- Tier 1: Event Partner -->
+            <div class="partner-mode" id="event-partner">
                 <div class="mode-header">
-                    <span class="mode-letter">A</span>
+                    <span class="mode-tier mode-tier--entry">Entry tier</span>
                     <div>
-                        <h3>Partner on Events</h3>
-                        <p class="mode-tagline">Events are our "community heartbeat": repeat collisions, repeat learning, repeat momentum.</p>
+                        <h3>Event Partner</h3>
+                        <p class="mode-tagline">Single-event sponsorship, mentor slots, brand on materials. The fastest way to start working with us.</p>
                     </div>
                 </div>
 
@@ -229,13 +241,13 @@ const faqs = [
                 <p class="mode-rule"><i data-lucide="alert-circle"></i> <strong>Founder-first rule:</strong> we keep the content practical. No sales pitches. If it's a product session, it must help founders ship.</p>
             </div>
 
-            <!-- Sprints -->
-            <div class="partner-mode" id="sprints">
+            <!-- Tier 2: Sprint Partner -->
+            <div class="partner-mode" id="sprint-partner">
                 <div class="mode-header">
-                    <span class="mode-letter">B</span>
+                    <span class="mode-tier mode-tier--mid">Mid tier</span>
                     <div>
-                        <h3>Partner on Sprints</h3>
-                        <p class="mode-tagline">Sprints are where founders build, not just talk. They're the fastest way to turn interest into real prototypes, teams, and companies.</p>
+                        <h3>Sprint Partner</h3>
+                        <p class="mode-tagline">Sponsor a themed Sprint, set the challenge, meet teams, optional pilot pathway.</p>
                     </div>
                 </div>
 
@@ -251,7 +263,7 @@ const faqs = [
                             ))}
                         </div>
                     </div>
-                    
+
                     <div class="mode-columns">
                         <div class="mode-column sprint-column">
                             <div class="sprint-column-header">
@@ -273,34 +285,33 @@ const faqs = [
                         </div>
                     </div>
                 </div>
-
             </div>
 
-            <!-- Sponsorship -->
-            <div class="partner-mode" id="sponsorship">
+            <!-- Tier 3: Founding Partner -->
+            <div class="partner-mode partner-mode--top" id="founding-partner">
                 <div class="mode-header">
-                    <span class="mode-letter">C</span>
+                    <span class="mode-tier mode-tier--top">Top tier</span>
                     <div>
-                        <h3>Sponsor Techstars Belfast</h3>
-                        <p class="mode-tagline">Some partners want to do more than show up once. Financial sponsorship allows us to run more events, create more founder on-ramps, and build a stronger NI-wide network.</p>
+                        <h3>Founding Partner</h3>
+                        <p class="mode-tagline">Year-round presence, priority on Sprint themes, named on partner wall, quarterly founder access sessions, full calendar access.</p>
                     </div>
                 </div>
 
                 <div class="mode-content sponsor-content">
                     <div class="sponsor-column">
-                        <h4>Sponsorship is ideal if you want</h4>
+                        <h4>Founding Partner is ideal if you want</h4>
                         <ul>
                             {sponsorWant.map(item => <li>{item}</li>)}
                         </ul>
                     </div>
                     <div class="sponsor-column">
-                        <h4>What sponsorship can fund</h4>
+                        <h4>What it funds</h4>
                         <ul>
                             {sponsorFunds.map(item => <li>{item}</li>)}
                         </ul>
                     </div>
                     <div class="sponsor-column highlight-column">
-                        <h4>What sponsors get</h4>
+                        <h4>What Founding Partners get</h4>
                         <ul>
                             {sponsorGets.map(item => <li>{item}</li>)}
                         </ul>
@@ -347,50 +358,13 @@ const faqs = [
         </div>
     </section>
 
-    <!-- Contact Form -->
-    <section id="contact" class="contact-section">
+    <!-- Book an intro call -->
+    <section id="book-call" class="book-call-section">
         <div class="container">
-            <div class="contact-block">
-                <h2>GET IN TOUCH</h2>
-                <p class="contact-intro">Tell us what you want to do and we'll propose the best format.</p>
-                
-                <form class="contact-form" name="partner-contact" method="POST" action="/partner-thanks" data-netlify="true" netlify-honeypot="bot-field">
-                    <input type="hidden" name="form-name" value="partner-contact">
-                    <p class="hidden">
-                        <label>Don’t fill this out: <input name="bot-field"></label>
-                    </p>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="organisation">Organisation</label>
-                        <input type="text" id="organisation" name="organisation" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="partnership-type">Partnership type</label>
-                        <select id="partnership-type" name="partnership-type">
-                            <option value="">Select an option</option>
-                            <option value="events">Events</option>
-                            <option value="sprints">Sprints</option>
-                            <option value="sponsorship">Sponsorship</option>
-                            <option value="not-sure">Not sure yet</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn--accent">Partner with us</button>
-                    </div>
-                </form>
+            <div class="book-call-block">
+                <h2>READY TO TALK?</h2>
+                <p class="book-call-intro">Tell us what you want to do and we'll propose the best format. 30 minutes, no slides.</p>
+                <a href={bookCallHref} class="btn btn--accent">Book an intro call</a>
             </div>
         </div>
     </section>
@@ -439,88 +413,98 @@ const faqs = [
     }
 
     .partner-hero h1 {
-        font-size: clamp(2rem, 5vw, 3rem);
+        font-size: clamp(2.25rem, 5.5vw, 3.5rem);
         line-height: 1.1;
-        margin-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+        text-transform: none;
+        letter-spacing: -0.02em;
     }
 
-    .hero-tagline {
-        font-size: 1.25rem;
-        color: var(--text-muted);
-        margin-bottom: 2rem;
-    }
-
-    .hero-description {
-        font-size: 1.15rem;
+    .hero-subhead {
+        font-size: 1.2rem;
         color: #ccc;
         line-height: 1.6;
-        margin-bottom: 2rem;
-        max-width: 700px;
+        margin-bottom: 2.5rem;
+        max-width: 760px;
     }
 
-    .hero-what p {
+    .hero-cta {
         font-size: 1rem;
-        color: #aaa;
+        padding: 14px 28px;
+    }
+
+    /* STAT STRIP */
+    .stat-strip {
+        padding: 2.5rem 0;
+        border-bottom: 1px solid var(--border-color);
+        background: #0a0a0a;
+    }
+
+    .stat-strip .container {
+        max-width: 1100px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .stat-item {
+        padding: 1rem 1.25rem;
+        text-align: center;
+    }
+
+    .stat-item p {
+        font-family: var(--font-mono);
+        font-size: 0.95rem;
+        color: #ddd;
+        margin: 0;
+        line-height: 1.4;
+        max-width: none;
+    }
+
+    /* WHY PARTNER */
+    .why-partner-section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .why-partner-section .container {
+        max-width: 1100px;
+    }
+
+    .why-partner-section h2 {
+        margin-bottom: 2.5rem;
+    }
+
+    .why-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    .why-column {
+        padding: 2rem;
+        background: #161616;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+    }
+
+    .why-column h3 {
+        font-size: 0.95rem;
+        font-family: var(--font-mono);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--accent-color);
         margin-bottom: 1rem;
     }
 
-    .hero-what ul {
-        list-style: none;
-        padding: 0;
-        margin: 0 0 2.5rem 0;
-    }
-
-    .hero-what li {
+    .why-column p {
         font-size: 1rem;
         color: #ccc;
-        padding-left: 1.5rem;
-        margin-bottom: 0.5rem;
-        position: relative;
-    }
-
-    .hero-what li::before {
-        content: "→";
-        position: absolute;
-        left: 0;
-        color: var(--accent-color);
-    }
-
-    .hero-partners {
-        margin-bottom: 2.5rem;
-        padding: 1.5rem;
-        background: rgba(255, 255, 255, 0.03);
-        border-radius: 12px;
-        border: 1px solid var(--border-color);
-    }
-
-    .partners-label {
-        font-family: var(--font-mono);
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: #999;
-        margin-bottom: 1rem;
-    }
-
-    .partners-logos {
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-        flex-wrap: wrap;
-    }
-
-    .partner-logo {
-        height: 50px;
-        width: auto;
-        opacity: 0.8;
-    }
-
-    .partner-logo.ormeau {
-        filter: brightness(0) invert(1);
-    }
-
-    .partner-logo.ts {
-        height: 60px;
+        line-height: 1.6;
+        margin: 0;
     }
 
     /* WAYS TO PARTNER */
@@ -535,6 +519,12 @@ const faqs = [
     }
 
     .ways-section > .container > h2 {
+        margin-bottom: 0.75rem;
+    }
+
+    .ways-intro {
+        font-size: 1.05rem;
+        color: var(--text-muted);
         margin-bottom: 3rem;
     }
 
@@ -546,6 +536,11 @@ const faqs = [
         margin-bottom: 2rem;
     }
 
+    .partner-mode--top {
+        border-color: rgba(0, 230, 118, 0.4);
+        background: linear-gradient(180deg, rgba(0, 230, 118, 0.04) 0%, #161616 100%);
+    }
+
     .mode-header {
         display: flex;
         gap: 1.5rem;
@@ -555,19 +550,35 @@ const faqs = [
         border-bottom: 1px solid var(--border-color);
     }
 
-    .mode-letter {
+    .mode-tier {
         font-family: var(--font-mono);
-        font-size: 1.5rem;
+        font-size: 0.7rem;
         font-weight: 700;
-        color: var(--accent-color);
-        background: rgba(0, 230, 118, 0.1);
-        width: 48px;
-        height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        padding: 0.45rem 0.85rem;
+        border-radius: 999px;
         flex-shrink: 0;
+        white-space: nowrap;
+        align-self: center;
+    }
+
+    .mode-tier--entry {
+        color: #ddd;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .mode-tier--mid {
+        color: #a29bfe;
+        background: rgba(108, 92, 231, 0.15);
+        border: 1px solid rgba(108, 92, 231, 0.35);
+    }
+
+    .mode-tier--top {
+        color: var(--accent-color);
+        background: rgba(0, 230, 118, 0.12);
+        border: 1px solid rgba(0, 230, 118, 0.4);
     }
 
     .mode-header h3 {
@@ -926,82 +937,34 @@ const faqs = [
         line-height: 1.4;
     }
 
-    /* CONTACT */
-    .contact-section {
+    /* BOOK AN INTRO CALL */
+    .book-call-section {
         padding: 5rem 0;
         border-bottom: 1px solid var(--border-color);
     }
 
-    .contact-section .container {
-        max-width: 700px;
+    .book-call-section .container {
+        max-width: 800px;
     }
 
-    .contact-block h2 {
-        margin-bottom: 0.5rem;
-    }
-
-    .contact-intro {
-        font-size: 1.1rem;
-        color: var(--text-muted);
-        margin-bottom: 2.5rem;
-    }
-
-    .contact-form {
+    .book-call-block {
         background: #161616;
         border: 1px solid var(--border-color);
         border-radius: 12px;
-        padding: 2rem;
-    }
-
-    .form-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-    }
-
-    .form-group {
-        margin-bottom: 1.25rem;
-    }
-
-    .form-group label {
-        display: block;
-        font-size: 0.85rem;
-        color: #aaa;
-        margin-bottom: 0.5rem;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        width: 100%;
-        padding: 0.75rem 1rem;
-        background: #0f0f0f;
-        border: 1px solid var(--border-color);
-        border-radius: 6px;
-        color: #fff;
-        font-size: 1rem;
-        font-family: inherit;
-        transition: border-color 0.2s ease;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-        outline: none;
-        border-color: var(--accent-color);
-    }
-
-    .form-group select {
-        appearance: none;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: right 1rem center;
-        padding-right: 2.5rem;
-    }
-
-    .form-actions {
-        margin-top: 1.5rem;
+        padding: 4rem 2rem;
         text-align: center;
+    }
+
+    .book-call-block h2 {
+        margin-bottom: 1rem;
+        color: var(--accent-color);
+    }
+
+    .book-call-intro {
+        font-size: 1.1rem;
+        color: #ccc;
+        margin: 0 auto 2rem;
+        max-width: 540px;
     }
 
     .btn--accent {
@@ -1062,16 +1025,13 @@ const faqs = [
             padding-bottom: 3rem;
         }
 
-        .partners-logos {
-            gap: 1.5rem;
+        .stat-grid {
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
         }
 
-        .partner-logo {
-            height: 40px;
-        }
-
-        .partner-logo.ts {
-            height: 50px;
+        .why-grid {
+            grid-template-columns: 1fr;
         }
 
         .mode-header {
@@ -1097,12 +1057,8 @@ const faqs = [
             display: none;
         }
 
-        .form-row {
-            grid-template-columns: 1fr;
-        }
-
-        .contact-form {
-            padding: 1.5rem;
+        .book-call-block {
+            padding: 2.5rem 1.5rem;
         }
     }
 </style>
