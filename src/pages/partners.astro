@@ -205,121 +205,130 @@ const bookCallHref = '#book-call';
     <section class="ways-section">
         <div class="container">
             <h2>WAYS TO PARTNER</h2>
-            <p class="ways-intro">Three tiers. Pick the level of involvement that fits — start small, scale what works.</p>
+            <p class="ways-intro">Three tiers. Pick the level of involvement that fits — start small, scale what works. Tap a tier to expand.</p>
 
             <!-- Tier 1: Event Partner -->
-            <div class="partner-mode" id="event-partner">
-                <div class="mode-header">
+            <details class="partner-mode" id="event-partner">
+                <summary class="mode-header">
                     <span class="mode-tier mode-tier--entry">Entry tier</span>
-                    <div>
+                    <div class="mode-header-text">
                         <h3>Event Partner</h3>
                         <p class="mode-tagline">Single-event sponsorship, mentor slots, brand on materials. The fastest way to start working with us.</p>
                     </div>
-                </div>
+                    <span class="mode-toggle" aria-hidden="true"></span>
+                </summary>
 
-                <div class="mode-content">
-                    <div class="mode-column">
-                        <h4>Good event formats</h4>
-                        <ul>
-                            {eventFormats.map(item => <li>{item}</li>)}
-                        </ul>
+                <div class="mode-body">
+                    <div class="mode-content">
+                        <div class="mode-column">
+                            <h4>Good event formats</h4>
+                            <ul>
+                                {eventFormats.map(item => <li>{item}</li>)}
+                            </ul>
+                        </div>
+                        <div class="mode-column">
+                            <h4>What you bring</h4>
+                            <ul>
+                                {eventBring.map(item => <li>{item}</li>)}
+                            </ul>
+                        </div>
+                        <div class="mode-column">
+                            <h4>What you get</h4>
+                            <ul>
+                                {eventGet.map(item => <li>{item}</li>)}
+                            </ul>
+                        </div>
                     </div>
-                    <div class="mode-column">
-                        <h4>What you bring</h4>
-                        <ul>
-                            {eventBring.map(item => <li>{item}</li>)}
-                        </ul>
-                    </div>
-                    <div class="mode-column">
-                        <h4>What you get</h4>
-                        <ul>
-                            {eventGet.map(item => <li>{item}</li>)}
-                        </ul>
-                    </div>
-                </div>
 
-                <p class="mode-rule"><i data-lucide="alert-circle"></i> <strong>Founder-first rule:</strong> we keep the content practical. No sales pitches. If it's a product session, it must help founders ship.</p>
-            </div>
+                    <p class="mode-rule"><i data-lucide="alert-circle"></i> <strong>Founder-first rule:</strong> we keep the content practical. No sales pitches. If it's a product session, it must help founders ship.</p>
+                </div>
+            </details>
 
             <!-- Tier 2: Sprint Partner -->
-            <div class="partner-mode" id="sprint-partner">
-                <div class="mode-header">
+            <details class="partner-mode" id="sprint-partner">
+                <summary class="mode-header">
                     <span class="mode-tier mode-tier--mid">Mid tier</span>
-                    <div>
+                    <div class="mode-header-text">
                         <h3>Sprint Partner</h3>
                         <p class="mode-tagline">Sponsor a themed Sprint, set the challenge, meet teams, optional pilot pathway.</p>
                     </div>
-                </div>
+                    <span class="mode-toggle" aria-hidden="true"></span>
+                </summary>
 
-                <div class="mode-content">
-                    <div class="sprint-types">
-                        <h4>Sprint partner options</h4>
-                        <div class="sprint-types-grid">
-                            {sprintTypes.map(type => (
-                                <div class="sprint-type-card">
-                                    <strong>{type.title}</strong>
-                                    <span>{type.description}</span>
+                <div class="mode-body">
+                    <div class="mode-content">
+                        <div class="sprint-types">
+                            <h4>Sprint partner options</h4>
+                            <div class="sprint-types-grid">
+                                {sprintTypes.map(type => (
+                                    <div class="sprint-type-card">
+                                        <strong>{type.title}</strong>
+                                        <span>{type.description}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div class="mode-columns">
+                            <div class="mode-column sprint-column">
+                                <div class="sprint-column-header">
+                                    <h4>What you bring</h4>
+                                    <span class="sprint-column-tag">Input</span>
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div class="mode-columns">
-                        <div class="mode-column sprint-column">
-                            <div class="sprint-column-header">
-                                <h4>What you bring</h4>
-                                <span class="sprint-column-tag">Input</span>
+                                <ul class="sprint-list">
+                                    {sprintBring.map(item => <li>{item}</li>)}
+                                </ul>
                             </div>
-                            <ul class="sprint-list">
-                                {sprintBring.map(item => <li>{item}</li>)}
-                            </ul>
-                        </div>
-                        <div class="mode-column sprint-column">
-                            <div class="sprint-column-header">
-                                <h4>What you get</h4>
-                                <span class="sprint-column-tag">Output</span>
+                            <div class="mode-column sprint-column">
+                                <div class="sprint-column-header">
+                                    <h4>What you get</h4>
+                                    <span class="sprint-column-tag">Output</span>
+                                </div>
+                                <ul class="sprint-list">
+                                    {sprintGet.map(item => <li>{item}</li>)}
+                                </ul>
                             </div>
-                            <ul class="sprint-list">
-                                {sprintGet.map(item => <li>{item}</li>)}
-                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
+            </details>
 
             <!-- Tier 3: Founding Partner -->
-            <div class="partner-mode partner-mode--top" id="founding-partner">
-                <div class="mode-header">
+            <details class="partner-mode partner-mode--top" id="founding-partner">
+                <summary class="mode-header">
                     <span class="mode-tier mode-tier--top">Top tier</span>
-                    <div>
+                    <div class="mode-header-text">
                         <h3>Founding Partner</h3>
                         <p class="mode-tagline">Year-round presence, priority on Sprint themes, named on partner wall, quarterly founder access sessions, full calendar access.</p>
                     </div>
-                </div>
+                    <span class="mode-toggle" aria-hidden="true"></span>
+                </summary>
 
-                <div class="mode-content sponsor-content">
-                    <div class="sponsor-column">
-                        <h4>Founding Partner is ideal if you want</h4>
-                        <ul>
-                            {sponsorWant.map(item => <li>{item}</li>)}
-                        </ul>
+                <div class="mode-body">
+                    <div class="mode-content sponsor-content">
+                        <div class="sponsor-column">
+                            <h4>Founding Partner is ideal if you want</h4>
+                            <ul>
+                                {sponsorWant.map(item => <li>{item}</li>)}
+                            </ul>
+                        </div>
+                        <div class="sponsor-column">
+                            <h4>What it funds</h4>
+                            <ul>
+                                {sponsorFunds.map(item => <li>{item}</li>)}
+                            </ul>
+                        </div>
+                        <div class="sponsor-column highlight-column">
+                            <h4>What Founding Partners get</h4>
+                            <ul>
+                                {sponsorGets.map(item => <li>{item}</li>)}
+                            </ul>
+                        </div>
                     </div>
-                    <div class="sponsor-column">
-                        <h4>What it funds</h4>
-                        <ul>
-                            {sponsorFunds.map(item => <li>{item}</li>)}
-                        </ul>
-                    </div>
-                    <div class="sponsor-column highlight-column">
-                        <h4>What Founding Partners get</h4>
-                        <ul>
-                            {sponsorGets.map(item => <li>{item}</li>)}
-                        </ul>
-                    </div>
-                </div>
 
-                <p class="mode-rule"><i data-lucide="shield"></i> <strong>Important:</strong> we do not sell founder access in a way that breaks trust. This stays founder-first.</p>
-            </div>
+                    <p class="mode-rule"><i data-lucide="shield"></i> <strong>Important:</strong> we do not sell founder access in a way that breaks trust. This stays founder-first.</p>
+                </div>
+            </details>
         </div>
     </section>
 
@@ -534,6 +543,11 @@ const bookCallHref = '#book-call';
         border-radius: 12px;
         padding: 2rem;
         margin-bottom: 2rem;
+        transition: border-color 0.2s ease;
+    }
+
+    .partner-mode[open] {
+        border-color: rgba(255, 255, 255, 0.18);
     }
 
     .partner-mode--top {
@@ -541,13 +555,71 @@ const bookCallHref = '#book-call';
         background: linear-gradient(180deg, rgba(0, 230, 118, 0.04) 0%, #161616 100%);
     }
 
+    .partner-mode--top[open] {
+        border-color: rgba(0, 230, 118, 0.55);
+    }
+
     .mode-header {
         display: flex;
         gap: 1.5rem;
-        align-items: flex-start;
-        margin-bottom: 2rem;
-        padding-bottom: 1.5rem;
-        border-bottom: 1px solid var(--border-color);
+        align-items: center;
+        cursor: pointer;
+        list-style: none;
+        user-select: none;
+    }
+
+    .mode-header::-webkit-details-marker {
+        display: none;
+    }
+
+    .mode-header:hover .mode-toggle::before,
+    .mode-header:hover .mode-toggle::after {
+        background: var(--accent-color);
+    }
+
+    .mode-header-text {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .mode-toggle {
+        position: relative;
+        width: 28px;
+        height: 28px;
+        flex-shrink: 0;
+        display: inline-block;
+    }
+
+    .mode-toggle::before,
+    .mode-toggle::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: #888;
+        transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .mode-toggle::before {
+        width: 14px;
+        height: 2px;
+        transform: translate(-50%, -50%);
+    }
+
+    .mode-toggle::after {
+        width: 2px;
+        height: 14px;
+        transform: translate(-50%, -50%);
+    }
+
+    .partner-mode[open] .mode-toggle::after {
+        transform: translate(-50%, -50%) scaleY(0);
+    }
+
+    .mode-body {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border-color);
     }
 
     .mode-tier {
@@ -1039,8 +1111,15 @@ const bookCallHref = '#book-call';
         }
 
         .mode-header {
-            flex-direction: column;
             gap: 1rem;
+        }
+
+        .mode-header h3 {
+            font-size: 1.25rem;
+        }
+
+        .mode-tagline {
+            font-size: 0.95rem;
         }
 
         .mode-content,
