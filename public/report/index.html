@@ -278,12 +278,42 @@ figure{margin:0}
 }
 @media (max-width:840px){
   body{padding:8px 0}
-  .page,.cover{width:100%;min-height:auto;padding:8mm 6mm}
-  h1{font-size:48pt}
-  .cover h1{font-size:64pt}
+  .page,.cover{width:100%;min-height:auto;padding:6mm 5mm}
+  h1{font-size:42pt}
+  h2{font-size:18pt}
+  h3{font-size:12pt}
+  .cover h1{font-size:56pt;line-height:.9}
   .col2,.qb{column-count:1}
-  .grid-2,.grid-12,.grid-3{grid-template-columns:1fr}
+  .grid-2,.grid-12,.grid-3,.contents-grid{grid-template-columns:1fr !important;gap:6mm !important}
+  /* Coverage table: collapse 4-col grid into 2-col header + full-width body on mobile */
+  .coverage .row{grid-template-columns:1fr auto;gap:4px;padding:3mm}
+  .coverage .row .find{grid-column:1/-1;margin-top:2mm}
+  /* Photo strip: 2-up on phones instead of 4-up */
+  .photo-band{grid-template-columns:repeat(2,1fr)}
+
+  /* The biggest bug on mobile: .run-head and .run-foot are position:absolute,
+     so they sit at top:8mm / bottom:8mm regardless of padding. With the
+     tighter mobile padding they were overlapping the section-head. Make them
+     flow in-document on narrow viewports. */
+  .run-head, .run-foot { position:static; margin:0 0 6mm; padding-bottom:2mm }
+  .run-foot { margin:6mm 0 0; padding-bottom:0; padding-top:2mm }
+
+  /* section-head's 3-col grid (num | title | tag) doesn't fit narrow widths.
+     Stack the tag below and let the title breathe. */
+  .section-head { grid-template-columns:auto 1fr; gap:8px }
+  .section-head .tag { grid-column:1/-1; margin-top:4px }
+
+  /* Cover title scaled down to fit phone widths. */
+  .cover .top { flex-direction:column; gap:6mm; align-items:flex-start }
+  .cover .meta { text-align:left }
+  .cover .bottom { grid-template-columns:1fr; gap:5mm }
+  .cover .bottom .rhs { align-items:flex-start }
+  .cover .bottom .rhs .vol { text-align:left }
+
   .recs td.caps{display:none}
+
+  /* Two-col Suggestions Raised lists collapse to single column on phones. */
+  .suggestions-grid, [style*="column-count:2"] { column-count:1 !important }
 }
 
 /* Web nav — non-sticky on web (was overlapping content); hidden in print */
@@ -384,7 +414,7 @@ figure{margin:0}
     <div>Contents &amp; Editorial Note</div>
   </div>
 
-  <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:10mm;margin-top:8mm">
+  <div class="contents-grid" style="display:grid;grid-template-columns:1.1fr 1fr;gap:10mm;margin-top:8mm">
     <div>
       <div class="kicker"><span class="dot"></span>Editorial · by Ian Browne</div>
       <h2 style="margin-top:4mm">In better shape than its founders realise. In worse shape than its institutions believe.</h2>
