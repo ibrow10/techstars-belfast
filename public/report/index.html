@@ -1,0 +1,1746 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>State of the Startup Nation — Techstars Belfast</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fafaf7;
+  --paper-2:#f3f0e8;
+  --ink:#0a0a0a;
+  --ink-2:#1a1a1a;
+  --rule:#0a0a0a;
+  --muted:#5a5a55;
+  --muted-2:#8a8a83;
+  --green:#00C853;
+  --green-deep:#00a344;
+  --warn:#c75a2b;
+  --serif:"Source Serif 4", Georgia, serif;
+  --sans:"Inter", -apple-system, system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#e9e7e0;color:var(--ink);font-family:var(--serif);font-size:11pt;line-height:1.5;}
+body{padding:32px 0;}
+a{color:inherit}
+
+/* Page */
+.page{
+  width:210mm;
+  min-height:297mm;
+  margin:0 auto 14px;
+  background:var(--paper);
+  position:relative;
+  padding:18mm 16mm 16mm;
+  box-shadow:0 4px 24px rgba(0,0,0,.08), 0 1px 0 rgba(0,0,0,.04);
+  overflow:hidden;
+}
+.page-cover{padding:0;}
+
+/* Running header / footer */
+.run-head{
+  position:absolute;top:8mm;left:16mm;right:16mm;
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--sans);font-size:7.5pt;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);
+  border-bottom:.5pt solid var(--ink);padding-bottom:3mm;
+}
+.run-head .lhs{display:flex;gap:10px;align-items:center}
+.run-head .mark{display:inline-flex;align-items:baseline;gap:4px;font-weight:800;letter-spacing:-.01em;text-transform:none;font-size:9pt}
+.run-head .mark .u{display:inline-block;width:14px;height:3px;background:var(--green);transform:translateY(-1px)}
+.run-foot{
+  position:absolute;bottom:8mm;left:16mm;right:16mm;
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--sans);font-size:7.5pt;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  border-top:.5pt solid var(--ink);padding-top:3mm;
+}
+.run-foot .pno{font-weight:700;color:var(--ink)}
+
+/* Type */
+h1,h2,h3,h4,h5{font-family:var(--sans);font-weight:800;letter-spacing:-.02em;color:var(--ink);margin:0}
+h1{font-size:64pt;line-height:.92}
+h2{font-size:22pt;line-height:1.04;letter-spacing:-.025em}
+h3{font-size:13pt;line-height:1.15;letter-spacing:-.01em}
+h4{font-size:10pt;line-height:1.2;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+p{margin:0 0 9pt}
+.serif{font-family:var(--serif)}
+.sans{font-family:var(--sans)}
+.mono{font-family:var(--mono)}
+.kicker{font-family:var(--sans);font-size:8.5pt;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--ink)}
+.kicker .dot{display:inline-block;width:6px;height:6px;background:var(--green);border-radius:50%;vertical-align:middle;margin:0 6px 2px 0}
+.dropcap::first-letter{
+  font-family:var(--sans);font-weight:900;font-size:54pt;line-height:.85;
+  float:left;padding:6pt 8pt 0 0;color:var(--ink);
+}
+.lead{font-size:13pt;line-height:1.45;font-family:var(--serif);}
+.small{font-size:8.5pt;line-height:1.4}
+.tiny{font-size:7.5pt;line-height:1.35;font-family:var(--sans);color:var(--muted)}
+
+/* Cover */
+.cover{
+  width:210mm;height:297mm;
+  background:var(--paper);
+  display:grid;grid-template-rows:auto auto auto auto;
+  padding:18mm 16mm;
+  position:relative;
+}
+.cover .top{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  border-bottom:1pt solid var(--ink);padding-bottom:6mm;
+}
+.cover .logo{height:18mm;display:block}
+.cover .meta{font-family:var(--sans);font-size:8pt;letter-spacing:.18em;text-transform:uppercase;text-align:right;line-height:1.7;font-weight:600}
+.cover .meta .acc{color:var(--green-deep)}
+.cover .mid{display:flex;flex-direction:column;justify-content:center;padding:6mm 0 4mm}
+.cover .super{font-family:var(--sans);font-size:9pt;letter-spacing:.22em;text-transform:uppercase;font-weight:700;margin-bottom:14mm}
+.cover .super .green{color:var(--green-deep)}
+.cover h1{font-size:96pt;line-height:.86;letter-spacing:-.045em}
+.cover h1 .em{font-style:italic;font-family:"Source Serif 4",serif;font-weight:500;letter-spacing:-.02em}
+.cover h1 .u{position:relative;display:inline-block}
+.cover h1 .u::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:8px;background:var(--green)}
+.cover .tagline{margin-top:14mm;font-family:var(--sans);font-size:11pt;font-weight:600;letter-spacing:.04em;text-transform:uppercase;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.cover .tagline span{display:inline-block}
+.cover .tagline .sep{width:6px;height:6px;background:var(--ink);border-radius:50%}
+.cover .tagline .green{color:var(--green-deep)}
+.cover .bottom{
+  display:grid;grid-template-columns:1.1fr 1fr;gap:10mm;align-items:end;
+  border-top:1pt solid var(--ink);padding-top:6mm;
+}
+.cover .bottom .lhs .pull{font-family:var(--serif);font-size:13pt;line-height:1.3;font-style:italic;max-width:78mm}
+.cover .bottom .lhs .by{font-family:var(--sans);font-size:8pt;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:5mm}
+.cover .bottom .rhs{display:flex;flex-direction:column;align-items:flex-end;gap:6mm}
+.cover .bottom .vol{font-family:var(--sans);font-size:9pt;letter-spacing:.22em;text-transform:uppercase;font-weight:700;text-align:right;line-height:1.7}
+.cover .barcode{display:flex;gap:1px;align-items:flex-end;height:10mm}
+.cover .barcode i{display:block;width:1.2px;background:var(--ink)}
+.cover .stripe{position:absolute;left:0;right:0;height:5mm;background:var(--green);bottom:0}
+
+/* Section header band */
+.section-head{
+  display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;
+  border-top:2pt solid var(--ink);border-bottom:.5pt solid var(--ink);
+  padding:6pt 0 7pt;margin:0 0 8mm;
+}
+.section-head .num{font-family:var(--sans);font-weight:900;font-size:24pt;letter-spacing:-.03em}
+.section-head .ttl{font-family:var(--sans);font-weight:800;font-size:14pt;letter-spacing:-.01em}
+.section-head .tag{font-family:var(--mono);font-size:8pt;color:var(--muted);text-transform:lowercase}
+.section-head .tag b{color:var(--ink);font-weight:600}
+
+/* Layout */
+.col2{column-count:2;column-gap:8mm;column-rule:.5pt solid #c9c5b8}
+.col2 p{break-inside:avoid;orphans:2;widows:2}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:8mm}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6mm}
+.grid-12{display:grid;grid-template-columns:5fr 7fr;gap:8mm}
+.rule{height:.5pt;background:var(--ink);margin:4mm 0}
+.rule-thick{height:2pt;background:var(--ink);margin:5mm 0}
+.dashed{border-top:1pt dashed var(--ink);margin:4mm 0;height:0}
+
+/* Tags */
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:6pt}
+.tag{font-family:var(--mono);font-size:7.2pt;padding:2px 6px;border:.5pt solid var(--ink);background:var(--paper);color:var(--ink)}
+.tag.cap{background:var(--ink);color:var(--paper)}
+.tag.frict{border-color:var(--warn);color:var(--warn)}
+.tag.work{border-color:var(--green-deep);color:var(--green-deep)}
+.tag.sug{background:var(--green);border-color:var(--green);color:#062814}
+.tag.obs{}
+
+/* Pull quote */
+.pull{
+  font-family:var(--serif);font-style:italic;font-size:18pt;line-height:1.22;letter-spacing:-.005em;
+  border-left:3pt solid var(--green);padding:3mm 0 3mm 6mm;margin:5mm 0;color:var(--ink);
+}
+.pull .who{display:block;margin-top:3mm;font-style:normal;font-family:var(--sans);font-size:8.5pt;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.pull-card{
+  background:var(--ink);color:var(--paper);
+  padding:7mm;font-family:var(--serif);font-style:italic;font-size:16pt;line-height:1.25;
+  position:relative;
+}
+.pull-card .who{display:block;margin-top:4mm;font-style:normal;font-family:var(--sans);font-size:8pt;letter-spacing:.1em;text-transform:uppercase;color:#bdbcb6;font-weight:600}
+.pull-card::before{content:"\201C";position:absolute;top:1mm;left:5mm;font-family:var(--serif);font-size:60pt;line-height:1;color:var(--green);font-style:normal}
+.pull-card.lite{background:var(--paper-2);color:var(--ink)}
+.pull-card.lite .who{color:var(--muted)}
+.pull-card.lite::before{color:var(--green-deep)}
+
+/* Quote block (compact) */
+.q{margin:3mm 0 5mm;padding-left:5mm;border-left:1.5pt solid var(--ink);break-inside:avoid}
+.q .body{font-family:var(--serif);font-size:10.5pt;line-height:1.4;font-style:italic}
+.q .who{font-family:var(--sans);font-size:7.8pt;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:2mm}
+.q .tags{margin-top:2mm}
+.q.green{border-left-color:var(--green)}
+.q.warn{border-left-color:var(--warn)}
+
+/* Lists */
+ul.tight,ol.tight{margin:0 0 8pt;padding-left:14pt}
+ul.tight li,ol.tight li{margin-bottom:2pt}
+ul.dash{list-style:none;padding-left:0}
+ul.dash li{position:relative;padding-left:14pt;margin-bottom:3pt}
+ul.dash li::before{content:"";position:absolute;left:0;top:.65em;width:8px;height:1.5px;background:var(--ink)}
+
+/* Stat / index card */
+.stat{
+  border:.5pt solid var(--ink);padding:4mm;background:var(--paper);
+}
+.stat .v{font-family:var(--sans);font-weight:900;font-size:36pt;line-height:.95;letter-spacing:-.04em}
+.stat .v .green{color:var(--green-deep)}
+.stat .l{font-family:var(--sans);font-size:8.5pt;text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-top:2mm}
+.stat .d{font-family:var(--serif);font-size:9pt;color:var(--muted);margin-top:2mm;line-height:1.35}
+
+/* Coverage map */
+.coverage{border:.5pt solid var(--ink)}
+.coverage .row{display:grid;grid-template-columns:38mm 36mm 1fr 22mm;gap:0;border-bottom:.5pt solid var(--ink);align-items:center;padding:3mm 4mm;font-size:9pt}
+.coverage .row:last-child{border-bottom:none}
+.coverage .row.hd{background:var(--ink);color:var(--paper);font-family:var(--sans);text-transform:uppercase;letter-spacing:.12em;font-size:7.5pt;font-weight:700;padding:2.5mm 4mm}
+.coverage .cap{font-family:var(--sans);font-weight:800;font-size:10pt}
+.coverage .cap .hash{color:var(--muted-2);font-weight:500;font-family:var(--mono);font-size:8.5pt;display:block;margin-top:1mm}
+.coverage .dots{display:flex;gap:3px}
+.coverage .dots i{display:inline-block;width:9px;height:9px;border-radius:50%;border:.5pt solid var(--ink);background:var(--paper)}
+.coverage .dots i.f{background:var(--ink)}
+.coverage .find{font-family:var(--serif);font-size:9.5pt;line-height:1.35;padding-right:4mm}
+.coverage .ev{font-family:var(--mono);font-size:7.8pt;text-transform:uppercase;text-align:right}
+.coverage .ev.high{color:var(--green-deep);font-weight:600}
+.coverage .ev.med{color:var(--ink)}
+.coverage .ev.low{color:var(--warn)}
+
+/* Recs table */
+.recs{border-collapse:collapse;width:100%;font-size:9pt;font-family:var(--serif)}
+.recs th,.recs td{text-align:left;padding:3mm;vertical-align:top;border-bottom:.5pt solid #ccc8b9}
+.recs thead th{background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:7.5pt;letter-spacing:.12em;text-transform:uppercase;border-bottom:none}
+.recs td.n{font-family:var(--sans);font-weight:900;font-size:14pt;width:8mm;color:var(--ink);line-height:1}
+.recs td .rec-t{font-family:var(--sans);font-weight:700;font-size:9.8pt;letter-spacing:-.005em;display:block;margin-bottom:1mm}
+.recs td.caps{width:34mm;font-family:var(--mono);font-size:7.4pt;color:var(--muted);line-height:1.5}
+.recs td.f{width:18mm;font-family:var(--sans);font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.recs td.f .bar{display:inline-block;height:3px;background:var(--ink);vertical-align:middle;margin-right:5px}
+.recs tr.hi td.f{color:var(--green-deep)}
+.recs tr.hi td.n{color:var(--green-deep)}
+
+/* Diagrams */
+.diagram{border:.5pt solid var(--ink);padding:5mm;background:var(--paper)}
+
+/* TOC */
+.toc{border-top:1pt solid var(--ink);border-bottom:1pt solid var(--ink);padding:4mm 0}
+.toc .tline{display:grid;grid-template-columns:auto 1fr auto auto;gap:5mm;align-items:baseline;padding:2.4mm 0;border-bottom:.5pt dashed #b9b6a8;font-family:var(--sans);font-size:10pt}
+.toc .tline:last-child{border-bottom:none}
+.toc .tline .num{font-family:var(--sans);font-weight:800;width:8mm;color:var(--green-deep)}
+.toc .tline .ttl{font-weight:600}
+.toc .tline .ttl em{font-weight:400;color:var(--muted)}
+.toc .tline .pno{font-family:var(--mono);font-size:9pt}
+.toc .tline .dots{border-top:1px dotted var(--muted-2);height:0;align-self:center}
+
+/* Footnote */
+.fn{font-family:var(--sans);font-size:7.5pt;color:var(--muted);line-height:1.4}
+
+/* Chip strip */
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-family:var(--mono);font-size:7.5pt;border:.5pt solid var(--ink);padding:1.5px 6px}
+.chip.fill{background:var(--ink);color:var(--paper)}
+.chip.green{background:var(--green);color:#062814;border-color:var(--green)}
+
+/* Photos */
+figure{margin:0}
+.photo{position:relative;overflow:hidden;background:#1a1a1a;display:block}
+.photo img{display:block;width:100%;height:100%;object-fit:cover}
+.photo.tall img{aspect-ratio:3/4}
+.photo.wide img{aspect-ratio:16/9}
+.photo.square img{aspect-ratio:1/1}
+.photo.portrait img{aspect-ratio:2/3}
+.cap-line{font-family:var(--mono);font-size:7.2pt;color:var(--muted);text-transform:lowercase;margin-top:2mm;line-height:1.4;letter-spacing:.02em}
+.cap-line b{color:var(--ink);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:6.8pt;margin-right:5px}
+.photo-band{display:grid;grid-template-columns:repeat(4,1fr);gap:2mm;margin:5mm 0}
+.photo-band .photo{aspect-ratio:1/1}
+.photo-overlay{position:absolute;left:0;right:0;bottom:0;padding:3mm 4mm;background:linear-gradient(0deg,rgba(0,0,0,.85),rgba(0,0,0,0));color:var(--paper);font-family:var(--sans);font-size:8pt;font-weight:600;letter-spacing:.02em;line-height:1.3}
+.photo-overlay .tag{font-family:var(--mono);font-size:7pt;text-transform:uppercase;letter-spacing:.14em;color:var(--green);display:block;margin-bottom:2mm;font-weight:700}
+
+/* Quote bank */
+.qb{column-count:2;column-gap:8mm;column-rule:.5pt solid #c9c5b8}
+.qb .qbi{break-inside:avoid;margin:0 0 6mm;padding:0 0 4mm;border-bottom:.5pt solid #c9c5b8}
+.qb .qbi:last-child{border-bottom:none}
+.qb .qbi .body{font-family:var(--serif);font-size:10pt;line-height:1.35;font-style:italic}
+.qb .qbi .who{font-family:var(--sans);font-size:7.5pt;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:2mm;font-weight:600}
+.qb .qbi .ts{font-family:var(--mono);font-size:7pt;color:var(--ink);margin-top:1.5mm}
+
+/* Print */
+@page{size:A4;margin:0}
+@media print{
+  body{background:#fff;padding:0}
+  .page,.cover{box-shadow:none;margin:0;page-break-after:always;break-after:page}
+  .no-print{display:none}
+}
+@media (max-width:840px){
+  body{padding:8px 0}
+  .page,.cover{width:100%;min-height:auto;padding:8mm 6mm}
+  h1{font-size:48pt}
+  .cover h1{font-size:64pt}
+  .col2,.qb{column-count:1}
+  .grid-2,.grid-12,.grid-3{grid-template-columns:1fr}
+  .recs td.caps{display:none}
+}
+
+/* Web nav */
+.web-nav{
+  position:sticky;top:0;z-index:50;background:#0a0a0a;color:#fafaf7;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:10px 18px;font-family:var(--sans);font-size:8.5pt;letter-spacing:.14em;text-transform:uppercase;
+}
+.web-nav .l{display:flex;align-items:center;gap:10px;font-weight:800}
+.web-nav .l .u{display:inline-block;width:14px;height:3px;background:var(--green)}
+.web-nav .r{display:flex;gap:12px;align-items:center}
+.web-nav button{background:transparent;border:1px solid #fafaf7;color:#fafaf7;font:inherit;letter-spacing:inherit;text-transform:inherit;padding:6px 10px;cursor:pointer}
+.web-nav button:hover{background:var(--green);color:#0a0a0a;border-color:var(--green)}
+@media print{.web-nav{display:none}}
+</style>
+
+<!-- Open Graph / Twitter Card -->
+<meta name="description" content="State of the Startup Nation — a 17-page report from Techstars Belfast on Northern Ireland's founder economy, the seven capitals analysis, and the case for treating indigenous founder density as economic policy. By Ian Browne, May 2026.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Techstars Belfast">
+<meta property="og:title" content="State of the Startup Nation — Techstars Belfast">
+<meta property="og:description" content="Northern Ireland's founder economy and the case for treating it as economic policy. A 17-page report from the May 6 Community Development Lab.">
+<meta property="og:url" content="https://techstarsbelfast.com/report/">
+<meta property="og:image" content="https://techstarsbelfast.com/report/uploads/cdlPic-25.jpeg">
+<meta property="og:image:alt" content="State of the Startup Nation — Techstars Belfast">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="State of the Startup Nation — Techstars Belfast">
+<meta name="twitter:description" content="Northern Ireland's founder economy and the case for treating it as economic policy.">
+<meta name="twitter:image" content="https://techstarsbelfast.com/report/uploads/cdlPic-25.jpeg">
+<link rel="canonical" href="https://techstarsbelfast.com/report/">
+</head>
+<body>
+
+<nav class="web-nav no-print">
+  <div class="l"><span>techstars<span class="u"></span></span><span style="font-weight:500;letter-spacing:.18em">Belfast · State of the Startup Nation · Working draft v3 · May 2026</span></div>
+  <div class="r"><button onclick="window.print()">Print / save PDF</button></div>
+</nav>
+
+<!-- ============================== COVER ============================== -->
+<section class="cover" data-screen-label="01 Cover">
+  <header class="top">
+    <img class="logo" src="assets/techstars-belfast-logo.png" alt="Techstars Belfast">
+    <div class="meta">
+      <div>Community Development Lab</div>
+      <div>Belfast · 6 May 2026</div>
+      <div class="acc">Working draft · v3</div>
+    </div>
+  </header>
+
+  <div class="mid">
+    <div class="super">A Founder-Led Reading of Northern Ireland's Startup Economy<span class="green"> //</span> Vol. 01</div>
+    <h1>State of the<br><span class="u">Startup</span><br><span class="em">Nation</span><span style="color:var(--green-deep)">.</span></h1>
+    <div style="margin-top:10mm;font-family:var(--serif);font-style:italic;font-size:14pt;line-height:1.3;max-width:155mm;color:var(--ink)">Northern Ireland's founder economy &mdash; and the case for treating it as economic policy.</div>
+    <div class="tagline" style="margin-top:10mm">
+      <span>GDP as Mission</span>
+      <span class="sep"></span>
+      <span>Founder-Led</span>
+      <span class="sep"></span>
+      <span>Evidence-Based</span>
+      <span class="sep"></span>
+      <span class="green">Optimistic</span>
+    </div>
+  </div>
+
+  <!-- Cover photo strip -->
+  <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3mm;height:42mm;margin:2mm 0 5mm">
+    <figure class="photo wide" style="height:100%"><img src="uploads/cdlPic-189.jpeg" alt="The room — eight tables in conversation"><div class="photo-overlay"><span class="tag">06 May 2026</span>The room. Eight tables. Fifty-odd people from five stakeholder groups, four hours.</div></figure>
+    <figure class="photo" style="height:100%"><img src="uploads/cdlPic-210.jpeg" alt="Founder laughing at table"></figure>
+    <figure class="photo" style="height:100%"><img src="uploads/cdlPic-25.jpeg" alt="Techstars Belfast notebooks"></figure>
+  </div>
+
+  <div class="bottom">
+    <div class="lhs">
+      <div class="pull">"In better shape than its founders usually realise &mdash; in worse shape than its institutions believe. The window to close that gap is shorter than the system is currently behaving as if it is."</div>
+      <div class="by">— Editorial · State of the Startup Nation</div>
+    </div>
+    <div class="rhs">
+      <div class="vol">
+        <div>The Seven Capitals</div>
+        <div>+ Five Recommendations</div>
+        <div style="color:var(--green-deep)">By Ian Browne · Techstars Belfast</div>
+      </div>
+      <div class="barcode" aria-hidden="true">
+        <i style="height:10mm"></i><i style="height:6mm"></i><i style="height:9mm"></i><i style="height:4mm"></i><i style="height:10mm"></i><i style="height:8mm"></i><i style="height:5mm"></i><i style="height:10mm"></i><i style="height:7mm"></i><i style="height:9mm"></i><i style="height:4mm"></i><i style="height:10mm"></i><i style="height:6mm"></i><i style="height:8mm"></i><i style="height:10mm"></i><i style="height:5mm"></i><i style="height:9mm"></i><i style="height:7mm"></i><i style="height:10mm"></i><i style="height:4mm"></i><i style="height:8mm"></i><i style="height:10mm"></i><i style="height:6mm"></i><i style="height:9mm"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cover photo strip removed; now inline above bottom -->
+
+  <div class="stripe"></div>
+</section>
+
+<!-- ============================== P02 — MASTHEAD / CONTENTS / HEADLINE ============================== -->
+<section class="page" data-screen-label="02 Contents">
+  <div class="run-head">
+    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Belfast — CDL Findings</span></div>
+    <div>Contents &amp; Editorial Note</div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:10mm;margin-top:8mm">
+    <div>
+      <div class="kicker"><span class="dot"></span>Editorial · by Ian Browne</div>
+      <h2 style="margin-top:4mm">In better shape than its founders realise. In worse shape than its institutions believe.</h2>
+      <p class="lead" style="margin-top:5mm">On 6 May 2026, fifty-odd people from five stakeholder groups &mdash; founders, universities, government, investors, corporates &mdash; sat down at eight tables in Belfast for four hours. The Community Development Lab was the first ecosystem-wide listening exercise of its kind in Northern Ireland. Every table was recorded, transcribed, and anonymised. This is what was said.</p>
+      <p>The argument of the report is structural: <strong>indigenous founder density is the conversion mechanism between AI-era productivity and NI's GDP.</strong> Northern Ireland's economy is structurally exposed to FDI workflow automation &mdash; KYC, AML, legal ops, customer support, BPO. Whether AI grows the local economy or shrinks it depends on how many founders we successfully form, fund, and scale here. That is the mission this report serves.</p>
+      <p>It is built on the Seven Capitals framework from Feld &amp; Hathaway's <em>The Startup Community Way</em>, with one additional lens: <em>what does each stakeholder group need to do next?</em> The framework forces us past the loudest complaint &mdash; financial capital &mdash; into the quieter capitals that often decide whether a community compounds or stalls. The stakeholder lens forces specificity. Both are answers to the same question: where is the leverage?</p>
+      <p>Three things to know before you read on. First, founders prefaced almost every critique with gratitude; this report tries to keep that tone. Second, all names of speakers, companies, and third parties have been removed; voices stand by their roles. Third, this is a working draft, not a verdict &mdash; the open offers at the back are an invitation to keep the conversation going.</p>
+      <div class="rule"></div>
+      <div class="kicker"><span class="dot"></span>Masthead</div>
+      <div class="grid-3" style="margin-top:4mm;font-family:var(--sans);font-size:8.5pt;line-height:1.5">
+        <div><div style="font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:7.5pt;color:var(--muted)">Convened by</div>Techstars Belfast<br>Community Development Lab</div>
+        <div><div style="font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:7.5pt;color:var(--muted)">Author</div>Ian Browne<br>Managing Director, Techstars Belfast</div>
+        <div><div style="font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:7.5pt;color:var(--muted)">Format</div>50+ participants<br>8 tables · 4 themed sprints</div>
+        <div><div style="font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:7.5pt;color:var(--muted)">Method</div>Granola full transcription<br>thematic analysis, anonymised</div>
+        <div><div style="font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:7.5pt;color:var(--muted)">Framework</div>Seven Capitals<br>Feld &amp; Hathaway, 2020</div>
+        <div><div style="font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:7.5pt;color:var(--muted)">Status</div>Working draft v3<br>May 2026</div>
+      </div>
+    </div>
+
+    <aside>
+      <div class="kicker"><span class="dot"></span>Inside this issue</div>
+      <div class="toc" style="margin-top:4mm">
+        <div class="tline"><span class="num">01</span><span class="ttl">Headline finding<em> · founder economy as GDP policy</em></span><span class="dots"></span><span class="pno">03</span></div>
+        <div class="tline"><span class="num">02</span><span class="ttl">Method &amp; coverage map<em> · the room, the seven capitals</em></span><span class="dots"></span><span class="pno">04</span></div>
+        <div class="tline"><span class="num">03</span><span class="ttl">Network capital<em> · generous inside, illegible outside</em></span><span class="dots"></span><span class="pno">05</span></div>
+        <div class="tline"><span class="num">04</span><span class="ttl">Financial capital<em> · grant monkeys &amp; the local ceiling</em></span><span class="dots"></span><span class="pno">06</span></div>
+        <div class="tline"><span class="num">05</span><span class="ttl">Cultural capital<em> · the ambition trap</em></span><span class="dots"></span><span class="pno">07</span></div>
+        <div class="tline"><span class="num">06</span><span class="ttl">Institutional capital<em> · the front door problem</em></span><span class="dots"></span><span class="pno">08</span></div>
+        <div class="tline"><span class="num">07</span><span class="ttl">Human capital<em> · a new founder generation</em></span><span class="dots"></span><span class="pno">09</span></div>
+        <div class="tline"><span class="num">08</span><span class="ttl">Intellectual capital<em> · institutions debate, founders ship</em></span><span class="dots"></span><span class="pno">10</span></div>
+        <div class="tline"><span class="num">09</span><span class="ttl">Physical capital<em> · the absence is the data</em></span><span class="dots"></span><span class="pno">11</span></div>
+        <div class="tline"><span class="num">10</span><span class="ttl">Cross-cutting<em> · asymmetry &amp; the connected core</em></span><span class="dots"></span><span class="pno">12</span></div>
+        <div class="tline"><span class="num">11</span><span class="ttl">Recommendations<em> · five priorities, fourteen moves</em></span><span class="dots"></span><span class="pno">13</span></div>
+        <div class="tline"><span class="num">12</span><span class="ttl">Quote bank<em> · pull-ready voices</em></span><span class="dots"></span><span class="pno">14</span></div>
+        <div class="tline"><span class="num">13</span><span class="ttl">What each stakeholder can do<em> · the ask</em></span><span class="dots"></span><span class="pno">15</span></div>
+        <div class="tline"><span class="num">14</span><span class="ttl">The case for Techstars Belfast<em> · connective tissue</em></span><span class="dots"></span><span class="pno">16</span></div>
+        <div class="tline"><span class="num">15</span><span class="ttl">Open offers &amp; what happens next</span><span class="dots"></span><span class="pno">17</span></div>
+      </div>
+
+      <figure class="photo wide" style="margin-top:6mm;aspect-ratio:16/10;display:block"><img src="uploads/cdlPic-58.jpeg" alt="Welcome to the Community Development Lab"></figure>
+      <div class="cap-line"><b>Fig. 01</b>The doors at Techstars Belfast. The CDL was the first ecosystem-wide listening exercise of its kind in Northern Ireland.</div>
+
+      <div class="pull-card lite" style="margin-top:6mm">
+        The mission is explicit: <strong>using startup founders to increase the GDP of Northern Ireland.</strong> Every section is in service of that thesis.
+        <span class="who">— Editorial note</span>
+      </div>
+    </aside>
+  </div>
+
+  <div class="run-foot">
+    <div>State of the Startup Nation · Vol. 01</div>
+    <div class="pno">02</div>
+  </div>
+</section>
+
+<!-- ============================== P03 — HEADLINE FINDING ============================== -->
+<section class="page" data-screen-label="03 Headline">
+  <div class="run-head">
+    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 01 · Headline finding</span></div>
+    <div>The surplus &amp; its quiet flaw</div>
+  </div>
+
+  <div class="section-head">
+    <div class="num">01</div>
+    <div class="ttl">Headline finding</div>
+    <div class="tag">evidence: <b>high</b> · across all three recordings</div>
+  </div>
+
+  <div class="grid-12">
+    <div>
+      <div class="kicker"><span class="dot"></span>The argument in one sentence</div>
+      <h2 style="margin-top:4mm;font-size:26pt">NI's founder economy is in <span style="color:var(--green-deep)">better shape</span> than its founders realise &mdash; and in <span style="background:#0a0a0a;color:var(--green);padding:0 4px">worse shape</span> than its institutions believe.</h2>
+      <p class="lead" style="margin-top:6mm">The cultural raw material is here. The structural layer around it has not kept pace with the technology shift now underway. The window to close that gap is shorter than the system is currently behaving as if it is.</p>
+
+      <div class="dashed"></div>
+
+      <p class="dropcap">In Feld's terms, NI has a deep surplus of <strong>network</strong> and <strong>cultural</strong> capital &mdash; the warm-intro culture, the give-first instinct, the senior operators making time &mdash; and a structural deficit of <strong>institutional</strong> legibility and <strong>codified</strong> founder protection. That much was visible in the room.</p>
+      <p>The mission this report serves is more specific than "improve the ecosystem." It is <strong>using indigenous founder density to raise NI's GDP.</strong> Northern Ireland's economy is structurally exposed to FDI workflow automation &mdash; KYC, AML, legal ops, customer support, BPO &mdash; that current-generation AI agents are now demonstrably replacing. Whether the AI productivity dividend grows the local economy or shrinks it depends on whether we successfully form, fund, and scale founders <em>here</em>. Every founder that succeeds is a small redistribution of that dividend into the local tax base, employment base, and supply chain. The aggregate is GDP movement.</p>
+      <p>The financial-capital complaint that often dominates these conversations elsewhere &mdash; <em>"we don't have enough money here"</em> &mdash; is present in the NI conversation but blunter than expected. Per capita, NI has one of the most heavily-funded founder support systems in the UK. The binding constraints are not quantity. They are <strong>legibility</strong> (founders can't navigate the system), <strong>velocity</strong> (institutional pace doesn't match founder pace), and <strong>ambition</strong> (founders benchmark against the company down the road, not the Series A in Palo Alto).</p>
+      <p>Limerick &mdash; one third the size of Belfast &mdash; has produced ten YC companies. We have not. The difference is not resources. It is system design and which conversations founders are having.</p>
+    </div>
+
+    <aside>
+      <div class="grid-2" style="gap:4mm">
+        <div class="stat">
+          <div class="v"><span class="green">50</span>+</div>
+          <div class="l">Participants</div>
+          <div class="d">Five stakeholder groups: founders, universities, government, investors, corporates</div>
+        </div>
+        <div class="stat">
+          <div class="v">8</div>
+          <div class="l">Tables · 4 sprints</div>
+          <div class="d">Themed: network, capital, support, AI. 20 minutes each, full Granola transcription.</div>
+        </div>
+        <div class="stat">
+          <div class="v">10<span class="green">×</span></div>
+          <div class="l">Limerick : Belfast</div>
+          <div class="d">Limerick (pop. 100k) has produced 10 YC companies. Belfast (pop. 340k) has produced far fewer.</div>
+        </div>
+        <div class="stat">
+          <div class="v">7</div>
+          <div class="l">Capitals</div>
+          <div class="d">Feld &amp; Hathaway's framework, applied honestly to NI</div>
+        </div>
+      </div>
+
+      <div class="pull-card" style="margin-top:5mm">
+        Indigenous founder density is not a nice-to-have. In an economy structurally exposed to FDI workflow displacement, it is the conversion mechanism that determines whether AI grows the NI economy or shrinks it.
+        <span class="who">— The thesis of this report</span>
+      </div>
+
+      <figure class="photo wide" style="margin-top:5mm;aspect-ratio:4/3;display:block"><img src="uploads/cdlPic-210.jpeg" alt="Founder laughing at table during CDL"></figure>
+      <div class="cap-line"><b>Fig. 02</b>The room was honest in a way most ecosystem workshops are not. That itself is an asset.</div>
+    </aside>
+  </div>
+
+  <div class="run-foot">
+    <div>01 · Headline finding</div>
+    <div class="pno">03</div>
+  </div>
+</section>
+
+<!-- ============================== P04 — METHOD + COVERAGE MAP ============================== -->
+<section class="page" data-screen-label="04 Method">
+  <div class="run-head">
+    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 02 · Method &amp; coverage</span></div>
+    <div>The seven capitals at a glance</div>
+  </div>
+
+  <div class="section-head">
+    <div class="num">02</div>
+    <div class="ttl">Methodology &amp; coverage map</div>
+    <div class="tag">framework: <b>Feld &amp; Hathaway · 2020</b></div>
+  </div>
+
+  <div class="grid-12" style="margin-bottom:6mm">
+    <div>
+      <h3>Why the Seven Capitals frame.</h3>
+      <p style="margin-top:3mm">When founders complain "there isn't enough capital here," they almost always mean <em>financial</em> capital. But financial is only one of seven. Feld and Hathaway argue the first three (intellectual, human, financial) are the visible inputs — ideas, talent, money. The other four (network, cultural, physical, institutional) are infrastructure running quietly in the background. Often the binding constraint is one of those quieter four.</p>
+      <p>The frame disciplines the analysis. The temptation when summarising founders is to organise around the loudest complaints; this lens makes us look at the quiet places too. The capitals that aren't being talked about may be the most important finding of all.</p>
+
+      <div class="diagram" style="margin-top:5mm">
+        <svg viewBox="0 0 480 220" width="100%" style="display:block">
+          <defs>
+            <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <line x1="0" y1="0" x2="0" y2="6" stroke="#0a0a0a" stroke-width=".5"/>
+            </pattern>
+          </defs>
+          <!-- inputs ring -->
+          <circle cx="240" cy="110" r="58" fill="#0a0a0a"/>
+          <text x="240" y="100" text-anchor="middle" font-family="Inter" font-size="11" font-weight="800" fill="#fafaf7">VISIBLE</text>
+          <text x="240" y="115" text-anchor="middle" font-family="Inter" font-size="11" font-weight="800" fill="#fafaf7">INPUTS</text>
+          <text x="240" y="130" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#00C853">3 of 7</text>
+          <!-- outer ring -->
+          <circle cx="240" cy="110" r="100" fill="none" stroke="#0a0a0a" stroke-width=".75" stroke-dasharray="3 2"/>
+          <!-- inner labels -->
+          <text x="240" y="64" text-anchor="middle" font-family="Inter" font-size="9" font-weight="700" fill="#fafaf7">INTELLECTUAL</text>
+          <text x="200" y="148" text-anchor="middle" font-family="Inter" font-size="9" font-weight="700" fill="#fafaf7">HUMAN</text>
+          <text x="280" y="148" text-anchor="middle" font-family="Inter" font-size="9" font-weight="700" fill="#fafaf7">FINANCIAL</text>
+          <!-- outer labels -->
+          <text x="240" y="22" text-anchor="middle" font-family="Inter" font-size="10" font-weight="800">NETWORK</text>
+          <text x="60" y="115" text-anchor="middle" font-family="Inter" font-size="10" font-weight="800">CULTURAL</text>
+          <text x="420" y="115" text-anchor="middle" font-family="Inter" font-size="10" font-weight="800">INSTITUTIONAL</text>
+          <text x="240" y="208" text-anchor="middle" font-family="Inter" font-size="10" font-weight="800">PHYSICAL</text>
+          <!-- ring background -->
+          <text x="60" y="128" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="#5a5a55">background</text>
+          <text x="420" y="128" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="#5a5a55">background</text>
+          <text x="240" y="35" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="#5a5a55">background</text>
+          <text x="240" y="195" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="#5a5a55">background</text>
+          <!-- accent green dot for NI focus -->
+          <circle cx="240" cy="22" r="3" fill="#00C853"/>
+          <circle cx="60" cy="115" r="3" fill="#00C853"/>
+        </svg>
+        <div class="tiny" style="margin-top:3mm">Network and culture are where NI's surplus and binding constraint both sit. The other quiet capitals — institutional, physical — are where the deficit hides.</div>
+      </div>
+    </div>
+
+    <aside>
+      <div class="kicker"><span class="dot"></span>The room · 06 May 2026</div>
+      <figure class="photo wide" style="margin-top:3mm;aspect-ratio:16/10;display:block"><img src="uploads/cdlPic-118.jpeg" alt="The Community Development Lab room — eight tables, capitals on the wall"><div class="photo-overlay"><span class="tag">The Room</span>Eight tables. Capitals on the wall. Four hours.</div></figure>
+
+      <div class="kicker" style="margin-top:5mm"><span class="dot"></span>Stakeholder groups in the room</div>
+      <table style="width:100%;border-collapse:collapse;font-size:8.5pt;margin-top:3mm" class="sans">
+        <thead><tr style="background:var(--ink);color:var(--paper)"><th style="text-align:left;padding:2mm">Group</th><th style="text-align:left;padding:2mm">Brought to the conversation</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:2mm;border-bottom:.5pt solid #ccc"><b>Founders</b></td><td style="padding:2mm;border-bottom:.5pt solid #ccc">The people the report is about</td></tr>
+          <tr><td style="padding:2mm;border-bottom:.5pt solid #ccc"><b>Universities</b></td><td style="padding:2mm;border-bottom:.5pt solid #ccc">Queen's, Ulster, AFBI, FE sector — commercialisation &amp; pipeline</td></tr>
+          <tr><td style="padding:2mm;border-bottom:.5pt solid #ccc"><b>Government</b></td><td style="padding:2mm;border-bottom:.5pt solid #ccc">DfE, Invest NI, councils, agencies, BBB regional</td></tr>
+          <tr><td style="padding:2mm;border-bottom:.5pt solid #ccc"><b>Investors</b></td><td style="padding:2mm;border-bottom:.5pt solid #ccc">Local VCs, angels, UK &amp; Irish capital interested in NI</td></tr>
+          <tr><td style="padding:2mm"><b>Corporates</b></td><td style="padding:2mm">NI-HQ businesses and FDI employers</td></tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top:4mm" class="fn">Four 20-minute themed sprints (Network, Capital, Support, AI), per table. Granola full transcription. Names of speakers, companies, and identifying third parties removed. Quotes lightly cleaned for readability; voice, phrasing, and meaning preserved.</div>
+
+      <div class="kicker" style="margin-top:6mm"><span class="dot"></span>Tagging conventions</div>
+      <div class="chips" style="margin-top:3mm"><span class="chip fill">#capital</span><span class="chip">#sentiment</span><span class="chip green">quote:tier</span></div>
+      <div class="fn" style="margin-top:3mm">Every quote is tagged on three dimensions — capital(s), sentiment (working / friction / suggestion / observation), and quotability tier.</div>
+    </aside>
+  </div>
+
+  <h3 style="margin-bottom:4mm">Coverage map &amp; headline by capital</h3>
+  <div class="coverage">
+    <div class="row hd"><div>Capital</div><div>Coverage</div><div>Headline finding</div><div style="text-align:right">Evidence</div></div>
+    <div class="row"><div class="cap">Financial<span class="hash">#financial</span></div><div class="dots"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></div><div class="find">Geography penalty on terms; grants generous but rigid; bootstrap-vs-raise an active, unresolved cultural debate.</div><div class="ev high">High ↑</div></div>
+    <div class="row"><div class="cap">Network<span class="hash">#network</span></div><div class="dots"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></div><div class="find">Invisible from outside, generous from inside. Warm-intro culture is the engine — but follow-up discipline is poor.</div><div class="ev high">High ↑</div></div>
+    <div class="row"><div class="cap">Cultural<span class="hash">#cultural</span></div><div class="dots"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i></div><div class="find">Give-first culture is real; pitch-room asymmetry remains; <em>fear of failure</em> &amp; <em>tech talent under-respected</em> as undercurrents.</div><div class="ev high">High ↑</div></div>
+    <div class="row"><div class="cap">Institutional<span class="hash">#institutional</span></div><div class="dots"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i></div><div class="find">Too many programme doors, no map. INI front door filters out the wrong founders — independently corroborated.</div><div class="ev high">High ↑</div></div>
+    <div class="row"><div class="cap">Human<span class="hash">#human</span></div><div class="dots"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i></div><div class="find">Negotiation as a missing capability; the "founder mafia" generation isn't here yet — but the candidates are.</div><div class="ev high">High ↑</div></div>
+    <div class="row"><div class="cap">Intellectual<span class="hash">#intellectual</span></div><div class="dots"><i class="f"></i><i class="f"></i><i class="f"></i><i></i><i></i></div><div class="find">AI-enabled service models running ahead of ecosystem recognition. The moat conversation is genuinely live.</div><div class="ev med">Medium-high ↑</div></div>
+    <div class="row"><div class="cap">Physical<span class="hash">#physical</span></div><div class="dots"><i class="f"></i><i></i><i></i><i></i><i></i></div><div class="find">Almost no discussion across any of three recordings. <strong>The absence is the data.</strong></div><div class="ev low">Minimal · firm</div></div>
+  </div>
+
+  <div class="run-foot">
+    <div>02 · Method &amp; coverage</div>
+    <div class="pno">04</div>
+  </div>
+</section>
+
+<!-- ============================== P05 — NETWORK ============================== -->
+<section class="page" data-screen-label="05 Network">
+  <div class="run-head">
+    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 03 · Network capital</span></div>
+    <div>Invisible outside, generous inside</div>
+  </div>
+
+  <div class="section-head">
+    <div class="num">03</div>
+    <div class="ttl">Network capital · #network</div>
+    <div class="tag">evidence: <b>high</b> · most-discussed capital</div>
+  </div>
+
+  <div class="grid-12">
+    <div>
+      <p class="lead">The most discussed capital across all three recordings — and, paradoxically, the one founders are most polarised on. Once inside the network, the experience is uniformly positive: warm, generous, transformational. Getting inside is the hard part. The Northern Ireland ecosystem is, in effect, hidden from outside it.</p>
+
+      <h4 style="margin-top:5mm">Four sub-themes sharpened by the data</h4>
+      <ol class="tight" style="margin-top:3mm">
+        <li><strong>The "shockwave" gap.</strong> London and New York have generations of large successful companies whose people spin out into new ones — the Stripe mafia, the Revolut mafia. NI doesn't have those generations yet. Cloudsmith and a small number of others are the first wave. A structural observation about <em>time</em>.</li>
+        <li><strong>The follow-up culture problem.</strong> Founders ask for warm intros and don't act on them. A single good intro takes 45 minutes; a significant proportion never produce a follow-up by the founder. <em>A cultural-capital deficit dressed as a network-capital surplus.</em></li>
+        <li><strong>Pace.</strong> Founders work in weekly sprints. The institutional layer works in quarters; decisions wait on annual leave. The fastest-moving founders in the room have stopped trying to operate at local speed.</li>
+        <li><strong>Diaspora and the missing peer infrastructure.</strong> NI has a globally distributed diaspora it isn't using. Limerick is. And inside NI there is no persistent cross-cohort founder channel where a Series B founder can answer a first-time founder's question in 35 minutes.</li>
+      </ol>
+
+      <div class="rule"></div>
+
+      <div class="grid-2">
+        <div>
+          <h4 style="color:var(--green-deep)">What's working</h4>
+          <ul class="dash" style="margin-top:2mm;font-size:9.5pt">
+            <li>Warm-introduction culture is strong; senior operators make time.</li>
+            <li>A latent senior-advisor pool — ex-operators winding down, willing to mentor.</li>
+            <li>Real-time give-first behaviour observed inside the conversations themselves.</li>
+            <li>Cohort &amp; alumni networks (Founder Labs, Tech Stars Belfast, Awaken) function inside their boundaries.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:var(--warn)">Where the friction is</h4>
+          <ul class="dash" style="margin-top:2mm;font-size:9.5pt">
+            <li>No public-facing front door to the ecosystem.</li>
+            <li>Mentor relationships happen by chance, not design.</li>
+            <li>The ecosystem is legible only after entry.</li>
+            <li>Follow-up discipline is poor; the compounding engine throttles itself.</li>
+            <li>No persistent cross-cohort peer infrastructure.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <aside>
+      <div class="pull-card">
+        Every single one of my forty-five investments has come through a warm introduction. Never, ever underestimate the power of your network.
+        <span class="who">— Multi-time exited founder, now angel investor</span>
+      </div>
+
+      <figure class="photo wide" style="margin-top:5mm;aspect-ratio:4/3;display:block"><img src="uploads/cdlPic-83.jpeg" alt="Founders in conversation at CDL"></figure>
+      <div class="cap-line"><b>Fig. 03</b>Network capital in action. Coffee is not yet priced. Help is offered without immediate transactional cost.</div>
+
+      <div class="q green" style="margin-top:5mm">
+        <div class="body">"An introduction might take me 45 minutes to an hour. So there has to be a why. Reality is so many founders don't even follow up with the actors who are begging to make the introduction."</div>
+        <div class="who">— Senior ecosystem operator</div>
+        <div class="tags"><span class="tag cap">#network</span><span class="tag cap">#cultural</span><span class="tag frict">#friction</span></div>
+      </div>
+
+      <div class="q warn">
+        <div class="body">"Speed is very poor in Northern Ireland. In the US, you move so much faster. Get an introduction and it happens quickly. Breakfast meetings, evening meetings. There is still too much of a laid-back attitude where offices are empty by 4pm."</div>
+        <div class="who">— Founder, AI-native software</div>
+        <div class="tags"><span class="tag cap">#network</span><span class="tag cap">#cultural</span><span class="tag frict">#friction</span></div>
+      </div>
+
+      <div class="q">
+        <div class="body">"Boulder is 110,000 people. They've produced ten YC companies. Belfast is three times the size — Limerick alone has 10 YC. That shows what's possible if you leverage the network properly."</div>
+        <div class="who">— Founder, closing read-out</div>
+        <div class="tags"><span class="tag cap">#network</span><span class="tag cap">#cultural</span></div>
+      </div>
+    </aside>
+
+      <div style="border:.5pt solid var(--ink);padding:4mm;margin-top:3mm">
+        <div class="kicker"><span class="dot"></span>Suggestions raised</div>
+        <ul class="dash" style="margin-top:3mm;font-size:9pt">
+          <li>A curated senior-advisor pool, accessed by warm intro not application.</li>
+          <li>A persistent NI-wide founder peer group — a working channel of 200+ founders across stages.</li>
+          <li>Cross-cohort meetups across accelerator alumni.</li>
+          <li>A continuous diaspora-outreach mechanism. <em>Limerick is using its diaspora. NI is not.</em></li>
+          <li>Normalise <strong>follow-up etiquette</strong> in programme onboarding: close the loop within a week.</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <div class="run-foot">
+    <div>03 · Network capital</div>
+    <div class="pno">05</div>
+  </div>
+</section>
+
+<!-- ============================== P06 — FINANCIAL ============================== -->
+<section class="page" data-screen-label="06 Financial">
+  <div class="run-head">
+    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 04 · Financial capital</span></div>
+    <div>The geography penalty</div>
+  </div>
+
+  <div class="section-head">
+    <div class="num">04</div>
+    <div class="ttl">Financial capital · #financial</div>
+    <div class="tag">evidence: <b>high</b> · most emotionally charged thread</div>
+  </div>
+
+  <div class="grid-12">
+    <div>
+      <p class="lead">Per capita, NI has one of the most heavily funded founder-support systems in the UK. The binding constraint isn't quantity. It is <strong>design</strong>: capital priced for the wrong ambition, grants that don't pay for AI tooling, and match-funding that filters out anyone without personal capital.</p>
+
+      <ol class="tight" style="margin-top:4mm">
+        <li><strong>The local ceiling is set too low.</strong> Identical metrics produce materially worse equity terms in Belfast than in London. Founders openly state they plan to raise outside NI; ambitious founders are not benchmarking themselves against local funds.</li>
+        <li><strong>Grant design produces "grant monkeys."</strong> POC and concept grants are too narrow &mdash; they pay for a developer hire but not for Claude Code credits that would ship the same feature faster. Twelve-month plans ossify when the market moves quarterly.</li>
+        <li><strong>Match-funding excludes the founders the system says it wants to support.</strong> Personal-capital match requirements filter out non-traditional founders and increase social inequality at the bottom of the ladder.</li>
+        <li><strong>Predatory operators in the advice gap.</strong> Ratchet term sheets and 50% board-control demands seen from local VCs in NI's recent past. Less common today; the warning persists.</li>
+        <li><strong>The active bootstrap-vs-raise debate.</strong> AI-enabled services founders are deliberately <em>not</em> seeking equity. Angels report the seed-strap model is now <em>more</em> attractive than companies that will raise Series A.</li>
+        <li><strong>AI is inflating grant-application volume.</strong> Same pots, more applications, harder to distinguish signal.</li>
+      </ol>
+
+      <div class="rule"></div>
+      <h4 style="margin-top:2mm">Diagnosis</h4>
+      <p class="small" style="margin-top:2mm">This is not a money problem. It is a design problem. POC grants that don't pay for AI tooling but will pay for unnecessary developer hires; match-funding that filters out anyone without personal capital; an angel layer that operates entirely on warm introduction and is therefore invisible to most founders; local funds that signal ambition ceilings smaller than the global market would offer the same company. Each of these is fixable without new money.</p>
+    </div>
+
+    <aside>
+      <div class="pull-card">
+        My ambition as a founder is almost not to raise money through the local funds. Because there's a cap on that. If you're a founder with big ambition the opportunities exist outside Northern Ireland.
+        <span class="who">— Founder, B2B SaaS</span>
+      </div>
+
+      <div class="q warn" style="margin-top:5mm">
+        <div class="body">"POC grants are way too narrow. I can't even use them to buy Claude Code credits which would get me much faster. Instead I am forced to hire a developer."</div>
+        <div class="who">— Founder, AI-native build</div>
+        <div class="tags"><span class="tag cap">#financial</span><span class="tag cap">#intellectual</span><span class="tag frict">#friction</span></div>
+      </div>
+
+      <div class="q warn">
+        <div class="body">"Sometimes I have to match my own capital against it. That excludes people who can't afford it and increases the social inequality."</div>
+        <div class="who">— Founder, recently left corporate role</div>
+        <div class="tags"><span class="tag cap">#financial</span><span class="tag cap">#cultural</span><span class="tag frict">#friction</span></div>
+      </div>
+
+      <figure class="photo wide" style="margin-top:4mm;aspect-ratio:4/3;display:block"><img src="uploads/cdlPic-44.jpeg" alt="Founder in conversation, coffee in hand"></figure>
+      <div class="cap-line"><b>Fig. 04</b>The most emotionally charged thread of the day. Capital here is not absent. It is mispriced.</div>
+
+      <div class="q green" style="margin-top:4mm">
+        <div class="body">"If you want money, ask for advice. If you want advice, ask for money. The best time to talk to investors is when you don't need their money."</div>
+        <div class="who">— Multi-time exited founder, now angel investor</div>
+        <div class="tags"><span class="tag cap">#financial</span><span class="tag cap">#cultural</span><span class="tag sug">#suggestion</span></div>
+      </div>
+
+      <div class="q warn">
+        <div class="body">"They were trying to de-risk the funding by an equity ratchet agreement. If we missed targets they took equity off the founders. They wanted 50% of our board seats."</div>
+        <div class="who">— Multi-time founder, recounting NI VC experience c. 2019</div>
+        <div class="tags"><span class="tag cap">#financial</span><span class="tag cap">#institutional</span><span class="tag frict">#friction</span></div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="run-foot">
+    <div>04 · Financial capital</div>
+    <div class="pno">06</div>
+  </div>
+</section>
+
+<!-- ============================== P07 — CULTURAL ============================== -->
+<section class="page" data-screen-label="07 Cultural">
+  <div class="run-head">
+    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 05 · Cultural capital</span></div>
+    <div>Warmth, follow-up, fear of failure</div>
+  </div>
+
+  <div class="section-head">
+    <div class="num">05</div>
+    <div class="ttl">Cultural capital · #cultural</div>
+    <div class="tag">evidence: <b>high</b> · most consequential quiet capital</div>
+  </div>
+
+  <div class="grid-12">
+    <div>
+      <p class="lead">The cultural undercurrents are the most consequential capital running quietly in the background. The biggest of them is the one nobody quite said out loud — and it is the most fixable.</p>
+
+      <h4 style="margin-top:5mm">Four undercurrents</h4>
+      <ol class="tight" style="margin-top:3mm">
+        <li><strong>The ambition trap.</strong> Belfast founders calibrate against the company down the road, not the founder in Palo Alto raising on a slide. The Mullaney framing: being the fastest runner in a slow race and mistaking that for winning. This is not a problem of risk-tolerance — the founders in the room work harder, with less, than founders in most cities. It is a problem of benchmark.</li>
+        <li><strong>Follow-up as a cultural discipline.</strong> A network surplus the ecosystem is partly wasting at the user end. Costs zero to fix; cannot be mandated; can be cultivated.</li>
+        <li><strong>Fear of failure</strong> linked to a sibling observation that <em>technology talent is not respected here as it is in San Francisco or London</em>. Starting a company is socially riskier when (a) failure reads as personal failure, and (b) the path is less culturally legitimised than other professional routes.</li>
+        <li><strong>Bootstrap-as-cultural-statement.</strong> A new generation of AI-native founders is making bootstrap a deliberate choice — not a fallback. The angels are increasingly making the same case from the other side. The values of "what success looks like" here are mid-revision.</li>
+      </ol>
+
+      <div class="rule"></div>
+
+      <p style="margin-top:2mm"><strong>The good news on ambition.</strong> Founder Labs alumni named the New York trip, unprompted, as the moment that recalibrated their ambition. <em>Exposure works.</em> The current weakness is that exposure is occasional, not continuous. Make global exposure infrastructure, not a programme.</p>
+
+      <div class="grid-2" style="margin-top:5mm">
+        <div>
+          <h4 style="color:var(--green-deep)">What's working</h4>
+          <ul class="dash" style="margin-top:2mm;font-size:9.5pt">
+            <li>Give-first culture: warm intros, real-time mentoring.</li>
+            <li>Safe-space dynamics in dedicated communities.</li>
+            <li>Critique prefaced with gratitude — a healthy ecosystem signal.</li>
+            <li>A room willing to be honest in front of operators — rare.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:var(--warn)">Where the friction is</h4>
+          <ul class="dash" style="margin-top:2mm;font-size:9.5pt">
+            <li>Ambition benchmarked against the wrong peer group.</li>
+            <li>Pitch-room demographics don't reflect the markets being addressed.</li>
+            <li>No codified founder-protection norms.</li>
+            <li>Narrative concentration on a small number of names.</li>
+            <li>Hesitance to pay advisors with sweat equity, even when right.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <aside>
+      <div class="pull-card">
+        Limerick is one third the size of Belfast. It has ten YC companies. We don't. The difference isn't resources. It is which conversations founders are having and who they are pretending to compete with.
+        <span class="who">— Editorial observation</span>
+      </div>
+
+      <div class="q warn" style="margin-top:5mm">
+        <div class="body">"As a founder, I wouldn't benchmark myself against that caliber. I want to find out. And I'm not going to find out here."
+        </div>
+        <div class="who">— Founder on raising outside NI</div>
+        <div class="tags"><span class="tag cap">#cultural</span><span class="tag cap">#financial</span><span class="tag frict">#friction</span></div>
+      </div>
+
+      <figure class="photo wide" style="margin-top:4mm;aspect-ratio:3/4;display:block"><img src="uploads/cdlPic-292.jpeg" alt="A speaker addressing the room"></figure>
+      <div class="cap-line"><b>Fig. 05</b>The room was honest in a way most ecosystem workshops are not. That itself is an asset — the precondition for fixing things, not performing about them.</div>
+
+      <div class="q green" style="margin-top:4mm">
+        <div class="body">"The Founder Labs New York trip — that was the moment my ambition recalibrated. I came back operating at a different gear."</div>
+        <div class="who">— Founder Labs alumnus</div>
+        <div class="tags"><span class="tag cap">#cultural</span><span class="tag cap">#network</span><span class="tag work">#working</span></div>
+      </div>
+
+      <div class="q warn">
+        <div class="body">"Technology talent here, I don't think it's respected as much as it is in San Francisco or London. How do we bring that into the education system? How do we make it more acceptable to start a company?"</div>
+        <div class="who">— Founder, closing read-out</div>
+        <div class="tags"><span class="tag cap">#cultural</span><span class="tag cap">#human</span><span class="tag frict">#friction</span></div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="run-foot">
+    <div>05 · Cultural capital</div>
+    <div class="pno">07</div>
+  </div>
+</section>
+
+<!-- ============================== P08 — INSTITUTIONAL ============================== -->
+<section class="page" data-screen-label="08 Institutional">
+  <div class="run-head">
+    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 06 · Institutional capital</span></div>
+    <div>The front door problem</div>
+  </div>
+
+  <div class="section-head">
+    <div class="num">06</div>
+    <div class="ttl">Institutional capital · #institutional</div>
+    <div class="tag">evidence: <b>high</b> · INI front-door now corroborated independently</div>
+  </div>
+
+  <div class="grid-12">
+    <div>
+      <p class="lead">Each programme is, individually, well-designed. Together they are illegible. Programmes operate in silos because their KPIs are individual, not collective. And the single largest friction point &mdash; Invest NI's front door &mdash; could be re-engineered in months, not years.</p>
+
+      <ol class="tight" style="margin-top:4mm">
+        <li><strong>Too crowded to navigate.</strong> Founder Labs, Catalyst, Ormeau Labs, Eagle Labs, Go Succeed, council programmes, university programmes, Innovate UK, Intertrade Ireland, Invest NI. All real. All individually useful. None coherent from a founder's perspective.</li>
+        <li><strong>Grant criteria assume one shape of company</strong> &mdash; typically equity-track, product-led.</li>
+        <li><strong>The Invest NI front door is filtering out the wrong founders.</strong> Now corroborated independently across multiple recordings &mdash; including from a founder operating successfully in NI for six years who has <em>never</em> gone back. "The form is too long. Invest NI doesn't even know that they do this."</li>
+        <li><strong>The connection-between-networks problem.</strong> A founder rejected by one programme isn't routinely referred onward. KPI structures incentivise individual programmes, not collective coverage.</li>
+        <li><strong>Public-sector pace.</strong> Founders work in weekly sprints. Institutions work in quarters. Decisions wait on annual leave.</li>
+      </ol>
+
+      <div class="rule"></div>
+
+      <h4>Diagnosis</h4>
+      <p class="small" style="margin-top:2mm">The system around the bright spots is what is failing &mdash; not the programmes themselves. Founder Labs, Eagle Labs / Ormeau Labs, Catalyst Invent, Awakened Angels, Go Succeed, Intertrade Ireland were all named, unprompted, as bright spots. The friction is in the connective tissue between them, and in the single front-door interface that decides who gets in.</p>
+      <p class="small" style="margin-top:2mm"><strong>Recommendation summary.</strong> Commission an external review of the Invest NI founder-facing front door with a measurable target. Build a shared cross-referral protocol between programmes. Publish a single navigable map of NI support by stage and sector &mdash; resourced as infrastructure, not as a programme.</p>
+    </div>
+
+    <aside>
+      <div class="pull-card">
+        I went to Invest NI a couple of years ago. It was a lot of forms and time. When you're running a business and you're really busy, is it even worth going? I just walked away from it.
+        <span class="who">— Founder, six years operating in NI</span>
+      </div>
+
+      <figure class="photo wide" style="margin-top:5mm;aspect-ratio:4/3;display:block"><img src="uploads/cdlPic-130.jpeg" alt="Speaker at the CDL with Techstars and QUBIS branding"></figure>
+      <div class="cap-line"><b>Fig. 06</b>Programmes named, unprompted, as bright spots: Founder Labs, Eagle / Ormeau Labs, Catalyst, Awakened Angels, Go Succeed, Intertrade Ireland.</div>
+
+      <div class="q warn" style="margin-top:5mm">
+        <div class="body">"How do I tell which programmes are good and which are relevant to my business? I wish it was clearer. Founder Labs only has 10 people on it and doesn't run all the time."</div>
+        <div class="who">— Founder, services-led B2B</div>
+        <div class="tags"><span class="tag cap">#institutional</span><span class="tag frict">#friction</span></div>
+      </div>
+
+      <div class="q warn">
+        <div class="body">"Most of the time in public sector — to make decisions you have to wait for this person, then this person — and most of the time they're on annual leave."</div>
+        <div class="who">— Founder reflecting on pace</div>
+        <div class="tags"><span class="tag cap">#institutional</span><span class="tag cap">#cultural</span><span class="tag frict">#friction</span></div>
+      </div>
+
+      <div class="q green">
+        <div class="body">"One thing we could improve is the connection between the networks. If you apply for a Barclays accelerator and aren't a fit, ideally you'd fall into a catch-all where Founder Labs picks you up &mdash; rather than fall by the wayside."</div>
+        <div class="who">— Founder, closing read-out</div>
+        <div class="tags"><span class="tag cap">#institutional</span><span class="tag cap">#network</span><span class="tag sug">#suggestion</span></div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="run-foot">
+    <div>06 · Institutional capital</div>
+    <div class="pno">08</div>
+  </div>
+</section>
+
+<!-- ============================== P09 — HUMAN ============================== -->
+<section class="page" data-screen-label="09 Human">
+  <div class="run-head">
+    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 07 · Human capital</span></div>
+    <div>The missing founder mafia</div>
+  </div>
+
+  <div class="section-head">
+    <div class="num">07</div>
+    <div class="ttl">Human capital · #human</div>
+    <div class="tag">evidence: <b>high</b></div>
+  </div>
+
+  <div class="grid-12">
+    <div>
+      <p class="lead">The most strategically important observation from the day was <em>who was in the room</em>. A new founder generation operating on different unit economics &mdash; AI-native, customer-funded, global from week one. The system around them has not yet caught up.</p>
+
+      <h4 style="margin-top:5mm">Four lenses</h4>
+      <ol class="tight" style="margin-top:3mm">
+        <li><strong>A new founder generation, operating differently.</strong> One founder doing the work of a thirty-person team. Domain experts leaving large institutions to build products in those domains. A bootstrapped, customer-funded ethic earlier in the lifecycle. Canadian contracts won by Belfast solo founders before any local agency engagement. This cohort is not a continuation of the cohort before it.</li>
+        <li><strong>The skills gap</strong> &mdash; negotiation as a missing capability that founders without accelerator access never fully acquire.</li>
+        <li><strong>The diversity question</strong> &mdash; women founders navigating an environment built for someone else; pitch-room asymmetry ("who's the CTO?" &mdash; looking for a man even when a woman is the CTO).</li>
+        <li><strong>The "founder mafia" generational gap</strong> &mdash; London / NY / SF have generations of large successful companies whose alumni become the next generation's founders, advisors, angels. NI doesn't have this yet. A <em>time</em> problem, not a programme problem &mdash; but cultivating the candidates is the work.</li>
+      </ol>
+
+      <div class="rule"></div>
+
+      <div class="grid-2">
+        <div>
+          <h4 style="color:var(--green-deep)">What's working</h4>
+          <ul class="dash" style="margin-top:2mm;font-size:9.2pt">
+            <li>Women-only founder communities producing real outcomes.</li>
+            <li>Bank- and corporate-led programmes emerging (Awakened Hub, Awakened Angels, Eagle Lab).</li>
+            <li>Life-sciences university pipeline producing balanced gender representation in spinouts.</li>
+            <li><strong>AI as an upskilling path for non-technical founders</strong> &mdash; a chartered accountant building her own EMI scheme.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:var(--warn)">Where the friction is</h4>
+          <ul class="dash" style="margin-top:2mm;font-size:9.2pt">
+            <li>Negotiation acquired by chance, not design.</li>
+            <li>Investment panels demographically narrow.</li>
+            <li>Few female angels and VCs to draw from.</li>
+            <li>No structured exposure to founder as a viable path at school or undergraduate stage.</li>
+            <li>Question-asymmetry on investment panels &mdash; a panel-training issue, not just a representation issue.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <aside>
+      <div class="pull-card">
+        We're trying to be as close to AI-native as possible. Everyone is on Claude, doing QA cycles, generating design assets, writing copy. There's no rules &mdash; you just decide one morning to do it.
+        <span class="who">— Founder, AI-native services</span>
+      </div>
+
+      <figure class="photo wide" style="margin-top:5mm;aspect-ratio:4/3;display:block"><img src="uploads/cdlPic-102.jpeg" alt="Founders in conversation — a Startup Community Partner shirt visible"></figure>
+      <div class="cap-line"><b>Fig. 07</b>A new generation of founders, operating on different unit economics. The system around them has not yet caught up.</div>
+
+      <div class="q green" style="margin-top:5mm">
+        <div class="body">"I built the EMI scheme myself. A year ago I would have said I'm not technical &mdash; but I've used AI to learn how to code. I understand architecture now."</div>
+        <div class="who">— Founder, AI-native fintech</div>
+        <div class="tags"><span class="tag cap">#human</span><span class="tag cap">#intellectual</span><span class="tag work">#working</span></div>
+      </div>
+
+      <div class="q warn">
+        <div class="body">"I work with a lot of female founders just starting that journey, and they're not getting the investment. They get asked different questions — grilled on different things. A lot get asked 'who's the CTO?' I'm the CTO. They're looking for the man."</div>
+        <div class="who">— Ecosystem operator working with women founders</div>
+        <div class="tags"><span class="tag cap">#human</span><span class="tag cap">#cultural</span><span class="tag frict">#friction</span></div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="run-foot">
+    <div>07 · Human capital</div>
+    <div class="pno">09</div>
+  </div>
+</section>
+
+<!-- ============================== P10 — INTELLECTUAL ============================== -->
+<section class="page" data-screen-label="10 Intellectual">
+  <div class="run-head">
+    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 08 · Intellectual capital</span></div>
+    <div>What AI just changed</div>
+  </div>
+
+  <div class="section-head">
+    <div class="num">08</div>
+    <div class="ttl">Intellectual capital · #intellectual</div>
+    <div class="tag">evidence: <b>medium-high</b> · live debate</div>
+  </div>
+
+  <div class="grid-12">
+    <div>
+      <p class="lead">The founders already using AI properly are operating at a different gear. The institutions in the room are still debating governance and guardrails. The gap between those two states is the structural risk for NI's economy &mdash; and the section's central observation.</p>
+
+      <h4 style="margin-top:5mm">The FDI exposure</h4>
+      <p style="margin-top:2mm">A significant part of NI's FDI base sits in workflows that current-generation AI agents are now demonstrably automating: KYC, AML, legal operations, customer support, BPO. The choice is not whether AI happens to Northern Ireland. It is whether the system is set up to capture the upside or absorb only the downside. The institutional response has, with respect, concentrated on the conversations we cannot move (the model layer, frontier safety, regulation at the level of large jurisdictions) and avoided the conversations we can: whether our grant rules let founders spend on AI tooling, whether our schools and universities teach with AI, whether our programmes are designed for AI-native unit economics.</p>
+
+      <div class="rule"></div>
+
+      <h4 style="margin-top:3mm">A live tension worth publishing as a tension</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-top:4mm">
+        <div style="border:1pt solid var(--ink);padding:5mm;background:var(--paper-2)">
+          <div class="kicker">Position A · Investor</div>
+          <div style="font-family:var(--serif);font-style:italic;font-size:13pt;line-height:1.25;margin-top:3mm">"Consultancy businesses are not investable, full stop. Nobody will ever invest in a consultancy."</div>
+          <div class="who" style="font-family:var(--sans);font-size:8pt;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:3mm">— Angel investor</div>
+        </div>
+        <div style="border:1pt solid var(--ink);padding:5mm;background:#0a0a0a;color:var(--paper)">
+          <div class="kicker" style="color:var(--green)"><span class="dot"></span>Position B · Founder</div>
+          <div style="font-family:var(--serif);font-style:italic;font-size:13pt;line-height:1.25;margin-top:3mm">"As one person I can have six clients, where before that would have needed a team of thirty or forty. The cap on what you can earn isn't quite the way it used to be."</div>
+          <div class="who" style="font-family:var(--sans);font-size:8pt;letter-spacing:.1em;text-transform:uppercase;color:#bdbcb6;font-weight:600;margin-top:3mm">— Founder, AI-native services</div>
+        </div>
+      </div>
+
+      <p style="margin-top:4mm">The angel's position reflects the historical model: linear time-for-money. The founder's reflects what AI has changed: productised services with software-like margins. <strong>The ecosystem has not yet developed shared language to distinguish "old-style consultancy" from "AI-native services".</strong> That language gap is itself the intellectual-capital observation.</p>
+    </div>
+
+    <aside>
+      <div class="pull-card">
+        Institutions are debating AI. Founders are shipping with it. The gap between those two states is the structural risk for NI's economy.
+        <span class="who">— Cross-cutting observation</span>
+      </div>
+
+      <div class="q warn" style="margin-top:5mm">
+        <div class="body">"If you're still using ChatGPT that's like a red flag. The capability of AI has moved way beyond. People in San Francisco are using AI to do the work. So if you're not, you're far behind."</div>
+        <div class="who">— Founder, AI-native build</div>
+        <div class="tags"><span class="tag cap">#intellectual</span><span class="tag frict">#friction</span></div>
+      </div>
+
+      <div class="q">
+        <div class="body">"Just having AI functionality in your product is no longer enough. You need a real data moat &mdash; proprietary data, something hard for someone else to acquire."</div>
+        <div class="who">— VC investor</div>
+        <div class="tags"><span class="tag cap">#intellectual</span><span class="tag cap">#financial</span></div>
+      </div>
+
+      <div class="q green">
+        <div class="body">"There's no such thing as a data moat anymore &mdash; all that data is going into the foundation models. The moat now is workflow embedding, UX, and how connected your tool is to your user's actual work."</div>
+        <div class="who">— Founder (responding directly)</div>
+        <div class="tags"><span class="tag cap">#intellectual</span></div>
+      </div>
+
+      <div class="q">
+        <div class="body">"Six months ago you had assumptions about how sticky a product was. Then OpenAI or Anthropic releases an update and the businesses you thought had solid fundamentals are totally redundant."</div>
+        <div class="who">— VC investor</div>
+        <div class="tags"><span class="tag cap">#intellectual</span><span class="tag obs">#observation</span></div>
+      </div>
+
+      <div class="q">
+        <div class="body">"The software is the easy bit now. The hard bit is getting in front of the customer."</div>
+        <div class="who">— Founder</div>
+        <div class="tags"><span class="tag cap">#intellectual</span><span class="tag cap">#cultural</span></div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="run-foot">
+    <div>08 · Intellectual capital</div>
+    <div class="pno">10</div>
+  </div>
+</section>
+
+<!-- ============================== P11 — PHYSICAL ============================== -->
+<section class="page" data-screen-label="11 Physical">
+  <div class="run-head">
+    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 09 · Physical capital</span></div>
+    <div>The absence is the data</div>
+  </div>
+
+  <div class="section-head">
+    <div class="num">09</div>
+    <div class="ttl">Physical capital · #physical</div>
+    <div class="tag">evidence: <b>minimal</b> · finding is firm</div>
+  </div>
+
+  <div class="grid-12">
+    <div>
+      <p class="lead">For three full hours of recorded conversation, no founder talked about Belfast as a place. That's not because the place isn't an asset — it's because the place is taken for granted. A startup community that has stopped seeing its own backdrop has lost a narrative tool.</p>
+
+      <p style="margin-top:5mm">Founders did not talk about Belfast as a place, didn't reference physical hubs as differentiators, didn't discuss density or co-location as advantages — even when prompted by a facilitator who explicitly raised "density" as a feature of NI.</p>
+
+      <p>The closest physical-capital moment was incidental: a founder mentioning they chose Belfast over Dublin because it was "a lot more affordable than Dublin". A quiet positive — surfaced as one sentence, in passing, not as a frame.</p>
+
+      <p>Feld and Hathaway specifically argue that physical capital — quality of place, density, infrastructure — runs in the background of the most successful startup communities and is often underestimated. Boulder's identity as a place is, in their writing, inseparable from its identity as a startup community.</p>
+
+      <h4 style="margin-top:5mm">What the absence could mean</h4>
+      <ul class="dash" style="margin-top:2mm;font-size:9.5pt">
+        <li>Physical capital genuinely isn't a constraint or differentiator — in which case it's also not a story to tell.</li>
+        <li>Physical capital is taken for granted — in which case it's working but undervalued as narrative.</li>
+        <li>Founders here haven't yet learned to use <em>place</em> as part of their story — in which case there's a missed narrative opportunity.</li>
+      </ul>
+      <p style="margin-top:3mm">The third hypothesis is the most useful. Belfast has real physical-capital assets — Ormeau Labs, Catalyst Inc, university corridors, walkable density, affordability vs Dublin / London, ease of cross-border travel — that are not being deployed as part of NI's startup-community story. As one founder put it in passing: <em>"in a major hub you compete for everything — talent, attention, runway. Here the math is different."</em></p>
+    </div>
+
+    <aside>
+      <figure class="photo wide" style="aspect-ratio:4/3;display:block"><img src="uploads/cdlPic-118.jpeg" alt="Catalyst / Ormeau Labs room"></figure>
+      <div class="cap-line"><b>Fig. 08</b>Catalyst Inc, Ormeau Labs, university corridors — walkable density that founders aren't using as narrative.</div>
+
+      <div class="diagram" style="margin-top:4mm">
+        <div class="kicker"><span class="dot"></span>Mentions per capital · across recordings (relative)</div>
+        <svg viewBox="0 0 280 240" width="100%" style="margin-top:4mm">
+          <g font-family="Inter" font-size="9" font-weight="700" fill="#0a0a0a">
+            <text x="0" y="20">FINANCIAL</text>
+            <rect x="92" y="11" width="180" height="12" fill="#0a0a0a"/>
+            <text x="0" y="50">NETWORK</text>
+            <rect x="92" y="41" width="172" height="12" fill="#0a0a0a"/>
+            <text x="0" y="80">CULTURAL</text>
+            <rect x="92" y="71" width="138" height="12" fill="#0a0a0a"/>
+            <text x="0" y="110">INSTITUTIONAL</text>
+            <rect x="92" y="101" width="120" height="12" fill="#0a0a0a"/>
+            <text x="0" y="140">HUMAN</text>
+            <rect x="92" y="131" width="116" height="12" fill="#0a0a0a"/>
+            <text x="0" y="170">INTELLECTUAL</text>
+            <rect x="92" y="161" width="84" height="12" fill="#0a0a0a"/>
+            <text x="0" y="200">PHYSICAL</text>
+            <rect x="92" y="191" width="14" height="12" fill="#00C853"/>
+            <text x="112" y="200" fill="#5a5a55" font-weight="500">← the absence is the data</text>
+          </g>
+          <line x1="92" y1="218" x2="272" y2="218" stroke="#0a0a0a" stroke-width=".5"/>
+          <text x="92" y="230" font-family="JetBrains Mono" font-size="7" fill="#5a5a55">low</text>
+          <text x="270" y="230" font-family="JetBrains Mono" font-size="7" fill="#5a5a55" text-anchor="end">high</text>
+        </svg>
+      </div>
+
+      <div style="border:.5pt solid var(--ink);padding:4mm;margin-top:5mm">
+        <div class="kicker"><span class="dot"></span>What to do about it</div>
+        <p class="small" style="margin-top:3mm">Deliberately surface physical-capital narratives in ecosystem storytelling: affordability vs Dublin, compactness as networking advantage, hub density (Ormeau, Catalyst, university corridors), ease of cross-border travel and work.</p>
+      </div>
+    </aside>
+  </div>
+
+  <div class="run-foot">
+    <div>09 · Physical capital</div>
+    <div class="pno">11</div>
+  </div>
+</section>
+
+<!-- ============================== P12 — CROSS-CUTTING ============================== -->
+<section class="page" data-screen-label="12 Cross-cutting">
+  <div class="run-head">
+    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 10 · Cross-cutting</span></div>
+    <div>Asymmetry &amp; the connected core</div>
+  </div>
+
+  <div class="section-head">
+    <div class="num">10</div>
+    <div class="ttl">Cross-cutting observations</div>
+    <div class="tag">patterns running across capitals</div>
+  </div>
+
+  <div class="grid-12">
+    <div>
+      <h3>The meta-finding: information asymmetry between connected and unconnected founders.</h3>
+      <p style="margin-top:3mm">Almost every friction in the dataset can be reframed as an asymmetry problem. The ecosystem's strongest interventions all <em>close</em> this asymmetry for founders inside them. The opportunity is to extend the same protection to founders outside.</p>
+
+      <div class="diagram" style="margin-top:5mm">
+        <svg viewBox="0 0 480 280" width="100%">
+          <defs>
+            <linearGradient id="grad1" x1="0" x2="1" y1="0" y2="0">
+              <stop offset="0" stop-color="#fafaf7"/>
+              <stop offset="1" stop-color="#0a0a0a"/>
+            </linearGradient>
+          </defs>
+          <!-- spectrum -->
+          <rect x="20" y="60" width="440" height="14" fill="url(#grad1)" stroke="#0a0a0a" stroke-width=".5"/>
+          <text x="20" y="52" font-family="Inter" font-size="9" font-weight="700">UNCONNECTED FOUNDER</text>
+          <text x="460" y="52" font-family="Inter" font-size="9" font-weight="700" text-anchor="end" fill="#0a0a0a">CONNECTED FOUNDER</text>
+          <text x="20" y="92" font-family="JetBrains Mono" font-size="7" fill="#5a5a55">no warm intros · doesn't know the form</text>
+          <text x="460" y="92" font-family="JetBrains Mono" font-size="7" fill="#5a5a55" text-anchor="end">knows who to call · learns by osmosis</text>
+
+          <!-- rows -->
+          <g font-family="Inter" font-size="8.5" font-weight="600" fill="#0a0a0a">
+            <line x1="20" y1="120" x2="460" y2="120" stroke="#0a0a0a" stroke-width=".25" stroke-dasharray="2 2"/>
+            <text x="20" y="118">#network</text><text x="460" y="118" text-anchor="end">finds programmes ↔ doesn't</text>
+            <line x1="20" y1="140" x2="460" y2="140" stroke="#0a0a0a" stroke-width=".25" stroke-dasharray="2 2"/>
+            <text x="20" y="138">#human</text><text x="460" y="138" text-anchor="end">learns negotiation from mentors ↔ doesn't</text>
+            <line x1="20" y1="160" x2="460" y2="160" stroke="#0a0a0a" stroke-width=".25" stroke-dasharray="2 2"/>
+            <text x="20" y="158">#cultural</text><text x="460" y="158" text-anchor="end">spots ratchet term sheets ↔ doesn't</text>
+            <line x1="20" y1="180" x2="460" y2="180" stroke="#0a0a0a" stroke-width=".25" stroke-dasharray="2 2"/>
+            <text x="20" y="178">#institutional</text><text x="460" y="178" text-anchor="end">knows who to call at INI ↔ fills the form &amp; walks away</text>
+            <line x1="20" y1="200" x2="460" y2="200" stroke="#0a0a0a" stroke-width=".25" stroke-dasharray="2 2"/>
+            <text x="20" y="198">#financial</text><text x="460" y="198" text-anchor="end">knows "ask for advice, get money" ↔ doesn't</text>
+            <line x1="20" y1="220" x2="460" y2="220" stroke="#0a0a0a" stroke-width=".25" stroke-dasharray="2 2"/>
+            <text x="20" y="218">#intellectual</text><text x="460" y="218" text-anchor="end">inside the live AI conversation ↔ lags by months</text>
+          </g>
+
+          <!-- arrow -->
+          <path d="M 240 245 L 240 265" stroke="#00C853" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+          <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#00C853"/></marker></defs>
+          <text x="240" y="278" text-anchor="middle" font-family="Inter" font-size="9" font-weight="800" fill="#00C853">close the asymmetry · the leverage move</text>
+        </svg>
+      </div>
+    </div>
+
+    <aside>
+      <h4>Eight patterns that run across capitals</h4>
+      <ol class="tight" style="margin-top:3mm;font-size:9.2pt">
+        <li><strong>Asymmetry is the meta-finding.</strong> Connected founders compound; unconnected ones get filtered out.</li>
+        <li><strong>NI is rich in two capitals (network, cultural-warmth) and short in two (institutional-legibility, codified culture).</strong> The leverage move is to spend the surplus on the deficit.</li>
+        <li><strong>Founders trust each other more than formal channels.</strong> Formal infrastructure sets the conditions; the value transfer happens between founders.</li>
+        <li><strong>The most experienced founders deliberately limit their exposure to "general" ecosystem activity</strong> — small, trusted, online over big, broad, in-person.</li>
+        <li><strong>Tone: gratitude with honest critique.</strong> The ecosystem is being asked to finish the job, not torn down.</li>
+        <li><strong>The follow-up culture problem</strong> — costs zero to fix at founder level. Cannot be mandated; can be cultivated.</li>
+        <li><strong>The bootstrap-vs-raise debate is no longer fringe.</strong> Treat it as live.</li>
+        <li><strong>The shockwave is yet to come, but the candidates are visible.</strong> Cultivate exit alumni before they dissolve into private life.</li>
+      </ol>
+
+      <div class="pull-card lite" style="margin-top:4mm">
+        Cultivate exit alumni before they dissolve into private life. That is the work that produces the next generation of founders, advisors, and angels.
+        <span class="who">— Cross-cutting observation</span>
+      </div>
+    </aside>
+  </div>
+
+  <div class="run-foot">
+    <div>10 · Cross-cutting</div>
+    <div class="pno">12</div>
+  </div>
+</section>
+
+<!-- ============================== P13 — RECOMMENDATIONS ============================== -->
+<section class="page" data-screen-label="13 Recommendations">
+  <div class="run-head">
+    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 11 · Recommendations</span></div>
+    <div>14, ranked &amp; tagged</div>
+  </div>
+
+  <div class="section-head">
+    <div class="num">11</div>
+    <div class="ttl">Recommendations</div>
+    <div class="tag">ranked by frequency × force × actionability</div>
+  </div>
+
+  <p class="small">Synthesised from founder suggestions and the author's analysis. Five priorities sit at the top — chosen because none require substantial new money, all are implementable, and together they constitute the leverage move: <em>spend NI's surplus network and cultural capital on its deficit of institutional and human capital.</em></p>
+
+  <div style="margin-top:5mm;border:1pt solid var(--ink);padding:5mm;background:var(--paper-2)">
+    <div class="kicker"><span class="dot"></span>The five priorities, in order of leverage</div>
+    <ol class="tight" style="margin-top:3mm;font-size:9.5pt;font-family:var(--sans);font-weight:500;letter-spacing:-.005em;padding-left:18pt">
+      <li><strong>Reform grants</strong> to reward velocity and customers — not application-writing. AI tooling eligible spend; drop personal match-funding pre-revenue.</li>
+      <li><strong>Fix the Invest NI front door</strong> — an external review with a measurable target. Months, not years.</li>
+      <li><strong>Build the missing peer network</strong> — a working channel of 200+ NI founders across stages, anchored jointly across Catalyst / Founder Labs / Ormeau Labs.</li>
+      <li><strong>Make global exposure continuous, not occasional</strong> — programmatic diaspora outreach; YC / Techstars alumni introductions on tap. Target: match Limerick on YC entries within 24 months.</li>
+      <li><strong>Take a public position that NI builds with AI</strong> — a posture commitment with operational consequences across grants, education, and FDI-workforce adaptation.</li>
+    </ol>
+  </div>
+
+  <table class="recs" style="margin-top:5mm">
+    <thead>
+      <tr><th>#</th><th>Recommendation</th><th>Capitals</th><th>Force</th></tr>
+    </thead>
+    <tbody>
+      <tr class="hi">
+        <td class="n">01</td>
+        <td><span class="rec-t">Publish a public-domain "Founder Best Practice" guide.</span>Fundraising hygiene, term-sheet red flags (with historical ratchet examples), advisory norms, sweat-equity cap-table hygiene, the "ask for advice, get money" rule. Written by founders. One findable place. Referenced from every programme.</td>
+        <td class="caps">#cultural #institutional #financial #human</td>
+        <td class="f"><span class="bar" style="width:34px"></span>High</td>
+      </tr>
+      <tr class="hi">
+        <td class="n">02</td>
+        <td><span class="rec-t">Build a single, founder-stage-aware map of the support landscape.</span>A decision tree, not a brochure. Include an inter-programme catch-net: when a founder applies to one programme and isn't a fit, route them onward.</td>
+        <td class="caps">#institutional #network</td>
+        <td class="f"><span class="bar" style="width:34px"></span>High</td>
+      </tr>
+      <tr class="hi">
+        <td class="n">03</td>
+        <td><span class="rec-t">Stand up a persistent NI-wide founder peer infrastructure.</span>Modelled on the Lithuanian Unicorn Association. Mix Series B founders with first-time founders. Cross all accelerator alumni groups. Anchor in Catalyst / Founder Labs / Ormeau Labs jointly.</td>
+        <td class="caps">#network #cultural #human</td>
+        <td class="f"><span class="bar" style="width:34px"></span>High</td>
+      </tr>
+      <tr class="hi">
+        <td class="n">04</td>
+        <td><span class="rec-t">Simplify the on-ramp to Invest NI for already-trading exporters.</span>An alternative to the long web form for companies with demonstrable traction. The current intake is filtering out the wrong founders; that finding is corroborated.</td>
+        <td class="caps">#institutional</td>
+        <td class="f"><span class="bar" style="width:34px"></span>High</td>
+      </tr>
+      <tr>
+        <td class="n">05</td>
+        <td><span class="rec-t">Re-examine grant architecture.</span>Reward capital efficiency rather than encouraging founders to default to the maximum. Anticipate AI-driven volume increase by updating selection methods.</td>
+        <td class="caps">#financial #institutional #intellectual</td>
+        <td class="f"><span class="bar" style="width:26px"></span>Med-High</td>
+      </tr>
+      <tr class="hi">
+        <td class="n">06</td>
+        <td><span class="rec-t">Increase cadence of women-founder programmes</span>to quarterly or rolling. Ensure investment panels include relevant market context, and explicitly address question-asymmetry (the "where's the CTO?" pattern) in panel training.</td>
+        <td class="caps">#human #cultural #financial</td>
+        <td class="f"><span class="bar" style="width:34px"></span>High</td>
+      </tr>
+      <tr>
+        <td class="n">07</td>
+        <td><span class="rec-t">Build recognition and tailored support for AI-native services.</span>Not the same as old-style consultancy. The ecosystem needs shared language and shared eligibility criteria.</td>
+        <td class="caps">#intellectual #financial #institutional</td>
+        <td class="f"><span class="bar" style="width:26px"></span>Med-High</td>
+      </tr>
+      <tr>
+        <td class="n">08</td>
+        <td><span class="rec-t">Treat scaled-exit alumni as a deliberate strategic asset.</span>Cloudsmith and a small number of others are the candidate "founder mafia" networks. Annual alumni convening; deliberate pairing of exited founders with first-time founders — before alumni dissolve into private life.</td>
+        <td class="caps">#human #network #cultural</td>
+        <td class="f"><span class="bar" style="width:26px"></span>Med-High</td>
+      </tr>
+      <tr>
+        <td class="n">09</td>
+        <td><span class="rec-t">Earlier-stage exposure</span>— bring the existence of the ecosystem into school, college, and university. Specifically address fear of failure and cultural status of technology talent.</td>
+        <td class="caps">#human #cultural #network</td>
+        <td class="f"><span class="bar" style="width:18px"></span>Medium</td>
+      </tr>
+      <tr>
+        <td class="n">10</td>
+        <td><span class="rec-t">Embed warm-intro follow-up etiquette into accelerator onboarding.</span>When someone makes you a warm intro, you owe them a closing-the-loop note within a week. Make it explicit. Costs zero. Protects the network's compounding engine.</td>
+        <td class="caps">#cultural #network</td>
+        <td class="f"><span class="bar" style="width:26px"></span>Med-High</td>
+      </tr>
+      <tr>
+        <td class="n">11</td>
+        <td><span class="rec-t">Specialist advisory pools.</span>Accountancy and legal support for holding-company structures, exit planning, tax-efficient bootstrapping, cross-border (NI/RoI/UK) capital structuring, sweat-equity hygiene.</td>
+        <td class="caps">#human #institutional #financial</td>
+        <td class="f"><span class="bar" style="width:18px"></span>Medium</td>
+      </tr>
+      <tr>
+        <td class="n">12</td>
+        <td><span class="rec-t">Curate a senior-advisor pool</span>of experienced ex-operators willing to mentor next-generation founders, by warm introduction.</td>
+        <td class="caps">#network #human #cultural</td>
+        <td class="f"><span class="bar" style="width:18px"></span>Medium</td>
+      </tr>
+      <tr>
+        <td class="n">13</td>
+        <td><span class="rec-t">Diversify ecosystem storytelling.</span>Surface a broader range of company shapes — bootstrapped, services-led, profitable-without-VC, scale-via-acquisition, AI-native, women-led, deep-tech-from-life-sciences.</td>
+        <td class="caps">#intellectual #cultural</td>
+        <td class="f"><span class="bar" style="width:18px"></span>Medium</td>
+      </tr>
+      <tr>
+        <td class="n">14</td>
+        <td><span class="rec-t">Surface place as a narrative asset.</span>Belfast's affordability vs Dublin, hub density, university-corridor compactness, ease of cross-border travel — real physical-capital advantages founders aren't currently using in their own stories.</td>
+        <td class="caps">#physical #cultural</td>
+        <td class="f"><span class="bar" style="width:12px"></span>Low-Med</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="run-foot">
+    <div>11 · Recommendations</div>
+    <div class="pno">13</div>
+  </div>
+</section>
+
+<!-- ============================== P14 — QUOTE BANK ============================== -->
+<section class="page" data-screen-label="14 Quote bank">
+  <div class="run-head">
+    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 12 · Quote bank</span></div>
+    <div>Pull-ready voices</div>
+  </div>
+
+  <div class="section-head">
+    <div class="num">12</div>
+    <div class="ttl">Quote bank · founders, in their own words</div>
+    <div class="tag">tier: <b>quote:designed-report &amp; quote:social</b></div>
+  </div>
+
+  <div class="qb">
+    <div class="qbi">
+      <div class="body">"I left the job and decided this is what I want to do. I had no clue where to find support or where the network was."</div>
+      <div class="who">— Founder, recently left corporate role</div>
+      <div class="ts">#network · #cultural · #friction</div>
+    </div>
+    <div class="qbi">
+      <div class="body">"I have barely been out since Covid. I do everything online. A lot of it is going through warm introductions and building a closer network you can pick up the phone to — rather than just kind of random."</div>
+      <div class="who">— Multi-time founder</div>
+      <div class="ts">#network · #observation</div>
+    </div>
+    <div class="qbi">
+      <div class="body">"Ten years ago on LinkedIn I had no contacts, but the contacts I've built up over the last ten years have been transformational to my progress."</div>
+      <div class="who">— Multi-time founder</div>
+      <div class="ts">#network · #working</div>
+    </div>
+    <div class="qbi">
+      <div class="body">"There's a big gap between going to school, going to university, learning your trade, and then getting to here. I found that the hard way."</div>
+      <div class="who">— Multi-time founder</div>
+      <div class="ts">#human · #cultural · #friction</div>
+    </div>
+    <div class="qbi">
+      <div class="body">"It sounds like an opportunity for the VCs themselves. If they mobilised, they'd come across more opportunities — rather than waiting for everything to come to them."</div>
+      <div class="who">— Multi-time founder</div>
+      <div class="ts">#financial · #suggestion</div>
+    </div>
+    <div class="qbi">
+      <div class="body">"Everybody is absolutely grateful for every single thing — it's all money. But it's more about access."</div>
+      <div class="who">— Multi-time founder</div>
+      <div class="ts">#financial · #observation</div>
+    </div>
+    <div class="qbi">
+      <div class="body">"There should be more governance over who is operating in this space and taking advantage of founders who are early-stage. If you didn't know better, you could think you have to do these things."</div>
+      <div class="who">— Multi-time founder</div>
+      <div class="ts">#financial · #cultural · #institutional · #friction</div>
+    </div>
+    <div class="qbi">
+      <div class="body">"Just like a best-practice guide that anyone can lift up. So everyone knows where it is — you can go look at stuff and be like, okay, that's definitely not okay."</div>
+      <div class="who">— Multi-time founder</div>
+      <div class="ts">#cultural · #institutional · #suggestion</div>
+    </div>
+    <div class="qbi">
+      <div class="body">"If you're pitching health tech that's addressing endometriosis, every single one of us has our own glasses on. How do you connect with that potential investor or panel?"</div>
+      <div class="who">— Academic researcher</div>
+      <div class="ts">#human · #financial · #cultural · #friction</div>
+    </div>
+    <div class="qbi">
+      <div class="body">"97% of women will go for an investment round when prompted — and when women go for it, they're really successful. We need to give these people a bit of confidence."</div>
+      <div class="who">— Bank-led ecosystem operator <span style="color:var(--warn);font-style:normal">(stat to verify)</span></div>
+      <div class="ts">#human · #cultural · #working</div>
+    </div>
+    <div class="qbi">
+      <div class="body">"There was someone who used to work for a major tech company. Someone else was creating a watch. All of a sudden, this person is bringing their contacts in to help the other one grow. Doesn't exist without that lovely conversation."</div>
+      <div class="who">— Bank-led ecosystem operator</div>
+      <div class="ts">#cultural · #network · #working</div>
+    </div>
+    <div class="qbi">
+      <div class="body">"There's a lot of weight on a small number of names' shoulders. The only way the people running this stuff can make it better is if they have honest opinions from everyone in the room."</div>
+      <div class="who">— Programme operator and facilitator</div>
+      <div class="ts">#cultural · #institutional · #observation</div>
+    </div>
+    <div class="qbi">
+      <div class="body">"Anything we can automate in our process of talking to clients, we do. That's why I as one person can have six clients, where before that would have required a team of thirty or forty."</div>
+      <div class="who">— Founder, AI-enabled services</div>
+      <div class="ts">#intellectual · #cultural · #working</div>
+    </div>
+    <div class="qbi">
+      <div class="body">"Our North Star challenge to ourselves is: when it feels like the answer is to hire more people, try not to."</div>
+      <div class="who">— Founder, AI-enabled services</div>
+      <div class="ts">#cultural · #intellectual · #observation</div>
+    </div>
+    <div class="qbi">
+      <div class="body">"The cheapest money you'll ever get is a customer."</div>
+      <div class="who">— Angel investor</div>
+      <div class="ts">#financial · #cultural · #suggestion</div>
+    </div>
+    <div class="qbi">
+      <div class="body">"There's too much grant chasing here. You can wake up in three years and you're still chasing grants. It's easy to convince yourself you're moving forward by getting another grant when in fact you're not."</div>
+      <div class="who">— Senior ecosystem operator</div>
+      <div class="ts">#financial · #cultural · #friction</div>
+    </div>
+    <div class="qbi">
+      <div class="body">"The software is the easy bit now. The hard bit is getting in front of the customer."</div>
+      <div class="who">— Founder</div>
+      <div class="ts">#intellectual · #cultural · #observation</div>
+    </div>
+    <div class="qbi">
+      <div class="body">"Six months ago you had assumptions about how sticky a product was. Then OpenAI or Anthropic releases an update and businesses you thought had solid fundamentals are totally redundant."</div>
+      <div class="who">— VC investor</div>
+      <div class="ts">#intellectual · #financial · #observation</div>
+    </div>
+    <div class="qbi">
+      <div class="body">"You can use AI to automate a lot of stuff, but it still goes back to human connection. In six months we'll all be drowning in 15 cold-emails-from-AI every morning."</div>
+      <div class="who">— Senior ecosystem operator</div>
+      <div class="ts">#cultural · #network · #observation</div>
+    </div>
+    <div class="qbi">
+      <div class="body">"I closed my pre-seed round. The Founder Labs cohort and Gary set up three of my calls and I sat there for a week and I had three or four term sheets by the end. If I hadn't been part of Founder Labs, I'd probably still be at this."</div>
+      <div class="who">— Founder, B2B</div>
+      <div class="ts">#financial · #network · #working</div>
+    </div>
+  </div>
+
+  <div class="run-foot">
+    <div>12 · Quote bank</div>
+    <div class="pno">14</div>
+  </div>
+</section>
+
+<!-- ============================== P15 — STAKEHOLDER ASKS ============================== -->
+<section class="page" data-screen-label="15 Stakeholder asks">
+  <div class="run-head">
+    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 13 · What each stakeholder can do</span></div>
+    <div>The ask, by group</div>
+  </div>
+
+  <div class="section-head">
+    <div class="num">13</div>
+    <div class="ttl">What each stakeholder can do</div>
+    <div class="tag">specific · sequenced · doable this year</div>
+  </div>
+
+  <p class="small" style="max-width:175mm">This is the ask. Five stakeholder groups; one report; specific moves. Indigenous founder density is the conversion mechanism between AI-era productivity and NI's GDP — and that mechanism only works if each of these groups operates differently. None of these asks requires substantial new money. All require honesty about how we operate.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:3mm;margin-top:6mm">
+
+    <!-- Founders -->
+    <div style="border:.5pt solid var(--ink);background:var(--paper);padding:4mm;display:flex;flex-direction:column">
+      <div style="font-family:var(--sans);font-weight:900;font-size:14pt;letter-spacing:-.02em">Founders</div>
+      <div class="tiny" style="margin-top:1mm">The people the report is about</div>
+      <div style="height:.5pt;background:var(--ink);margin:3mm 0"></div>
+      <ul class="dash" style="font-size:8.2pt;line-height:1.4;flex:1">
+        <li>Stop benchmarking against the company down the road.</li>
+        <li>Plan for external capital from week one.</li>
+        <li>Get on a plane.</li>
+        <li>Apply to YC even if you don't get in.</li>
+        <li>Use AI as an operating model, not a feature.</li>
+        <li>Charge for the MVP.</li>
+        <li>Refuse the term sheet with 50% board seats.</li>
+        <li>When you raise, introduce two founders behind you.</li>
+      </ul>
+    </div>
+
+    <!-- Universities -->
+    <div style="border:.5pt solid var(--ink);background:var(--paper);padding:4mm;display:flex;flex-direction:column">
+      <div style="font-family:var(--sans);font-weight:900;font-size:14pt;letter-spacing:-.02em">Universities</div>
+      <div class="tiny" style="margin-top:1mm">Queen's, Ulster, AFBI, FE</div>
+      <div style="height:.5pt;background:var(--ink);margin:3mm 0"></div>
+      <ul class="dash" style="font-size:8.2pt;line-height:1.4;flex:1">
+        <li>Treat founder formation as core economic infrastructure.</li>
+        <li>Build a working spinout pipeline the founder community can see and engage with.</li>
+        <li>Make student entrepreneurs visible to investors and to each other earlier.</li>
+        <li>Integrate AI fluency into curriculum design, urgently.</li>
+        <li>Open access to research and IP commercialisation as continuous flow, not a once-a-year event.</li>
+      </ul>
+    </div>
+
+    <!-- Government -->
+    <div style="border:.5pt solid var(--ink);background:#0a0a0a;color:var(--paper);padding:4mm;display:flex;flex-direction:column">
+      <div style="font-family:var(--sans);font-weight:900;font-size:14pt;letter-spacing:-.02em">Government</div>
+      <div class="tiny" style="margin-top:1mm;color:#bdbcb6">DfE · INI · councils · BBB</div>
+      <div style="height:.5pt;background:var(--paper);margin:3mm 0"></div>
+      <ul class="dash" style="font-size:8.2pt;line-height:1.4;flex:1">
+        <li>Reform grants to reward velocity and customers, not application-writing.</li>
+        <li>Fix the Invest NI front door.</li>
+        <li>Resource the founder peer network as infrastructure.</li>
+        <li>Make global exposure continuous.</li>
+        <li>Take a public position that NI builds with AI.</li>
+        <li>Treat indigenous founder density as economic policy, not as a CSR programme.</li>
+      </ul>
+      <div style="font-family:var(--mono);font-size:7pt;color:var(--green);margin-top:3mm;letter-spacing:.06em;text-transform:uppercase">Highest leverage</div>
+    </div>
+
+    <!-- Investors -->
+    <div style="border:.5pt solid var(--ink);background:var(--paper);padding:4mm;display:flex;flex-direction:column">
+      <div style="font-family:var(--sans);font-weight:900;font-size:14pt;letter-spacing:-.02em">Investors</div>
+      <div class="tiny" style="margin-top:1mm">VCs, angels, UK / Irish capital</div>
+      <div style="height:.5pt;background:var(--ink);margin:3mm 0"></div>
+      <ul class="dash" style="font-size:8.2pt;line-height:1.4;flex:1">
+        <li>Operate at the speed founders need, not the speed legacy fund structures allow.</li>
+        <li>Be honest about local capital ceilings; route founders externally when you can't match the round.</li>
+        <li>Open the angel layer to public criteria and public deal flow.</li>
+        <li>Co-invest with London and Dublin rather than competing against them.</li>
+        <li>Treat founder education as part of the deal, not an aftermarket service.</li>
+      </ul>
+    </div>
+
+    <!-- Corporates -->
+    <div style="border:.5pt solid var(--ink);background:var(--paper);padding:4mm;display:flex;flex-direction:column">
+      <div style="font-family:var(--sans);font-weight:900;font-size:14pt;letter-spacing:-.02em">Corporates</div>
+      <div class="tiny" style="margin-top:1mm">NI-HQ businesses & FDI</div>
+      <div style="height:.5pt;background:var(--ink);margin:3mm 0"></div>
+      <ul class="dash" style="font-size:8.2pt;line-height:1.4;flex:1">
+        <li>Engage as customers, not sponsors.</li>
+        <li>Open procurement to local startups in a structured way.</li>
+        <li>Move talent — second-time founders need a path back into corporate-funded roles and out again.</li>
+        <li>Treat the founder economy as your innovation pipeline, not your community-relations budget.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div style="margin-top:6mm;display:grid;grid-template-columns:1.4fr 1fr;gap:6mm;align-items:start">
+    <div>
+      <div class="kicker"><span class="dot"></span>What founders said they want · ranked by frequency in the room</div>
+      <ol class="tight" style="margin-top:3mm;font-size:9.5pt;column-count:2;column-gap:6mm">
+        <li>A single, navigable map of NI funding and support</li>
+        <li>POC and concept grants that pay for AI tooling, not just developer hires</li>
+        <li>The end of personal match-funding requirements</li>
+        <li>A real cross-programme founder peer network — 200+ founders, mixed stages, working channel</li>
+        <li>A reduced-friction front door at Invest NI</li>
+        <li>A formal cross-referral protocol between rejected applicants and partner programmes</li>
+        <li>More domain-specific events — legal tech, GovTech, fintech, life sciences</li>
+        <li>Continuous, not occasional, US exposure for ambitious founders</li>
+        <li>Visible second- and third-time founders publicly active in the community</li>
+        <li><strong>Speed.</strong></li>
+      </ol>
+    </div>
+    <figure class="photo" style="aspect-ratio:1/1;display:block"><img src="uploads/cdlPic-170.jpeg" alt="Founder listening intently at a table"><div class="photo-overlay"><span class="tag">In the room</span>The founder economy listening to itself.</div></figure>
+  </div>
+
+  <div class="run-foot">
+    <div>13 · What each stakeholder can do</div>
+    <div class="pno">15</div>
+  </div>
+</section>
+
+<!-- ============================== P16 — THE CASE FOR TECHSTARS BELFAST ============================== -->
+<section class="page" data-screen-label="16 Case for Techstars Belfast">
+  <div class="run-head">
+    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 14 · The case for Techstars Belfast</span></div>
+    <div>Connective tissue</div>
+  </div>
+
+  <div class="section-head">
+    <div class="num">14</div>
+    <div class="ttl">The case for Techstars Belfast</div>
+    <div class="tag">the explicit close · author's position</div>
+  </div>
+
+  <div class="grid-12">
+    <div>
+      <div class="kicker"><span class="dot"></span>The thesis, restated</div>
+      <h2 style="margin-top:4mm;font-size:24pt">If indigenous founder density is the conversion mechanism between AI productivity and NI GDP, the connective tissue between founders, capital, programmes, universities, government, and corporates needs to be <span style="color:var(--green-deep)">owned</span> by someone.</h2>
+      <p class="lead" style="margin-top:6mm">Today it is not. Each institutional body operates inside its own KPI structure. The founder economy lives in the gaps between them. That is precisely where the asymmetry described in Section 10 actually compounds — and precisely where the recommendations in this report stand or fall.</p>
+
+      <div class="rule"></div>
+
+      <h3>Why Techstars Belfast can hold these threads</h3>
+      <ul class="dash" style="margin-top:3mm;font-size:9.8pt;line-height:1.45">
+        <li><strong>Independent of any single institutional body.</strong> Equally credible to all five stakeholder groups, captive to none.</li>
+        <li><strong>Inside the global Techstars network.</strong> Access founders here cannot otherwise reach — programmatic, not on personal hustle.</li>
+        <li><strong>Physically inside Ormeau Labs.</strong> Density advantage built in.</li>
+        <li><strong>AI-native in our own operating model.</strong> Lets us run at the speed founders now need.</li>
+        <li><strong>The room was willing to be honest in front of us.</strong> On the basis of 6 May, this is the operator the founder economy is willing to tell the truth to.</li>
+      </ul>
+
+      <div class="rule"></div>
+
+      <h3>The explicit ask</h3>
+      <p style="margin-top:3mm">Read the report. Engage with the recommendations. And help us build the entity that converts the founder economy into GDP movement for Northern Ireland.</p>
+      <p>Several of the recommendations in Section 11 will be implemented by Techstars Belfast directly — the peer network, the diaspora bridge, the continuous global-exposure programme. Others require institutional partners — the front-door redesign, grant reform, the public AI posture. All of them benefit when the connective tissue between groups is funded and resourced.</p>
+      <p>This document establishes the case. The conversations that follow are where investment in Techstars Belfast as that entity gets agreed.</p>
+    </div>
+
+    <aside>
+      <div class="pull-card">
+        Indigenous founder density is one of the highest-leverage available interventions for raising NI's GDP. Every recommendation in this document is sequenced against that thesis.
+        <span class="who">— The thesis of the report</span>
+      </div>
+
+      <figure class="photo" style="aspect-ratio:3/4;display:block;margin-top:5mm"><img src="uploads/cdlPic-58.jpeg" alt="Two founders shaking hands under the CDL welcome wall"></figure>
+      <div class="cap-line"><b>Fig. 09</b>The doors at Techstars Belfast are open. This report is the front door. The conversations that follow are where the work gets done.</div>
+
+      <div style="margin-top:5mm;border:1pt solid var(--ink);padding:5mm;background:var(--paper-2)">
+        <div class="kicker"><span class="dot"></span>What happens next</div>
+        <ol class="tight" style="margin-top:3mm;font-size:8.8pt;line-height:1.4">
+          <li>This report circulates to founders, universities, government, investors, corporates — with five different cover letters.</li>
+          <li>Stakeholder conversations in the eight weeks following publication.</li>
+          <li>The five priorities (Section 11) move from recommendation to commitment, owner by owner.</li>
+          <li>A six-month follow-up reports on what happened.</li>
+        </ol>
+      </div>
+    </aside>
+  </div>
+
+  <div class="run-foot">
+    <div>14 · The case for Techstars Belfast</div>
+    <div class="pno">16</div>
+  </div>
+</section>
+
+<!-- ============================== P15 — OPEN QUESTIONS / WHAT NEXT ============================== -->
+<section class="page" data-screen-label="17 What next">
+  <div class="run-head">
+    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 15 · Open offers &amp; what happens next</span></div>
+    <div>Honour the live offers</div>
+  </div>
+
+  <div class="section-head">
+    <div class="num">15</div>
+    <div class="ttl">Open offers &amp; what happens next</div>
+    <div class="tag">an invitation, not a verdict</div>
+  </div>
+
+  <div class="grid-12">
+    <div>
+      <h3>Eleven questions this draft raises but doesn't resolve.</h3>
+      <ol class="tight" style="margin-top:4mm;font-size:9.5pt">
+        <li><strong>Who would own the public "founder best practice" guide?</strong> Founder Labs? Catalyst? Invest NI? A founder-collective? Awaken Hub? The answer matters because the guide's credibility is in <em>who writes it</em>.</li>
+        <li><strong>Is the "geography penalty" a fact, a perception, or both?</strong> Worth digging into actual term-sheet data alongside founder testimony before publishing as fact.</li>
+        <li><strong>Why are women-founder programmes so infrequent?</strong> Funding constraint, demand misjudgement, or operator capacity? "She Ventures" runs every two years explicitly because of operational lift — that suggests capacity, not demand.</li>
+        <li><strong>Why is physical capital so absent from these conversations?</strong> Now firm finding across three recordings: taken for granted, not viewed as narrative asset.</li>
+        <li><strong>What's the right unit of "ecosystem map"?</strong> Geographic, stage-based, sector-based, founder-type-based?</li>
+        <li><strong>How replicable is the AI-enabled services model?</strong> A small handful of unusually capable founders, or a structural shift in what "scalable" means?</li>
+        <li><strong>What do founders we <em>didn't</em> hear from think?</strong> The sharpest critique would come from founders who never made it in — or who left NI to build elsewhere.</li>
+        <li><strong>Is there a "tier 2" ecosystem city playbook?</strong> Limerick (population 100k, 10 YC companies) is the comparator that most demands attention.</li>
+        <li><strong>Who would convene the persistent founder peer infrastructure?</strong> Catalyst, Founder Labs, and Ormeau Labs all have a credible claim.</li>
+        <li><strong>What does "investable AI-native services" look like to a sophisticated investor?</strong> The "consultancy is not investable / I'm at £400k week five" tension is the biggest unresolved intellectual-capital question. A fireside was offered live at the table — honour the offer.</li>
+        <li><strong>What is the actual rate of warm-intro follow-up by NI founders, and how does it compare?</strong> Empirically. Senior operators perceive the rate as low. Worth measuring.</li>
+      </ol>
+    </div>
+
+    <aside>
+      <div style="border:1pt solid var(--ink);padding:5mm">
+        <div class="kicker"><span class="dot"></span>Live offers made on the record</div>
+        <ul class="dash" style="margin-top:3mm;font-size:9.5pt">
+          <li>A fireside chat between an angel investor and an AI-native services founder, on the record.</li>
+          <li>Warm introductions to specific INI contacts to fix the front-door experience.</li>
+          <li>A follow-up coffee on machine learning between founders.</li>
+        </ul>
+        <p class="small" style="margin-top:3mm">These are commitments the ecosystem made to itself, in public. The next pass of this report will track which ones happened.</p>
+      </div>
+
+      <div class="pull-card lite" style="margin-top:5mm">
+        The ecosystem is not being attacked here. It's being asked to finish the job.
+        <span class="who">— Editorial close</span>
+      </div>
+
+      <div style="margin-top:5mm">
+        <div class="kicker"><span class="dot"></span>For the next pass</div>
+        <ul class="dash" style="margin-top:3mm;font-size:9pt">
+          <li>Verify weight of evidence on every promoted capital with one further table.</li>
+          <li>Probe deliberately for under-discussed capitals — physical above all.</li>
+          <li>Run a "missing voices" pass: founders outside Belfast, those from underrepresented backgrounds, those who left NI.</li>
+          <li>Build a one-page exec summary for senior INI / Catalyst / agency stakeholders.</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <div style="margin-top:8mm;padding-top:5mm;border-top:2pt solid var(--ink);display:grid;grid-template-columns:1fr auto;gap:8mm;align-items:end">
+    <div>
+      <div class="kicker"><span class="dot"></span>Colophon</div>
+      <p class="small" style="margin-top:3mm">Convened by Techstars Belfast. Written by Ian Browne, Managing Director, Techstars Belfast. Drafted from recordings of the Community Development Lab held in Belfast on 6 May 2026 — 50+ participants from five stakeholder groups, eight tables, four themed sprints. Granola full transcription, anonymised. Framework draws on Feld &amp; Hathaway, <em>The Startup Community Way</em> (Wiley, 2020), and on Sean Mullaney's "ambition trap" framing for the cultural-capital analysis. All names of speakers, companies, and identifying third parties have been removed; voices stand by their roles. Quotes lightly cleaned for readability — fillers, false starts, and transcription errors removed; voice, phrasing, and meaning preserved. This is a working draft for circulation; comments and corrections welcome.</p>
+    </div>
+    <img src="assets/techstars-belfast-logo.png" alt="Techstars Belfast" style="height:22mm;display:block;justify-self:end">
+  </div>
+
+  <div class="run-foot">
+    <div>15 · Open offers · End of working draft</div>
+    <div class="pno">17</div>
+  </div>
+</section>
+
+</body>
+</html>
