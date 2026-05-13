@@ -208,6 +208,9 @@ figure{margin:0}
 .web-nav .r{display:flex;gap:12px;align-items:center}
 .web-nav button{background:transparent;border:1px solid #fafaf7;color:#fafaf7;font:inherit;letter-spacing:inherit;text-transform:inherit;padding:6px 10px;cursor:pointer}
 .web-nav button:hover{background:var(--green);color:#0a0a0a;border-color:var(--green)}
+.web-nav .icon-btn{padding:6px;line-height:0;border-color:rgba(250,250,247,.4)}
+.web-nav .icon-btn svg{display:block}
+.web-nav .icon-btn:hover{border-color:var(--green)}
 @media print{.web-nav{display:none}}
 </style>
 
@@ -228,8 +231,12 @@ figure{margin:0}
 <body>
 
 <nav class="web-nav no-print">
-  <div class="l"><span>techstars<span class="u"></span></span><span style="font-weight:500;letter-spacing:.18em">Belfast · State of the Startup Nation · Founder edition · May 2026</span></div>
-  <div class="r"><button onclick="window.print()">Print / save PDF</button></div>
+  <div class="l"><span style="font-weight:600;letter-spacing:.18em">N.Ireland · State of the Startup Nation · May 2026</span></div>
+  <div class="r">
+    <button onclick="window.print()" aria-label="Print or save as PDF" title="Print / save as PDF" class="icon-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    </button>
+  </div>
 </nav>
 
 <!-- ============================== COVER — identical to /report/ ============================== -->
