@@ -29,6 +29,7 @@ a{color:inherit}
 .run-head .lhs{display:flex;gap:10px;align-items:center}
 .run-head .mark{display:inline-flex;align-items:baseline;gap:4px;font-weight:800;letter-spacing:-.01em;text-transform:none;font-size:9pt}
 .run-head .mark .u{display:inline-block;width:14px;height:3px;background:var(--green);transform:translateY(-1px)}
+.run-head .run-logo{height:14px;width:auto;display:inline-block;vertical-align:middle;margin-right:8px}
 .run-foot{position:absolute;bottom:8mm;left:16mm;right:16mm;display:flex;justify-content:space-between;align-items:center;font-family:var(--sans);font-size:7.5pt;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border-top:.5pt solid var(--ink);padding-top:3mm}
 .run-foot .pno{font-weight:700;color:var(--ink)}
 
@@ -294,7 +295,7 @@ figure{margin:0}
 <!-- ============================== P02 — CONTENTS + EDITORIAL ============================== -->
 <section class="page">
   <div class="run-head">
-    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Founder edition · Belfast, Honestly</span></div>
+    <div class="lhs"><img class="run-logo" src="/report/assets/techstars-belfast-logo.png" alt="Techstars Belfast"><span>Founder edition · Belfast, Honestly</span></div>
     <div>Contents &amp; Editorial</div>
   </div>
 
@@ -352,7 +353,7 @@ figure{margin:0}
 <!-- ============================== P03 — SEC 1: SEVEN CAPITALS (NEW) ============================== -->
 <section class="page">
   <div class="run-head">
-    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 01 · The Seven Capitals</span></div>
+    <div class="lhs"><img class="run-logo" src="/report/assets/techstars-belfast-logo.png" alt="Techstars Belfast"><span>Section 01 · The Seven Capitals</span></div>
     <div>The analytical anchor</div>
   </div>
 
@@ -367,113 +368,128 @@ figure{margin:0}
   <!-- The diagram — rebranded to match the report palette -->
   <div class="diagram" style="margin-top:6mm;padding:0;border:none">
     <svg viewBox="0 0 1600 900" width="100%" style="display:block;background:var(--paper);font-family:'Source Serif 4',Georgia,serif">
-      <!-- Decorative top rule -->
+      <!-- Top rules -->
       <line x1="80" y1="60" x2="1520" y2="60" stroke="#0a0a0a" stroke-width="1.5"/>
       <line x1="80" y1="68" x2="1520" y2="68" stroke="#0a0a0a" stroke-width="0.5"/>
-      <!-- Header eyebrow -->
+      <!-- Eyebrow -->
       <text x="80" y="100" font-size="14" letter-spacing="3" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" font-weight="600">TECHSTARS BELFAST  ·  STATE OF THE STARTUP NATION  ·  MAY 2026</text>
       <!-- Title -->
-      <text x="80" y="170" font-size="56" font-weight="500" fill="#0a0a0a" font-style="italic">The Seven Capitals</text>
-      <text x="80" y="212" font-size="22" fill="#0a0a0a">What the room covered &mdash; and what it didn't</text>
-      <!-- Framework attribution -->
-      <text x="80" y="244" font-size="13" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.5">Framework: Brad Feld &amp; Ian Hathaway · The Startup Community Way (2020)</text>
+      <text x="80" y="180" font-size="64" font-weight="500" fill="#0a0a0a" font-style="italic">The Seven Capitals</text>
+      <text x="80" y="222" font-size="22" fill="#0a0a0a">What the room covered &mdash; and what it didn't.</text>
+      <text x="80" y="254" font-size="13" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.5">Framework: Brad Feld &amp; Ian Hathaway · The Startup Community Way (2020)</text>
 
-      <!-- Section label: COVERED -->
-      <line x1="80" y1="310" x2="1520" y2="310" stroke="#0a0a0a" stroke-width="0.5"/>
-      <text x="80" y="340" font-size="14" letter-spacing="3" fill="#00a344" font-family="Inter,Helvetica,Arial,sans-serif" font-weight="700">FIVE CAPITALS · WHAT THE ROOM COVERED</text>
-      <text x="1520" y="340" text-anchor="end" font-size="13" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" font-style="italic">Four themed sprints · load-bearing evidence</text>
+      <!-- COVERED divider + label -->
+      <line x1="80" y1="300" x2="1520" y2="300" stroke="#0a0a0a" stroke-width="1.5"/>
+      <rect x="80" y="312" width="6" height="22" fill="#00C853"/>
+      <text x="96" y="330" font-size="14" letter-spacing="3" fill="#0a0a0a" font-family="Inter,Helvetica,Arial,sans-serif" font-weight="800">FIVE CAPITALS · WHAT THE ROOM COVERED</text>
+      <text x="1520" y="330" text-anchor="end" font-size="13" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" font-style="italic">Four themed sprints · load-bearing evidence</text>
 
       <!-- 01 NETWORK -->
-      <g transform="translate(80, 380)">
-        <rect x="0" y="0" width="260" height="280" fill="#fafaf7" stroke="#0a0a0a" stroke-width="2" rx="0"/>
-        <text x="20" y="38" font-size="13" letter-spacing="2" fill="#00a344" font-family="JetBrains Mono,ui-monospace,monospace" font-weight="700">01</text>
-        <text x="20" y="78" font-size="26" font-style="italic" fill="#0a0a0a" font-weight="500">Network</text>
-        <line x1="20" y1="98" x2="80" y2="98" stroke="#00C853" stroke-width="3"/>
-        <text x="20" y="130" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3">Connectedness,</text>
-        <text x="20" y="146" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3">relationships, bondedness.</text>
-        <text x="20" y="194" font-size="13" fill="#0a0a0a" font-style="italic">"You're never more</text>
-        <text x="20" y="212" font-size="13" fill="#0a0a0a" font-style="italic">than one person away</text>
-        <text x="20" y="230" font-size="13" fill="#0a0a0a" font-style="italic">from the right person."</text>
-        <text x="20" y="262" font-size="11" fill="#00a344" font-family="JetBrains Mono,ui-monospace,monospace" letter-spacing="1" font-weight="600">STRONGEST · ONE GAP</text>
+      <g transform="translate(80, 354)">
+        <rect x="0" y="0" width="260" height="54" fill="#0a0a0a"/>
+        <text x="20" y="37" font-size="24" fill="#00C853" font-family="Inter,Helvetica,Arial,sans-serif" font-weight="800">01</text>
+        <text x="76" y="37" font-size="13" letter-spacing="3" fill="#fafaf7" font-family="Inter,Helvetica,Arial,sans-serif" font-weight="700">NETWORK</text>
+        <rect x="0" y="54" width="260" height="246" fill="#fafaf7" stroke="#0a0a0a" stroke-width="1.5"/>
+        <rect x="254" y="54" width="6" height="246" fill="#00C853"/>
+        <text x="20" y="92" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3">Connectedness,</text>
+        <text x="20" y="108" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3">relationships, bondedness.</text>
+        <text x="20" y="158" font-size="14" font-style="italic" fill="#0a0a0a">"You're never more</text>
+        <text x="20" y="178" font-size="14" font-style="italic" fill="#0a0a0a">than one person away</text>
+        <text x="20" y="198" font-size="14" font-style="italic" fill="#0a0a0a">from the right person."</text>
+        <line x1="20" y1="232" x2="110" y2="232" stroke="#00C853" stroke-width="2"/>
+        <text x="20" y="270" font-size="11" fill="#00a344" font-family="JetBrains Mono,ui-monospace,monospace" letter-spacing="1.5" font-weight="700">STRONGEST · ONE GAP</text>
       </g>
       <!-- 02 FINANCIAL -->
-      <g transform="translate(360, 380)">
-        <rect x="0" y="0" width="260" height="280" fill="#fafaf7" stroke="#0a0a0a" stroke-width="2" rx="0"/>
-        <text x="20" y="38" font-size="13" letter-spacing="2" fill="#00a344" font-family="JetBrains Mono,ui-monospace,monospace" font-weight="700">02</text>
-        <text x="20" y="78" font-size="26" font-style="italic" fill="#0a0a0a" font-weight="500">Financial</text>
-        <line x1="20" y1="98" x2="80" y2="98" stroke="#00C853" stroke-width="3"/>
-        <text x="20" y="130" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3">Revenue, debt,</text>
-        <text x="20" y="146" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3">equity, grants.</text>
-        <text x="20" y="194" font-size="13" fill="#0a0a0a" font-style="italic">"My ambition is almost</text>
-        <text x="20" y="212" font-size="13" fill="#0a0a0a" font-style="italic">not to raise money</text>
-        <text x="20" y="230" font-size="13" fill="#0a0a0a" font-style="italic">through the local funds."</text>
-        <text x="20" y="262" font-size="11" fill="#00a344" font-family="JetBrains Mono,ui-monospace,monospace" letter-spacing="1" font-weight="600">CEILING · GRANTS · ANGELS</text>
+      <g transform="translate(360, 354)">
+        <rect x="0" y="0" width="260" height="54" fill="#0a0a0a"/>
+        <text x="20" y="37" font-size="24" fill="#00C853" font-family="Inter,Helvetica,Arial,sans-serif" font-weight="800">02</text>
+        <text x="76" y="37" font-size="13" letter-spacing="3" fill="#fafaf7" font-family="Inter,Helvetica,Arial,sans-serif" font-weight="700">FINANCIAL</text>
+        <rect x="0" y="54" width="260" height="246" fill="#fafaf7" stroke="#0a0a0a" stroke-width="1.5"/>
+        <rect x="254" y="54" width="6" height="246" fill="#00C853"/>
+        <text x="20" y="92" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3">Revenue, debt,</text>
+        <text x="20" y="108" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3">equity, grants.</text>
+        <text x="20" y="158" font-size="14" font-style="italic" fill="#0a0a0a">"My ambition is almost</text>
+        <text x="20" y="178" font-size="14" font-style="italic" fill="#0a0a0a">not to raise money</text>
+        <text x="20" y="198" font-size="14" font-style="italic" fill="#0a0a0a">through the local funds."</text>
+        <line x1="20" y1="232" x2="110" y2="232" stroke="#00C853" stroke-width="2"/>
+        <text x="20" y="270" font-size="11" fill="#00a344" font-family="JetBrains Mono,ui-monospace,monospace" letter-spacing="1.5" font-weight="700">CEILING · GRANTS · ANGELS</text>
       </g>
       <!-- 03 CULTURAL -->
-      <g transform="translate(640, 380)">
-        <rect x="0" y="0" width="260" height="280" fill="#fafaf7" stroke="#0a0a0a" stroke-width="2" rx="0"/>
-        <text x="20" y="38" font-size="13" letter-spacing="2" fill="#00a344" font-family="JetBrains Mono,ui-monospace,monospace" font-weight="700">03</text>
-        <text x="20" y="78" font-size="26" font-style="italic" fill="#0a0a0a" font-weight="500">Cultural</text>
-        <line x1="20" y1="98" x2="80" y2="98" stroke="#00C853" stroke-width="3"/>
-        <text x="20" y="130" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3">Attitudes, mindset,</text>
-        <text x="20" y="146" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3">behaviours, inclusiveness.</text>
-        <text x="20" y="194" font-size="13" fill="#0a0a0a" font-style="italic">"I'm not going to find</text>
-        <text x="20" y="212" font-size="13" fill="#0a0a0a" font-style="italic">out here."</text>
-        <text x="20" y="230" font-size="12" fill="#5a5a55" font-style="italic">— on the ambition trap</text>
-        <text x="20" y="262" font-size="11" fill="#00a344" font-family="JetBrains Mono,ui-monospace,monospace" letter-spacing="1" font-weight="600">AMBITION · INCLUSIVENESS</text>
+      <g transform="translate(640, 354)">
+        <rect x="0" y="0" width="260" height="54" fill="#0a0a0a"/>
+        <text x="20" y="37" font-size="24" fill="#00C853" font-family="Inter,Helvetica,Arial,sans-serif" font-weight="800">03</text>
+        <text x="76" y="37" font-size="13" letter-spacing="3" fill="#fafaf7" font-family="Inter,Helvetica,Arial,sans-serif" font-weight="700">CULTURAL</text>
+        <rect x="0" y="54" width="260" height="246" fill="#fafaf7" stroke="#0a0a0a" stroke-width="1.5"/>
+        <rect x="254" y="54" width="6" height="246" fill="#00C853"/>
+        <text x="20" y="92" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3">Attitudes, mindset,</text>
+        <text x="20" y="108" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3">behaviours, inclusiveness.</text>
+        <text x="20" y="158" font-size="14" font-style="italic" fill="#0a0a0a">"I'm not going to find</text>
+        <text x="20" y="178" font-size="14" font-style="italic" fill="#0a0a0a">out here."</text>
+        <text x="20" y="200" font-size="12" fill="#5a5a55" font-style="italic">— on the ambition trap</text>
+        <line x1="20" y1="232" x2="110" y2="232" stroke="#00C853" stroke-width="2"/>
+        <text x="20" y="270" font-size="11" fill="#00a344" font-family="JetBrains Mono,ui-monospace,monospace" letter-spacing="1.5" font-weight="700">AMBITION · INCLUSIVENESS</text>
       </g>
       <!-- 04 TECHNOLOGY (AI) -->
-      <g transform="translate(920, 380)">
-        <rect x="0" y="0" width="260" height="280" fill="#fafaf7" stroke="#0a0a0a" stroke-width="2" rx="0"/>
-        <text x="20" y="38" font-size="13" letter-spacing="2" fill="#00a344" font-family="JetBrains Mono,ui-monospace,monospace" font-weight="700">04</text>
-        <text x="20" y="78" font-size="26" font-style="italic" fill="#0a0a0a" font-weight="500">Technology</text>
-        <text x="20" y="104" font-size="13" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" font-style="italic">— the AI conversation</text>
-        <line x1="20" y1="120" x2="80" y2="120" stroke="#00C853" stroke-width="3"/>
-        <text x="20" y="148" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3">The shift founders</text>
-        <text x="20" y="164" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3">are operating inside.</text>
-        <text x="20" y="200" font-size="13" fill="#0a0a0a" font-style="italic">"We're trying to be</text>
-        <text x="20" y="218" font-size="13" fill="#0a0a0a" font-style="italic">as close to AI-native</text>
-        <text x="20" y="236" font-size="13" fill="#0a0a0a" font-style="italic">as possible."</text>
-        <text x="20" y="262" font-size="11" fill="#00a344" font-family="JetBrains Mono,ui-monospace,monospace" letter-spacing="1" font-weight="600">FORWARD-POINTING</text>
+      <g transform="translate(920, 354)">
+        <rect x="0" y="0" width="260" height="54" fill="#0a0a0a"/>
+        <text x="20" y="37" font-size="24" fill="#00C853" font-family="Inter,Helvetica,Arial,sans-serif" font-weight="800">04</text>
+        <text x="76" y="37" font-size="13" letter-spacing="3" fill="#fafaf7" font-family="Inter,Helvetica,Arial,sans-serif" font-weight="700">TECHNOLOGY</text>
+        <rect x="0" y="54" width="260" height="246" fill="#fafaf7" stroke="#0a0a0a" stroke-width="1.5"/>
+        <rect x="254" y="54" width="6" height="246" fill="#00C853"/>
+        <text x="20" y="92" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3" font-style="italic">— the AI conversation</text>
+        <text x="20" y="118" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3">The shift founders are</text>
+        <text x="20" y="134" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3">operating inside.</text>
+        <text x="20" y="170" font-size="14" font-style="italic" fill="#0a0a0a">"We're trying to be</text>
+        <text x="20" y="190" font-size="14" font-style="italic" fill="#0a0a0a">as close to AI-native</text>
+        <text x="20" y="210" font-size="14" font-style="italic" fill="#0a0a0a">as possible."</text>
+        <line x1="20" y1="232" x2="110" y2="232" stroke="#00C853" stroke-width="2"/>
+        <text x="20" y="270" font-size="11" fill="#00a344" font-family="JetBrains Mono,ui-monospace,monospace" letter-spacing="1.5" font-weight="700">FORWARD-POINTING</text>
       </g>
       <!-- 05 INSTITUTIONAL -->
-      <g transform="translate(1200, 380)">
-        <rect x="0" y="0" width="260" height="280" fill="#fafaf7" stroke="#0a0a0a" stroke-width="2" rx="0"/>
-        <text x="20" y="38" font-size="13" letter-spacing="2" fill="#00a344" font-family="JetBrains Mono,ui-monospace,monospace" font-weight="700">05</text>
-        <text x="20" y="78" font-size="26" font-style="italic" fill="#0a0a0a" font-weight="500">Institutional</text>
-        <line x1="20" y1="98" x2="80" y2="98" stroke="#00C853" stroke-width="3"/>
-        <text x="20" y="130" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3">Functioning public sector,</text>
-        <text x="20" y="146" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3">markets, stability.</text>
-        <text x="20" y="194" font-size="13" fill="#0a0a0a" font-style="italic">"How do I tell which</text>
-        <text x="20" y="212" font-size="13" fill="#0a0a0a" font-style="italic">programmes are good</text>
-        <text x="20" y="230" font-size="13" fill="#0a0a0a" font-style="italic">and which are relevant?"</text>
-        <text x="20" y="262" font-size="11" fill="#00a344" font-family="JetBrains Mono,ui-monospace,monospace" letter-spacing="1" font-weight="600">POLICY · COORDINATION</text>
+      <g transform="translate(1200, 354)">
+        <rect x="0" y="0" width="260" height="54" fill="#0a0a0a"/>
+        <text x="20" y="37" font-size="24" fill="#00C853" font-family="Inter,Helvetica,Arial,sans-serif" font-weight="800">05</text>
+        <text x="76" y="37" font-size="13" letter-spacing="3" fill="#fafaf7" font-family="Inter,Helvetica,Arial,sans-serif" font-weight="700">INSTITUTIONAL</text>
+        <rect x="0" y="54" width="260" height="246" fill="#fafaf7" stroke="#0a0a0a" stroke-width="1.5"/>
+        <rect x="254" y="54" width="6" height="246" fill="#00C853"/>
+        <text x="20" y="92" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3">Functioning public sector,</text>
+        <text x="20" y="108" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3">markets, stability.</text>
+        <text x="20" y="158" font-size="14" font-style="italic" fill="#0a0a0a">"How do I tell which</text>
+        <text x="20" y="178" font-size="14" font-style="italic" fill="#0a0a0a">programmes are good</text>
+        <text x="20" y="198" font-size="14" font-style="italic" fill="#0a0a0a">and which are relevant?"</text>
+        <line x1="20" y1="232" x2="110" y2="232" stroke="#00C853" stroke-width="2"/>
+        <text x="20" y="270" font-size="11" fill="#00a344" font-family="JetBrains Mono,ui-monospace,monospace" letter-spacing="1.5" font-weight="700">POLICY · COORDINATION</text>
       </g>
 
-      <!-- Divider -->
-      <line x1="80" y1="700" x2="1520" y2="700" stroke="#0a0a0a" stroke-width="0.5"/>
-      <text x="80" y="730" font-size="14" letter-spacing="3" fill="#c75a2b" font-family="Inter,Helvetica,Arial,sans-serif" font-weight="700">TWO CAPITALS · NOT YET COVERED</text>
-      <text x="1520" y="730" text-anchor="end" font-size="13" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" font-style="italic">Not because they don't matter — we ran out of time</text>
+      <!-- NOT YET COVERED divider + label -->
+      <line x1="80" y1="690" x2="1520" y2="690" stroke="#0a0a0a" stroke-width="1.5"/>
+      <rect x="80" y="702" width="6" height="22" fill="#c75a2b"/>
+      <text x="96" y="720" font-size="14" letter-spacing="3" fill="#c75a2b" font-family="Inter,Helvetica,Arial,sans-serif" font-weight="800">TWO CAPITALS · NOT YET COVERED</text>
+      <text x="1520" y="720" text-anchor="end" font-size="13" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" font-style="italic">Not because they don't matter — we ran out of time</text>
 
       <!-- 06 INTELLECTUAL -->
-      <g transform="translate(80, 760)">
-        <rect x="0" y="0" width="690" height="110" fill="none" stroke="#c75a2b" stroke-width="2" stroke-dasharray="6,4" rx="0"/>
-        <text x="20" y="38" font-size="13" letter-spacing="2" fill="#c75a2b" font-family="JetBrains Mono,ui-monospace,monospace" font-weight="700">06</text>
-        <text x="20" y="78" font-size="26" font-style="italic" fill="#0a0a0a" font-weight="500">Intellectual</text>
-        <text x="200" y="42" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3">Ideas, information, technologies, stories.</text>
-        <text x="200" y="68" font-size="13" fill="#0a0a0a" font-style="italic">Universities, spinouts, deep-tech, IP commercialisation</text>
-        <text x="200" y="86" font-size="13" fill="#0a0a0a" font-style="italic">touched on — never the subject of a sprint.</text>
-        <text x="200" y="102" font-size="11" fill="#c75a2b" font-family="JetBrains Mono,ui-monospace,monospace" letter-spacing="1" font-weight="600">NEEDS THE NEXT ROOM</text>
+      <g transform="translate(80, 744)">
+        <rect x="0" y="0" width="170" height="130" fill="#c75a2b"/>
+        <text x="20" y="46" font-size="24" fill="#fafaf7" font-family="Inter,Helvetica,Arial,sans-serif" font-weight="800">06</text>
+        <text x="20" y="72" font-size="13" letter-spacing="3" fill="#fafaf7" font-family="Inter,Helvetica,Arial,sans-serif" font-weight="700">INTELLECTUAL</text>
+        <text x="20" y="110" font-size="10" fill="#fafaf7" font-family="JetBrains Mono,ui-monospace,monospace" letter-spacing="1.5" font-weight="700">NEEDS THE</text>
+        <text x="20" y="124" font-size="10" fill="#fafaf7" font-family="JetBrains Mono,ui-monospace,monospace" letter-spacing="1.5" font-weight="700">NEXT ROOM</text>
+        <rect x="170" y="0" width="520" height="130" fill="#fafaf7" stroke="#c75a2b" stroke-width="1.5"/>
+        <text x="190" y="42" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3">Ideas, information, technologies, stories.</text>
+        <text x="190" y="76" font-size="14" font-style="italic" fill="#0a0a0a">Universities, spinouts, deep-tech, IP commercialisation</text>
+        <text x="190" y="96" font-size="14" font-style="italic" fill="#0a0a0a">touched on &mdash; never the subject of a sprint.</text>
       </g>
       <!-- 07 PHYSICAL -->
-      <g transform="translate(830, 760)">
-        <rect x="0" y="0" width="690" height="110" fill="none" stroke="#c75a2b" stroke-width="2" stroke-dasharray="6,4" rx="0"/>
-        <text x="20" y="38" font-size="13" letter-spacing="2" fill="#c75a2b" font-family="JetBrains Mono,ui-monospace,monospace" font-weight="700">07</text>
-        <text x="20" y="78" font-size="26" font-style="italic" fill="#0a0a0a" font-weight="500">Physical</text>
-        <text x="200" y="42" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3">Density, quality of place, infrastructure.</text>
-        <text x="200" y="68" font-size="13" fill="#0a0a0a" font-style="italic">Belfast density mentioned in passing — no</text>
-        <text x="200" y="86" font-size="13" fill="#0a0a0a" font-style="italic">conversation on regional spread or AI infrastructure.</text>
-        <text x="200" y="102" font-size="11" fill="#c75a2b" font-family="JetBrains Mono,ui-monospace,monospace" letter-spacing="1" font-weight="600">NEEDS THE NEXT ROOM</text>
+      <g transform="translate(830, 744)">
+        <rect x="0" y="0" width="170" height="130" fill="#c75a2b"/>
+        <text x="20" y="46" font-size="24" fill="#fafaf7" font-family="Inter,Helvetica,Arial,sans-serif" font-weight="800">07</text>
+        <text x="20" y="72" font-size="13" letter-spacing="3" fill="#fafaf7" font-family="Inter,Helvetica,Arial,sans-serif" font-weight="700">PHYSICAL</text>
+        <text x="20" y="110" font-size="10" fill="#fafaf7" font-family="JetBrains Mono,ui-monospace,monospace" letter-spacing="1.5" font-weight="700">NEEDS THE</text>
+        <text x="20" y="124" font-size="10" fill="#fafaf7" font-family="JetBrains Mono,ui-monospace,monospace" letter-spacing="1.5" font-weight="700">NEXT ROOM</text>
+        <rect x="170" y="0" width="520" height="130" fill="#fafaf7" stroke="#c75a2b" stroke-width="1.5"/>
+        <text x="190" y="42" font-size="12" fill="#5a5a55" font-family="Inter,Helvetica,Arial,sans-serif" letter-spacing="0.3">Density, quality of place, infrastructure.</text>
+        <text x="190" y="76" font-size="14" font-style="italic" fill="#0a0a0a">Belfast density mentioned in passing &mdash; no</text>
+        <text x="190" y="96" font-size="14" font-style="italic" fill="#0a0a0a">conversation on regional spread or AI infrastructure.</text>
       </g>
 
       <!-- Footer rule -->
@@ -494,7 +510,7 @@ figure{margin:0}
 <!-- ============================== P03 — SEC 1: ROOM AGREED ============================== -->
 <section class="page">
   <div class="run-head">
-    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 02 · The unanimous bit</span></div>
+    <div class="lhs"><img class="run-logo" src="/report/assets/techstars-belfast-logo.png" alt="Techstars Belfast"><span>Section 02 · The unanimous bit</span></div>
     <div>What everyone agreed on</div>
   </div>
 
@@ -539,7 +555,7 @@ figure{margin:0}
 <!-- ============================== P04 — SEC 2A: WHAT'S WORKING (2.1-2.5) ============================== -->
 <section class="page">
   <div class="run-head">
-    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 03 · What's working · 1 of 2</span></div>
+    <div class="lhs"><img class="run-logo" src="/report/assets/techstars-belfast-logo.png" alt="Techstars Belfast"><span>Section 03 · What's working · 1 of 2</span></div>
     <div>Seven bright spots</div>
   </div>
 
@@ -618,7 +634,7 @@ figure{margin:0}
 <!-- ============================== P05 — SEC 2B: CLOUDSMITH + HEELS + 2.7 WINS ============================== -->
 <section class="page">
   <div class="run-head">
-    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 03 · What's working · 2 of 2</span></div>
+    <div class="lhs"><img class="run-logo" src="/report/assets/techstars-belfast-logo.png" alt="Techstars Belfast"><span>Section 03 · What's working · 2 of 2</span></div>
     <div>Local proof &amp; wins from the room</div>
   </div>
 
@@ -664,15 +680,10 @@ figure{margin:0}
 
   <p style="margin-top:5mm">Multiple shapes. Different sectors. None relocated. Pick your reference point from this list, not from the company down the road.</p>
 
-  <div class="rule-thick" style="margin-top:6mm"></div>
+  <figure class="photo wide" style="margin-top:7mm;aspect-ratio:21/9;display:block"><img src="/report/uploads/cdl2-05.jpeg" alt="The room mid-sprint — eight tables, four themes"></figure>
 
-  <div class="wins-heading" style="display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-top:6mm;align-items:end">
-    <figure class="photo wide" style="aspect-ratio:4/3;display:block"><img src="/report/uploads/cdlPic-83.jpeg" alt="Founders mid-conversation at table"></figure>
-    <div>
-      <h3 style="margin-top:0">2.7 &nbsp; Founder wins from the room</h3>
-      <p style="margin-top:3mm">Things actual founders in the 6 May room are doing right now. Anonymised, specific, recent. The playbook is being written here, in this year.</p>
-    </div>
-  </div>
+  <h3 style="margin-top:6mm">2.7 &nbsp; Founder wins from the room</h3>
+  <p style="margin-top:3mm">Things actual founders in the 6 May room are doing right now. Anonymised, specific, recent. The playbook is being written here, in this year.</p>
 
   <div class="wins">
     <div class="win"><b>Week five · £400k</b>A solo founder five weeks into a new AI-native consultancy, with paying clients before any sales hire and a £400k pipeline.</div>
@@ -696,7 +707,7 @@ figure{margin:0}
 <!-- ============================== P06 — SEC 3: HONESTY ============================== -->
 <section class="page">
   <div class="run-head">
-    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 04 · Things to be honest about</span></div>
+    <div class="lhs"><img class="run-logo" src="/report/assets/techstars-belfast-logo.png" alt="Techstars Belfast"><span>Section 04 · Things to be honest about</span></div>
     <div>Structural honesty · contained</div>
   </div>
 
@@ -781,7 +792,7 @@ figure{margin:0}
 <!-- ============================== P07 — SEC 4: SPEED + AI AS ADVANTAGES ============================== -->
 <section class="page">
   <div class="run-head">
-    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 05 · Speed &amp; AI</span></div>
+    <div class="lhs"><img class="run-logo" src="/report/assets/techstars-belfast-logo.png" alt="Techstars Belfast"><span>Section 05 · Speed &amp; AI</span></div>
     <div>Your structural advantages</div>
   </div>
 
@@ -854,7 +865,7 @@ figure{margin:0}
 <!-- ============================== P08 — SEC 5: DO THIS WEEK ============================== -->
 <section class="page">
   <div class="run-head">
-    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 06 · Tactics</span></div>
+    <div class="lhs"><img class="run-logo" src="/report/assets/techstars-belfast-logo.png" alt="Techstars Belfast"><span>Section 06 · Tactics</span></div>
     <div>Six categories · pick at least one each</div>
   </div>
 
@@ -938,7 +949,7 @@ figure{margin:0}
 <!-- ============================== P09 — SEC 6: NEXT MOVES (renumbered) ============================== -->
 <section class="page">
   <div class="run-head">
-    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 07 · The next moves</span></div>
+    <div class="lhs"><img class="run-logo" src="/report/assets/techstars-belfast-logo.png" alt="Techstars Belfast"><span>Section 07 · The next moves</span></div>
     <div>Commitments · not the room's findings</div>
   </div>
 
@@ -995,7 +1006,7 @@ figure{margin:0}
 <!-- ============================== P10 — SEC 7: WHERE THIS GOES IF IT WORKS ============================== -->
 <section class="page">
   <div class="run-head">
-    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 08 · Where this goes if it works</span></div>
+    <div class="lhs"><img class="run-logo" src="/report/assets/techstars-belfast-logo.png" alt="Techstars Belfast"><span>Section 08 · Where this goes if it works</span></div>
     <div>2031</div>
   </div>
 
@@ -1043,7 +1054,7 @@ figure{margin:0}
 <!-- ============================== P11 — SEC 8: WHAT COMES NEXT + APPENDIX ============================== -->
 <section class="page">
   <div class="run-head">
-    <div class="lhs"><span class="mark">techstars<span class="u"></span></span><span>Section 09 · What comes next</span></div>
+    <div class="lhs"><img class="run-logo" src="/report/assets/techstars-belfast-logo.png" alt="Techstars Belfast"><span>Section 09 · What comes next</span></div>
     <div>The close &amp; the method</div>
   </div>
 
@@ -1060,8 +1071,6 @@ figure{margin:0}
       <p style="margin-top:5mm">If you are a founder, the doors at Techstars Belfast are open. Come and find us.</p>
 
       <p>If you are someone with a decision to make about how the system around founders operates &mdash; in government, in a university, in a fund, in a corporate, in a council &mdash; the doors are also open. <strong>The next conversation is the one that turns this report into outcomes.</strong></p>
-
-      <p style="margin-top:6mm;font-family:var(--sans);font-weight:700">&mdash; Ian</p>
 
       <div class="rule-thick" style="margin-top:7mm"></div>
 
