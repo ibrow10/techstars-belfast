@@ -2,16 +2,18 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const latestEvent = {
-    day: '25',
-    month: 'JUN',
+    day: '30',
+    month: 'JUL',
     tag: 'PARTNER SESSION',
     tagType: 'partner',
-    title: 'Founder Labs Demo Day',
-    time: '2:45 PM doors',
-    location: 'Ormeau Labs, Belfast',
-    description: 'Ten companies from Founder Labs Cohort 4 take the stage. After three months heads-down, building, finding first customers and mapping the path to investment, the founders pitch their businesses, followed by networking and drinks.',
-    link: 'https://luma.com/syl0pl0j'
+    title: 'InQUBate Summer Social x Techstars Belfast',
+    time: '5:30 PM – 8:00 PM',
+    location: "QBS Student Hub, Queen's Business School, Belfast",
+    description: "An informal Meet and Match social connecting students, alumni and entrepreneurs. Pitch a business idea or your skills, hear from Queen's graduates on their journey co-founding Opinly, and build relationships over food and refreshments.",
+    link: 'https://events.humanitix.com/inqubate-summer-social-2026'
 };
+
+const applyUrl = 'https://www.techstars.com/techstars-founder-catalyst-global-fall-2026-program';
 
 const startHereCards = [
     {
@@ -60,8 +62,8 @@ const startHereCards = [
             </p>
 
             <div class="hero-ctas">
-                <a href="/events" class="btn">See what's on</a>
-                <a href="https://techstarsbelfast.com/founder-report/" class="btn btn--outline">State of the Nation</a>
+                <a href={applyUrl} class="btn btn--accent" target="_blank" rel="noopener">Apply for next cohort</a>
+                <a href="/events" class="btn btn--outline">See what's on</a>
             </div>
 
             <p class="givefirst-quote">We <span class="givefirst">#GiveFirst</span> — help anyone, especially entrepreneurs, without any expectation of getting anything back.</p>
