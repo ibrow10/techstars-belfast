@@ -185,7 +185,7 @@ const faqs = [
 
             <div class="hero-ctas">
                 <a href={applyUrl} class="btn btn--accent" target="_blank" rel="noopener">Apply now</a>
-                <a href="/#newsletter" class="btn btn--outline">Get the monthly email</a>
+                <a href="#apply" class="btn btn--outline">Register interest locally</a>
             </div>
 
             <div class="trust-bar">
@@ -360,6 +360,51 @@ const faqs = [
     </section>
 
     <!-- FAQ -->
+    <section id="apply" class="apply-section">
+        <div class="container">
+            <div class="apply-block">
+                <span class="programme-label">APPLY</span>
+                <h2>APPLY FOR FOUNDER CATALYST</h2>
+                <p class="apply-intro">Applications for the autumn 2026 cohort are open now. Tell us who you are and what you're building. We read every application and follow up by email if it looks like a fit.</p>
+
+                <form name="catalyst-application" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks" class="apply-form">
+                    <input type="hidden" name="form-name" value="catalyst-application" />
+                    <p class="hidden">
+                        <label>Don't fill this out: <input name="bot-field" /></label>
+                    </p>
+
+                    <div class="apply-field">
+                        <label for="apply-name">Name</label>
+                        <input id="apply-name" name="name" type="text" autocomplete="name" required />
+                    </div>
+
+                    <div class="apply-field">
+                        <label for="apply-email">Email</label>
+                        <input id="apply-email" name="email" type="email" autocomplete="email" required />
+                    </div>
+
+                    <div class="apply-field">
+                        <label for="apply-company">Company</label>
+                        <input id="apply-company" name="company" type="text" autocomplete="organization" required />
+                    </div>
+
+                    <div class="apply-field apply-field--full">
+                        <label for="apply-pitch">One-line pitch</label>
+                        <input id="apply-pitch" name="pitch" type="text" placeholder="What you're building, in one sentence" required />
+                    </div>
+
+                    <div class="apply-field apply-field--full">
+                        <label for="apply-linkedin">LinkedIn URL</label>
+                        <input id="apply-linkedin" name="linkedin" type="url" placeholder="https://www.linkedin.com/in/your-name" required />
+                    </div>
+
+                    <button type="submit" class="btn btn--accent apply-submit">Submit application</button>
+                    <p class="apply-legal">No equity exchange. We'll confirm receipt by email and follow up with next steps.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <section class="faq-section">
         <div class="container">
             <h2>FAQ</h2>
@@ -384,7 +429,7 @@ const faqs = [
                 
                 <div class="cta-buttons">
                     <a href={applyUrl} class="btn btn--accent" target="_blank" rel="noopener">Apply now</a>
-                    <a href="/#newsletter" class="btn btn--outline">Get the monthly email</a>
+                    <a href="#apply" class="btn btn--outline">Register interest locally</a>
                 </div>
                 <p class="cta-note">One email a month, no spam.</p>
             </div>
