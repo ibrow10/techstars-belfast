@@ -1,0 +1,290 @@
+[
+ {
+  "id": "ts-2026-06-25-founder-labs-demo-day",
+  "title": "Founder Labs Demo Day",
+  "date": "2026-06-25",
+  "time": "2:45 PM doors",
+  "venue": "Ormeau Labs, Belfast",
+  "tag": "PARTNER SESSION",
+  "tagType": "partner",
+  "audience": "Investors & founders",
+  "description": "Ten companies from Founder Labs Cohort 4 take the stage. After three months heads-down, building, finding first customers and mapping the path to investment, the founders pitch their businesses, followed by networking and drinks.",
+  "link": "https://luma.com/syl0pl0j",
+  "private": false,
+  "surfaces": [
+   "techstars"
+  ]
+ },
+ {
+  "id": "ts-2026-06-23-claude-code-meetup-for-everyone",
+  "title": "Claude Code Meetup for Everyone",
+  "date": "2026-06-23",
+  "time": "6:00 PM – 8:00 PM",
+  "venue": "Ormeau Labs, Belfast",
+  "tag": "PARTNER SESSION",
+  "tagType": "partner",
+  "audience": "All skill levels",
+  "description": "An evening of Claude Code with the community: four talks from practitioners on real-world builds, a hands-on workshop, and time to network. No experience required, from seasoned Claude developers to curious newcomers.",
+  "link": "https://luma.com/eqom6q5t?tk=qtPD6B",
+  "private": false,
+  "surfaces": [
+   "techstars"
+  ]
+ },
+ {
+  "id": "ts-2026-06-09-from-start-up-to-success-with-copeland-d",
+  "title": "From Start-up to Success with Copeland Distillery",
+  "date": "2026-06-09",
+  "time": "5:00 PM – 7:00 PM",
+  "venue": "Ormeau Labs, Belfast",
+  "tag": "PARTNER SESSION",
+  "tagType": "partner",
+  "audience": "Open to all",
+  "description": "Copeland Distillery founder Gareth Irvine sits down with Ormeau Labs and A&L Goodbody for an informal evening on building one of Northern Ireland's most popular craft distilleries — from start-up to success. A proper founder story from someone who's done it the hard way. Pizzas, drinks, and good conversation.",
+  "link": "https://luma.com/nm5xzmlx",
+  "private": false,
+  "surfaces": [
+   "techstars"
+  ]
+ },
+ {
+  "id": "ts-2026-06-04-founders-night-jonny-clarke-locate-a-loc",
+  "title": "Founders Night: Jonny Clarke (Locate a Locum)",
+  "date": "2026-06-04",
+  "time": "5:30 PM – 7:30 PM",
+  "venue": "Ormeau Labs, Belfast",
+  "tag": "Founders Night Series",
+  "tagType": "in-person",
+  "audience": "Founders & operators",
+  "description": "June edition of our monthly Founders Night. This month: Jonny Clarke, founder of Locate a Locum — a workforce management platform for healthcare workers and organisations. Built around the belief that every healthcare worker deserves the tools to manage their own work life. Drinks and food provided.",
+  "link": "https://luma.com/u2x1q34k",
+  "private": false,
+  "surfaces": [
+   "techstars"
+  ]
+ },
+ {
+  "id": "ts-2026-06-03-founder-catalyst-end-of-programme-showca",
+  "title": "Founder Catalyst: End of Programme Showcase",
+  "date": "2026-06-03",
+  "time": "2:00 PM – 5:00 PM",
+  "venue": "Queen's Business School, Seminar Room 2",
+  "tag": "Founder Catalyst Showcase",
+  "tagType": "in-person",
+  "audience": "Mentors, investors & ecosystem",
+  "description": "The final showcase for the Techstars Founder Catalyst Global Spring 2026 cohort. Fast-paced one-minute pitches from founders across Sarajevo, Omaha, Istanbul, Uzbekistan, Belfast and the NatWest Startup Network. Belfast teams present in-person; others join virtually. Open to mentors, investors, and anyone backing early-stage founders. Refreshments provided.",
+  "link": "https://luma.com/7rs4jk5j",
+  "private": false,
+  "surfaces": [
+   "techstars"
+  ]
+ },
+ {
+  "id": "ts-2026-05-07-virtual-fireside-james-garvey-self-finan",
+  "title": "Virtual Fireside: James Garvey (Self Financial)",
+  "date": "2026-05-07",
+  "time": "4:00 PM – 5:30 PM BST",
+  "venue": "Online via Luma",
+  "tag": "Virtual Fireside",
+  "tagType": "remote",
+  "audience": "Founders & operators",
+  "description": "Exclusive virtual fireside with James Garvey — founder and former CEO of Self Financial, the Techstars portfolio company he scaled to a billion-dollar valuation serving millions of US customers. Topics: rapid growth without losing customer focus, raising $120M+ in venture capital, strategic bank partnerships, and scaling a 600-person team. Fintech-flavoured but the playbook generalises.",
+  "link": "https://luma.com/x7cek4nn",
+  "private": false,
+  "surfaces": [
+   "techstars"
+  ]
+ },
+ {
+  "id": "ts-2026-05-07-founders-night-aidan-larkin-asset-realit",
+  "title": "Founders Night: Aidan Larkin (Asset Reality)",
+  "date": "2026-05-07",
+  "time": "5:30 PM – 7:30 PM",
+  "venue": "Ormeau Labs, Belfast",
+  "tag": "Founders Night Series",
+  "tagType": "in-person",
+  "audience": "Founders & operators",
+  "description": "Our monthly Founders Night brings the local startup community together to interview founders and dig into their journeys. This month: Aidan Larkin, co-founder and CEO of Asset Reality — a former UK criminal investigator now building digital asset custody and compliance for recovered assets. Drinks and food provided.",
+  "link": "https://luma.com/alagvajn",
+  "private": false,
+  "surfaces": [
+   "techstars"
+  ]
+ },
+ {
+  "id": "ts-2026-05-06-techstars-community-development-lab",
+  "title": "Techstars Community Development Lab",
+  "date": "2026-05-06",
+  "time": "12:30 PM – 5:00 PM",
+  "venue": "Ormeau Labs, Belfast",
+  "tag": "PARTNER SESSION",
+  "tagType": "partner",
+  "audience": "Invite only",
+  "description": "Techstars CDL is an invite-only session bringing together founders, investors, universities, corporates, government and all other stakeholders to understand how best to support the startup ecosystem for the future. Places are limited — if you want to attend please ping us on LinkedIn.",
+  "link": "https://www.linkedin.com/showcase/techstars-belfast",
+  "private": true,
+  "surfaces": [
+   "techstars"
+  ]
+ },
+ {
+  "id": "ts-2026-04-29-ai-build-day",
+  "title": "AI Build Day",
+  "date": "2026-04-29",
+  "time": "12:00 PM – 4:30 PM",
+  "venue": "The AMP Growth Incubator, Derry",
+  "tag": "Community Event",
+  "tagType": "in-person",
+  "audience": "Founders, builders & operators",
+  "description": "Techstars Belfast x The AMP x Invest NI. A day-long AI build event: morning intro to AI models and tools for founders and operators, followed by a two-hour afternoon build sprint on workflows, websites, agents or products, ending in a show-and-tell. Bring a laptop and ideas. Come to learn. Stay to build. Leave with something that works.",
+  "link": "https://luma.com/72mco2r0",
+  "private": false,
+  "surfaces": [
+   "techstars"
+  ]
+ },
+ {
+  "id": "ts-2026-04-25-hackbelfast-2026",
+  "title": "HackBelfast 2026",
+  "date": "2026-04-25",
+  "time": "25-26 April, 10:00 AM start",
+  "venue": "Queen's University Belfast, Computer Science Building",
+  "tag": "PARTNER SESSION",
+  "tagType": "partner",
+  "audience": "175+ students across Ireland",
+  "description": "Northern Ireland's largest student-led hackathon. A 24-hour innovation sprint tackling real-world challenges across Builder, Non-Builder, and Finance tracks. Techstars Belfast is a community partner.",
+  "link": "https://www.hackbelfast.org/register",
+  "private": false,
+  "surfaces": [
+   "techstars"
+  ]
+ },
+ {
+  "id": "ts-2026-04-09-stripe-snacks-agentic-commerce",
+  "title": "Stripe Snacks: Agentic Commerce",
+  "date": "2026-04-09",
+  "time": "11:00 AM – 1:00 PM",
+  "venue": "Ormeau Labs",
+  "tag": "Networking",
+  "tagType": "in-person",
+  "audience": "Stripe Partnership",
+  "description": "Continuing the agentic commerce discussion with content and networking in partnership with our friends at Stripe. Coffee, snacks, and shipping agents.",
+  "link": "",
+  "private": false,
+  "surfaces": [
+   "techstars"
+  ]
+ },
+ {
+  "id": "ts-2026-03-16-founder-catalyst-kick-off",
+  "title": "Founder Catalyst Kick Off",
+  "date": "2026-03-16",
+  "time": "4:00 PM – 6:00 PM",
+  "venue": "Google Meet",
+  "tag": "Virtual Pre-Accelerator",
+  "tagType": "remote",
+  "audience": "Cohort Participants",
+  "description": "The official kick off for the Founder Catalyst cohort. Get ready to start your 10-week journey with Techstars.",
+  "link": "",
+  "private": true,
+  "surfaces": [
+   "techstars"
+  ]
+ },
+ {
+  "id": "ts-2026-03-05-founder-investor-elkstone",
+  "title": "Founder ❤️ Investor: Elkstone",
+  "date": "2026-03-05",
+  "time": "5:30 PM – 7:30 PM",
+  "venue": "Ormeau Labs",
+  "tag": "Founders Night Series",
+  "tagType": "in-person",
+  "audience": "Elkstone Fund",
+  "description": "Elkstone have announced the first close on their new fund and are keen to invest in high potential early stage companies in Northern Ireland. Come hear from the team and one of their portfolio companies.",
+  "link": "",
+  "private": false,
+  "surfaces": [
+   "techstars"
+  ]
+ },
+ {
+  "id": "ts-2026-03-04-founders-vs-vcs-agent-wars",
+  "title": "Founders vs VCs: Agent Wars",
+  "date": "2026-03-04",
+  "time": "11:00 AM – 2:30 PM",
+  "venue": "Ormeau Labs",
+  "tag": "Build Challenge",
+  "tagType": "in-person",
+  "audience": "Technical Build",
+  "description": "Who can build the best AI agents in just 2 hours? A high-stakes live build challenge between local founders and the investment community.",
+  "link": "",
+  "private": false,
+  "surfaces": [
+   "techstars"
+  ]
+ },
+ {
+  "id": "ts-2026-02-12-coinbase-x-ormeau-labs-future-of-commerc",
+  "title": "Coinbase x Ormeau Labs: Future of Commerce",
+  "date": "2026-02-12",
+  "time": "5:30 PM – 7:30 PM",
+  "venue": "Ormeau Labs, Belfast",
+  "tag": "Community Event",
+  "tagType": "in-person",
+  "audience": "NI-Blockchain Partnership",
+  "description": "Unpick the future of commerce, agents, and stablecoins with Evan (Coinbase) and Ian (Ormeau Labs). Part of the new QUB partnership launching Techstars in NI.",
+  "link": "",
+  "private": false,
+  "surfaces": [
+   "techstars"
+  ]
+ },
+ {
+  "id": "ts-2026-02-05-founder-ama-techstars-founder-catalyst",
+  "title": "Founder AMA: Techstars Founder Catalyst",
+  "date": "2026-02-05",
+  "time": "3:00 PM – 4:00 PM GMT",
+  "venue": "Google Meet",
+  "tag": "Virtual Pre-Accelerator",
+  "tagType": "remote",
+  "audience": "Founders only",
+  "description": "Ask questions live, no filters, no sales pitch. Join the Techstars team to find out if the 10-week virtual pre-accelerator is the right fit for your startup. Applications have closed for Spring 2026.",
+  "link": "https://luma.com/a9e83czs",
+  "private": false,
+  "surfaces": [
+   "techstars"
+  ]
+ },
+ {
+  "id": "ts-2026-02-05-founders-night-x-founder-labs",
+  "title": "Founders Night X Founder Labs",
+  "date": "2026-02-05",
+  "time": "5:30 PM – 7:30 PM",
+  "venue": "Ormeau Labs, Belfast",
+  "tag": "PARTNER SESSION",
+  "tagType": "partner",
+  "audience": "Cohort 4 Launch",
+  "description": "Dive into startups and scaling with Orla Lynch. Get an exclusive first look at Cohort 4 and hear real-world insights from previous cohort members in an interactive setting.",
+  "link": "https://luma.com/6sqbnad2",
+  "private": false,
+  "surfaces": [
+   "techstars"
+  ]
+ },
+ {
+  "id": "ts-2026-02-03-founder-labs-x-the-amp-ama",
+  "title": "Founder Labs x The AMP: AMA",
+  "date": "2026-02-03",
+  "time": "11:00 AM – 3:00 PM",
+  "venue": "Ebrington Square, Derry",
+  "tag": "PARTNER SESSION",
+  "tagType": "partner",
+  "audience": "Cohort 4 focus",
+  "description": "Join the Founder Labs team at The AMP for an open conversation about Cohort 4. Includes a Fireside Chat with Orla Lynch and Ian Browne, plus insights from alumni.",
+  "link": "https://luma.com/ixnvtb9s",
+  "private": false,
+  "surfaces": [
+   "techstars"
+  ]
+ }
+]
