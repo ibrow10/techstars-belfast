@@ -30,7 +30,8 @@
   "surfaces": [
    "techstars",
    "fl"
-  ]
+  ],
+  "sprint": true
  },
  {
   "id": "ts-2026-06-25-founder-labs-demo-day",
