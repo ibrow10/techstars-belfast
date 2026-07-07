@@ -3,32 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const applyUrl = 'https://www.techstars.com/techstars-founder-catalyst-global-fall-2026-program';
 
-const personas = [
-    {
-        icon: 'code',
-        title: 'BUILDERS',
-        subtitle: 'Technical Founders',
-        hook: 'Bring code. Leave with momentum.',
-        description: "You're building the product, but you want sharper focus: the right customer, the right wedge, the right story — and the weekly pressure to execute.",
-        benefits: 'Faster validation loops, repeatable GTM experiments, tighter metrics, and a pitch that matches reality.'
-    },
-    {
-        icon: 'microscope',
-        title: 'RESEARCHERS',
-        subtitle: 'PhD / Postdoc / Lab Teams',
-        hook: 'Bring the insight. We\'ll help you prove demand.',
-        description: "You have something real — but translating research into a company is a different sport.",
-        benefits: 'Customer discovery that respects depth, a commercial wedge, a fundable narrative, and the confidence to move from "interesting" to "investable".'
-    },
-    {
-        icon: 'briefcase',
-        title: 'DOMAIN EXPERTS',
-        subtitle: 'Deep Industry Operators',
-        hook: 'Bring the problem. We\'ll help you build the wedge.',
-        description: "You understand the industry pain better than anyone — now you need the go-to-market path and a story that wins.",
-        benefits: 'Structured problem framing, proof-driven GTM, metrics that matter, and investor-ready clarity.'
-    }
-];
 
 const benefits = [
     { icon: 'video', text: 'Weekly live masterclasses taught by Techstars leaders + experts' },
@@ -222,31 +196,6 @@ const faqs = [
             <div class="why-matters-content">
                 <p>Techstars Belfast is a Startup Community Partnership built with <strong>Ormeau Labs</strong> and <strong>Queen's University Belfast</strong> — opening the door to Techstars' worldwide network of mentors, investors, tools, and programmes.</p>
                 <p class="highlight-text">If you're building something ambitious here, Founder Catalyst is the fastest credible on-ramp into that global ecosystem.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Who It's For -->
-    <section class="personas-section">
-        <div class="container">
-            <h2>WHO IT'S FOR</h2>
-            
-            <div class="personas-grid">
-                {personas.map(persona => (
-                    <div class="persona-card card">
-                        <div class="persona-icon">
-                            <i data-lucide={persona.icon}></i>
-                        </div>
-                        <div class="persona-header">
-                            <h3>{persona.title}</h3>
-                            <span class="persona-subtitle">{persona.subtitle}</span>
-                        </div>
-                        <p class="persona-hook">{persona.hook}</p>
-                        <p class="persona-description">{persona.description}</p>
-                        <p class="persona-benefits"><strong>You'll love this if you want:</strong> {persona.benefits}</p>
-                        <a href={applyUrl} class="btn btn--accent" target="_blank" rel="noopener">Apply now</a>
-                    </div>
-                ))}
             </div>
         </div>
     </section>
@@ -669,97 +618,6 @@ const faqs = [
     }
 
     /* PERSONAS SECTION */
-    .personas-section {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .personas-section .container {
-        max-width: 1000px;
-    }
-
-    .personas-section h2 {
-        font-size: 1.25rem;
-        margin-bottom: 2rem;
-    }
-
-    .personas-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-    }
-
-    .persona-card {
-        padding: 2rem;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .persona-icon {
-        width: 48px;
-        height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(0, 210, 106, 0.15);
-        border-radius: 10px;
-        margin-bottom: 1.25rem;
-        color: var(--accent-color);
-    }
-
-    .persona-icon i {
-        width: 24px;
-        height: 24px;
-    }
-
-    .persona-header {
-        margin-bottom: 1rem;
-    }
-
-    .persona-header h3 {
-        font-size: 1.2rem;
-        font-family: var(--font-mono);
-        margin-bottom: 0.25rem;
-    }
-
-    .persona-subtitle {
-        font-family: var(--font-mono);
-        font-size: 0.75rem;
-        color: var(--accent-color);
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-    }
-
-    .persona-hook {
-        font-size: 1.15rem;
-        color: #fff;
-        margin-bottom: 1rem;
-        font-style: italic;
-    }
-
-    .persona-description {
-        font-size: 0.95rem;
-        color: #aaa;
-        line-height: 1.6;
-        margin-bottom: 1rem;
-    }
-
-    .persona-benefits {
-        font-size: 0.9rem;
-        color: var(--text-muted);
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
-        flex-grow: 1;
-    }
-
-    .persona-benefits strong {
-        color: #aaa;
-    }
-
-    .persona-card .btn {
-        width: 100%;
-        text-align: center;
-    }
 
     /* BENEFITS SECTION */
     .benefits-section {
