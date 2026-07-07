@@ -1,5 +1,21 @@
 [
  {
+  "id": "ts-2026-07-30-inqubate-summer-social",
+  "title": "InQUBate Summer Social x Techstars Belfast",
+  "date": "2026-07-30",
+  "time": "5:30 PM – 8:00 PM",
+  "venue": "QBS Student Hub, Queen's Business School, Belfast",
+  "tag": "PARTNER SESSION",
+  "tagType": "partner",
+  "audience": "Students, alumni & founders",
+  "description": "An informal Meet and Match social connecting students, alumni and entrepreneurs. Pitch a business idea or your skills, hear from Queen's graduates on their journey co-founding Opinly, and build relationships over food and refreshments.",
+  "link": "https://events.humanitix.com/inqubate-summer-social-2026",
+  "private": false,
+  "surfaces": [
+   "techstars"
+  ]
+ },
+ {
   "id": "ts-2026-06-25-founder-labs-demo-day",
   "title": "Founder Labs Demo Day",
   "date": "2026-06-25",
