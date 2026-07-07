@@ -16,6 +16,23 @@
   ]
  },
  {
+  "id": "ts-2026-07-24-build-day-belfast-sprint",
+  "title": "Build Day: Belfast Sprint",
+  "date": "2026-07-24",
+  "time": "10:00 AM – 4:00 PM",
+  "venue": "Ormeau Labs, Belfast",
+  "tag": "Community Event",
+  "tagType": "in-person",
+  "audience": "Open to all",
+  "description": "A day-long build sprint at Ormeau Labs. Partners include Young Social Innovators, Patch, Illuminate, Barclays Eagle Labs and Techstars Belfast.",
+  "link": "",
+  "private": false,
+  "surfaces": [
+   "techstars",
+   "fl"
+  ]
+ },
+ {
   "id": "ts-2026-06-25-founder-labs-demo-day",
   "title": "Founder Labs Demo Day",
   "date": "2026-06-25",
