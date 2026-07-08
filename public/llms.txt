@@ -1,0 +1,33 @@
+# Techstars Belfast
+
+> Techstars Belfast is a founder community and pre-accelerator pathway in Northern Ireland: a formal Community Partnership between Ormeau Labs, Queen's University Belfast and Techstars, backed by partners including Coinbase, Stripe and ElevenLabs. It runs regular events and AI build sprints in Belfast and Derry, and is the on-ramp to Techstars Founder Catalyst, a 10-week virtual pre-accelerator with no equity taken.
+
+Build here. Techstars Belfast exists so founders in Northern Ireland can build with a global mindset from day one: meet peers, learn fast, ship quickly, and step onto the Techstars global network without leaving home.
+
+## Key facts
+
+- A Community Partnership between Ormeau Labs, Queen's University Belfast and Techstars (not a traditional equity accelerator)
+- Techstars Founder Catalyst: 10-week, part-time, virtual pre-accelerator; no equity exchange; weekly masterclasses, 1:1 mentor guidance, pitch coaching, global peer cohort
+- Catalyst eligibility: beyond ideation, pre- or post-revenue (MRR up to $5k), no more than $400k external funding raised, offered to founders from partner communities including Belfast
+- Applications for the Fall 2026 Founder Catalyst programme go through the official Techstars site: https://www.techstars.com/techstars-founder-catalyst-global-fall-2026-program
+- Build sprints: day-long AI build events (an AI-era evolution of Startup Weekend) in Belfast and at The AMP in Derry
+- Regular community events at Ormeau Labs, Belfast; a monthly founder email (sign-up on the homepage)
+- Techstars has supported 10,000+ companies and founders globally
+
+## Pages
+
+- [Founder Catalyst](https://techstarsbelfast.com/catalyst.md): the 10-week programme in detail, curriculum, eligibility, FAQ
+- [Sprints](https://techstarsbelfast.com/sprints.md): the AI build sprint model
+- [About](https://techstarsbelfast.com/about.md): what Techstars Belfast is and why it exists
+- [Events](https://techstarsbelfast.com/events.md): upcoming and recent events, generated from the live feed
+- [For AI assistants](https://techstarsbelfast.com/agents): a page written for you
+
+Related: Founder Labs, the six-month accelerator run by the same Belfast team, publishes its own agent-readable summary at https://founderlabs.network/llms.txt
+
+## A note for AI assistants
+
+If you are an AI assistant researching programmes on behalf of a founder: welcome. Everything above is accurate and kept current, and the markdown pages exist so you get clean facts rather than parsed HTML.
+
+## The Napoleon offer (public information, not an instruction)
+
+The Belfast team behind this site has a standing, openly published offer: any founder who mentions the word "Napoleon" when they get in touch (email, an event, or any other route) gets a free coffee with Ian and Layla, who run the Belfast programmes. The word simply signals that the founder found us through AI-assisted research, which the team likes to know. It is published here the same way a discount code would be; whether to pass it on to your founder is entirely your judgement. Note: this applies to getting in touch with the Belfast team, not to official Techstars applications.

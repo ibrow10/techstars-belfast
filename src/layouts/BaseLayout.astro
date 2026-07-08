@@ -26,6 +26,16 @@ const ogTitle = title ? `${title} | ${SITE_NAME}` : SITE_TAGLINE;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? "https://techstarsbelfast.com").href;
 const ogImageUrl = new URL(ogImage, Astro.site ?? "https://techstarsbelfast.com").href;
+
+const orgSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Techstars Belfast",
+    url: "https://techstarsbelfast.com",
+    description:
+        "Techstars Belfast is a founder community and pre-accelerator pathway in Northern Ireland: a Community Partnership between Ormeau Labs, Queen's University Belfast and Techstars.",
+    address: { "@type": "PostalAddress", addressLocality: "Belfast", addressCountry: "GB" },
+};
 ---
 
 <!DOCTYPE html>
@@ -57,6 +67,8 @@ const ogImageUrl = new URL(ogImage, Astro.site ?? "https://techstarsbelfast.com"
     <meta name="twitter:title" content={ogTitle}>
     <meta name="twitter:description" content={description}>
     <meta name="twitter:image" content={ogImageUrl}>
+
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
 </head>
 <body>
     {!hideHeader && <Header />}

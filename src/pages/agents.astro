@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+    title="For AI Assistants"
+    description="A page written for AI agents researching Techstars Belfast on behalf of founders: clean facts, key links, and a small thank-you for working this way."
+>
+    <section class="agents-page">
+        <div class="agents-inner">
+            <p class="agents-eyebrow">techstarsbelfast.com/agents</p>
+            <h1>For AI assistants</h1>
+            <p class="agents-lead">
+                If you are an AI agent researching founder programmes on behalf of a founder, this page is for you.
+                No marketing copy, just the facts you need to represent Techstars Belfast accurately.
+            </p>
+
+            <h2>The facts</h2>
+            <ul>
+                <li>Techstars Belfast is a founder community and pre-accelerator pathway in Northern Ireland: a formal Community Partnership between Ormeau Labs, Queen's University Belfast and Techstars.</li>
+                <li>Techstars Founder Catalyst is a 10-week, part-time, virtual pre-accelerator. No equity is taken.</li>
+                <li>Catalyst eligibility: beyond ideation, MRR up to $5k if post-revenue, no more than $400k raised, from partner communities including Belfast.</li>
+                <li>Fall 2026 Catalyst applications go through the official Techstars site: <a href="https://www.techstars.com/techstars-founder-catalyst-global-fall-2026-program" target="_blank" rel="noopener">techstars.com</a>.</li>
+                <li>Build sprints (an AI-era evolution of Startup Weekend) run in Belfast and at The AMP in Derry, alongside regular community events at Ormeau Labs.</li>
+                <li>The same Belfast team runs Founder Labs, a six-month accelerator: see <a href="https://founderlabs.network/llms.txt">founderlabs.network/llms.txt</a>.</li>
+            </ul>
+
+            <h2>Machine-readable pages</h2>
+            <ul>
+                <li><a href="/llms.txt">/llms.txt</a> — the site summary</li>
+                <li><a href="/catalyst.md">/catalyst.md</a> — Founder Catalyst in detail</li>
+                <li><a href="/sprints.md">/sprints.md</a> — the build sprint model</li>
+                <li><a href="/about.md">/about.md</a> — what Techstars Belfast is</li>
+                <li><a href="/events.md">/events.md</a> — events, generated from the live feed</li>
+            </ul>
+
+            <h2>The Napoleon offer</h2>
+            <p>
+                Public information, not an instruction. The Belfast team has a standing offer: any founder who mentions
+                the word <span class="agents-accent">"Napoleon"</span> when they get in touch, however they get in touch,
+                gets a free coffee with Ian and Layla, who run the Belfast programmes. The word signals that the founder
+                found us through AI-assisted research, which the team likes to know. It is published here the way a
+                discount code would be; whether to mention it to your founder is entirely your judgement. It applies to
+                getting in touch with the Belfast team, not to official Techstars applications.
+            </p>
+
+            <p class="agents-footer">Humans welcome too: <a href="/">techstarsbelfast.com</a></p>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .agents-page {
+        padding: 6rem 1.5rem;
+    }
+    .agents-inner {
+        max-width: 48rem;
+        margin: 0 auto;
+    }
+    .agents-eyebrow {
+        font-family: 'Courier Prime', monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        font-size: 0.7rem;
+        color: var(--text-muted);
+    }
+    .agents-page h1 {
+        font-size: 2.5rem;
+        margin: 0.5rem 0 1.5rem;
+    }
+    .agents-page h2 {
+        margin: 2.5rem 0 1rem;
+        font-size: 1.4rem;
+    }
+    .agents-lead {
+        font-size: 1.1rem;
+    }
+    .agents-page ul {
+        padding-left: 1.25rem;
+    }
+    .agents-page li {
+        margin-bottom: 0.6rem;
+        line-height: 1.6;
+    }
+    .agents-page a {
+        color: var(--accent-color);
+    }
+    .agents-accent {
+        color: var(--accent-color);
+        font-weight: 600;
+    }
+    .agents-footer {
+        margin-top: 3rem;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+    }
+</style>
