@@ -9,12 +9,10 @@ const parseEventDate = (isoDate) => {
     const [year, month, day] = isoDate.split('-').map(Number);
     return new Date(year, month - 1, day);
 };
-const nextSprint = eventsFeed
+const upcomingSprints = eventsFeed
     .filter(e => e.sprint && !e.private && parseEventDate(e.date) >= today)
-    .sort((a, b) => parseEventDate(a.date) - parseEventDate(b.date))[0] ?? null;
-const sprintDateLabel = nextSprint
-    ? parseEventDate(nextSprint.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
-    : '';
+    .sort((a, b) => parseEventDate(a.date) - parseEventDate(b.date));
+const fmtSprintDate = (iso) => parseEventDate(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 
 const examples = [
     {
@@ -75,21 +73,25 @@ const openTo = [
         </div>
     </section>
 
-    <!-- Next Sprint (from the live events feed) -->
-    {nextSprint && (
+    <!-- Upcoming sprints (from the live events feed) -->
+    {upcomingSprints.length > 0 && (
         <section class="next-sprint-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>NEXT SPRINT</h2>
+                    <h2>{upcomingSprints.length > 1 ? 'UPCOMING SPRINTS' : 'NEXT SPRINT'}</h2>
                 </div>
-                <div class="example-card next-sprint-card">
-                    <span class="example-tag">{nextSprint.tag}</span>
-                    <h3>{nextSprint.title}</h3>
-                    <p class="example-partner">{sprintDateLabel}{nextSprint.time ? ` · ${nextSprint.time}` : ''} · {nextSprint.venue}</p>
-                    <p class="example-description">{nextSprint.description}</p>
-                    {nextSprint.link && (
-                        <a href={nextSprint.link} class="btn btn--accent" target="_blank" rel="noopener">Register now</a>
-                    )}
+                <div class="upcoming-sprints-grid">
+                    {upcomingSprints.map(s => (
+                        <div class="example-card next-sprint-card">
+                            <span class="example-tag">{s.tag}</span>
+                            <h3>{s.title}</h3>
+                            <p class="example-partner">{fmtSprintDate(s.date)}{s.time ? ` · ${s.time}` : ''} · {s.venue}</p>
+                            <p class="example-description">{s.description}</p>
+                            {s.link && (
+                                <a href={s.link} class="btn btn--accent" target="_blank" rel="noopener">{s.link.includes('qub.ac.uk') ? 'Apply' : 'Register now'}</a>
+                            )}
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
@@ -435,5 +437,10 @@ const openTo = [
     }
     .next-sprint-card .btn {
         margin-top: 1.25rem;
+    }
+    .upcoming-sprints-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.5rem;
     }
 </style>

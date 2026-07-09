@@ -1,5 +1,22 @@
 [
  {
+  "id": "ts-2026-09-16-quest-techstars-sprint",
+  "title": "QUest x Techstars: Customer Discovery Sprint",
+  "date": "2026-09-16",
+  "time": "Two-day sprint",
+  "venue": "Queen's University Belfast",
+  "tag": "Sprint",
+  "tagType": "in-person",
+  "audience": "QUB graduates & postgraduates",
+  "description": "A two-day customer-discovery sprint (16–17 September 2026) run by Queen's inQUBate with Techstars Belfast, Venture Folk, Ormeau Labs and the AI Collaboration Centre. Teams move from idea to customer insight: identify customers, test assumptions, prototype and pitch. Ten finalist teams progress to an eight-week Phase 2. For Queen's graduates and postgraduates with a business idea gaining traction.",
+  "link": "https://www.qub.ac.uk/sites/inqubate/StudentsRecentGraduates/EntrepreneurialSkills/quest-programme/",
+  "private": false,
+  "surfaces": [
+   "techstars"
+  ],
+  "sprint": true
+ },
+ {
   "id": "ts-2026-07-30-inqubate-summer-social",
   "title": "InQUBate Summer Social x Techstars Belfast",
   "date": "2026-07-30",
