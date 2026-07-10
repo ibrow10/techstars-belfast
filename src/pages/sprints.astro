@@ -38,13 +38,6 @@ const examples = [
     }
 ];
 
-const openTo = [
-    'Universities and research groups',
-    'Funds and investors',
-    'Corporates and partners',
-    'Public sector and government',
-    'Community groups and meetups'
-];
 ---
 
 <BaseLayout title="Sprints">
@@ -113,22 +106,6 @@ const openTo = [
                         <p class="example-description">{example.description}</p>
                     </div>
                 ))}
-            </div>
-        </div>
-    </section>
-
-    <!-- Open To -->
-    <section class="open-section">
-        <div class="container">
-            <div class="open-content">
-                <span class="open-eyebrow">// Open to all</span>
-                <h2>WE'LL RUN A SPRINT WITH ANYONE</h2>
-                <p class="open-intro">Bring a real challenge and people willing to build against it. We'll shape a Sprint around it, with:</p>
-                <ul class="open-list">
-                    {openTo.map(item => (
-                        <li class="open-item">{item}</li>
-                    ))}
-                </ul>
             </div>
         </div>
     </section>
@@ -326,64 +303,6 @@ const openTo = [
         color: var(--text-muted);
         line-height: 1.5;
         margin: 0.5rem 0 0;
-    }
-
-    /* OPEN TO */
-    .open-section {
-        padding: 5rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .open-section .container {
-        max-width: 800px;
-    }
-
-    .open-eyebrow {
-        display: inline-block;
-        font-family: var(--font-mono);
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        font-size: 0.8rem;
-        color: var(--accent-color);
-        margin-bottom: 1rem;
-    }
-
-    .open-content h2 {
-        margin-bottom: 1rem;
-    }
-
-    .open-intro {
-        font-size: 1.1rem;
-        color: #ccc;
-        margin-bottom: 2rem;
-        line-height: 1.6;
-    }
-
-    .open-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        line-height: 1.25;
-    }
-
-    .open-item {
-        display: inline;
-        font-family: var(--font-mono);
-        text-transform: uppercase;
-        font-size: clamp(1.4rem, 4vw, 2.4rem);
-        letter-spacing: -0.03em;
-        color: var(--text-color);
-        transition: color 0.15s ease;
-    }
-
-    .open-item:not(:last-child)::after {
-        content: ' / ';
-        color: var(--accent-color);
-        font-weight: 700;
-    }
-
-    .open-item:hover {
-        color: var(--accent-color);
     }
 
     /* FINAL CTA */
