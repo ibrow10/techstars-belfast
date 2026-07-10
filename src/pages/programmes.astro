@@ -1,1194 +1,146 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const personas = [
-    {
-        icon: 'code',
-        title: 'BUILDERS',
-        subtitle: 'Technical Founders',
-        hook: 'Bring code. Leave with momentum.',
-        description: "You're building the product, but you want sharper focus: the right customer, the right wedge, the right story — and the weekly pressure to execute.",
-        benefits: 'Faster validation loops, repeatable GTM experiments, tighter metrics, and a pitch that matches reality.'
-    },
-    {
-        icon: 'microscope',
-        title: 'RESEARCHERS',
-        subtitle: 'PhD / Postdoc / Lab Teams',
-        hook: 'Bring the insight. We\'ll help you prove demand.',
-        description: "You have something real — but translating research into a company is a different sport.",
-        benefits: 'Customer discovery that respects depth, a commercial wedge, a fundable narrative, and the confidence to move from "interesting" to "investable".'
-    },
-    {
-        icon: 'briefcase',
-        title: 'DOMAIN EXPERTS',
-        subtitle: 'Deep Industry Operators',
-        hook: 'Bring the problem. We\'ll help you build the wedge.',
-        description: "You understand the industry pain better than anyone — now you need the go-to-market path and a story that wins.",
-        benefits: 'Structured problem framing, proof-driven GTM, metrics that matter, and investor-ready clarity.'
-    }
+const gives = [
+    'Weekly masterclasses from Techstars leaders and operators',
+    '1:1 mentor time with founders, operators and investors',
+    'Pitch coaching until your story actually lands',
+    'A global cohort that holds you to it',
 ];
 
-const benefits = [
-    { icon: 'video', text: 'Weekly live masterclasses taught by Techstars leaders + experts' },
-    { icon: 'wrench', text: 'Bonus workshops on practical founder execution' },
-    { icon: 'users', text: '1:1 guidance and support from Techstars mentors/operators/investors' },
-    { icon: 'mic', text: 'Weekly pitch coaching to sharpen your investor story' },
-    { icon: 'gift', text: 'Exclusive perks (tools/credits/support)' },
-    { icon: 'globe', text: 'A global peer cohort for accountability + collaboration' }
-];
-
-const tracks = [
-    {
-        number: '1',
-        title: 'Masterclass Track',
-        subtitle: 'Core founder build',
-        description: 'A practical curriculum covering the fundamentals that make a startup investable:',
-        items: [
-            'Customer discovery → ICP → PMF evidence',
-            'GTM wedge + experiments',
-            'Metrics + traction narrative',
-            'Financial model + runway logic',
-            'Pitch + fundraising readiness'
-        ]
-    },
-    {
-        number: '2',
-        title: 'Pitch Feedback Drop-ins',
-        subtitle: 'Repetition loop',
-        description: 'You pitch, get direct critique, iterate, and pitch again.',
-        items: [
-            'This is where founders compound fast: repetition + specific feedback beats "one perfect pitch workshop".'
-        ]
-    },
-    {
-        number: '3',
-        title: 'Partner Workshops',
-        subtitle: 'Operator-level help',
-        description: 'Targeted sessions designed to make you execution-ready. (Examples from the Belfast track may include:)',
-        items: [
-            'Sales pipeline management using AI (HubSpot)',
-            'AI infrastructure architecture (AWS)',
-            'Investor pipeline management (Metal)'
-        ]
-    },
-    {
-        number: '4',
-        title: 'Community Track',
-        subtitle: 'Pattern recognition + ambition',
-        description: 'Sessions that help you see what "great" looks like and how the game is played:',
-        items: [
-            'Fundraising fundamentals',
-            'Unicorn journeys + founder mental models',
-            'What great investors listen for (and what they ignore)'
-        ]
-    }
-];
-
-const curriculum = [
-    {
-        title: 'The Customer Playbook: Discovery → PMF',
-        description: 'Run discovery properly, define your ICP, and prove the pain with evidence.'
-    },
-    {
-        title: 'Forecasting for Success with Financial Modelling (Part 1)',
-        description: 'Build a simple, investor-legible model: assumptions, unit economics logic, runway.'
-    },
-    {
-        title: 'When to Scale and How Fast',
-        description: 'Learn what scaling really means — and how to avoid premature burn.'
-    },
-    {
-        title: 'Go-To-Market Foundations: picking the right first channel',
-        description: 'Pick a wedge, design tests, avoid "spray and pray".'
-    },
-    {
-        title: 'From Story to Stage: mastering the winning pitch',
-        description: 'Problem, why now, why you, traction, model, ask — tied to evidence.'
-    },
-    {
-        title: 'Product: roadmapping, testing, prioritising & launching',
-        description: 'Roadmap by hypothesis, not feature-wishlists.'
-    },
-    {
-        title: 'The Magic of Metrics',
-        description: 'Define the few numbers that matter and talk about traction credibly.'
-    }
-];
-
-const outcomes = [
-    'A clear ICP + problem statement backed by real customer conversations',
-    'A tested GTM wedge (first channel + experiments + early signals)',
-    'A simple financial model you can defend (assumptions, runway, key drivers)',
-    'A product roadmap tied to hypotheses + learning milestones',
-    'A metrics view (north star + a few traction indicators that make sense)',
-    'A tight 3–4 minute pitch + narrative that matches the evidence',
-    'A more professional investor pipeline approach (if fundraising is the right next step)'
-];
-
-const eligibility = [
-    'Beyond ideation (moving toward product or growth)',
-    'Pre- or post-revenue; if post-revenue, MRR up to $5k',
-    'Raised no more than $400k external funding',
-    'Traction signals encouraged (pilots, users, waitlist, pre-orders)',
-    'Offered exclusively to founders from partner communities including Belfast'
-];
-
-const faqs = [
-    {
-        question: 'Is this in-person?',
-        answer: "It's a virtual programme (part-time) running across 10 weeks."
-    },
-    {
-        question: 'Do you take equity?',
-        answer: 'No — Techstars notes there is no equity exchange in Founder Catalyst programmes.'
-    },
-    {
-        question: "I'm a researcher — can I apply if this isn't a fully formed startup yet?",
-        answer: "If you're beyond pure ideation and can show real problem insight + evidence gathering (discovery, pilots, waitlist, early users), you're in the zone Techstars is looking for."
-    },
-    {
-        question: 'Why should I trust this?',
-        answer: "This is delivered through Techstars Belfast — a formal partnership between Ormeau Labs, Queen's, and Techstars. And Techstars has supported 10,000+ companies/founders globally."
-    }
+const facts = [
+    { k: 'Format', v: '10 weeks, part-time, virtual' },
+    { k: 'Equity', v: 'None. Zero taken.' },
+    { k: 'Cost', v: 'Free to selected founders' },
+    { k: 'Runs', v: 'Sep – Nov 2026' },
 ];
 ---
 
-<BaseLayout title="Founder Catalyst">
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-bg"></div>
-        <div class="container">
-            <span class="programme-label">PROGRAMMES</span>
-            <img src="/images/founder catalyst.png" alt="Founder Catalyst" class="fc-logo">
-            <p class="hero-tagline">Build a fundable company — with a global Techstars cohort — from Belfast.</p>
-            
-            <p class="hero-description">
-                Founder Catalyst is a highly selective, 10-week, part-time virtual pre-accelerator designed to take you from early idea / early traction → clear customer, credible plan, fundable story.
+<BaseLayout title="Founder Catalyst" description="A selective Techstars pre-accelerator for Northern Ireland's founders. 10 weeks, global cohort, no equity.">
+    <!-- HERO -->
+    <section class="hero">
+        <div class="wrap wrap--mid">
+            <p class="eyebrow">Founder Catalyst · Techstars</p>
+            <h1>Want to succeed?<br /><span class="accent">Apply.</span></h1>
+            <p class="lead hero-lead">
+                A selective Techstars pre-accelerator for founders building from Northern Ireland.
+                Ten weeks that take you from early traction to fundable. It's the real thing.
             </p>
-
-            <div class="key-dates">
-                <div class="date-item">
-                    <span class="date-label">Applications open</span>
-                    <span class="date-value">29 June 2026</span>
-                </div>
-                <div class="date-item">
-                    <span class="date-label">Programme runs</span>
-                    <span class="date-value">September – November 2026</span>
-                </div>
-                <div class="date-item">
-                    <span class="date-label">Demo Day</span>
-                    <span class="date-value">TBC</span>
-                </div>
-            </div>
-
             <div class="hero-ctas">
-                <span class="btn btn--accent">Applications open 29 June</span>
-                <a href="/#newsletter" class="btn btn--outline">Get the monthly email</a>
+                <a href="#apply" class="btn btn--accent">Apply now</a>
+                <a href="/sprints" class="btn btn--ghost">Not ready? Start with a sprint</a>
             </div>
-
-            <div class="trust-bar">
-                <span class="trust-item"><i data-lucide="check-circle"></i> Techstars-powered global programme</span>
-                <span class="trust-item"><i data-lucide="check-circle"></i> No equity exchange</span>
-                <span class="trust-item"><i data-lucide="check-circle"></i> Join a global cohort (Belfast + partner communities)</span>
-            </div>
+        </div>
+        <div class="wrap">
+            <img src="/images/photos/pic-143.jpg" alt="A Techstars speaker presenting to founders in Belfast" class="hero-photo" />
         </div>
     </section>
 
-    <!-- Network Stats Strip -->
-    <section class="stats-strip">
-        <div class="container">
-            <div class="stat-item">
-                <span class="stat-number">10,000+</span>
-                <span class="stat-label">Founders in Techstars network</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">150+</span>
-                <span class="stat-label">Countries represented</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">$130.6B+</span>
-                <span class="stat-label">Market cap of Techstars companies</span>
-            </div>
+    <!-- FACTS -->
+    <section class="facts">
+        <div class="wrap facts-inner">
+            {facts.map(f => (
+                <div class="fact">
+                    <span class="fact-k">{f.k}</span>
+                    <span class="fact-v">{f.v}</span>
+                </div>
+            ))}
         </div>
     </section>
 
-    <!-- Why This Matters -->
-    <section class="why-matters-section">
-        <div class="container">
-            <h2>WHY THIS MATTERS (ESPECIALLY IN NORTHERN IRELAND)</h2>
-            
-            <div class="why-matters-content">
-                <p>Techstars Belfast is a Startup Community Partnership built with <strong>Ormeau Labs</strong> and <strong>Queen's University Belfast</strong> — opening the door to Techstars' worldwide network of mentors, investors, tools, and programmes.</p>
-                <p class="highlight-text">If you're building something ambitious here, Founder Catalyst is the fastest credible on-ramp into that global ecosystem.</p>
-            </div>
+    <!-- WHAT YOU GET -->
+    <section class="section">
+        <div class="wrap wrap--mid">
+            <p class="eyebrow">What you get</p>
+            <h2 class="gives-head">Everything that actually moves the needle.</h2>
+            <ul class="gives">
+                {gives.map(g => <li>{g}</li>)}
+            </ul>
         </div>
     </section>
 
-    <!-- Who It's For -->
-    <section class="personas-section">
-        <div class="container">
-            <h2>WHO IT'S FOR</h2>
-            
-            <div class="personas-grid">
-                {personas.map(persona => (
-                    <div class="persona-card card">
-                        <div class="persona-icon">
-                            <i data-lucide={persona.icon}></i>
-                        </div>
-                        <div class="persona-header">
-                            <h3>{persona.title}</h3>
-                            <span class="persona-subtitle">{persona.subtitle}</span>
-                        </div>
-                        <p class="persona-hook">{persona.hook}</p>
-                        <p class="persona-description">{persona.description}</p>
-                        <p class="persona-benefits"><strong>You'll love this if you want:</strong> {persona.benefits}</p>
-                        <span class="btn btn--accent">Applications open 29 June</span>
-                    </div>
-                ))}
-            </div>
-        </div>
-    </section>
-
-    <!-- What You Get -->
-    <section class="benefits-section">
-        <div class="container">
-            <h2>WHAT YOU GET</h2>
-            <p class="section-intro">The benefits founders actually care about</p>
-            
-            <p class="benefits-lead">You'll get a tight structure with weekly sessions and feedback loops — plus the credibility and reach of Techstars.</p>
-
-            <div class="benefits-grid">
-                {benefits.map(benefit => (
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i data-lucide={benefit.icon}></i>
-                        </div>
-                        <span>{benefit.text}</span>
-                    </div>
-                ))}
-            </div>
-
-            <p class="benefits-translation">
-                <strong>Translation:</strong> you leave with the artefacts customers and investors expect — not just "advice".
+    <!-- PROOF LINE -->
+    <section class="section--tight band">
+        <div class="wrap wrap--mid">
+            <p class="band-line">
+                Delivered through Techstars — 10,000+ founders, 150+ countries, $130B+ in market cap.
+                You're not joining a local programme. You're joining a global one, from here.
             </p>
         </div>
     </section>
 
-    <!-- How It Works -->
-    <section class="how-works-section">
-        <div class="container">
-            <h2>HOW THE PROGRAMME WORKS</h2>
-            
-            <div class="tracks-grid">
-                {tracks.map(track => (
-                    <div class="track-card">
-                        <div class="track-number">{track.number}</div>
-                        <div class="track-content">
-                            <h3>{track.title}</h3>
-                            <span class="track-subtitle">{track.subtitle}</span>
-                            <p class="track-description">{track.description}</p>
-                            <ul class="track-items">
-                                {track.items.map(item => (
-                                    <li>{item}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                ))}
+    <!-- WHO -->
+    <section class="section">
+        <div class="wrap wrap--mid who-grid">
+            <div>
+                <p class="eyebrow">Who it's for</p>
+                <h2 class="who-head">Builders, researchers, domain experts.</h2>
+                <p class="lead who-body">
+                    Past pure ideation. Some signal — pilots, users, a waitlist, early revenue.
+                    Ambitious enough to build something that competes anywhere. If that's you, apply.
+                </p>
             </div>
+            <img src="/images/photos/pic-153.jpg" alt="Founders in a 1:1 mentoring conversation at Techstars Belfast" class="who-photo" loading="lazy" />
         </div>
     </section>
 
-    <!-- Curriculum -->
-    <section class="curriculum-section">
-        <div class="container">
-            <h2>CURRICULUM</h2>
-            <p class="section-intro">What you'll actually cover</p>
-            
-            <div class="curriculum-grid">
-                {curriculum.map((module, index) => (
-                    <div class="curriculum-item">
-                        <span class="curriculum-number">{String(index + 1).padStart(2, '0')}</span>
-                        <div class="curriculum-content">
-                            <h4>{module.title}</h4>
-                            <p>{module.description}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
-    </section>
-
-    <!-- Outcomes -->
-    <section class="outcomes-section">
-        <div class="container">
-            <h2>WHAT YOU'LL LEAVE WITH</h2>
-            <p class="section-intro">Outcomes checklist</p>
-            
-            <p class="outcomes-lead">By the end, strong participants typically have:</p>
-
-            <div class="outcomes-list">
-                {outcomes.map(outcome => (
-                    <div class="outcome-item">
-                        <i data-lucide="check"></i>
-                        <span>{outcome}</span>
-                    </div>
-                ))}
-            </div>
-        </div>
-    </section>
-
-    <!-- Selection Bar -->
-    <section class="selection-section">
-        <div class="container">
-            <div class="selection-block">
-                <h2>THE SELECTION BAR</h2>
-                <p class="selection-intro">This is not for tourists.</p>
-                
-                <p class="selection-description">Techstars is looking for founders with deep problem insight, strong execution, resilience, and ambition to build scalable companies in meaningful markets.</p>
-
-                <h4>Baseline criteria (from Techstars):</h4>
-                <ul class="eligibility-list">
-                    {eligibility.map(item => (
-                        <li><i data-lucide="arrow-right"></i> {item}</li>
-                    ))}
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq-section">
-        <div class="container">
-            <h2>FAQ</h2>
-            
-            <div class="faq-grid">
-                {faqs.map(faq => (
-                    <div class="faq-item">
-                        <h4>{faq.question}</h4>
-                        <p>{faq.answer}</p>
-                    </div>
-                ))}
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="final-cta-section">
-        <div class="container">
-            <div class="final-cta-block">
-                <p class="deadline-text">Applications open <strong>29 June 2026</strong></p>
-                <h2>Founder Catalyst returns for autumn 2026.</h2>
-                
-                <div class="cta-buttons">
-                    <span class="btn btn--accent">Applications open 29 June</span>
-                    <a href="/#newsletter" class="btn btn--outline">Get the monthly email</a>
-                </div>
-                <p class="cta-note">One email a month, no spam.</p>
-            </div>
+    <!-- APPLY -->
+    <section id="apply" class="apply">
+        <div class="wrap wrap--mid apply-inner">
+            <h2>Applications are open.</h2>
+            <p class="lead">Take the shot. Worst case, you sharpen your story. Best case, everything changes.</p>
+            <a href="https://www.linkedin.com/showcase/techstars-belfast" class="btn btn--accent" target="_blank" rel="noopener">Apply now</a>
+            <p class="apply-note">No equity. No cost. No tourists.</p>
         </div>
     </section>
 </BaseLayout>
 
 <style>
-    /* HERO SECTION */
-    .hero-section {
-        padding-top: 140px;
-        padding-bottom: 4rem;
-        border-bottom: 1px solid var(--border-color);
-        position: relative;
-        overflow: hidden;
-    }
+    .hero { padding: 6rem 0 4rem; }
+    .hero h1 { margin: 1.25rem 0 1.75rem; }
+    .hero-lead { margin-bottom: 2.5rem; }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-photo { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; border-radius: 20px; margin-top: 3.5rem; }
 
-    .hero-bg {
-        position: absolute;
-        inset: 0;
-        background-image: url('/images/fcbg.jpg');
-        background-size: cover;
-        background-position: center;
-        opacity: 0.15;
-        z-index: 0;
-    }
+    .facts { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg-subtle); }
+    .facts-inner { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .fact { padding: 2rem 1.5rem; display: flex; flex-direction: column; gap: 0.4rem; border-left: 1px solid var(--line); }
+    .fact:first-child { border-left: none; }
+    .fact-k { font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-muted); }
+    .fact-v { font-size: 1.05rem; font-weight: 600; letter-spacing: -0.01em; }
 
-    .hero-bg::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to bottom, rgba(15, 15, 15, 0.3) 0%, rgba(15, 15, 15, 0.9) 70%, rgba(15, 15, 15, 1) 100%);
-    }
-
-    .hero-section .container {
-        max-width: 1000px;
-        position: relative;
-        z-index: 1;
-    }
-
-    .fc-logo {
-        height: 140px;
-        width: auto;
-        max-width: 100%;
-        object-fit: contain;
-        margin-bottom: 1.5rem;
-    }
-
-    @media (max-width: 480px) {
-        .fc-logo {
-            height: auto;
-            max-height: 100px;
-        }
-    }
-
-    .programme-label {
-        display: inline-block;
-        font-family: var(--font-mono);
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        color: var(--accent-color);
-        margin-bottom: 1rem;
-    }
-
-    .hero-section h1 {
-        font-size: clamp(2rem, 5vw, 3rem);
-        margin-bottom: 1rem;
-        line-height: 1.1;
-    }
-
-    .hero-tagline {
-        font-size: 1.4rem;
-        color: #fff;
-        margin-bottom: 1.5rem;
-        max-width: 700px;
-    }
-
-    .hero-description {
-        font-size: 1.1rem;
-        color: #aaa;
-        margin-bottom: 2.5rem;
-        max-width: 700px;
-        line-height: 1.6;
-    }
-
-    .key-dates {
-        display: flex;
-        gap: 2rem;
-        margin-bottom: 2.5rem;
-        flex-wrap: wrap;
-    }
-
-    .date-item {
-        display: flex;
-        flex-direction: column;
-        gap: 0.25rem;
-    }
-
-    .date-label {
-        font-family: var(--font-mono);
-        font-size: 0.7rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: #999;
-    }
-
-    .date-value {
-        font-family: var(--font-mono);
-        font-size: 1rem;
-        color: var(--accent-color);
-        font-weight: bold;
-    }
-
-    .hero-ctas {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-        margin-bottom: 2rem;
-    }
-
-    .btn--accent {
-        background: var(--accent-color);
-        color: var(--bg-color);
-        border-color: var(--accent-color);
-    }
-
-    .btn--accent:hover {
-        background: transparent;
-        color: var(--accent-color);
-        box-shadow: 4px 4px 0 var(--accent-color);
-        transform: translate(-2px, -2px);
-    }
-
-    .btn--outline {
-        background: transparent;
-        color: var(--text-color);
-    }
-
-    .btn--outline:hover {
-        background: var(--text-color);
-        color: var(--bg-color);
-    }
-
-    .trust-bar {
-        display: flex;
-        gap: 2rem;
-        flex-wrap: wrap;
-        padding-top: 1.5rem;
-        border-top: 1px solid var(--border-color);
-    }
-
-    .trust-item {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 0.85rem;
-        color: var(--text-muted);
-    }
-
-    .trust-item i {
-        width: 16px;
-        height: 16px;
-        color: var(--accent-color);
-    }
-
-    /* STATS STRIP */
-    .stats-strip {
-        padding: 3rem 0;
-        background: linear-gradient(to right, rgba(0, 210, 106, 0.05), rgba(108, 92, 231, 0.05));
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .stats-strip .container {
-        max-width: 1000px;
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        gap: 2rem;
-    }
-
-    .stat-item {
-        text-align: center;
-    }
-
-    .stat-number {
-        display: block;
-        font-family: var(--font-mono);
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: var(--accent-color);
-        line-height: 1;
-    }
-
-    .stat-label {
-        display: block;
-        font-size: 0.85rem;
-        color: var(--text-muted);
-        margin-top: 0.5rem;
-    }
-
-    /* WHY THIS MATTERS */
-    .why-matters-section {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .why-matters-section .container {
-        max-width: 1000px;
-    }
-
-    .why-matters-section h2 {
-        font-size: 1.25rem;
-        margin-bottom: 2rem;
-    }
-
-    .why-matters-content {
-        border-left: 3px solid var(--accent-color);
-        padding-left: 2rem;
-        max-width: 700px;
-    }
-
-    .why-matters-content p {
-        font-size: 1.1rem;
-        color: #ccc;
-        line-height: 1.7;
-        margin-bottom: 1.5rem;
-    }
-
-    .why-matters-content p strong {
-        color: #fff;
-    }
-
-    .highlight-text {
-        color: #fff !important;
-        font-size: 1.2rem !important;
-    }
-
-    /* PERSONAS SECTION */
-    .personas-section {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .personas-section .container {
-        max-width: 1000px;
-    }
-
-    .personas-section h2 {
-        font-size: 1.25rem;
-        margin-bottom: 2rem;
-    }
-
-    .personas-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-    }
-
-    .persona-card {
-        padding: 2rem;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .persona-icon {
-        width: 48px;
-        height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(0, 210, 106, 0.15);
-        border-radius: 10px;
-        margin-bottom: 1.25rem;
-        color: var(--accent-color);
-    }
-
-    .persona-icon i {
-        width: 24px;
-        height: 24px;
-    }
-
-    .persona-header {
-        margin-bottom: 1rem;
-    }
-
-    .persona-header h3 {
-        font-size: 1.2rem;
-        font-family: var(--font-mono);
-        margin-bottom: 0.25rem;
-    }
-
-    .persona-subtitle {
-        font-family: var(--font-mono);
-        font-size: 0.75rem;
-        color: var(--accent-color);
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-    }
-
-    .persona-hook {
+    .gives-head, .who-head { margin: 0.75rem 0 2rem; }
+    .gives { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .gives li {
         font-size: 1.15rem;
-        color: #fff;
-        margin-bottom: 1rem;
-        font-style: italic;
-    }
-
-    .persona-description {
-        font-size: 0.95rem;
-        color: #aaa;
-        line-height: 1.6;
-        margin-bottom: 1rem;
-    }
-
-    .persona-benefits {
-        font-size: 0.9rem;
-        color: var(--text-muted);
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
-        flex-grow: 1;
-    }
-
-    .persona-benefits strong {
-        color: #aaa;
-    }
-
-    .persona-card .btn {
-        width: 100%;
-        text-align: center;
-    }
-
-    /* BENEFITS SECTION */
-    .benefits-section {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .benefits-section .container {
-        max-width: 1000px;
-    }
-
-    .benefits-section h2 {
-        font-size: 1.25rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .section-intro {
-        font-size: 1rem;
-        color: var(--text-muted);
-        margin-bottom: 2rem;
-    }
-
-    .benefits-lead {
-        font-size: 1.1rem;
-        color: #ccc;
-        margin-bottom: 2rem;
-        max-width: 700px;
-    }
-
-    .benefits-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.25rem;
-        margin-bottom: 2rem;
-    }
-
-    .benefit-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 1rem;
-        padding: 1rem;
-        background: var(--bg-elevated);
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-    }
-
-    .benefit-icon {
-        width: 36px;
-        height: 36px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(0, 210, 106, 0.1);
-        border-radius: 8px;
-        flex-shrink: 0;
-        color: var(--accent-color);
-    }
-
-    .benefit-icon i {
-        width: 18px;
-        height: 18px;
-    }
-
-    .benefit-item span {
-        font-size: 0.95rem;
-        color: #ccc;
-        line-height: 1.5;
-    }
-
-    .benefits-translation {
-        font-size: 1rem;
-        color: var(--text-muted);
-        padding-top: 1.5rem;
-        border-top: 1px solid var(--border-color);
-    }
-
-    .benefits-translation strong {
-        color: var(--accent-color);
-    }
-
-    /* HOW IT WORKS */
-    .how-works-section {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border-color);
-        background: linear-gradient(to bottom, #0f0f0f 0%, #141414 100%);
-    }
-
-    .how-works-section .container {
-        max-width: 1000px;
-    }
-
-    .how-works-section h2 {
-        font-size: 1.25rem;
-        margin-bottom: 2rem;
-    }
-
-    .tracks-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
-
-    .track-card {
-        display: flex;
-        gap: 1.25rem;
-        padding: 1.5rem;
-        background: var(--bg-elevated);
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
-        transition: all 0.3s ease;
-    }
-
-    .track-card:hover {
-        border-color: var(--accent-color);
-    }
-
-    .track-number {
-        font-family: var(--font-mono);
-        font-size: 2rem;
-        font-weight: bold;
-        color: var(--accent-color);
-        line-height: 1;
-        flex-shrink: 0;
-    }
-
-    .track-content h3 {
-        font-size: 1.1rem;
-        font-family: var(--font-mono);
-        margin-bottom: 0.25rem;
-    }
-
-    .track-subtitle {
-        display: block;
-        font-family: var(--font-mono);
-        font-size: 0.7rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: #999;
-        margin-bottom: 1rem;
-    }
-
-    .track-description {
-        font-size: 0.9rem;
-        color: #aaa;
-        line-height: 1.5;
-        margin-bottom: 1rem;
-    }
-
-    .track-items {
-        list-style: none;
-    }
-
-    .track-items li {
-        font-size: 0.85rem;
-        color: var(--text-muted);
-        padding-left: 1rem;
+        color: var(--ink-soft);
+        padding: 1.1rem 0 1.1rem 2rem;
+        border-bottom: 1px solid var(--line);
         position: relative;
-        margin-bottom: 0.5rem;
-        line-height: 1.4;
     }
+    .gives li:first-child { border-top: 1px solid var(--line); }
+    .gives li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
 
-    .track-items li::before {
-        content: "→";
-        position: absolute;
-        left: 0;
-        color: var(--accent-color);
-    }
+    .band { background: var(--accent-soft); }
+    .band-line { font-size: clamp(1.2rem, 2.4vw, 1.6rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.4; color: #0a3d24; }
 
-    /* CURRICULUM */
-    .curriculum-section {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
+    .who-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center; }
+    .who-body { max-width: 600px; }
+    .who-photo { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; }
 
-    .curriculum-section .container {
-        max-width: 1000px;
-    }
+    .apply { background: var(--ink); color: var(--bg); padding: 6rem 0; }
+    .apply-inner { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.25rem; }
+    .apply h2 { color: var(--bg); }
+    .apply .lead { color: rgba(255,255,255,0.72); max-width: 36ch; }
+    .apply-note { font-family: var(--mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.5); margin-top: 0.5rem; }
 
-    .curriculum-section h2 {
-        font-size: 1.25rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .curriculum-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .curriculum-item {
-        display: flex;
-        gap: 1.5rem;
-        padding: 1.5rem;
-        background: var(--bg-elevated);
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        align-items: flex-start;
-    }
-
-    .curriculum-number {
-        font-family: var(--font-mono);
-        font-size: 0.8rem;
-        color: var(--accent-color);
-        flex-shrink: 0;
-        padding-top: 0.25rem;
-    }
-
-    .curriculum-content h4 {
-        font-size: 1rem;
-        font-family: var(--font-mono);
-        text-transform: none;
-        letter-spacing: 0;
-        margin-bottom: 0.5rem;
-        color: #fff;
-    }
-
-    .curriculum-content p {
-        font-size: 0.9rem;
-        color: var(--text-muted);
-        line-height: 1.5;
-    }
-
-    /* OUTCOMES */
-    .outcomes-section {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .outcomes-section .container {
-        max-width: 1000px;
-    }
-
-    .outcomes-section h2 {
-        font-size: 1.25rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .outcomes-lead {
-        font-size: 1.1rem;
-        color: #ccc;
-        margin-bottom: 2rem;
-    }
-
-    .outcomes-list {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-    }
-
-    .outcome-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 1rem;
-        padding: 1rem 1.25rem;
-        background: rgba(0, 210, 106, 0.05);
-        border: 1px solid rgba(0, 210, 106, 0.2);
-        border-radius: 8px;
-    }
-
-    .outcome-item i {
-        width: 20px;
-        height: 20px;
-        color: var(--accent-color);
-        flex-shrink: 0;
-        margin-top: 2px;
-    }
-
-    .outcome-item span {
-        font-size: 0.95rem;
-        color: #ccc;
-        line-height: 1.5;
-    }
-
-    /* SELECTION */
-    .selection-section {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .selection-section .container {
-        max-width: 1000px;
-    }
-
-    .selection-block {
-        background: #0a0a0a;
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
-        padding: 3rem;
-    }
-
-    .selection-block h2 {
-        font-size: 1.25rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .selection-intro {
-        font-family: var(--font-mono);
-        font-size: 1rem;
-        color: var(--accent-color);
-        margin-bottom: 1.5rem;
-    }
-
-    .selection-description {
-        font-size: 1.05rem;
-        color: #ccc;
-        line-height: 1.6;
-        margin-bottom: 2rem;
-        max-width: 700px;
-    }
-
-    .selection-block h4 {
-        font-family: var(--font-mono);
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        color: var(--text-muted);
-        margin-bottom: 1rem;
-    }
-
-    .eligibility-list {
-        list-style: none;
-    }
-
-    .eligibility-list li {
-        display: flex;
-        align-items: flex-start;
-        gap: 0.75rem;
-        font-size: 0.95rem;
-        color: #aaa;
-        margin-bottom: 0.75rem;
-        line-height: 1.5;
-    }
-
-    .eligibility-list i {
-        width: 16px;
-        height: 16px;
-        color: var(--accent-color);
-        flex-shrink: 0;
-        margin-top: 3px;
-    }
-
-    /* FAQ */
-    .faq-section {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .faq-section .container {
-        max-width: 1000px;
-    }
-
-    .faq-section h2 {
-        font-size: 1.25rem;
-        margin-bottom: 2rem;
-    }
-
-    .faq-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-    }
-
-    .faq-item {
-        padding: 1.5rem;
-        background: var(--bg-elevated);
-        border: 1px solid var(--border-color);
-        border-radius: 10px;
-    }
-
-    .faq-item h4 {
-        font-family: var(--font-mono);
-        font-size: 0.95rem;
-        text-transform: none;
-        letter-spacing: 0;
-        color: #fff;
-        margin-bottom: 0.75rem;
-        line-height: 1.4;
-    }
-
-    .faq-item p {
-        font-size: 0.9rem;
-        color: var(--text-muted);
-        line-height: 1.6;
-    }
-
-    /* FINAL CTA */
-    .final-cta-section {
-        padding: 5rem 0;
-    }
-
-    .final-cta-section .container {
-        max-width: 1000px;
-    }
-
-    .final-cta-block {
-        text-align: center;
-    }
-
-    .deadline-text {
-        font-family: var(--font-mono);
-        font-size: 0.9rem;
-        color: var(--text-muted);
-        margin-bottom: 1rem;
-    }
-
-    .deadline-text strong {
-        color: var(--accent-color);
-    }
-
-    .final-cta-block h2 {
-        font-size: clamp(1.5rem, 3vw, 2rem);
-        margin-bottom: 2rem;
-    }
-
-    .cta-buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-bottom: 1rem;
-    }
-
-    .cta-note {
-        font-size: 0.85rem;
-        color: #999;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-        .hero-section {
-            padding-top: 120px;
-        }
-
-        .key-dates {
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .hero-ctas {
-            flex-direction: column;
-        }
-
-        .hero-ctas .btn {
-            width: 100%;
-            text-align: center;
-        }
-
-        .trust-bar {
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .stats-strip .container {
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .tracks-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .track-card {
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .selection-block {
-            padding: 2rem;
-        }
-
-        .cta-buttons {
-            flex-direction: column;
-        }
-
-        .cta-buttons .btn {
-            width: 100%;
-        }
+    @media (max-width: 760px) {
+        .facts-inner { grid-template-columns: repeat(2, 1fr); }
+        .fact:nth-child(3) { border-left: none; }
+        .fact { border-top: 1px solid var(--line); }
+        .fact:nth-child(1), .fact:nth-child(2) { border-top: none; }
+        .hero-ctas .btn { width: 100%; }
+        .hero-photo { aspect-ratio: 16 / 10; }
+        .who-grid { grid-template-columns: 1fr; gap: 2rem; }
     }
 </style>

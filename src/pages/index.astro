@@ -1,864 +1,221 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const latestEvent = {
-    day: '25',
-    month: 'JUN',
-    tag: 'PARTNER SESSION',
-    tagType: 'partner',
-    title: 'Founder Labs Demo Day',
-    time: '2:45 PM doors',
-    location: 'Ormeau Labs, Belfast',
-    description: 'Ten companies from Founder Labs Cohort 4 take the stage. After three months heads-down, building, finding first customers and mapping the path to investment, the founders pitch their businesses, followed by networking and drinks.',
-    link: 'https://luma.com/syl0pl0j'
-};
-
-const startHereCards = [
+const paths = [
     {
-        title: 'Come to an event',
-        description: 'Meet founders. Learn something useful. Leave with energy.',
-        cta: 'View events',
-        link: '/events'
+        label: 'Founder Catalyst',
+        title: 'Build a fundable company',
+        body: 'A selective pre-accelerator delivered with Techstars. Ten weeks, a global cohort, no equity taken.',
+        href: '/programmes',
+        cta: 'Apply now',
+        img: '/images/photos/pic-130.jpg',
+        alt: 'A speaker presenting at a Techstars Belfast session',
     },
     {
-        title: 'Join a sprint',
-        description: 'Time-boxed build sessions. Ship something real.',
-        cta: 'See sprints',
-        link: '/sprints'
+        label: 'Sprints',
+        title: 'Ship something real',
+        body: 'Short, high-intensity build sessions. We run them with universities, funds, corporates and the public sector.',
+        href: '/sprints',
+        cta: 'Run one with us',
+        img: '/images/photos/pic-227.jpg',
+        alt: 'Teams working at tables during a Techstars Belfast build sprint',
     },
     {
-        title: 'Partner',
-        description: 'Back the next wave of NI founders. Sponsor events, sprints, or sign on as a Founding Partner.',
-        cta: 'See ways to partner',
-        link: '/partners'
-    }
+        label: 'Community',
+        title: 'Meet the room',
+        body: 'Events and founder nights across Northern Ireland. Turn up, bring questions, leave with momentum.',
+        href: '/events',
+        cta: "See what's on",
+        img: '/images/photos/pic-16.jpg',
+        alt: 'Founders laughing together at a Techstars Belfast founder night',
+    },
 ];
-
 ---
 
-<BaseLayout description="A founder community and pre-accelerator in Northern Ireland. Events, sprints, and Founder Catalyst — backed by Coinbase, Stripe, and ElevenLabs.">
-    <!-- Hero Section with Video Background -->
+<BaseLayout>
+    <!-- HERO -->
     <section class="hero">
-        <div class="hero-video-container">
-            <video
-                class="hero-video"
-                autoplay
-                muted
-                loop
-                playsinline
-            >
-                <source src="/images/hero-techstars.mp4" type="video/mp4">
-            </video>
-            <div class="hero-overlay"></div>
-        </div>
-
-        <div class="container hero-content">
-            <h1>BUILD HERE.<br><span class="highlight">SHIP EVERYWHERE.</span></h1>
-            
-            <p class="hero-tagline">
-                This isn't startup tourism. It's a founder-led network for builders, researchers, and domain experts who want to move fast — with AI-native execution baked in<span class="cursor">|</span>
+        <div class="wrap">
+            <p class="eyebrow">Northern Ireland × Techstars</p>
+            <h1>Build here.<br /><span class="accent">Connect everywhere.</span></h1>
+            <p class="lead hero-lead">
+                Techstars Belfast plugs Northern Ireland's founders into one of the world's
+                biggest startup networks. Start where you are. Compete with anyone.
             </p>
-
             <div class="hero-ctas">
-                <a href="/events" class="btn">See what's on</a>
-                <a href="https://techstarsbelfast.com/founder-report/" class="btn btn--outline">State of the Nation</a>
+                <a href="/programmes" class="btn btn--accent">Apply to Founder Catalyst</a>
+                <a href="/sprints" class="btn btn--ghost">Run a sprint</a>
             </div>
-
-            <p class="givefirst-quote">We <span class="givefirst">#GiveFirst</span> — help anyone, especially entrepreneurs, without any expectation of getting anything back.</p>
+            <img src="/images/photos/pic-90.jpg" alt="A full room at a Techstars Belfast event in Ormeau Labs" class="hero-photo" />
         </div>
     </section>
 
-    <!-- Partnership Section -->
-    <section class="partnership-section">
-        <div class="container">
-            <p class="partnership-label">Official Techstars Startup Community Partnership</p>
-            <div class="partnership-logos">
-                <div class="partner-logo techstars-logo">
-                    <img src="/images/techstarsbelfastlogo.png" alt="Techstars Belfast">
-                </div>
-                <span class="logo-separator">×</span>
-                <div class="partner-logo qub-logo">
-                    <img src="/images/QUB-Logo.png" alt="Queen's University Belfast">
-                </div>
-                <span class="logo-separator">×</span>
-                <div class="partner-logo ormeau-logo">
-                    <img src="/images/ormeau-labs-logo.svg" alt="Ormeau Labs">
-                </div>
+    <!-- NETWORK PROOF -->
+    <section class="proof">
+        <div class="wrap proof-inner">
+            <div class="proof-stat">
+                <span class="proof-num">10,000+</span>
+                <span class="proof-label">founders in the network</span>
+            </div>
+            <div class="proof-stat">
+                <span class="proof-num">150+</span>
+                <span class="proof-label">countries</span>
+            </div>
+            <div class="proof-stat">
+                <span class="proof-num">$130B+</span>
+                <span class="proof-label">market cap of Techstars companies</span>
+            </div>
+            <div class="proof-stat">
+                <span class="proof-num">2006</span>
+                <span class="proof-label">backing founders since</span>
             </div>
         </div>
     </section>
 
-    <!-- Bill Gurley Quote -->
-    <section class="quote-highlight">
-        <div class="container">
-            <blockquote>
-                <p>"The number one way to protect your career from AI is to be the most aggressive user of AI in your field.</p>
-                <p class="quote-emphasis">RUN AT IT."</p>
-                <cite>— Bill Gurley</cite>
-            </blockquote>
-        </div>
-    </section>
-
-    <!-- Start Here Section -->
-    <section class="start-here-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>CHOOSE YOUR STARTING POINT</h2>
+    <!-- THREE PATHS -->
+    <section class="section paths">
+        <div class="wrap">
+            <div class="paths-head">
+                <p class="eyebrow">Where to start</p>
+                <h2>Three ways in.</h2>
             </div>
-
-            <div class="start-here-grid">
-                {startHereCards.map(card => (
-                    <div class="start-here-card card">
-                        <h3>{card.title}</h3>
-                        <p>{card.description}</p>
-                        {card.closed ? (
-                            <span class="card-link card-link--disabled">{card.cta}</span>
-                        ) : (
-                            <a href={card.link} class="card-link">{card.cta} →</a>
-                        )}
-                    </div>
+            <div class="paths-grid">
+                {paths.map(p => (
+                    <a href={p.href} class="card path-card">
+                        <img src={p.img} alt={p.alt} class="path-photo" loading="lazy" />
+                        <p class="eyebrow">{p.label}</p>
+                        <h3>{p.title}</h3>
+                        <p class="muted path-body">{p.body}</p>
+                        <span class="path-link">{p.cta} →</span>
+                    </a>
                 ))}
             </div>
+        </div>
+    </section>
 
-            <p class="partner-blurb">
-                Already running an early-stage initiative — corporate, investor, university, public sector? We pair our founder community with partners who want to support the next generation of NI builders. Three tiers, founder-first, no sales pitches. <a href="/partners">See how to partner →</a>
+    <!-- ETHOS -->
+    <section class="section ethos divide">
+        <div class="wrap wrap--mid">
+            <p class="eyebrow">Why we exist</p>
+            <p class="ethos-line">
+                The next wave of companies will start here and sell to the world.
+                We give founders the network, the pace and the room to make that real.
             </p>
+            <p class="ethos-give">We <span class="accent">#GiveFirst</span> — help founders, expecting nothing back. And we collaborate with everyone: universities, funds, corporates, government, community groups.</p>
+        </div>
+        <div class="wrap ethos-strip">
+            <img src="/images/photos/pic-31.jpg" alt="Founders networking at a Techstars Belfast event" loading="lazy" />
+            <img src="/images/photos/pic-206.jpg" alt="Founders in conversation at a Techstars Belfast session" loading="lazy" />
+            <img src="/images/photos/pic-308.jpg" alt="A founder presenting to the room at a Techstars Belfast workshop" loading="lazy" />
         </div>
     </section>
 
-    <!-- Ethos Strip -->
-    <section class="ethos-strip">
-        <div class="container">
-            <p>We give first. We move fast. We're here to help founders win.</p>
-        </div>
-    </section>
-
-    <!-- Next Up (Featured Event) -->
-    <section id="events" class="events-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>NEXT UP</h2>
-            </div>
-
-            <p class="section-intro">Turn up. Bring questions. Leave clearer.</p>
-
-            <div class="events-grid">
-                <div class="event-card">
-                    <div class="event-date-box">
-                        <span class="day">{latestEvent.day}</span>
-                        <span class="month">{latestEvent.month}</span>
-                    </div>
-                    <div class="event-content">
-                        <div class="tag-row">
-                            <span class={`tag-pill ${latestEvent.tagType}`}>{latestEvent.tag}</span>
-                        </div>
-                        <h3>{latestEvent.title}</h3>
-                        <div class="event-info-row">
-                            <div class="info-item">
-                                <i data-lucide="clock"></i>
-                                <span>{latestEvent.time}</span>
-                            </div>
-                            <div class="info-item">
-                                <i data-lucide="map-pin"></i>
-                                <span>{latestEvent.location}</span>
-                            </div>
-                        </div>
-                        <p class="event-description">{latestEvent.description}</p>
-                    </div>
-                    <div class="event-action">
-                        <a href={latestEvent.link} class="btn" target="_blank">REGISTER NOW</a>
-                    </div>
+    <!-- NEWSLETTER -->
+    <section id="newsletter" class="section--tight newsletter divide">
+        <div class="wrap wrap--mid">
+            <p class="eyebrow">The monthly founder email</p>
+            <h2 class="newsletter-head">The best founder opportunities in NI. Once a month.</h2>
+            <p class="muted newsletter-detail">Early access for events, sprints, programmes, and open calls. No spam.</p>
+            <form name="newsletter-waitlist" method="POST" action="/thanks" data-netlify="true" netlify-honeypot="bot-field" class="newsletter-form">
+                <input type="hidden" name="form-name" value="newsletter-waitlist" />
+                <p class="hidden">
+                    <label>Don’t fill this out: <input name="bot-field" /></label>
+                </p>
+                <div class="newsletter-fields">
+                    <label class="sr-only" for="newsletter-name">Name</label>
+                    <input id="newsletter-name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
+                    <label class="sr-only" for="newsletter-email">Email</label>
+                    <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="Your email" required />
+                    <button type="submit" class="btn btn--accent">Join the waitlist</button>
                 </div>
-            </div>
-
-            <div class="view-all-wrapper">
-                <a href="/events" class="btn">VIEW ALL EVENTS →</a>
-            </div>
+                <p class="newsletter-legal">By signing up, you agree to receive the monthly email.</p>
+            </form>
         </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section id="newsletter" class="newsletter-section">
-        <div class="container">
-            <div class="newsletter-block">
-                <h2>THE MONTHLY FOUNDER EMAIL</h2>
-                <p>Coming soon, sign up to find out more.</p>
-                <p class="newsletter-detail">Early access for events, sprints, programmes, and open calls.</p>
-                <form name="newsletter-waitlist" method="POST" action="/thanks" data-netlify="true" netlify-honeypot="bot-field" class="newsletter-form">
-                    <input type="hidden" name="form-name" value="newsletter-waitlist" />
-                    <p class="hidden">
-                        <label>Don’t fill this out: <input name="bot-field" /></label>
-                    </p>
-                    <div class="newsletter-fields">
-                        <label class="sr-only" for="newsletter-name">Name</label>
-                        <input id="newsletter-name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
-                        <label class="sr-only" for="newsletter-email">Email</label>
-                        <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="Your email" required />
-                        <button type="submit" class="btn btn--accent">Join the waitlist</button>
-                    </div>
-                    <p class="newsletter-legal">By signing up, you agree to receive the monthly email.</p>
-                </form>
-            </div>
+    <!-- CTA BAND -->
+    <section class="cta-band">
+        <div class="wrap wrap--mid cta-inner">
+            <h2>Ready to build something that competes globally?</h2>
+            <p class="lead">Founder Catalyst applications are open.</p>
+            <a href="/programmes" class="btn btn--accent">Apply now</a>
         </div>
     </section>
-
 </BaseLayout>
 
 <style>
-    /* GIVEFIRST */
-    .givefirst {
-        color: var(--accent-color);
-        font-weight: 700;
-    }
-
-    .givefirst-quote {
-        margin-top: 2rem;
-        font-size: 0.95rem;
-        color: var(--text-muted);
-        max-width: 600px;
-    }
-
-    /* BLINKING CURSOR */
-    .cursor {
-        color: var(--accent-color);
-        font-weight: 400;
-        animation: blink 1s step-end infinite;
-    }
-
-    @keyframes blink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-    }
-
-    /* HERO SECTION */
-    .hero {
-        position: relative;
-        min-height: 50vh;
-        display: flex;
-        align-items: flex-start;
-        overflow: hidden;
-        padding-top: 200px;
-        padding-bottom: 4rem;
-    }
-
-    .hero .container {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 0 2rem;
-    }
-
-    .hero-video-container {
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-    }
-
-    .hero-video {
+    .hero { padding: 6rem 0 5rem; }
+    .hero h1 { margin: 1.25rem 0 1.75rem; }
+    .hero-lead { max-width: 600px; margin-bottom: 2.5rem; }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-photo {
         width: 100%;
-        height: 100%;
+        aspect-ratio: 21 / 9;
         object-fit: cover;
-    }
-
-    .hero-overlay {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-            to bottom,
-            rgba(15, 15, 15, 0.75) 0%,
-            rgba(15, 15, 15, 0.85) 60%,
-            rgba(15, 15, 15, 1) 100%
-        );
-    }
-
-    .hero-content {
-        position: relative;
-        z-index: 1;
-        padding-top: 280px;
-        width: 100%;
-    }
-
-    .hero h1 {
-        font-size: clamp(2.5rem, 5vw, 3.5rem);
-        line-height: 1.1;
-        margin-bottom: 1.5rem;
-        max-width: 800px;
-    }
-
-    .hero h1 .highlight {
-        color: var(--accent-color);
-    }
-
-    .hero-tagline {
-        font-size: 1.3rem;
-        max-width: 600px;
-        color: #ccc;
-        margin-bottom: 2rem;
-        line-height: 1.5;
-    }
-
-    .hero-ctas {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-    }
-
-    .btn--outline {
-        background: transparent;
-        color: var(--text-color);
-    }
-
-    .btn--outline:hover {
-        background: var(--text-color);
-        color: var(--bg-color);
-    }
-
-    /* PARTNERSHIP SECTION */
-    .partnership-section {
-        padding: 2.5rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .partnership-section .container {
-        max-width: 1000px;
-        text-align: center;
-    }
-
-    .partnership-label {
-        font-family: var(--font-mono);
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: #ddd;
-        margin: 0 0 1.5rem 0;
-    }
-
-    .partnership-logos {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1.5rem;
-        flex-wrap: wrap;
-    }
-
-    .logo-separator {
-        color: #444;
-        font-size: 1rem;
-        font-weight: 300;
-    }
-
-    .partner-logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0.7;
-        transition: opacity 0.3s ease;
-    }
-
-    .partner-logo:hover {
-        opacity: 1;
-    }
-
-    .techstars-logo img {
-        height: 90px;
-        width: auto;
-    }
-
-    .qub-logo img {
-        height: 80px;
-        width: auto;
-    }
-
-    .ormeau-logo img {
-        height: 65px;
-        width: auto;
-        filter: brightness(0) invert(1);
-    }
-
-    /* BILL GURLEY QUOTE */
-    .quote-highlight {
-        padding: 4rem 0;
-        background: linear-gradient(135deg, rgba(0, 230, 118, 0.08) 0%, rgba(0, 0, 0, 0) 50%);
-        border-bottom: 1px solid var(--border-color);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .quote-highlight::before {
-        content: '"';
-        position: absolute;
-        top: -40px;
-        left: 5%;
-        font-size: 20rem;
-        font-family: Georgia, serif;
-        color: rgba(0, 230, 118, 0.06);
-        line-height: 1;
-        pointer-events: none;
-    }
-
-    .quote-highlight .container {
-        max-width: 900px;
-        position: relative;
-        z-index: 1;
-    }
-
-    .quote-highlight blockquote {
-        text-align: center;
-        margin: 0;
-        padding: 0;
-    }
-
-    .quote-highlight blockquote p {
-        font-size: clamp(1.3rem, 3vw, 1.75rem);
-        line-height: 1.5;
-        color: #ccc;
-        margin: 0 0 1rem 0;
-        font-weight: 400;
-    }
-
-    .quote-highlight .quote-emphasis {
-        font-family: var(--font-mono);
-        font-size: clamp(2rem, 5vw, 3rem);
-        font-weight: 700;
-        color: var(--accent-color);
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        margin: 1.5rem 0;
-        text-shadow: 0 0 40px rgba(0, 230, 118, 0.3);
-    }
-
-    .quote-highlight cite {
-        display: block;
-        font-family: var(--font-mono);
-        font-size: 0.9rem;
-        color: #999;
-        font-style: normal;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        margin-top: 1.5rem;
-    }
-
-    /* START HERE SECTION */
-    .start-here-section {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .start-here-section .container {
-        max-width: 1000px;
-    }
-
-    .start-here-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-    }
-
-    .start-here-card {
-        padding: 2rem;
-    }
-
-    .start-here-card h3 {
-        font-size: 1.2rem;
-        margin-bottom: 0.75rem;
-        font-family: var(--font-mono);
-    }
-
-    .start-here-card p {
-        font-size: 0.95rem;
-        color: #aaa;
-        margin-bottom: 1.5rem;
-        line-height: 1.5;
-    }
-
-    .card-link {
-        font-family: var(--font-mono);
-        font-size: 0.85rem;
-        color: var(--accent-color);
-        text-transform: uppercase;
-        transition: opacity 0.2s ease;
-    }
-
-    .card-link:hover {
-        opacity: 0.8;
-    }
-
-    .card-link--disabled {
-        color: var(--text-muted);
-        cursor: default;
-        pointer-events: none;
-    }
-
-    .partner-blurb {
-        margin: 2.5rem auto 0;
-        max-width: 760px;
-        font-size: 1rem;
-        color: #bbb;
-        line-height: 1.6;
-        text-align: center;
-    }
-
-    .partner-blurb a {
-        color: var(--accent-color);
-        font-family: var(--font-mono);
-        text-transform: uppercase;
-        font-size: 0.85rem;
-        letter-spacing: 0.02em;
-        white-space: nowrap;
-    }
-
-    .partner-blurb a:hover {
-        opacity: 0.8;
-    }
-
-    /* ETHOS STRIP */
-    .ethos-strip {
-        padding: 3rem 0;
-        background: #161616;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .ethos-strip .container {
-        max-width: 1000px;
-    }
-
-    .ethos-strip p {
-        font-family: var(--font-mono);
-        font-size: 1.2rem;
-        text-align: center;
-        color: var(--accent-color);
-        margin: 0;
-    }
-
-    /* EVENTS SECTION */
-    .events-section {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .events-section .container {
-        max-width: 1000px;
-    }
-
-    .section-header {
-        margin-bottom: 1.5rem;
-        border-bottom: 1px solid var(--border-color);
-        padding-bottom: 1rem;
-    }
-
-    .section-intro {
-        font-size: 1.1rem;
-        color: #aaa;
-        margin-bottom: 2rem;
-    }
-
-    .events-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .event-card {
-        display: grid;
-        grid-template-columns: 120px 1fr auto;
-        gap: 2rem;
-        background: #161616;
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
-        padding: 2rem;
-        transition: all 0.3s ease;
-        align-items: center;
-    }
-
-    .event-card:hover {
-        border-color: var(--accent-color);
-        transform: translateY(-2px);
-        box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-        background: #1c1c1c;
-    }
-
-    .event-date-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background: #222;
-        border-radius: 8px;
-        padding: 1rem;
-        min-height: 100px;
-        border: 1px solid #333;
-    }
-
-    .event-date-box .day {
-        font-size: 2rem;
-        font-weight: 800;
-        color: var(--accent-color);
-        line-height: 1;
-        font-family: var(--font-mono);
-    }
-
-    .event-date-box .month {
-        font-size: 0.75rem;
-        color: var(--text-muted);
-        margin-top: 0.25rem;
-        letter-spacing: 0.1em;
-        font-family: var(--font-mono);
-        text-transform: uppercase;
-    }
-
-    .event-content {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-    }
-
-    .event-content h3 {
-        font-size: 1.5rem;
-        color: #fff;
-        margin: 0;
-        letter-spacing: -0.01em;
-        font-family: var(--font-main);
-        text-transform: none;
-    }
-
-    .event-info-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-        margin-top: 0.5rem;
-    }
-
-    .info-item {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 0.85rem;
-        color: #aaa;
-        font-family: var(--font-mono);
-    }
-
-    .info-item i {
-        width: 16px;
-        height: 16px;
-        color: var(--accent-color);
-    }
-
-    .event-description {
-        font-size: 0.95rem;
-        color: var(--text-muted);
-        line-height: 1.5;
-        margin-top: 0.5rem;
-    }
-
-    .tag-pill {
-        display: inline-flex;
-        align-items: center;
-        padding: 2px 10px;
         border-radius: 20px;
-        font-size: 0.7rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        font-family: var(--font-mono);
+        margin-top: 3.5rem;
     }
 
-    .tag-pill.remote { background: rgba(108, 92, 231, 0.2); color: #a29bfe; }
-    .tag-pill.in-person { background: rgba(0, 210, 106, 0.1); color: #00D26A; }
-    .tag-pill.partner { background: rgba(255, 255, 255, 0.1); color: #fff; border: 1px solid rgba(255,255,255,0.3); }
+    /* PROOF */
+    .proof { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg-subtle); }
+    .proof-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; padding: 3rem 1.5rem; }
+    .proof-stat { display: flex; flex-direction: column; gap: 0.4rem; }
+    .proof-num { font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; letter-spacing: -0.03em; color: var(--ink); }
+    .proof-label { font-size: 0.85rem; color: var(--ink-muted); line-height: 1.4; }
 
-    .event-action .btn {
-        min-width: 120px;
-        text-align: center;
-        border-radius: 6px;
-        font-size: 0.8rem;
-        padding: 12px 20px;
-    }
+    /* PATHS */
+    .paths-head { margin-bottom: 3rem; }
+    .paths-head h2 { margin-top: 0.75rem; }
+    .paths-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .path-card { display: flex; flex-direction: column; overflow: hidden; padding: 0; }
+    .path-card > * { margin-left: 2rem; margin-right: 2rem; }
+    .path-card .path-photo { margin: 0 0 1.75rem; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+    .path-card .path-link { margin-bottom: 2rem; }
+    .path-card h3 { margin-top: 0.75rem; margin-bottom: 0.75rem; font-size: 1.4rem; }
+    .path-body { flex-grow: 1; margin-bottom: 1.5rem; font-size: 0.98rem; }
+    .path-link { font-weight: 600; color: var(--accent); font-size: 0.95rem; }
 
-    .view-all-wrapper {
-        margin-top: 3rem;
-        text-align: center;
-    }
+    /* ETHOS */
+    .ethos-line { font-size: clamp(1.6rem, 3.2vw, 2.4rem); font-weight: 700; letter-spacing: -0.025em; line-height: 1.25; margin: 1.25rem 0 2rem; }
+    .ethos-give { font-size: 1.05rem; color: var(--ink-soft); }
+    .ethos-give .accent { font-weight: 700; }
+    .ethos-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 4rem; }
+    .ethos-strip img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; }
 
-    /* NEWSLETTER SECTION */
-    .newsletter-section {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .newsletter-section .container {
-        max-width: 1000px;
-    }
-
-    .newsletter-block {
-        background: #0a0a0a;
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
-        padding: 4rem;
-        text-align: center;
-    }
-
-    .newsletter-block h2 {
-        color: var(--accent-color);
-        margin-bottom: 1rem;
-    }
-
-    .newsletter-block p {
-        font-size: 1.15rem;
-        color: #ccc;
-        margin-bottom: 0.5rem;
-        max-width: 500px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .newsletter-detail {
-        font-size: 1rem !important;
-        color: #888 !important;
-        margin-bottom: 2rem !important;
-    }
-
-    .newsletter-form {
-        margin-top: 1.5rem;
-    }
-
-    .newsletter-fields {
-        display: grid;
-        grid-template-columns: 1fr 1fr auto;
-        gap: 0.75rem;
-        align-items: center;
-    }
-
+    /* NEWSLETTER */
+    .newsletter { background: var(--bg-subtle); }
+    .newsletter-head { margin: 0.75rem 0 0.75rem; max-width: 24ch; }
+    .newsletter-detail { margin-bottom: 2rem; }
+    .newsletter-fields { display: flex; gap: 0.75rem; flex-wrap: wrap; }
     .newsletter-fields input {
-        width: 100%;
-        padding: 0.8rem 1rem;
-        border-radius: 8px;
-        border: 1px solid var(--border-color);
-        background: #0f0f0f;
-        color: #fff;
+        flex: 1 1 200px;
+        padding: 0.85rem 1.2rem;
+        font-family: var(--font);
         font-size: 0.95rem;
+        border: 1.5px solid var(--line);
+        border-radius: 999px;
+        background: var(--bg);
+        color: var(--ink);
+        transition: border-color var(--t);
     }
+    .newsletter-fields input:focus { outline: none; border-color: var(--accent); }
+    .newsletter-legal { font-size: 0.8rem; color: var(--ink-muted); margin-top: 1rem; }
 
-    .newsletter-fields input::placeholder {
-        color: #777;
+    /* CTA BAND */
+    .cta-band { background: var(--ink); color: var(--bg); padding: 6rem 0; }
+    .cta-inner { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.25rem; }
+    .cta-band h2 { color: var(--bg); max-width: 18ch; }
+    .cta-band .lead { color: rgba(255,255,255,0.7); }
+    .cta-band .btn--accent { margin-top: 0.5rem; }
+
+    @media (max-width: 900px) {
+        .proof-inner { grid-template-columns: repeat(2, 1fr); }
+        .paths-grid { grid-template-columns: 1fr; }
+        .ethos-strip { grid-template-columns: 1fr; }
+        .hero-photo { aspect-ratio: 16 / 10; }
     }
-
-    .newsletter-legal {
-        margin-top: 0.8rem;
-        font-size: 0.85rem;
-        color: #777;
-    }
-
-    .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
-    }
-
-    .hidden {
-        display: none;
-    }
-
-    .btn--accent {
-        background: var(--accent-color);
-        color: var(--bg-color);
-        border-color: var(--accent-color);
-    }
-
-    .btn--accent:hover {
-        background: transparent;
-        color: var(--accent-color);
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-        .hero-content {
-            padding-top: 160px;
-        }
-
-        .hero-ctas {
-            flex-direction: column;
-        }
-
-        .hero-ctas .btn {
-            width: 100%;
-            text-align: center;
-        }
-
-        .newsletter-fields {
-            grid-template-columns: 1fr;
-        }
-
-        .partnership-logos {
-            gap: 1rem;
-        }
-
-        .techstars-logo img {
-            height: 70px;
-        }
-
-        .qub-logo img {
-            height: 60px;
-        }
-
-        .ormeau-logo img {
-            height: 50px;
-        }
-
-        .logo-separator {
-            font-size: 0.8rem;
-        }
-
-        .event-card {
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            padding: 1.5rem;
-        }
-
-        .event-date-box {
-            flex-direction: row;
-            min-height: auto;
-            padding: 0.5rem 1rem;
-            gap: 1rem;
-            justify-content: flex-start;
-        }
-
-        .event-date-box .month {
-            margin-top: 0;
-        }
-
-        .event-info-row {
-            gap: 1rem;
-        }
-
-        .event-action .btn {
-            width: 100%;
-        }
-
-        .newsletter-block {
-            padding: 2rem;
-        }
-
-        .quote-highlight {
-            padding: 3rem 0;
-        }
-
-        .quote-highlight::before {
-            font-size: 12rem;
-            top: -20px;
-            left: 0;
-        }
-
-        .quote-highlight blockquote p {
-            font-size: 1.2rem;
-        }
-
-        .quote-highlight .quote-emphasis {
-            font-size: 1.75rem;
-        }
+    @media (max-width: 600px) {
+        .hero-ctas .btn { width: 100%; }
+        .newsletter-fields .btn { width: 100%; }
     }
 </style>

@@ -11,8 +11,8 @@ interface Props {
 }
 
 const SITE_NAME = "Techstars Belfast";
-const SITE_TAGLINE = "Techstars Belfast - global mindset from day one";
-const DEFAULT_DESCRIPTION = "Techstars Belfast is a founder community and pre-accelerator in Northern Ireland. Backed by Coinbase, Stripe, and ElevenLabs.";
+const SITE_TAGLINE = "Techstars Belfast — Build here. Connect everywhere.";
+const DEFAULT_DESCRIPTION = "Northern Ireland's founder community, connected to the global Techstars network. Founder Catalyst, sprints, and events.";
 
 const {
     title,
@@ -60,13 +60,13 @@ const ogImageUrl = new URL(ogImage, Astro.site ?? "https://techstarsbelfast.com"
 </head>
 <body>
     {!hideHeader && <Header />}
-    
+
     <main>
         <slot />
     </main>
-    
+
     <Footer />
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             if (typeof lucide !== 'undefined') {

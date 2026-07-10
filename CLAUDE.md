@@ -14,31 +14,35 @@ Marketing website for Techstars Belfast - a founder community and pre-accelerato
 
 ## Design System
 
-The design DNA is established in `src/styles/global.css`. Key principles:
+The design DNA is established in `src/styles/global.css`. Light theme with a black nav bar (in keeping with techstars.com). Key principles:
 
 ### Colors
 ```css
---bg-color: #0f0f0f;        /* Primary background */
---bg-elevated: #161616;      /* Cards, elevated surfaces */
---accent-color: #00D26A;     /* Techstars green - CTAs, highlights */
---secondary-accent: #6c5ce7; /* Purple - secondary elements */
---text-color: #f0f0f0;       /* Primary text */
---text-muted: #888;          /* Subdued text */
---border-color: #333;        /* Borders, dividers */
+--bg: #ffffff;            /* Primary background */
+--bg-subtle: #f6f6f3;     /* Bands, strips, footer */
+--ink: #111111;           /* Primary text, dark CTA bands */
+--ink-soft: #44443f;      /* Secondary text */
+--ink-muted: #76766e;     /* Subdued text */
+--line: #e6e5df;          /* Borders, dividers */
+--accent: #00994f;        /* Techstars green (deep, reads on white) */
+--accent-bright: #04cf61; /* Brand green for dark surfaces (nav CTA) */
+--accent-soft: #e6f4ec;   /* Green tint bands */
+--nav-bg: #0d0d0d;        /* Black nav bar */
 ```
 
 ### Typography
-- **Headings:** Courier Prime, uppercase, tight letter-spacing (-0.05em)
-- **Body:** Inter, normal weight, 1.6 line-height
-- **Tags/Labels:** Courier Prime, uppercase, small (0.7-0.8rem)
+- **Headings:** Inter, heavy (800), tight letter-spacing (-0.025em)
+- **Body:** Inter, 1.65 line-height
+- **Eyebrows/Tags:** Courier Prime, uppercase, small, letterspaced — the one nod to the old mono brand
 
 ### Component Patterns
-- **Cards:** Dark background (#161616), 1px border, 12px radius, hover lifts with green border
-- **Buttons:** Inverted on hover with green box-shadow offset
-- **Sections:** Generous padding (4-6rem vertical), border-bottom dividers
+- **Nav:** Sticky black bar, white links, bright-green pill Apply CTA, white/green stacked logo (`Stackedlogo.svg`)
+- **Cards:** White, 1px border, 16px radius, hover lifts with soft shadow. Photo cards: full-bleed image top, 2rem inner padding
+- **Sections:** `.section` (6rem) / `.section--tight` (4rem), `.divide` top borders, `.band` green-tint statement bands, dark `--ink` CTA bands
+- **Photos:** Event photography in `public/images/photos/` (compressed from Ian's library). Hero images 21/9 rounded 20px, card images 3/2
 
 ### Aesthetic Direction
-Brutalist/tech aesthetic. Not corporate. Direct language. Dark mode only. The vibe is "builder-focused" not "investor deck."
+Clean, light, confident. Direct language, short headlines with a green accent word. The vibe is "builder-focused" not "investor deck."
 
 ## Project Structure
 
@@ -61,16 +65,9 @@ src/
 
 ## Current Status
 
-✅ Project scaffolded  
-✅ Design system ported from existing events page  
-✅ Header component (fixed, with nav)  
-✅ Footer component  
-✅ Base layout  
-⬜ Homepage  
-⬜ Events page  
-⬜ Programmes page  
-⬜ Partners page  
-⬜ About page  
+✅ All pages live on the light theme (Jul 2026 redesign): index, events, programmes (Founder Catalyst), sprints, partners, about, privacy, terms, thanks
+✅ Black nav bar, light design system, photo library placed across pages
+✅ Netlify newsletter form (`newsletter-waitlist`) on homepage, posts to /thanks
 
 ## Next Task: Homepage
 

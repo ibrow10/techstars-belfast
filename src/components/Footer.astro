@@ -1,203 +1,61 @@
 ---
-const currentYear = new Date().getFullYear();
+const year = new Date().getFullYear();
 ---
 
-<footer class="site-footer">
-    <div class="container">
-        <div class="footer-inner">
-            <div class="footer-brand">
-                <div class="footer-logo">
-                    <img src="/images/techstarsbelfastlogo.png" alt="Techstars Belfast" class="logo-img">
-                </div>
-                <p class="footer-tagline">An official Techstars Startup Community Partnership</p>
-                
-                <div class="footer-partner-logos">
-                    <div class="partner-logos">
-                        <img src="/images/QUB-Logo.png" alt="Queen's University Belfast" class="partner-logo qub">
-                        <span class="partner-separator">×</span>
-                        <img src="/images/ormeau-labs-logo.svg" alt="Ormeau Labs" class="partner-logo ormeau">
-                    </div>
-                </div>
+<footer class="lfoot">
+    <div class="wrap lfoot-inner">
+        <div class="lfoot-brand">
+            <div class="lfoot-logo">
+                <span class="lfoot-mark">Techstars</span>
+                <span class="lfoot-place">Belfast</span>
             </div>
-            
-            <div class="footer-links">
-                <div class="footer-col">
-                    <h4>Explore</h4>
-                    <ul>
-                        <li><a href="/events">Events</a></li>
-                        <li><a href="/programmes">Programme</a></li>
-                        <li><a href="/sprints">Sprints</a></li>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="https://www.techstars.com/blog/advice/mentor-manifesto" target="_blank" rel="noopener">Mentor Manifesto</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Connect</h4>
-                    <ul>
-                        <li><a href="https://www.linkedin.com/showcase/techstars-belfast" target="_blank" rel="noopener">LinkedIn</a></li>
-                        <li><a href="/partners">Partner with us</a></li>
-                    </ul>
-                </div>
-            </div>
+            <p class="lfoot-tag">An official Techstars Startup Community Partnership, delivered with Queen's University Belfast and Ormeau Labs.</p>
         </div>
 
-        <div class="footer-bottom">
-            <p class="footer-copyright">&copy; {currentYear} Techstars Belfast. All Rights Reserved.</p>
-            <div class="footer-legal">
-                <a href="/privacy">Privacy Policy</a>
-                <span class="legal-separator">|</span>
-                <a href="/terms">Terms & Conditions</a>
-            </div>
+        <div class="lfoot-cols">
+            <nav class="lfoot-links" aria-label="Explore">
+                <h4>Explore</h4>
+                <a href="/events">Events</a>
+                <a href="/programmes">Founder Catalyst</a>
+                <a href="/sprints">Sprints</a>
+                <a href="/about">About</a>
+            </nav>
+            <nav class="lfoot-links" aria-label="Connect">
+                <h4>Connect</h4>
+                <a href="/partners">Partner with us</a>
+                <a href="https://www.linkedin.com/showcase/techstars-belfast" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://www.techstars.com/blog/advice/mentor-manifesto" target="_blank" rel="noopener">Mentor Manifesto</a>
+            </nav>
         </div>
+    </div>
+    <div class="wrap lfoot-bottom">
+        <span>&copy; {year} Techstars Belfast. All rights reserved.</span>
+        <span class="lfoot-legal">
+            <a href="/privacy">Privacy</a>
+            <a href="/terms">Terms</a>
+        </span>
+        <span class="lfoot-mono">Build here. Connect everywhere.</span>
     </div>
 </footer>
 
 <style>
-    .site-footer {
-        border-top: 1px solid var(--border-color);
-        padding: var(--space-xl) 0 var(--space-lg);
-        margin-top: var(--space-2xl);
-    }
-    
-    .footer-inner {
-        display: flex;
-        justify-content: space-between;
-        gap: var(--space-xl);
-        margin-bottom: var(--space-xl);
-    }
-    
-    .footer-logo {
-        margin-bottom: var(--space-sm);
-    }
-    
-    .footer-logo .logo-img {
-        height: 48px;
-        width: auto;
-    }
-    
-    .footer-tagline {
-        font-family: var(--font-mono);
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        color: var(--text-muted);
-        margin-bottom: var(--space-md);
-    }
-    
-    .footer-partner-logos {
-        margin-top: var(--space-sm);
-    }
-    
-    .partner-logos {
-        display: flex;
-        align-items: center;
-        gap: var(--space-md);
-    }
-
-    .partner-separator {
-        color: #555;
-        font-size: 0.9rem;
-    }
-    
-    .partner-logo {
-        height: 32px;
-        width: auto;
-        opacity: 0.7;
-        filter: brightness(0) invert(1);
-        transition: opacity var(--transition-fast);
-    }
-
-    .partner-logo.ormeau {
-        height: 28px;
-    }
-
-    .partner-logo.qub {
-        filter: none;
-        opacity: 0.9;
-    }
-    
-    .partner-logo:hover {
-        opacity: 1;
-    }
-    
-    .footer-links {
-        display: flex;
-        gap: var(--space-xl);
-    }
-    
-    .footer-col h4 {
-        font-family: var(--font-mono);
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: var(--text-muted);
-        margin-bottom: var(--space-md);
-    }
-    
-    .footer-col ul {
-        list-style: none;
-    }
-    
-    .footer-col li {
-        margin-bottom: var(--space-sm);
-    }
-    
-    .footer-col a {
-        color: var(--text-secondary);
-        font-size: 0.9rem;
-        transition: color var(--transition-fast);
-    }
-    
-    .footer-col a:hover {
-        color: var(--accent-color);
-    }
-
-    .footer-bottom {
-        border-top: 1px solid var(--border-color);
-        padding-top: var(--space-lg);
-        text-align: center;
-        width: 100%;
-    }
-    
-    .footer-copyright {
-        font-family: var(--font-mono);
-        font-size: 0.7rem;
-        letter-spacing: 0.02em;
-        color: var(--text-muted);
-        margin: 0 auto 0.75rem;
-    }
-
-    .footer-legal {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 0.75rem;
-    }
-
-    .footer-legal a {
-        font-family: var(--font-mono);
-        font-size: 0.7rem;
-        color: var(--text-muted);
-        transition: color var(--transition-fast);
-    }
-
-    .footer-legal a:hover {
-        color: var(--accent-color);
-    }
-
-    .legal-separator {
-        color: #444;
-        font-size: 0.7rem;
-    }
-    
-    @media (max-width: 768px) {
-        .footer-inner {
-            flex-direction: column;
-        }
-        
-        .footer-links {
-            gap: var(--space-lg);
-        }
-    }
+    .lfoot { border-top: 1px solid var(--line); padding: 4rem 0 2.5rem; background: var(--bg-subtle); }
+    .lfoot-inner { display: flex; justify-content: space-between; gap: 3rem; flex-wrap: wrap; margin-bottom: 3rem; }
+    .lfoot-brand { max-width: 420px; }
+    .lfoot-logo { display: flex; align-items: baseline; gap: 0.4rem; margin-bottom: 0.75rem; }
+    .lfoot-mark { font-weight: 800; font-size: 1.15rem; letter-spacing: -0.03em; }
+    .lfoot-place { font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); font-weight: 700; }
+    .lfoot-tag { font-size: 0.92rem; color: var(--ink-muted); line-height: 1.6; }
+    .lfoot-cols { display: flex; gap: 4rem; flex-wrap: wrap; }
+    .lfoot-links { display: flex; flex-direction: column; gap: 0.75rem; }
+    .lfoot-links h4 { font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--ink-muted); margin-bottom: 0.25rem; }
+    .lfoot-links a { font-size: 0.95rem; color: var(--ink-soft); transition: color var(--t); }
+    .lfoot-links a:hover { color: var(--accent); }
+    .lfoot-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; border-top: 1px solid var(--line); flex-wrap: wrap; gap: 0.75rem; }
+    .lfoot-bottom span { font-size: 0.8rem; color: var(--ink-muted); }
+    .lfoot-legal { display: flex; gap: 1.25rem; }
+    .lfoot-legal a { transition: color var(--t); }
+    .lfoot-legal a:hover { color: var(--accent); }
+    .lfoot-mono { font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.1em; }
+    @media (max-width: 600px) { .lfoot-inner { flex-direction: column; gap: 2rem; } }
 </style>

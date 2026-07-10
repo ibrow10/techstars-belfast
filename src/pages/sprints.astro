@@ -2,27 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const examples = [
-    {
-        partner: 'Sure Valley Ventures',
-        title: 'SVV Build Sprint',
-        location: 'Belfast',
-        description: 'A focused build session with the SVV team and their portfolio — founders, operators, and investors in the same room shipping working prototypes against real challenges.',
-        tag: 'FUND PARTNER'
-    },
-    {
-        partner: 'The AMP × Invest NI',
-        title: 'AI Build Day, Derry',
-        location: 'The AMP Growth Incubator, Derry',
-        description: 'A day-long AI build event: morning intro to models and tooling, two-hour afternoon build sprint on workflows, websites, agents or products, ending in a show-and-tell.',
-        tag: 'REGIONAL'
-    },
-    {
-        partner: "Queen's University Belfast",
-        title: 'HackBelfast 2026',
-        location: "Queen's University Belfast",
-        description: "Community partner for Northern Ireland's largest student-led hackathon. 175+ students, 24 hours, real-world challenges across Builder, Non-Builder, and Finance tracks.",
-        tag: 'COMMUNITY'
-    }
+    { tag: 'Fund partner', title: 'SVV Build Sprint', with: 'Sure Valley Ventures · Belfast', body: 'Founders, operators and investors in one room, shipping working prototypes against real challenges.', img: '/images/photos/pic-282.jpg', alt: 'Teams working together at the SVV build sprint' },
+    { tag: 'Regional', title: 'AI Build Day, Derry', with: 'The AMP × Invest NI · Derry', body: 'Morning intro to models and tooling, an afternoon build sprint, ending in a show-and-tell.', img: '/images/photos/pic-149.jpg', alt: 'Builders in discussion at an AI build day workshop table' },
+    { tag: 'Community', title: 'HackBelfast 2026', with: "Queen's University Belfast", body: "Community partner for NI's largest student-led hackathon. 175+ students, 24 hours, real challenges.", img: '/images/photos/pic-283.jpg', alt: 'Two student builders demoing from a laptop' },
 ];
 
 const openTo = [
@@ -30,365 +12,110 @@ const openTo = [
     'Funds and investors',
     'Corporates and partners',
     'Public sector and government',
-    'Community groups and meetups'
+    'Community groups and meetups',
 ];
 ---
 
-<BaseLayout title="Sprints">
-    <!-- Hero -->
-    <section class="sprint-hero">
-        <div class="hero-bg"></div>
-        <div class="container">
-            <p class="hero-label">SPRINTS</p>
-            <h1>RUN A SPRINT WITH US</h1>
-            <p class="hero-tagline">
-                Short, high-intensity build sessions where founders, builders, and operators meet a real problem and ship something useful — fast.
+<BaseLayout title="Sprints" description="Short, high-intensity build sessions. Run one with Techstars Belfast — open to universities, funds, corporates and the public sector.">
+    <!-- HERO -->
+    <section class="hero">
+        <div class="wrap wrap--mid">
+            <p class="eyebrow">Sprints</p>
+            <h1>Run a sprint <span class="accent">with us.</span></h1>
+            <p class="lead hero-lead">
+                Short, high-intensity build sessions where founders, builders and operators
+                meet a real problem and ship something useful — fast. We build them with you,
+                around your challenge.
             </p>
-            <div class="hero-ctas">
-                <a href="https://www.linkedin.com/showcase/techstars-belfast" class="btn btn--accent" target="_blank" rel="noopener">Get in touch</a>
-                <a href="#examples" class="btn btn--outline">See what we've run</a>
-            </div>
+            <a href="#talk" class="btn btn--accent">Let's run one</a>
+        </div>
+        <div class="wrap">
+            <img src="/images/photos/pic-348.jpg" alt="Teams building together at a Techstars Belfast sprint" class="hero-photo" />
         </div>
     </section>
 
-    <!-- What is a Sprint -->
-    <section class="what-section">
-        <div class="container">
-            <p class="lead">
-                A Sprint is a time-boxed build — anywhere from a few hours to a few days. People form teams, pick a real problem, build a working prototype, and demo what they shipped. <span class="highlight">Working beats pretty. Shipping beats slides.</span>
+    <!-- WHAT -->
+    <section class="section--tight band divide">
+        <div class="wrap wrap--mid">
+            <p class="band-line">
+                A sprint is a time-boxed build — a few hours to a few days. Teams form, pick a real
+                problem, build a working prototype, and demo it. <span class="accent">Working beats pretty. Shipping beats slides.</span>
             </p>
         </div>
     </section>
 
-    <!-- Examples -->
-    <section id="examples" class="examples-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>SPRINTS WE'VE RUN OR SUPPORTED</h2>
-                <p class="section-tagline">A few recent examples.</p>
-            </div>
-            <div class="examples-grid">
-                {examples.map(example => (
-                    <div class="example-card">
-                        <span class="example-tag">{example.tag}</span>
-                        <h3>{example.title}</h3>
-                        <p class="example-partner">With {example.partner} — {example.location}</p>
-                        <p class="example-description">{example.description}</p>
+    <!-- EXAMPLES -->
+    <section class="section">
+        <div class="wrap">
+            <p class="eyebrow">A few we've run</p>
+            <h2 class="ex-head">Built with partners across NI.</h2>
+            <div class="ex-grid">
+                {examples.map(e => (
+                    <div class="card ex-card">
+                        <img src={e.img} alt={e.alt} class="ex-photo" loading="lazy" />
+                        <span class="ex-tag">{e.tag}</span>
+                        <h3>{e.title}</h3>
+                        <p class="ex-with">{e.with}</p>
+                        <p class="muted ex-body">{e.body}</p>
                     </div>
                 ))}
             </div>
         </div>
     </section>
 
-    <!-- Open To -->
-    <section class="open-section">
-        <div class="container">
-            <div class="open-content">
-                <h2>OPEN TO RUNNING THESE WITH ANYONE</h2>
-                <p class="open-intro">If you've got a real challenge and people willing to build against it, we can help shape a Sprint around it.</p>
-                <ul class="open-list">
-                    {openTo.map(item => (
-                        <li><i data-lucide="check"></i>{item}</li>
-                    ))}
-                </ul>
+    <!-- OPEN TO -->
+    <section class="section divide">
+        <div class="wrap wrap--mid">
+            <p class="eyebrow">Who we'll build with</p>
+            <h2 class="open-head">Got a real challenge and people to build against it? We're in.</h2>
+            <div class="open-grid">
+                {openTo.map(o => <span class="open-pill">{o}</span>)}
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="final-cta-section">
-        <div class="container">
-            <div class="final-cta-block">
-                <h2>WANT TO RUN ONE?</h2>
-                <p class="final-cta-tagline">Drop us a line on LinkedIn and we'll set it up.</p>
-                <a href="https://www.linkedin.com/showcase/techstars-belfast" class="btn btn--accent" target="_blank" rel="noopener">Get in touch</a>
-            </div>
+    <!-- TALK -->
+    <section id="talk" class="talk">
+        <div class="wrap wrap--mid talk-inner">
+            <h2>Let's shape one together.</h2>
+            <p class="lead">Tell us the problem. We'll help design the sprint around it.</p>
+            <a href="https://www.linkedin.com/showcase/techstars-belfast" class="btn btn--accent" target="_blank" rel="noopener">Get in touch</a>
         </div>
     </section>
 </BaseLayout>
 
 <style>
-    /* HERO */
-    .sprint-hero {
-        padding-top: 160px;
-        padding-bottom: 5rem;
-        border-bottom: 1px solid var(--border-color);
-        position: relative;
-        overflow: hidden;
-    }
+    .hero { padding: 6rem 0 4rem; }
+    .hero h1 { margin: 1.25rem 0 1.75rem; }
+    .hero-lead { margin-bottom: 2.5rem; }
+    .hero-photo { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; border-radius: 20px; margin-top: 3.5rem; }
 
-    .hero-bg {
-        position: absolute;
-        inset: 0;
-        background-image: url('/images/fc.jpg');
-        background-size: cover;
-        background-position: center;
-        opacity: 0.15;
-        z-index: 0;
-    }
+    .band { background: var(--accent-soft); }
+    .band-line { font-size: clamp(1.3rem, 2.6vw, 1.8rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.4; color: #0a3d24; }
+    .band-line .accent { color: var(--accent); }
 
-    .hero-bg::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to bottom, rgba(15, 15, 15, 0.3) 0%, rgba(15, 15, 15, 0.9) 70%, rgba(15, 15, 15, 1) 100%);
-    }
+    .ex-head, .open-head { margin: 0.75rem 0 2.5rem; }
+    .open-head { max-width: 18ch; }
+    .ex-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .ex-card { display: flex; flex-direction: column; gap: 0.4rem; overflow: hidden; padding: 0; }
+    .ex-card > * { margin-left: 2rem; margin-right: 2rem; }
+    .ex-card .ex-photo { margin: 0 0 1.5rem; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+    .ex-card .ex-body { margin-bottom: 2rem; }
+    .ex-tag { font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); background: var(--accent-soft); padding: 4px 10px; border-radius: 999px; align-self: flex-start; margin-left: 2rem; }
+    .ex-card h3 { margin: 0.6rem 0 0; }
+    .ex-with { font-family: var(--mono); font-size: 0.8rem; color: var(--ink-muted); }
+    .ex-body { margin-top: 0.5rem; font-size: 0.95rem; }
 
-    .sprint-hero .container {
-        max-width: 900px;
-        position: relative;
-        z-index: 1;
-    }
+    .open-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .open-pill { font-size: 0.98rem; padding: 0.7rem 1.2rem; border: 1px solid var(--line); border-radius: 999px; color: var(--ink-soft); }
 
-    .hero-label {
-        font-family: var(--font-mono);
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        color: var(--accent-color);
-        margin-bottom: 1rem;
-    }
+    .talk { background: var(--ink); color: var(--bg); padding: 6rem 0; }
+    .talk-inner { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.25rem; }
+    .talk h2 { color: var(--bg); }
+    .talk .lead { color: rgba(255,255,255,0.72); }
 
-    .sprint-hero h1 {
-        font-size: clamp(2.5rem, 7vw, 4.5rem);
-        margin-bottom: 1.5rem;
-        line-height: 1;
-    }
-
-    .hero-tagline {
-        font-size: clamp(1.15rem, 2.2vw, 1.4rem);
-        color: #ccc;
-        max-width: 720px;
-        line-height: 1.5;
-        margin-bottom: 2.5rem;
-    }
-
-    .hero-ctas {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-    }
-
-    .btn--outline {
-        background: transparent;
-        color: var(--text-color);
-    }
-
-    .btn--outline:hover {
-        background: var(--text-color);
-        color: var(--bg-color);
-    }
-
-    .btn--accent {
-        background: var(--accent-color);
-        color: var(--bg-color);
-        border-color: var(--accent-color);
-    }
-
-    .btn--accent:hover {
-        background: transparent;
-        color: var(--accent-color);
-    }
-
-    /* WHAT */
-    .what-section {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .what-section .container {
-        max-width: 800px;
-    }
-
-    .what-section .lead {
-        font-size: 1.25rem;
-        color: #ccc;
-        line-height: 1.6;
-    }
-
-    .what-section .highlight {
-        color: var(--accent-color);
-        font-weight: 500;
-    }
-
-    /* EXAMPLES */
-    .examples-section {
-        padding: 5rem 0;
-        border-bottom: 1px solid var(--border-color);
-        background: #0a0a0a;
-    }
-
-    .examples-section .container {
-        max-width: 1000px;
-    }
-
-    .section-header {
-        margin-bottom: 2.5rem;
-    }
-
-    .section-header h2 {
-        margin-bottom: 0.5rem;
-    }
-
-    .section-tagline {
-        font-size: 1.1rem;
-        color: var(--text-muted);
-    }
-
-    .examples-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-    }
-
-    .example-card {
-        padding: 2rem;
-        background: #161616;
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
-        transition: all 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .example-card:hover {
-        border-color: var(--accent-color);
-        transform: translateY(-2px);
-    }
-
-    .example-tag {
-        font-family: var(--font-mono);
-        font-size: 0.7rem;
-        color: var(--accent-color);
-        background: rgba(0, 230, 118, 0.1);
-        padding: 4px 10px;
-        border-radius: 20px;
-        align-self: flex-start;
-        letter-spacing: 0.05em;
-    }
-
-    .example-card h3 {
-        font-size: 1.25rem;
-        margin: 0.5rem 0 0;
-        text-transform: none;
-        font-family: var(--font-main);
-        color: #fff;
-    }
-
-    .example-partner {
-        font-size: 0.85rem;
-        color: var(--accent-color);
-        font-family: var(--font-mono);
-        margin: 0;
-    }
-
-    .example-description {
-        font-size: 0.95rem;
-        color: var(--text-muted);
-        line-height: 1.5;
-        margin: 0.5rem 0 0;
-    }
-
-    /* OPEN TO */
-    .open-section {
-        padding: 5rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .open-section .container {
-        max-width: 800px;
-    }
-
-    .open-content h2 {
-        margin-bottom: 1rem;
-    }
-
-    .open-intro {
-        font-size: 1.1rem;
-        color: #ccc;
-        margin-bottom: 2rem;
-        line-height: 1.6;
-    }
-
-    .open-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 0.75rem;
-    }
-
-    .open-list li {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        font-size: 1rem;
-        color: #ccc;
-        padding: 0.75rem 1rem;
-        background: #161616;
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-    }
-
-    .open-list i {
-        width: 18px;
-        height: 18px;
-        color: var(--accent-color);
-        flex-shrink: 0;
-    }
-
-    /* FINAL CTA */
-    .final-cta-section {
-        padding: 5rem 0;
-    }
-
-    .final-cta-section .container {
-        max-width: 800px;
-    }
-
-    .final-cta-block {
-        text-align: center;
-        padding: 4rem;
-        background: linear-gradient(135deg, rgba(0, 230, 118, 0.08) 0%, transparent 50%);
-        border: 1px solid var(--border-color);
-        border-radius: 16px;
-    }
-
-    .final-cta-block h2 {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .final-cta-tagline {
-        font-size: 1.2rem;
-        color: #aaa;
-        margin-bottom: 2rem;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-        .sprint-hero {
-            padding-top: 120px;
-            padding-bottom: 3rem;
-        }
-
-        .hero-ctas {
-            flex-direction: column;
-        }
-
-        .hero-ctas .btn {
-            width: 100%;
-            text-align: center;
-        }
-
-        .final-cta-block {
-            padding: 2rem;
-        }
-
-        .final-cta-block h2 {
-            font-size: 2rem;
-        }
+    @media (max-width: 900px) {
+        .ex-grid { grid-template-columns: 1fr; }
+        .hero-photo { aspect-ratio: 16 / 10; }
     }
 </style>
