@@ -6,23 +6,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     title="Get in touch"
     description="Partner with Techstars Belfast, run a sprint, mentor founders, or just say hello. Tell us what you have in mind and we'll come back to you."
 >
-    <section class="contact-hero">
-        <div class="container">
-            <span class="page-label">GET IN TOUCH</span>
-            <h1>PARTNER WITH US</h1>
-            <p class="hero-tagline">Running a sprint, partnering on a programme, mentoring founders, or just want to talk. Tell us what you have in mind and we'll come back to you.</p>
+    <section class="hero">
+        <div class="wrap wrap--mid">
+            <p class="eyebrow">Get in touch</p>
+            <h1>Partner with <span class="accent">us</span></h1>
+            <p class="lead hero-lead">Running a sprint, partnering on a programme, mentoring founders, or just want to talk. Tell us what you have in mind and we'll come back to you.</p>
         </div>
     </section>
 
-    <section class="contact-section">
-        <div class="container">
+    <section class="section--tight">
+        <div class="wrap wrap--mid">
             <form
                 name="techstars-contact"
                 method="POST"
                 action="/contact-thanks"
                 data-netlify="true"
                 netlify-honeypot="bot-field"
-                class="contact-form"
+                class="card contact-form"
             >
                 <input type="hidden" name="form-name" value="techstars-contact" />
                 <p class="hidden">
@@ -68,42 +68,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-    .contact-hero {
-        padding: var(--space-2xl) 0 var(--space-lg);
-        border-bottom: 1px solid var(--border-color);
-    }
-    .page-label {
-        display: inline-block;
-        font-family: var(--font-mono);
-        font-size: 0.75rem;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: var(--accent-color);
-        margin-bottom: var(--space-md);
-    }
-    .contact-hero h1 {
-        margin-bottom: var(--space-md);
-    }
-    .hero-tagline {
-        max-width: 44ch;
-        color: var(--text-secondary);
-        font-size: 1.05rem;
-        line-height: 1.6;
-    }
+    .hero { padding: 6rem 0 2rem; }
+    .hero h1 { margin: 1.25rem 0 1.5rem; }
+    .hero-lead { max-width: 600px; }
 
-    .contact-section {
-        padding: var(--space-xl) 0 var(--space-2xl);
-    }
     .contact-form {
-        max-width: 620px;
+        max-width: 680px;
+        padding: 3rem;
         display: flex;
         flex-direction: column;
-        gap: var(--space-lg);
+        gap: 1.5rem;
     }
+    .contact-form:hover {
+        transform: none;
+        box-shadow: none;
+        border-color: var(--line);
+    }
+
     .field-row {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: var(--space-lg);
+        gap: 1.5rem;
     }
     .field {
         display: flex;
@@ -111,62 +96,76 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         gap: 0.5rem;
     }
     .field label {
-        font-family: var(--font-mono);
-        font-size: 0.75rem;
-        letter-spacing: 0.08em;
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
-        color: var(--text-muted);
+        color: var(--ink-muted);
     }
     .field label .optional {
-        color: #555;
         text-transform: none;
         letter-spacing: 0;
+        opacity: 0.8;
     }
-    .contact-form input,
+
+    .contact-form input:not([type='hidden']),
     .contact-form select,
     .contact-form textarea {
         width: 100%;
-        background: var(--bg-elevated);
-        border: 1px solid var(--border-color);
-        border-radius: 10px;
-        padding: 0.85rem 1rem;
-        color: var(--text-color);
-        font-family: var(--font-body);
+        background: var(--bg);
+        border: 1.5px solid var(--line);
+        border-radius: 999px;
+        padding: 0.85rem 1.2rem;
+        color: var(--ink);
+        font-family: var(--font);
         font-size: 1rem;
-        transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+        transition: border-color 0.15s ease, box-shadow 0.15s ease;
     }
     .contact-form textarea {
+        border-radius: 16px;
         resize: vertical;
-        min-height: 120px;
+        min-height: 140px;
+    }
+    .contact-form select {
+        appearance: none;
+        -webkit-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2376766e' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 1.2rem center;
+        padding-right: 2.8rem;
+        cursor: pointer;
     }
     .contact-form input::placeholder,
     .contact-form textarea::placeholder {
-        color: #6a6a6a;
+        color: var(--ink-muted);
     }
     .contact-form input:focus,
     .contact-form select:focus,
     .contact-form textarea:focus {
         outline: none;
-        border-color: var(--accent-color);
-        box-shadow: 0 0 0 3px rgba(0, 210, 106, 0.15);
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px var(--accent-soft);
     }
+
     .contact-form .btn--accent {
         align-self: flex-start;
     }
     .form-legal {
-        font-family: var(--font-mono);
+        font-family: var(--mono);
         font-size: 0.72rem;
-        color: var(--text-muted);
-        margin-top: -0.25rem;
-    }
-    .hidden {
-        position: absolute;
-        left: -9999px;
+        color: var(--ink-muted);
+        margin-top: -0.5rem;
     }
 
+    @media (max-width: 900px) {
+        .field-row { grid-template-columns: 1fr; }
+    }
     @media (max-width: 600px) {
-        .field-row {
-            grid-template-columns: 1fr;
+        .contact-form { padding: 1.75rem 1.25rem; }
+        .contact-form .btn--accent {
+            align-self: stretch;
+            width: 100%;
+            text-align: center;
         }
     }
 </style>

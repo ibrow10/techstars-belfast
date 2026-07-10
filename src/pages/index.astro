@@ -35,60 +35,56 @@ const startHereCards = [
         title: 'Come to an event',
         description: 'Meet founders. Learn something useful. Leave with energy.',
         cta: 'View events',
-        link: '/events'
+        link: '/events',
+        img: '/images/photos/pic-16.jpg',
+        alt: 'Founders laughing at a Techstars Belfast founder night'
     },
     {
         title: 'Join a sprint',
         description: 'Time-boxed build sessions. Ship something real.',
         cta: 'See sprints',
-        link: '/sprints'
+        link: '/sprints',
+        img: '/images/photos/pic-227.jpg',
+        alt: 'Teams building at a Techstars Belfast sprint'
     },
     {
         title: 'Partner',
         description: 'Back the next wave of NI founders. Sponsor events, sprints, or sign on as a Founding Partner.',
         cta: 'See ways to partner',
-        link: '/partners'
+        link: '/partners',
+        img: '/images/photos/pic-64.jpg',
+        alt: 'Speakers on stage at the Techstars Community Development Lab Belfast'
     }
 ];
 
 ---
 
 <BaseLayout description="A founder community and pre-accelerator in Northern Ireland. Events, sprints, and Founder Catalyst, backed by Coinbase, Stripe, and ElevenLabs.">
-    <!-- Hero Section with Video Background -->
+    <!-- Hero -->
     <section class="hero">
-        <div class="hero-video-container">
-            <video
-                class="hero-video"
-                autoplay
-                muted
-                loop
-                playsinline
-            >
-                <source src="/images/hero-techstars.mp4" type="video/mp4">
-            </video>
-            <div class="hero-overlay"></div>
-        </div>
+        <div class="wrap">
+            <p class="eyebrow">Northern Ireland × Techstars</p>
+            <h1>Build here.<br /><span class="accent">Ship everywhere.</span></h1>
 
-        <div class="container hero-content">
-            <h1>BUILD HERE.<br><span class="highlight">SHIP EVERYWHERE.</span></h1>
-            
-            <p class="hero-tagline">
-                No startup tourism. A founder-led network for builders, researchers, and domain experts who want to move fast, with AI-native execution baked in<span class="cursor">|</span>
+            <p class="lead hero-tagline">
+                No startup tourism. A founder-led network for builders, researchers, and domain experts who want to move fast, with AI-native execution baked in
             </p>
 
             <div class="hero-ctas">
                 <a href={applyUrl} class="btn btn--accent" target="_blank" rel="noopener">Apply for next cohort</a>
-                <a href="/events" class="btn btn--outline">See what's on</a>
+                <a href="/events" class="btn btn--ghost">See what's on</a>
             </div>
 
             <p class="givefirst-quote">We <span class="givefirst">#GiveFirst</span>: help anyone, especially entrepreneurs, without any expectation of getting anything back.</p>
+
+            <img src="/images/photos/pic-90.jpg" alt="A full room at a Techstars Belfast event in Ormeau Labs" class="hero-photo" />
         </div>
     </section>
 
     <!-- Partnership Section -->
     <section class="partnership-section">
-        <div class="container">
-            <p class="partnership-label">Official Techstars Startup Community Partnership</p>
+        <div class="wrap partnership-inner">
+            <p class="eyebrow">Official Techstars Startup Community Partnership</p>
             <div class="partnership-logos">
                 <div class="partner-logo techstars-logo">
                     <img src="/images/techstarsbelfastlogo.png" alt="Techstars Belfast">
@@ -106,8 +102,8 @@ const startHereCards = [
     </section>
 
     <!-- Bill Gurley Quote -->
-    <section class="quote-highlight">
-        <div class="container">
+    <section class="quote-band">
+        <div class="wrap wrap--mid">
             <blockquote>
                 <p>"The number one way to protect your career from AI is to be the most aggressive user of AI in your field.</p>
                 <p class="quote-emphasis">RUN AT IT."</p>
@@ -117,53 +113,53 @@ const startHereCards = [
     </section>
 
     <!-- Start Here Section -->
-    <section class="start-here-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>CHOOSE YOUR STARTING POINT</h2>
+    <section class="section start-here-section">
+        <div class="wrap">
+            <div class="section-head">
+                <h2>Choose your <span class="accent">starting point</span></h2>
             </div>
 
             <div class="start-here-grid">
                 {startHereCards.map(card => (
-                    <div class="start-here-card card">
+                    <div class="card path-card">
+                        <img src={card.img} alt={card.alt} class="path-photo" loading="lazy" />
                         <h3>{card.title}</h3>
-                        <p>{card.description}</p>
+                        <p class="muted path-body">{card.description}</p>
                         {card.closed ? (
-                            <span class="card-link card-link--disabled">{card.cta}</span>
+                            <span class="path-link path-link--disabled">{card.cta}</span>
                         ) : (
-                            <a href={card.link} class="card-link">{card.cta} →</a>
+                            <a href={card.link} class="path-link">{card.cta} →</a>
                         )}
                     </div>
                 ))}
             </div>
 
-            <p class="partner-blurb">
+            <p class="partner-blurb muted">
                 Already running an early-stage initiative? Corporate, investor, university, public sector. We pair our founder community with partners who want to support the next generation of NI builders. Three tiers, founder-first, no sales pitches. <a href="/partners">See how to partner →</a>
             </p>
         </div>
     </section>
 
     <!-- Ethos Strip -->
-    <section class="ethos-strip">
-        <div class="container">
-            <p>We give first. We move fast. We're here to help founders win.</p>
+    <section class="section--tight ethos divide">
+        <div class="wrap wrap--mid">
+            <p class="ethos-line">We give first. We move fast. We're here to help founders win.</p>
         </div>
     </section>
 
     <!-- Next Up (Featured Event) -->
-    <section id="events" class="events-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>{featuredIsPast ? 'MOST RECENT EVENT' : 'NEXT UP'}</h2>
+    <section id="events" class="section events-section divide">
+        <div class="wrap">
+            <div class="section-head">
+                <h2>{featuredIsPast ? 'Most recent event' : 'Next up'}</h2>
+                <p class="lead section-intro">
+                    {featuredIsPast ? 'Nothing on the calendar yet. Here\'s the last one.' : 'Turn up. Bring questions. Leave clearer.'}
+                </p>
             </div>
-
-            <p class="section-intro">
-                {featuredIsPast ? 'Nothing on the calendar yet. Here\'s the last one.' : 'Turn up. Bring questions. Leave clearer.'}
-            </p>
 
             {latestEvent && (
                 <div class="events-grid">
-                    <div class={`event-card ${featuredIsPast ? 'event-card--finished' : ''}`}>
+                    <div class={`card event-card ${featuredIsPast ? 'event-card--finished' : ''}`}>
                         <div class="event-date-box">
                             <span class="day">{latestEvent.day}</span>
                             <span class="month">{latestEvent.month}</span>
@@ -184,17 +180,17 @@ const startHereCards = [
                                     <span>{latestEvent.location}</span>
                                 </div>
                             </div>
-                            <p class="event-description">{latestEvent.description}</p>
+                            <p class="event-description muted">{latestEvent.description}</p>
                         </div>
                         <div class="event-action">
                             {latestEvent.private ? (
-                                <span class="btn btn--disabled">PRIVATE EVENT</span>
+                                <span class="btn btn--ghost btn--disabled">Private event</span>
                             ) : featuredIsPast ? (
-                                <span class="btn btn--disabled">EVENT ENDED</span>
+                                <span class="btn btn--ghost btn--disabled">Event ended</span>
                             ) : latestEvent.link ? (
-                                <a href={latestEvent.link} class="btn" target="_blank">REGISTER NOW</a>
+                                <a href={latestEvent.link} class="btn btn--accent" target="_blank">Register now</a>
                             ) : (
-                                <span class="btn btn--disabled">COMING SOON</span>
+                                <span class="btn btn--ghost btn--disabled">Coming soon</span>
                             )}
                         </div>
                     </div>
@@ -202,166 +198,66 @@ const startHereCards = [
             )}
 
             <div class="view-all-wrapper">
-                <a href="/events" class="btn">VIEW ALL EVENTS →</a>
+                <a href="/events" class="btn">View all events →</a>
             </div>
         </div>
     </section>
 
     <!-- Newsletter Section -->
-    <section id="newsletter" class="newsletter-section">
-        <div class="container">
-            <div class="newsletter-block">
-                <h2>THE MONTHLY FOUNDER EMAIL</h2>
-                <p>Coming soon, sign up to find out more.</p>
-                <p class="newsletter-detail">Early access for events, sprints, programmes, and open calls.</p>
-                <form name="newsletter-waitlist" method="POST" action="/thanks" data-netlify="true" netlify-honeypot="bot-field" class="newsletter-form">
-                    <input type="hidden" name="form-name" value="newsletter-waitlist" />
-                    <p class="hidden">
-                        <label>Don’t fill this out: <input name="bot-field" /></label>
-                    </p>
-                    <div class="newsletter-fields">
-                        <label class="sr-only" for="newsletter-name">Name</label>
-                        <input id="newsletter-name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
-                        <label class="sr-only" for="newsletter-email">Email</label>
-                        <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="Your email" required />
-                        <button type="submit" class="btn btn--accent">Join the waitlist</button>
-                    </div>
-                    <p class="newsletter-legal">By signing up, you agree to receive the monthly email.</p>
-                </form>
-            </div>
+    <section id="newsletter" class="section--tight newsletter divide">
+        <div class="wrap wrap--mid">
+            <p class="eyebrow">The monthly founder email</p>
+            <h2 class="newsletter-head">Coming soon, sign up to find out more.</h2>
+            <p class="muted newsletter-detail">Early access for events, sprints, programmes, and open calls.</p>
+            <form name="newsletter-waitlist" method="POST" action="/thanks" data-netlify="true" netlify-honeypot="bot-field" class="newsletter-form">
+                <input type="hidden" name="form-name" value="newsletter-waitlist" />
+                <p class="hidden">
+                    <label>Don’t fill this out: <input name="bot-field" /></label>
+                </p>
+                <div class="newsletter-fields">
+                    <label class="sr-only" for="newsletter-name">Name</label>
+                    <input id="newsletter-name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
+                    <label class="sr-only" for="newsletter-email">Email</label>
+                    <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="Your email" required />
+                    <button type="submit" class="btn btn--accent">Join the waitlist</button>
+                </div>
+                <p class="newsletter-legal">By signing up, you agree to receive the monthly email.</p>
+            </form>
         </div>
     </section>
 
 </BaseLayout>
 
 <style>
-    /* GIVEFIRST */
-    .givefirst {
-        color: var(--accent-color);
-        font-weight: 700;
-    }
-
+    /* HERO */
+    .hero { padding: 6rem 0 5rem; }
+    .hero h1 { margin: 1.25rem 0 1.75rem; }
+    .hero-tagline { max-width: 600px; margin-bottom: 2.5rem; }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .givefirst { color: var(--accent); font-weight: 700; }
     .givefirst-quote {
         margin-top: 2rem;
         font-size: 0.95rem;
-        color: var(--text-muted);
+        color: var(--ink-muted);
         max-width: 600px;
     }
-
-    /* BLINKING CURSOR */
-    .cursor {
-        color: var(--accent-color);
-        font-weight: 400;
-        animation: blink 1s step-end infinite;
-    }
-
-    @keyframes blink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-    }
-
-    /* HERO SECTION */
-    .hero {
-        position: relative;
-        min-height: 50vh;
-        display: flex;
-        align-items: flex-start;
-        overflow: hidden;
-        padding-top: 200px;
-        padding-bottom: 4rem;
-    }
-
-    .hero .container {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 0 2rem;
-    }
-
-    .hero-video-container {
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-    }
-
-    .hero-video {
+    .hero-photo {
         width: 100%;
-        height: 100%;
+        aspect-ratio: 21 / 9;
         object-fit: cover;
+        border-radius: 20px;
+        margin-top: 3.5rem;
     }
 
-    .hero-overlay {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-            to bottom,
-            rgba(15, 15, 15, 0.75) 0%,
-            rgba(15, 15, 15, 0.85) 60%,
-            rgba(15, 15, 15, 1) 100%
-        );
-    }
-
-    .hero-content {
-        position: relative;
-        z-index: 1;
-        padding-top: 280px;
-        width: 100%;
-    }
-
-    .hero h1 {
-        font-size: clamp(2.5rem, 5vw, 3.5rem);
-        line-height: 1.1;
-        margin-bottom: 1.5rem;
-        max-width: 800px;
-    }
-
-    .hero h1 .highlight {
-        color: var(--accent-color);
-    }
-
-    .hero-tagline {
-        font-size: 1.3rem;
-        max-width: 600px;
-        color: #ccc;
-        margin-bottom: 2rem;
-        line-height: 1.5;
-    }
-
-    .hero-ctas {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-    }
-
-    .btn--outline {
-        background: transparent;
-        color: var(--text-color);
-    }
-
-    .btn--outline:hover {
-        background: var(--text-color);
-        color: var(--bg-color);
-    }
-
-    /* PARTNERSHIP SECTION */
+    /* PARTNERSHIP */
     .partnership-section {
+        background: var(--bg-subtle);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
         padding: 2.5rem 0;
-        border-bottom: 1px solid var(--border-color);
     }
-
-    .partnership-section .container {
-        max-width: 1000px;
-        text-align: center;
-    }
-
-    .partnership-label {
-        font-family: var(--font-mono);
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: #ddd;
-        margin: 0 0 1.5rem 0;
-    }
-
+    .partnership-inner { text-align: center; }
+    .partnership-inner .eyebrow { margin-bottom: 1.5rem; }
     .partnership-logos {
         display: flex;
         align-items: center;
@@ -369,326 +265,125 @@ const startHereCards = [
         gap: 1.5rem;
         flex-wrap: wrap;
     }
-
-    .logo-separator {
-        color: #444;
-        font-size: 1rem;
-        font-weight: 300;
-    }
-
+    .logo-separator { color: var(--ink-muted); font-size: 1rem; font-weight: 300; }
     .partner-logo {
         display: flex;
         align-items: center;
         justify-content: center;
-        opacity: 0.7;
+        opacity: 0.85;
         transition: opacity 0.3s ease;
     }
-
-    .partner-logo:hover {
-        opacity: 1;
-    }
-
-    .techstars-logo img {
-        height: 90px;
-        width: auto;
-    }
-
-    .qub-logo img {
-        height: 80px;
-        width: auto;
-    }
-
-    .ormeau-logo img {
-        height: 65px;
-        width: auto;
-        filter: brightness(0) invert(1);
-    }
+    .partner-logo:hover { opacity: 1; }
+    .techstars-logo img { height: 90px; width: auto; filter: invert(1) hue-rotate(180deg); }
+    .qub-logo img { height: 80px; width: auto; }
+    .ormeau-logo img { height: 65px; width: auto; }
 
     /* BILL GURLEY QUOTE */
-    .quote-highlight {
-        padding: 4rem 0;
-        background: linear-gradient(135deg, rgba(0, 230, 118, 0.08) 0%, rgba(0, 0, 0, 0) 50%);
-        border-bottom: 1px solid var(--border-color);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .quote-highlight::before {
-        content: '"';
-        position: absolute;
-        top: -40px;
-        left: 5%;
-        font-size: 20rem;
-        font-family: Georgia, serif;
-        color: rgba(0, 230, 118, 0.06);
-        line-height: 1;
-        pointer-events: none;
-    }
-
-    .quote-highlight .container {
-        max-width: 900px;
-        position: relative;
-        z-index: 1;
-    }
-
-    .quote-highlight blockquote {
-        text-align: center;
-        margin: 0;
-        padding: 0;
-    }
-
-    .quote-highlight blockquote p {
+    .quote-band { background: var(--accent-soft); padding: 5rem 0; }
+    .quote-band blockquote { text-align: center; margin: 0; padding: 0; }
+    .quote-band blockquote p {
         font-size: clamp(1.3rem, 3vw, 1.75rem);
         line-height: 1.5;
-        color: #ccc;
+        color: var(--ink);
         margin: 0 0 1rem 0;
-        font-weight: 400;
+        font-weight: 500;
     }
-
-    .quote-highlight .quote-emphasis {
-        font-family: var(--font-mono);
-        font-size: clamp(2rem, 5vw, 3rem);
-        font-weight: 700;
-        color: var(--accent-color);
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        margin: 1.5rem 0;
-        text-shadow: 0 0 40px rgba(0, 230, 118, 0.3);
+    .quote-emphasis {
+        font-size: clamp(2rem, 5vw, 3rem) !important;
+        font-weight: 800 !important;
+        letter-spacing: -0.02em;
+        color: var(--accent) !important;
+        margin: 1.5rem 0 !important;
     }
-
-    .quote-highlight cite {
+    .quote-band cite {
         display: block;
-        font-family: var(--font-mono);
+        font-family: var(--mono);
         font-size: 0.9rem;
-        color: #999;
+        color: var(--ink-muted);
         font-style: normal;
         text-transform: uppercase;
         letter-spacing: 0.15em;
         margin-top: 1.5rem;
     }
 
-    /* START HERE SECTION */
-    .start-here-section {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
+    /* SECTION HEADS */
+    .section-head { margin-bottom: 3rem; }
+    .section-intro { margin-top: 0.75rem; }
 
-    .start-here-section .container {
-        max-width: 1000px;
-    }
-
-    .start-here-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-    }
-
-    .start-here-card {
-        padding: 2rem;
-    }
-
-    .start-here-card h3 {
-        font-size: 1.2rem;
-        margin-bottom: 0.75rem;
-        font-family: var(--font-mono);
-    }
-
-    .start-here-card p {
-        font-size: 0.95rem;
-        color: #aaa;
-        margin-bottom: 1.5rem;
-        line-height: 1.5;
-    }
-
-    .card-link {
-        font-family: var(--font-mono);
-        font-size: 0.85rem;
-        color: var(--accent-color);
-        text-transform: uppercase;
-        transition: opacity 0.2s ease;
-    }
-
-    .card-link:hover {
-        opacity: 0.8;
-    }
-
-    .card-link--disabled {
-        color: var(--text-muted);
-        cursor: default;
-        pointer-events: none;
-    }
+    /* START HERE */
+    .start-here-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .path-card { display: flex; flex-direction: column; overflow: hidden; padding: 0; }
+    .path-card > * { margin-left: 2rem; margin-right: 2rem; }
+    .path-card .path-photo { margin: 0 0 1.75rem; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+    .path-card h3 { margin-bottom: 0.75rem; font-size: 1.4rem; }
+    .path-body { flex-grow: 1; margin-bottom: 1.5rem; font-size: 0.98rem; }
+    .path-link { margin-bottom: 2rem; font-weight: 600; color: var(--accent); font-size: 0.95rem; }
+    .path-link:hover { opacity: 0.8; }
+    .path-link--disabled { color: var(--ink-muted); cursor: default; pointer-events: none; }
 
     .partner-blurb {
-        margin: 2.5rem auto 0;
+        margin: 3rem auto 0;
         max-width: 760px;
         font-size: 1rem;
-        color: #bbb;
-        line-height: 1.6;
+        line-height: 1.65;
         text-align: center;
     }
+    .partner-blurb a { color: var(--accent); font-weight: 600; white-space: nowrap; }
+    .partner-blurb a:hover { opacity: 0.8; }
 
-    .partner-blurb a {
-        color: var(--accent-color);
-        font-family: var(--font-mono);
-        text-transform: uppercase;
-        font-size: 0.85rem;
-        letter-spacing: 0.02em;
-        white-space: nowrap;
-    }
-
-    .partner-blurb a:hover {
-        opacity: 0.8;
-    }
-
-    /* ETHOS STRIP */
-    .ethos-strip {
-        padding: 3rem 0;
-        background: #161616;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .ethos-strip .container {
-        max-width: 1000px;
-    }
-
-    .ethos-strip p {
-        font-family: var(--font-mono);
-        font-size: 1.2rem;
-        text-align: center;
-        color: var(--accent-color);
+    /* ETHOS */
+    .ethos-line {
+        font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        line-height: 1.25;
+        color: var(--ink);
         margin: 0;
+        text-align: center;
     }
 
-    /* EVENTS SECTION */
-    .events-section {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .events-section .container {
-        max-width: 1000px;
-    }
-
-    .section-header {
-        margin-bottom: 1.5rem;
-        border-bottom: 1px solid var(--border-color);
-        padding-bottom: 1rem;
-    }
-
-    .section-intro {
-        font-size: 1.1rem;
-        color: #aaa;
-        margin-bottom: 2rem;
-    }
-
-    .events-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
+    /* EVENTS */
+    .events-grid { display: flex; flex-direction: column; gap: 1.5rem; }
     .event-card {
         display: grid;
         grid-template-columns: 120px 1fr auto;
         gap: 2rem;
-        background: #161616;
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
         padding: 2rem;
-        transition: all 0.3s ease;
         align-items: center;
     }
-
-    .event-card:hover {
-        border-color: var(--accent-color);
-        transform: translateY(-2px);
-        box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-        background: #1c1c1c;
-    }
-
-    .event-card--finished {
-        opacity: 0.9;
-    }
-
-    .event-card--finished:hover {
-        transform: none;
-        border-color: var(--border-color);
-        background: #161616;
-    }
+    .event-card--finished { opacity: 0.9; }
+    .event-card--finished:hover { transform: none; border-color: var(--line); box-shadow: none; }
 
     .event-date-box {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background: #222;
-        border-radius: 8px;
+        background: var(--bg-subtle);
+        border: 1px solid var(--line);
+        border-radius: 12px;
         padding: 1rem;
         min-height: 100px;
-        border: 1px solid #333;
     }
-
     .event-date-box .day {
         font-size: 2rem;
         font-weight: 800;
-        color: var(--accent-color);
+        color: var(--accent);
         line-height: 1;
-        font-family: var(--font-mono);
     }
-
     .event-date-box .month {
         font-size: 0.75rem;
-        color: var(--text-muted);
-        margin-top: 0.25rem;
+        color: var(--ink-muted);
+        margin-top: 0.35rem;
         letter-spacing: 0.1em;
-        font-family: var(--font-mono);
+        font-family: var(--mono);
         text-transform: uppercase;
     }
 
-    .event-content {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-    }
+    .event-content { display: flex; flex-direction: column; gap: 0.75rem; }
+    .event-content h3 { font-size: 1.5rem; margin: 0; letter-spacing: -0.02em; }
 
-    .event-content h3 {
-        font-size: 1.5rem;
-        color: #fff;
-        margin: 0;
-        letter-spacing: -0.01em;
-        font-family: var(--font-main);
-        text-transform: none;
-    }
-
-    .event-info-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-        margin-top: 0.5rem;
-    }
-
-    .info-item {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 0.85rem;
-        color: #aaa;
-        font-family: var(--font-mono);
-    }
-
-    .info-item i {
-        width: 16px;
-        height: 16px;
-        color: var(--accent-color);
-    }
-
-    .event-description {
-        font-size: 0.95rem;
-        color: var(--text-muted);
-        line-height: 1.5;
-        margin-top: 0.5rem;
-    }
-
+    .tag-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
     .tag-pill {
         display: inline-flex;
         align-items: center;
@@ -698,168 +393,55 @@ const startHereCards = [
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.05em;
-        font-family: var(--font-mono);
+        font-family: var(--mono);
     }
+    .tag-pill.remote { background: #eeebfb; color: #5a4bd1; }
+    .tag-pill.in-person { background: var(--accent-soft); color: var(--accent); }
+    .tag-pill.partner { background: var(--bg-sunken); color: var(--ink-soft); border: 1px solid var(--line); }
+    .tag-pill.past { background: var(--bg-sunken); color: var(--ink-muted); border: 1px solid var(--line); }
 
-    .tag-pill.remote { background: rgba(108, 92, 231, 0.2); color: #a29bfe; }
-    .tag-pill.in-person { background: rgba(0, 210, 106, 0.1); color: #00D26A; }
-    .tag-pill.partner { background: rgba(255, 255, 255, 0.1); color: #fff; border: 1px solid rgba(255,255,255,0.3); }
-    .tag-pill.past { background: rgba(255, 255, 255, 0.05); color: #999; border: 1px solid rgba(255,255,255,0.15); }
-
-    .event-action .btn {
-        min-width: 120px;
-        text-align: center;
-        border-radius: 6px;
-        font-size: 0.8rem;
-        padding: 12px 20px;
-    }
-
-    .view-all-wrapper {
-        margin-top: 3rem;
-        text-align: center;
-    }
-
-    /* NEWSLETTER SECTION */
-    .newsletter-section {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .newsletter-section .container {
-        max-width: 1000px;
-    }
-
-    .newsletter-block {
-        background: #0a0a0a;
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
-        padding: 4rem;
-        text-align: center;
-    }
-
-    .newsletter-block h2 {
-        color: var(--accent-color);
-        margin-bottom: 1rem;
-    }
-
-    .newsletter-block p {
-        font-size: 1.15rem;
-        color: #ccc;
-        margin-bottom: 0.5rem;
-        max-width: 500px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .newsletter-detail {
-        font-size: 1rem !important;
-        color: #888 !important;
-        margin-bottom: 2rem !important;
-    }
-
-    .newsletter-form {
-        margin-top: 1.5rem;
-    }
-
-    .newsletter-fields {
-        display: grid;
-        grid-template-columns: 1fr 1fr auto;
-        gap: 0.75rem;
+    .event-info-row { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 0.25rem; }
+    .info-item {
+        display: flex;
         align-items: center;
-    }
-
-    .newsletter-fields input {
-        width: 100%;
-        padding: 0.8rem 1rem;
-        border-radius: 8px;
-        border: 1px solid var(--border-color);
-        background: #0f0f0f;
-        color: #fff;
-        font-size: 0.95rem;
-    }
-
-    .newsletter-fields input::placeholder {
-        color: #777;
-    }
-
-    .newsletter-legal {
-        margin-top: 0.8rem;
+        gap: 0.5rem;
         font-size: 0.85rem;
-        color: #777;
+        color: var(--ink-soft);
+        font-family: var(--mono);
     }
+    .info-item i { width: 16px; height: 16px; color: var(--accent); }
 
-    .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
-    }
+    .event-description { font-size: 0.95rem; line-height: 1.55; margin: 0.25rem 0 0; }
 
-    .hidden {
-        display: none;
-    }
+    .event-action .btn { min-width: 150px; text-align: center; }
 
-    .btn--accent {
-        background: var(--accent-color);
-        color: var(--bg-color);
-        border-color: var(--accent-color);
-    }
+    .view-all-wrapper { margin-top: 3rem; text-align: center; }
 
-    .btn--accent:hover {
-        background: transparent;
-        color: var(--accent-color);
+    /* NEWSLETTER */
+    .newsletter { background: var(--bg-subtle); }
+    .newsletter-head { margin: 0.75rem 0; max-width: 26ch; }
+    .newsletter-detail { margin-bottom: 2rem; }
+    .newsletter-fields { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .newsletter-fields input {
+        flex: 1 1 200px;
+        padding: 0.85rem 1.2rem;
+        font-family: var(--font);
+        font-size: 0.95rem;
+        border: 1.5px solid var(--line);
+        border-radius: 999px;
+        background: var(--bg);
+        color: var(--ink);
+        transition: border-color 0.2s ease;
     }
+    .newsletter-fields input::placeholder { color: var(--ink-muted); }
+    .newsletter-fields input:focus { outline: none; border-color: var(--accent); }
+    .newsletter-legal { font-size: 0.8rem; color: var(--ink-muted); margin-top: 1rem; }
 
     /* RESPONSIVE */
-    @media (max-width: 768px) {
-        .hero-content {
-            padding-top: 160px;
-        }
-
-        .hero-ctas {
-            flex-direction: column;
-        }
-
-        .hero-ctas .btn {
-            width: 100%;
-            text-align: center;
-        }
-
-        .newsletter-fields {
-            grid-template-columns: 1fr;
-        }
-
-        .partnership-logos {
-            gap: 1rem;
-        }
-
-        .techstars-logo img {
-            height: 70px;
-        }
-
-        .qub-logo img {
-            height: 60px;
-        }
-
-        .ormeau-logo img {
-            height: 50px;
-        }
-
-        .logo-separator {
-            font-size: 0.8rem;
-        }
-
-        .event-card {
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            padding: 1.5rem;
-        }
-
+    @media (max-width: 900px) {
+        .start-here-grid { grid-template-columns: 1fr; }
+        .hero-photo { aspect-ratio: 16 / 10; }
+        .event-card { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem; }
         .event-date-box {
             flex-direction: row;
             min-height: auto;
@@ -867,39 +449,17 @@ const startHereCards = [
             gap: 1rem;
             justify-content: flex-start;
         }
+        .event-date-box .month { margin-top: 0; }
+    }
 
-        .event-date-box .month {
-            margin-top: 0;
-        }
-
-        .event-info-row {
-            gap: 1rem;
-        }
-
-        .event-action .btn {
-            width: 100%;
-        }
-
-        .newsletter-block {
-            padding: 2rem;
-        }
-
-        .quote-highlight {
-            padding: 3rem 0;
-        }
-
-        .quote-highlight::before {
-            font-size: 12rem;
-            top: -20px;
-            left: 0;
-        }
-
-        .quote-highlight blockquote p {
-            font-size: 1.2rem;
-        }
-
-        .quote-highlight .quote-emphasis {
-            font-size: 1.75rem;
-        }
+    @media (max-width: 600px) {
+        .hero-ctas .btn { width: 100%; }
+        .event-action .btn { width: 100%; }
+        .newsletter-fields .btn { width: 100%; }
+        .partnership-logos { gap: 1rem; }
+        .techstars-logo img { height: 70px; }
+        .qub-logo img { height: 60px; }
+        .ormeau-logo img { height: 50px; }
+        .logo-separator { font-size: 0.8rem; }
     }
 </style>

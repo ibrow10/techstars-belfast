@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="Privacy Policy">
     <section class="legal-page">
-        <div class="container">
+        <div class="wrap wrap--narrow">
             <h1>Privacy Policy</h1>
             <p class="last-updated">Last Updated: 1 February 2026</p>
 
@@ -58,60 +58,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-    .legal-page {
-        padding-top: 140px;
-        padding-bottom: 4rem;
-    }
-
-    .legal-page .container {
-        max-width: 800px;
-    }
-
-    .legal-page h1 {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .last-updated {
-        font-family: var(--font-mono);
-        font-size: 0.85rem;
-        color: var(--text-muted);
-        margin-bottom: 3rem;
-    }
-
-    .legal-page h2 {
-        font-size: 1.25rem;
-        margin-top: 2.5rem;
-        margin-bottom: 1rem;
-        color: var(--accent-color);
-    }
-
-    .legal-page p {
-        font-size: 1rem;
-        color: #ccc;
-        line-height: 1.7;
-        margin-bottom: 1rem;
-    }
-
-    .legal-page ul {
-        margin-bottom: 1rem;
-        padding-left: 1.5rem;
-    }
-
-    .legal-page li {
-        font-size: 1rem;
-        color: #aaa;
-        line-height: 1.6;
-        margin-bottom: 0.5rem;
-    }
-
+    .legal-page { padding: 5rem 0 6rem; }
+    .legal-page h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .last-updated { font-family: var(--mono); font-size: 0.85rem; color: var(--ink-muted); margin-bottom: 3rem; }
+    .legal-page h2 { font-size: 1.25rem; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .legal-page p { font-size: 1rem; color: var(--ink-soft); line-height: 1.7; margin-bottom: 1rem; }
+    .legal-page ul { margin-bottom: 1rem; padding-left: 1.5rem; }
+    .legal-page li { font-size: 1rem; color: var(--ink-soft); line-height: 1.6; margin-bottom: 0.5rem; }
+    .legal-page a { color: var(--accent); text-decoration: underline; }
     @media (max-width: 768px) {
-        .legal-page {
-            padding-top: 120px;
-        }
-
-        .legal-page h1 {
-            font-size: 2rem;
-        }
+        .legal-page { padding-top: 3.5rem; }
+        .legal-page h1 { font-size: 2rem; }
     }
 </style>

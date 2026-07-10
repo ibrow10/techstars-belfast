@@ -40,27 +40,29 @@ const examples = [
 
 ---
 
-<BaseLayout title="Sprints">
-    <!-- Hero -->
-    <section class="sprint-hero">
-        <div class="hero-bg"></div>
-        <div class="container">
-            <p class="hero-label">SPRINTS</p>
-            <h1>RUN A SPRINT WITH US</h1>
-            <p class="hero-tagline">
+<BaseLayout title="Sprints" description="Short, high-intensity build sessions. Run one with Techstars Belfast: open to universities, funds, corporates and the public sector.">
+    <!-- HERO -->
+    <section class="hero">
+        <div class="wrap wrap--mid">
+            <p class="eyebrow">Sprints</p>
+            <h1>Run a sprint <span class="accent">with us.</span></h1>
+            <p class="lead hero-lead">
                 Short, high-intensity build sessions where founders, builders, and operators meet a real problem and ship something useful, fast.
             </p>
             <div class="hero-ctas">
                 <a href="/contact" class="btn btn--accent">Get in touch</a>
-                <a href="#examples" class="btn btn--outline">See what we've run</a>
+                <a href="#examples" class="btn btn--ghost">See what we've run</a>
             </div>
+        </div>
+        <div class="wrap">
+            <img src="/images/photos/pic-348.jpg" alt="Teams building together at a Techstars Belfast sprint" class="hero-photo" />
         </div>
     </section>
 
-    <!-- What is a Sprint -->
-    <section class="what-section">
-        <div class="container">
-            <p class="lead">
+    <!-- WHAT IS A SPRINT -->
+    <section class="section--tight band divide">
+        <div class="wrap wrap--mid">
+            <p class="band-line">
                 A Sprint is a time-boxed build, anywhere from a few hours to a few days. People form teams, pick a real problem, build a working prototype, and demo what they shipped. <span class="highlight">Working beats pretty. Shipping beats slides.</span>
             </p>
         </div>
@@ -68,20 +70,18 @@ const examples = [
 
     <!-- Upcoming sprints (from the live events feed) -->
     {upcomingSprints.length > 0 && (
-        <section class="next-sprint-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>{upcomingSprints.length > 1 ? 'UPCOMING SPRINTS' : 'NEXT SPRINT'}</h2>
-                </div>
-                <div class="upcoming-sprints-grid">
+        <section class="section--tight">
+            <div class="wrap">
+                <h2 class="sprints-head">{upcomingSprints.length > 1 ? 'Upcoming sprints' : 'Next sprint'}</h2>
+                <div class="upcoming-grid">
                     {upcomingSprints.map(s => (
-                        <div class="example-card next-sprint-card">
-                            <span class="example-tag">{s.tag}</span>
+                        <div class="card sprint-card">
+                            <span class="tag-chip">{s.tag}</span>
                             <h3>{s.title}</h3>
-                            <p class="example-partner">{fmtSprintDate(s.date)}{s.time ? ` · ${s.time}` : ''} · {s.venue}</p>
-                            <p class="example-description">{s.description}</p>
+                            <p class="meta-line">{fmtSprintDate(s.date)}{s.time ? ` · ${s.time}` : ''} · {s.venue}</p>
+                            <p class="muted card-description">{s.description}</p>
                             {s.link && (
-                                <a href={s.link} class="btn btn--accent" target="_blank" rel="noopener">{s.link.includes('qub.ac.uk') ? 'Apply' : 'Register now'}</a>
+                                <a href={s.link} class="btn btn--accent sprint-btn" target="_blank" rel="noopener">{s.link.includes('qub.ac.uk') ? 'Apply' : 'Register now'}</a>
                             )}
                         </div>
                     ))}
@@ -90,286 +90,99 @@ const examples = [
         </section>
     )}
 
-    <!-- Examples -->
-    <section id="examples" class="examples-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>SPRINTS WE'VE RUN OR SUPPORTED</h2>
-                <p class="section-tagline">A few recent examples.</p>
-            </div>
+    <!-- EXAMPLES -->
+    <section id="examples" class="section divide">
+        <div class="wrap">
+            <p class="eyebrow">A few recent examples</p>
+            <h2 class="examples-head">Sprints we've run or supported</h2>
             <div class="examples-grid">
-                {examples.map(example => (
-                    <div class="example-card">
-                        <span class="example-tag">{example.tag}</span>
-                        <h3>{example.title}</h3>
-                        <p class="example-partner">With {example.partner} · {example.location}</p>
-                        <p class="example-description">{example.description}</p>
-                    </div>
-                ))}
+                {examples.map((example, i) => {
+                    const photo = [
+                        { src: '/images/photos/pic-282.jpg', alt: 'Teams working together at the SVV Build Sprint' },
+                        { src: '/images/photos/pic-149.jpg', alt: 'Builders in discussion at the AI Build Day in Derry' },
+                        { src: '/images/photos/pic-283.jpg', alt: 'Student builders demoing at HackBelfast' },
+                    ][i];
+                    return (
+                        <div class="card example-card">
+                            <img src={photo.src} alt={photo.alt} class="example-photo" loading="lazy" />
+                            <span class="tag-chip">{example.tag}</span>
+                            <h3>{example.title}</h3>
+                            <p class="meta-line">With {example.partner} · {example.location}</p>
+                            <p class="muted card-description example-description">{example.description}</p>
+                        </div>
+                    );
+                })}
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="final-cta-section">
-        <div class="container">
-            <div class="final-cta-block">
-                <h2>WANT TO RUN ONE?</h2>
-                <p class="final-cta-tagline">Tell us what you have in mind and we'll set it up.</p>
-                <a href="/contact" class="btn btn--accent">Get in touch</a>
-            </div>
+    <!-- FINAL CTA -->
+    <section class="cta-band">
+        <div class="wrap wrap--mid cta-inner">
+            <h2>Want to run one?</h2>
+            <p class="lead">Tell us what you have in mind and we'll set it up.</p>
+            <a href="/contact" class="btn btn--accent">Get in touch</a>
         </div>
     </section>
 </BaseLayout>
 
 <style>
-    /* HERO */
-    .sprint-hero {
-        padding-top: 160px;
-        padding-bottom: 5rem;
-        border-bottom: 1px solid var(--border-color);
-        position: relative;
-        overflow: hidden;
-    }
+    .hero { padding: 6rem 0 3.5rem; }
+    .hero h1 { margin: 1.25rem 0 1.5rem; }
+    .hero-lead { max-width: 620px; margin-bottom: 2.25rem; }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-photo { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; border-radius: 20px; margin-top: 3rem; }
 
-    .hero-bg {
-        position: absolute;
-        inset: 0;
-        background-image: url('/images/fc.jpg');
-        background-size: cover;
-        background-position: center;
-        opacity: 0.15;
-        z-index: 0;
-    }
+    /* WHAT IS A SPRINT */
+    .band { background: var(--accent-soft); }
+    .band-line { font-size: clamp(1.3rem, 2.6vw, 1.8rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.4; color: #0a3d24; }
+    .band-line .highlight { color: var(--accent); }
 
-    .hero-bg::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to bottom, rgba(15, 15, 15, 0.3) 0%, rgba(15, 15, 15, 0.9) 70%, rgba(15, 15, 15, 1) 100%);
-    }
-
-    .sprint-hero .container {
-        max-width: 900px;
-        position: relative;
-        z-index: 1;
-    }
-
-    .hero-label {
-        font-family: var(--font-mono);
-        font-size: 0.75rem;
+    /* SHARED CARD BITS */
+    .tag-chip {
+        font-family: var(--mono);
+        font-size: 0.68rem;
         text-transform: uppercase;
-        letter-spacing: 0.15em;
-        color: var(--accent-color);
-        margin-bottom: 1rem;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        background: var(--accent-soft);
+        padding: 4px 10px;
+        border-radius: 999px;
+        align-self: flex-start;
     }
+    .meta-line { font-family: var(--mono); font-size: 0.8rem; color: var(--ink-muted); margin: 0; }
+    .card-description { font-size: 0.95rem; line-height: 1.55; margin-top: 0.5rem; }
 
-    .sprint-hero h1 {
-        font-size: clamp(2.5rem, 7vw, 4.5rem);
-        margin-bottom: 1.5rem;
-        line-height: 1;
-    }
-
-    .hero-tagline {
-        font-size: clamp(1.15rem, 2.2vw, 1.4rem);
-        color: #ccc;
-        max-width: 720px;
-        line-height: 1.5;
-        margin-bottom: 2.5rem;
-    }
-
-    .hero-ctas {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-    }
-
-    .btn--outline {
-        background: transparent;
-        color: var(--text-color);
-    }
-
-    .btn--outline:hover {
-        background: var(--text-color);
-        color: var(--bg-color);
-    }
-
-    .btn--accent {
-        background: var(--accent-color);
-        color: var(--bg-color);
-        border-color: var(--accent-color);
-    }
-
-    .btn--accent:hover {
-        background: transparent;
-        color: var(--accent-color);
-    }
-
-    /* WHAT */
-    .what-section {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .what-section .container {
-        max-width: 800px;
-    }
-
-    .what-section .lead {
-        font-size: 1.25rem;
-        color: #ccc;
-        line-height: 1.6;
-    }
-
-    .what-section .highlight {
-        color: var(--accent-color);
-        font-weight: 500;
-    }
+    /* UPCOMING SPRINTS */
+    .sprints-head { margin-bottom: 2rem; }
+    .upcoming-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    .sprint-card { display: flex; flex-direction: column; gap: 0.5rem; }
+    .sprint-card h3 { margin: 0.6rem 0 0; }
+    .sprint-btn { margin-top: 1.25rem; align-self: flex-start; }
 
     /* EXAMPLES */
-    .examples-section {
-        padding: 5rem 0;
-        border-bottom: 1px solid var(--border-color);
-        background: #0a0a0a;
+    .examples-head { margin: 0.75rem 0 2.5rem; }
+    .examples-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .example-card { display: flex; flex-direction: column; gap: 0.5rem; overflow: hidden; padding: 0; }
+    .example-card > * { margin-left: 2rem; margin-right: 2rem; }
+    .example-card .example-photo { margin: 0 0 1.5rem; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+    .example-card h3 { margin: 0.6rem 0 0; }
+    .example-card .example-description { margin-bottom: 2rem; }
+
+    /* CTA BAND */
+    .cta-band { background: var(--ink); color: var(--bg); padding: 6rem 0; }
+    .cta-inner { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.25rem; }
+    .cta-band h2 { color: var(--bg); }
+    .cta-band .lead { color: rgba(255,255,255,0.72); }
+
+    @media (max-width: 900px) {
+        .hero-photo { aspect-ratio: 16 / 10; }
+        .examples-grid { grid-template-columns: 1fr; }
+        .upcoming-grid { grid-template-columns: 1fr; }
     }
 
-    .examples-section .container {
-        max-width: 1000px;
-    }
-
-    .section-header {
-        margin-bottom: 2.5rem;
-    }
-
-    .section-header h2 {
-        margin-bottom: 0.5rem;
-    }
-
-    .section-tagline {
-        font-size: 1.1rem;
-        color: var(--text-muted);
-    }
-
-    .examples-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-    }
-
-    .example-card {
-        padding: 2rem;
-        background: #161616;
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
-        transition: all 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .example-card:hover {
-        border-color: var(--accent-color);
-        transform: translateY(-2px);
-    }
-
-    .example-tag {
-        font-family: var(--font-mono);
-        font-size: 0.7rem;
-        color: var(--accent-color);
-        background: rgba(0, 230, 118, 0.1);
-        padding: 4px 10px;
-        border-radius: 20px;
-        align-self: flex-start;
-        letter-spacing: 0.05em;
-    }
-
-    .example-card h3 {
-        font-size: 1.25rem;
-        margin: 0.5rem 0 0;
-        text-transform: none;
-        font-family: var(--font-main);
-        color: #fff;
-    }
-
-    .example-partner {
-        font-size: 0.85rem;
-        color: var(--accent-color);
-        font-family: var(--font-mono);
-        margin: 0;
-    }
-
-    .example-description {
-        font-size: 0.95rem;
-        color: var(--text-muted);
-        line-height: 1.5;
-        margin: 0.5rem 0 0;
-    }
-
-    /* FINAL CTA */
-    .final-cta-section {
-        padding: 5rem 0;
-    }
-
-    .final-cta-section .container {
-        max-width: 800px;
-    }
-
-    .final-cta-block {
-        text-align: center;
-        padding: 4rem;
-        background: linear-gradient(135deg, rgba(0, 230, 118, 0.08) 0%, transparent 50%);
-        border: 1px solid var(--border-color);
-        border-radius: 16px;
-    }
-
-    .final-cta-block h2 {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .final-cta-tagline {
-        font-size: 1.2rem;
-        color: #aaa;
-        margin-bottom: 2rem;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-        .sprint-hero {
-            padding-top: 120px;
-            padding-bottom: 3rem;
-        }
-
-        .hero-ctas {
-            flex-direction: column;
-        }
-
-        .hero-ctas .btn {
-            width: 100%;
-            text-align: center;
-        }
-
-        .final-cta-block {
-            padding: 2rem;
-        }
-
-        .final-cta-block h2 {
-            font-size: 2rem;
-        }
-    }
-
-    .next-sprint-section {
-        padding: 4rem 0 1rem;
-    }
-    .next-sprint-card {
-        border-color: var(--accent-color);
-    }
-    .next-sprint-card .btn {
-        margin-top: 1.25rem;
-    }
-    .upcoming-sprints-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 1.5rem;
+    @media (max-width: 600px) {
+        .hero-ctas .btn { width: 100%; text-align: center; justify-content: center; }
+        .sprint-btn { width: 100%; align-self: stretch; text-align: center; justify-content: center; }
     }
 </style>
