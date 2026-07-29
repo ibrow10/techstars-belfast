@@ -18,6 +18,22 @@
   "sprint": true
  },
  {
+  "id": "ts-2026-08-06-founder-ama-catalyst-fall-2026",
+  "title": "Founder AMA: Techstars Founder Catalyst Global Fall 2026",
+  "date": "2026-08-06",
+  "time": "3:30 PM – 4:30 PM BST",
+  "venue": "Online (Google Meet)",
+  "tag": "Founder Catalyst",
+  "tagType": "online",
+  "audience": "Early-stage founders",
+  "description": "Live Q&A for founders considering the Techstars Founder Catalyst Global Fall 2026 programme: eligibility, applications, and what the 10-week virtual pre-accelerator offers. Free, no equity taken. Applications close 21 August 2026.",
+  "link": "https://luma.com/foj2ztjk",
+  "private": false,
+  "surfaces": [
+   "techstars"
+  ]
+ },
+ {
   "id": "ts-2026-07-30-inqubate-summer-social",
   "title": "InQUBate Summer Social x Techstars Belfast",
   "date": "2026-07-30",
