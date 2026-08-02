@@ -1,3 +1,15 @@
 [build]
   command = "npm run build"
   publish = "dist"
+
+# Baseline security headers. SAMEORIGIN not DENY so the site can still frame
+# its own content; it blocks a third-party page framing the site (clickjacking).
+# No Content-Security-Policy here on purpose: a CSP has to be tuned to this
+# site's own scripts, fonts and embeds, and a wrong one fails silently.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
