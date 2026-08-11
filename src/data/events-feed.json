@@ -18,6 +18,22 @@
   "sprint": true
  },
  {
+  "id": "ts-2026-08-19-founders-first-mixer",
+  "title": "Founders First Mixer",
+  "date": "2026-08-19",
+  "time": "5:00 PM – 8:00 PM",
+  "venue": "Ormeau Labs, 18 Ormeau Ave, Belfast",
+  "tag": "Community Event",
+  "tagType": "in-person",
+  "audience": "Founders and builders",
+  "description": "Beers, food, craic, and a room full of people building things in Belfast. No pitches, no panels, no agenda beyond good conversation. Ian Browne and Layla McGarry (Founder Labs) will take a few minutes to talk Techstars and Founder Labs and answer whatever you throw at them.",
+  "link": "https://luma.com/i3va5q6b",
+  "surfaces": [
+   "techstars",
+   "fl"
+  ]
+ },
+ {
   "id": "ts-2026-08-06-founder-ama-catalyst-fall-2026",
   "title": "Founder AMA: Techstars Founder Catalyst Global Fall 2026",
   "date": "2026-08-06",
