@@ -18,6 +18,22 @@
   "sprint": true
  },
  {
+  "id": "fl-2026-09-10-builders-night",
+  "title": "Builders Night",
+  "date": "2026-09-10",
+  "time": "5:30 PM – 7:30 PM BST",
+  "venue": "Ormeau Labs, 18 Ormeau Ave, Belfast",
+  "tag": "Community Event",
+  "tagType": "in-person",
+  "audience": "Builders, domain experts and the curious",
+  "description": "AI, public services and building things that could make a real difference. A brief goes out one week before: pick a workflow from the NI AI strategy's own list, do what you can in a week, and come show it. Demos, slides, problems you know from the inside, or just curiosity - all count. Real numbers beat polish, failures welcome, no judgement.",
+  "link": "https://luma.com/019jqcnn",
+  "surfaces": [
+   "techstars",
+   "fl"
+  ]
+ },
+ {
   "id": "ts-2026-08-19-founders-first-mixer",
   "title": "Founders First Mixer",
   "date": "2026-08-19",
