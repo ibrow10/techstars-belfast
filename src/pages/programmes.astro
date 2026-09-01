@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const applyUrl = 'https://www.techstars.com/techstars-founder-catalyst-global-fall-2026-program';
+// Applications closed 1 Sep 2026; next intake May 2027. Restore the Techstars apply URL when the new cohort opens.
 
 
 const benefits = [
@@ -143,7 +143,7 @@ const faqs = [
             <div class="facts">
                 <div class="fact">
                     <span class="fact-k">Applications</span>
-                    <span class="fact-v">Open now</span>
+                    <span class="fact-v">Closed — next intake May 2027</span>
                 </div>
                 <div class="fact">
                     <span class="fact-k">Programme runs</span>
@@ -156,8 +156,8 @@ const faqs = [
             </div>
 
             <div class="hero-ctas">
-                <a href={applyUrl} class="btn btn--accent" target="_blank" rel="noopener">Apply now</a>
-                <a href="/#newsletter" class="btn btn--ghost">Get the monthly email</a>
+                <a href="/#newsletter" class="btn btn--accent">Get notified for May 2027</a>
+                <a href="/events" class="btn btn--ghost">See what's on</a>
             </div>
 
             <div class="trust-bar">
@@ -324,11 +324,11 @@ const faqs = [
     <!-- FINAL CTA -->
     <section class="final-cta">
         <div class="wrap wrap--mid final-cta-inner">
-            <p class="deadline-text">Applications are open now</p>
-            <h2>Founder Catalyst returns for autumn 2026.</h2>
+            <p class="deadline-text">Applications are closed</p>
+            <h2>Founder Catalyst returns in May 2027.</h2>
 
             <div class="cta-buttons">
-                <a href={applyUrl} class="btn btn--accent" target="_blank" rel="noopener">Apply now</a>
+                <a href="/#newsletter" class="btn btn--accent">Get notified when applications open</a>
                 <a href="/#newsletter" class="btn btn--ghost-dark">Get the monthly email</a>
             </div>
             <p class="cta-note">One email a month, no spam.</p>
