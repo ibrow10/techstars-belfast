@@ -196,24 +196,94 @@ const startHereCards = [
     <section id="newsletter" class="section--tight newsletter divide">
         <div class="wrap wrap--mid">
             <p class="eyebrow">The monthly founder email</p>
-            <h2 class="newsletter-head">Coming soon, sign up to find out more.</h2>
+            <h2 class="newsletter-head">One email a month. The best founder opportunities in NI.</h2>
             <p class="muted newsletter-detail">Early access for events, sprints, programmes, and open calls.</p>
-            <form name="newsletter-waitlist" method="POST" action="/thanks" data-netlify="true" netlify-honeypot="bot-field" class="newsletter-form">
-                <input type="hidden" name="form-name" value="newsletter-waitlist" />
-                <p class="hidden">
-                    <label>Don’t fill this out: <input name="bot-field" /></label>
+            <form
+                id="newsletter-form"
+                action="https://ormeaulabs.us5.list-manage.com/subscribe/post?u=000c136130636cfd77b637c9b&amp;id=c4d5b2e454"
+                method="POST"
+                class="newsletter-form"
+                novalidate
+            >
+                <!-- Mailchimp honeypot: must stay empty -->
+                <p class="hidden" aria-hidden="true">
+                    <label>Don't fill this out: <input type="text" name="b_000c136130636cfd77b637c9b_c4d5b2e454" tabindex="-1" value="" /></label>
                 </p>
                 <div class="newsletter-fields">
-                    <label class="sr-only" for="newsletter-name">Name</label>
-                    <input id="newsletter-name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
+                    <label class="sr-only" for="newsletter-name">First name</label>
+                    <input id="newsletter-name" name="FNAME" type="text" autocomplete="given-name" placeholder="Your first name" />
                     <label class="sr-only" for="newsletter-email">Email</label>
-                    <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="Your email" required />
-                    <button type="submit" class="btn btn--accent">Join the waitlist</button>
+                    <input id="newsletter-email" name="EMAIL" type="email" autocomplete="email" placeholder="Your email" required />
+                    <button type="submit" class="btn btn--accent">Get the monthly email</button>
                 </div>
-                <p class="newsletter-legal">By signing up, you agree to receive the monthly email.</p>
+                <p class="newsletter-legal">By signing up, you agree to receive the monthly email. Unsubscribe any time.</p>
+                <p class="newsletter-status" role="status" aria-live="polite"></p>
             </form>
         </div>
     </section>
+
+    <script>
+        // Submit to our Netlify function (/api/subscribe), which adds the
+        // contact through the Mailchimp API and reports back, so the person
+        // stays on the page. If the function isn't configured or the request
+        // fails, the form falls back to a normal POST to Mailchimp's hosted
+        // confirmation page. With JS off, the plain POST is what happens.
+        const form = document.getElementById('newsletter-form') as HTMLFormElement | null;
+        if (form) {
+            const status = form.querySelector('.newsletter-status') as HTMLElement;
+            const button = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+            const email = form.querySelector('#newsletter-email') as HTMLInputElement;
+            const name = form.querySelector('#newsletter-name') as HTMLInputElement;
+            const honeypot = form.querySelector('input[name^="b_"]') as HTMLInputElement;
+
+            const setStatus = (text: string, state: 'pending' | 'success' | 'error') => {
+                status.textContent = text;
+                status.dataset.state = state;
+            };
+
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                if (!email.value || !email.checkValidity()) {
+                    setStatus('Enter a valid email address.', 'error');
+                    email.focus();
+                    return;
+                }
+
+                button.disabled = true;
+                setStatus('Signing you up…', 'pending');
+
+                try {
+                    const res = await fetch('/api/subscribe', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email: email.value, name: name.value, hp: honeypot.value }),
+                    });
+                    const data = await res.json().catch(() => ({}));
+
+                    if (res.status === 503 || res.status === 404) {
+                        // Function not deployed or not configured: hand off to Mailchimp.
+                        form.submit();
+                        return;
+                    }
+                    if (res.ok) {
+                        form.querySelector('.newsletter-fields')?.classList.add('hidden');
+                        form.querySelector('.newsletter-legal')?.classList.add('hidden');
+                        setStatus(
+                            data.status === 'subscribed'
+                                ? "You're already on the list. Nothing more to do."
+                                : 'Nearly there. Check your inbox and click the confirmation link.',
+                            'success'
+                        );
+                        return;
+                    }
+                    setStatus(data.message || 'Something went wrong. Try again.', 'error');
+                    button.disabled = false;
+                } catch {
+                    form.submit();
+                }
+            });
+        }
+    </script>
 
 </BaseLayout>
 
@@ -425,6 +495,10 @@ const startHereCards = [
     .newsletter-fields input::placeholder { color: var(--ink-muted); }
     .newsletter-fields input:focus { outline: none; border-color: var(--accent); }
     .newsletter-legal { font-size: 0.8rem; color: var(--ink-muted); margin-top: 1rem; }
+    .newsletter-status { font-size: 0.95rem; margin-top: 1rem; min-height: 1.5em; font-weight: 600; }
+    .newsletter-status[data-state="success"] { color: var(--accent); }
+    .newsletter-status[data-state="error"] { color: #b42318; }
+    .newsletter-status[data-state="pending"] { color: var(--ink-muted); font-weight: 400; }
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
