@@ -1,5 +1,36 @@
 [
  {
+  "id": "fl-2026-11-03-iod-governance",
+  "title": "Governance That Helps Founders Scale",
+  "date": "2026-11-03",
+  "time": "5:30 PM – 7:30 PM GMT",
+  "venue": "Ormeau Labs, 18 Ormeau Ave, Belfast",
+  "tag": "PARTNER SESSION",
+  "tagType": "partner",
+  "audience": "Founders, leadership teams and investors",
+  "description": "The Institute of Directors (IoD) and Ormeau Labs on governance as a competitive advantage rather than a tick-box exercise: why it matters earlier than most founders think, the role of advisors, boards and your first Non-Executive Director, and how to introduce it without slowing momentum. Talks from Deborah Morton-Dare and Simon Haslam, then a panel with Liam McStravick (TeamFeePay), Alan Carson (Cloudsmith), Fiona Jelly (Complyfirst) and Brian Cummings (Clarendon Fund Managers). Pizza and drinks afterwards.",
+  "link": "https://luma.com/g7x164ov",
+  "surfaces": [
+   "techstars",
+   "fl"
+  ]
+ },
+ {
+  "id": "ts-2026-10-08-impromptu",
+  "title": "impromptu: AI and design lunch-and-learn",
+  "date": "2026-10-08",
+  "time": "12:30 PM – 1:30 PM BST",
+  "venue": "Ormeau Labs, 18 Ormeau Ave, Belfast (enter via Apply Street)",
+  "tag": "Community Event",
+  "tagType": "in-person",
+  "audience": "Designers, creatives and makers",
+  "description": "An informal lunch-and-learn for designers, creatives and makers on the intersection of AI and design. Bring a sandwich and hear Jonny Campbell and Jasmin Winiarski share real creative AI workflows, experiments and side projects, then Q&A, discussion and a bit of networking. No hype, no heavy theory.",
+  "link": "https://luma.com/ffyyodz8",
+  "surfaces": [
+   "techstars"
+  ]
+ },
+ {
   "id": "ts-2026-09-16-quest-techstars-sprint",
   "title": "QUest x Techstars: Customer Discovery Sprint",
   "date": "2026-09-16",
