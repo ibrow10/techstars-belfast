@@ -31,6 +31,22 @@
   ]
  },
  {
+  "id": "fl-2026-10-20-qub-founder-labs-ama",
+  "title": "QUB x Founder Labs AMA",
+  "date": "2026-10-20",
+  "time": "12:30 PM – 1:30 PM",
+  "venue": "Queen's University Belfast, Meeting Room D, 63 University Road (2nd floor)",
+  "tag": "Cohort 5 AMA",
+  "tagType": "in-person",
+  "audience": "Students, researchers and founders thinking about applying to Cohort 5",
+  "description": "Meet the Founder Labs team at Queen's and ask anything about Cohort 5: who it is for, what the six months look like, and how to make your application stronger. No slides. Applications close Friday 20 November.",
+  "link": "https://luma.com/xej98v2n",
+  "surfaces": [
+   "fl",
+   "techstars"
+  ]
+ },
+ {
   "id": "ts-2026-10-08-impromptu",
   "title": "impromptu: AI and design lunch-and-learn",
   "date": "2026-10-08",
