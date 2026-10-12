@@ -16,6 +16,23 @@
   ]
  },
  {
+  "id": "ts-2026-11-02-the-amp-x-founder-labs-ama",
+  "title": "The AMP x Founder Labs: AMA",
+  "date": "2026-11-02",
+  "time": "10:30 AM – 11:30 AM GMT",
+  "venue": "The AMP, Ebrington Square, Derry",
+  "tag": "PARTNER SESSION",
+  "tagType": "partner",
+  "audience": "Prospective founders",
+  "description": "Ask the Founder Labs team anything about Cohort 5. A £25k grant, trips to London, Dublin and the US, and access to founders who have raised millions. Applications are open.",
+  "link": "https://luma.com/hoo03hyi",
+  "private": false,
+  "surfaces": [
+   "techstars",
+   "fl"
+  ]
+ },
+ {
   "id": "ts-2026-10-22-founder-mixer-bullhouse",
   "title": "Founder Mixer x Bullhouse Brew Co.",
   "date": "2026-10-22",
