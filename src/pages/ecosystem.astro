@@ -5,7 +5,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 // See the comment at the top of src/embeds/ecosystem-map.html for the routine.
 // At build time this page lifts the hiring and news cards out of each block
 // into their own sections (roles and news are not month-bound), strips those
-// two filter chips from the map, and shows one month's map at a time.
+// two filter chips from the map, and merges every month into one map and one
+// week-by-week list (Ian, 21 Oct 2026: no month buttons, all weeks in the dropdown).
 import embed from '../embeds/ecosystem-map.html?raw';
 
 const SUBMIT_EMAIL = 'techstarsbelfast@ormeaulabs.com';
@@ -69,6 +70,63 @@ for (const raw of blocks) {
     months.push({ label, id, html: block });
 }
 
+// One map and one dated list for every month on file: the weeks of later
+// months join the first block's dropdown and list, and any towns pinned only in
+// a later month are added to the first block's map.
+const mergeMonths = (list) => {
+    if (list.length < 2) return list;
+    const shell = list[0];
+    let html = shell.html;
+
+    const options = new Map();
+    const weeks = new Map();
+    for (const m of list) {
+        for (const o of m.html.matchAll(/<option value="([^"]+)">([^<]+)<\/option>/g)) {
+            if (o[1] !== 'all' && !options.has(o[1])) options.set(o[1], o[2]);
+        }
+        for (const w of m.html.matchAll(/<section class="week" data-week="([^"]+)">([\s\S]*?)<\/section>/g)) {
+            const head = (w[2].match(/<h2 class="weekhead">[\s\S]*?<\/h2>/) || [''])[0];
+            const entry = weeks.get(w[1]) || { head, cards: new Map() };
+            for (const c of w[2].matchAll(/<article class="card [\s\S]*?<\/article>/g)) {
+                const id = (c[0].match(/data-id="([^"]+)"/) || [])[1] || c[0];
+                if (!entry.cards.has(id)) entry.cards.set(id, c[0]);
+            }
+            weeks.set(w[1], entry);
+        }
+    }
+    const optionHtml = [...options.entries()].sort(([a], [b]) => a.localeCompare(b))
+        .map(([v, l]) => `<option value="${v}">${l}</option>`).join('') + '<option value="all">All weeks</option>';
+    html = html.replace(/(<select aria-label="Choose a week">)[\s\S]*?(<\/select>)/, `$1${optionHtml}$2`);
+
+    const sectionHtml = [...weeks.entries()].sort(([a], [b]) => a.localeCompare(b))
+        .map(([w, e]) => `<section class="week" data-week="${w}">${e.head}<div class="cards">${[...e.cards.values()].join('')}</div></section>`).join('');
+    const first = html.indexOf('<section class="week"');
+    const last = html.lastIndexOf('</section>') + '</section>'.length;
+    if (first > -1 && last > first) html = html.slice(0, first) + sectionHtml + html.slice(last);
+
+    const svgOf = (h) => (h.match(/<svg class="tsb-map"[\s\S]*?<\/svg>/) || [''])[0];
+    const shellSvg = svgOf(html);
+    const have = new Set([...shellSvg.matchAll(/<g class="pin" data-town="([^"]+)"/g)].map(m => m[1]));
+    let extra = '';
+    for (const m of list.slice(1)) {
+        const svg = svgOf(m.html);
+        for (const pin of svg.matchAll(/<g class="pin" data-town="([^"]+)"[^>]*>[\s\S]*?<\/g><\/g>/g)) {
+            if (have.has(pin[1])) continue;
+            have.add(pin[1]);
+            const label = (svg.match(new RegExp(`<text class="pinlabel" data-town="${pin[1]}"[^>]*>[^<]*<\\/text>`)) || [''])[0];
+            extra += label + pin[0];
+        }
+    }
+    if (extra) html = html.replace(shellSvg, shellSvg.replace(/<\/svg>$/, extra + '</svg>'));
+
+    const [firstMonth, firstYear] = list[0].label.split(' ');
+    const lastLabel = list[list.length - 1].label;
+    const span = lastLabel.endsWith(firstYear) ? `${firstMonth} to ${lastLabel}` : `${list[0].label} to ${lastLabel}`;
+    html = html.replace(/(<h2 class="tsb-t">Ecosystem Map: <span>)[^<]*(<\/span>)/, `$1${span}$2`);
+    return [{ ...shell, html }];
+};
+const shown = mergeMonths(months);
+
 const jobList = [...jobs.values()];
 const newsList = [...news.values()];
 ---
@@ -93,14 +151,9 @@ const newsList = [...news.values()];
         <div class="wrap">
             <div class="sec-head">
                 <h2>What's on</h2>
-                <p class="muted">Pick a month, then a town on the map, a week, or a filter. Funding deadlines sit alongside events.</p>
+                <p class="muted">Pick a week, a town on the map, or a filter. Funding deadlines sit alongside events.</p>
             </div>
-            {months.length > 1 && (
-                <div class="month-switch" role="group" aria-label="Choose a month">
-                    {months.map(m => <button type="button" data-target={m.id} aria-pressed="false">{m.label}</button>)}
-                </div>
-            )}
-            {months.map(m => <Fragment set:html={m.html} />)}
+            {shown.map(m => <Fragment set:html={m.html} />)}
         </div>
     </section>
 
@@ -157,24 +210,6 @@ const newsList = [...news.values()];
     </section>
 </BaseLayout>
 
-<script>
-    const sw = document.querySelector('.month-switch');
-    if (sw) {
-        const buttons = [...sw.querySelectorAll('button')];
-        const show = (id: string) => {
-            buttons.forEach(b => {
-                const on = b.dataset.target === id;
-                b.setAttribute('aria-pressed', on ? 'true' : 'false');
-                const block = document.getElementById(b.dataset.target || '');
-                if (block) block.hidden = !on;
-            });
-        };
-        const now = new Date().toLocaleString('en-GB', { month: 'long', year: 'numeric' });
-        const current = buttons.find(b => b.textContent?.trim() === now) || buttons[0];
-        show(current.dataset.target || '');
-        buttons.forEach(b => b.addEventListener('click', () => show(b.dataset.target || '')));
-    }
-</script>
 
 <style>
     .hero { padding: 5rem 0 3rem; }
@@ -191,12 +226,6 @@ const newsList = [...news.values()];
     @media (min-width: 801px) {
         .ecosystem :global([id^='tsb-ev'] .tsb-g > div:first-child) { position: sticky; top: 96px; align-self: start; }
     }
-    .month-switch { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0 0 1.75rem; }
-    .month-switch button {
-        font: inherit; font-size: 0.95rem; font-weight: 600; padding: 0.5rem 1.1rem;
-        border-radius: 999px; border: 1.5px solid var(--line); background: #fff; color: #0d0d0d; cursor: pointer;
-    }
-    .month-switch button[aria-pressed="true"] { background: #0d0d0d; border-color: #0d0d0d; color: #fff; }
     .hiring { background: var(--bg-subtle); }
     .role-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; }
     .role { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
