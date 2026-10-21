@@ -187,6 +187,8 @@ const newsList = [...news.values()];
     .sec-head h2 { margin-bottom: 0.5rem; }
     .sec-head p { max-width: 60ch; }
     .ecosystem { background: #fff; }
+    /* The map travels with the list: her grid is map left, list right. */
+    .ecosystem :global([id^='tsb-ev'] .tsb-g > div:first-child) { position: sticky; top: 96px; align-self: start; }
     .month-switch { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0 0 1.75rem; }
     .month-switch button {
         font: inherit; font-size: 0.95rem; font-weight: 600; padding: 0.5rem 1.1rem;
