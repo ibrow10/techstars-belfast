@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-27",
+ "generated": "2026-10-30",
  "towns": {
   "Antrim": {
    "x": 562.4,
@@ -91,54 +91,6 @@
   }
  },
  "events": [
-  {
-   "id": "2026-10-28-100m-arr-talk",
-   "type": "event",
-   "date": "2026-10-28",
-   "end": "",
-   "time": "4pm",
-   "title": "$100M ARR and Counting: Building a Global Business from Belfast",
-   "org": "Ormeau Labs",
-   "venue": "Ormeau Labs, 18 Ormeau Ave, Belfast",
-   "town": "Belfast",
-   "note": "",
-   "url": "https://luma.com/5sy5yigt",
-   "tbc": false,
-   "cancelled": false,
-   "tier": 2
-  },
-  {
-   "id": "2026-10-29-ai-bootcamp-entrepreneurs-unleashed",
-   "type": "event",
-   "date": "2026-10-29",
-   "end": "",
-   "time": "9.30am",
-   "title": "AI Bootcamp: Build Your AI Toolkit & Supercharge Your Business in One Day",
-   "org": "Entrepreneurs Unleashed",
-   "venue": "Entrepreneurs Unleashed, North Derby Street",
-   "town": "Belfast",
-   "note": "A one-day hands-on workshop for business owners on practical AI tools for marketing and daily workflows.",
-   "url": "https://www.eventbrite.co.uk/e/ai-bootcamp-build-your-ai-toolkit-supercharge-your-business-in-one-day-tickets-2002431890689",
-   "tbc": false,
-   "cancelled": false,
-   "tier": 2
-  },
-  {
-   "id": "2026-10-29-ni-cyber-breakfast",
-   "type": "event",
-   "date": "2026-10-29",
-   "end": "",
-   "time": "9am",
-   "title": "NI Cyber: The Breakfast Club",
-   "org": "NI Cyber",
-   "venue": "Invest NI North West Office, Strand Road",
-   "town": "Derry",
-   "note": "Networking breakfast for the NI cyber security cluster.",
-   "url": "https://www.eventbrite.co.uk/e/ni-cyber-the-breakfast-club-tickets-510893384867",
-   "tbc": false,
-   "cancelled": false,
-   "tier": 2
-  },
   {
    "id": "ts-2026-11-02-the-amp-x-founder-labs-ama",
    "type": "event",
